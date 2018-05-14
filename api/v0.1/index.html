@@ -2489,8 +2489,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#post-appsapp-slugbuilds" title="POST /apps/{APP-SLUG}/builds" class="md-nav__link">
-    POST /apps/{APP-SLUG}/builds
+  <a href="#delete-appsapp-slugbuildsbuild-slugartifactsartifact-slug" title="DELETE /apps/{APP-SLUG}/builds/{BUILD-SLUG}/artifacts/{ARTIFACT-SLUG}" class="md-nav__link">
+    DELETE /apps/{APP-SLUG}/builds/{BUILD-SLUG}/artifacts/{ARTIFACT-SLUG}
   </a>
   
     <nav class="md-nav">
@@ -2516,8 +2516,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#post-appsapp-slugbuildsbuild-slugabort" title="POST /apps/{APP-SLUG}/builds/{BUILD-SLUG}/abort" class="md-nav__link">
-    POST /apps/{APP-SLUG}/builds/{BUILD-SLUG}/abort
+  <a href="#post-appsapp-slugbuilds" title="POST /apps/{APP-SLUG}/builds" class="md-nav__link">
+    POST /apps/{APP-SLUG}/builds
   </a>
   
     <nav class="md-nav">
@@ -2532,6 +2532,33 @@
         
           <li class="md-nav__item">
   <a href="#example-response_26" title="Example response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-appsapp-slugbuildsbuild-slugabort" title="POST /apps/{APP-SLUG}/builds/{BUILD-SLUG}/abort" class="md-nav__link">
+    POST /apps/{APP-SLUG}/builds/{BUILD-SLUG}/abort
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-curl-request_31" title="Example curl request" class="md-nav__link">
+    Example curl request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_27" title="Example response" class="md-nav__link">
     Example response
   </a>
   
@@ -3397,8 +3424,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#post-appsapp-slugbuilds" title="POST /apps/{APP-SLUG}/builds" class="md-nav__link">
-    POST /apps/{APP-SLUG}/builds
+  <a href="#delete-appsapp-slugbuildsbuild-slugartifactsartifact-slug" title="DELETE /apps/{APP-SLUG}/builds/{BUILD-SLUG}/artifacts/{ARTIFACT-SLUG}" class="md-nav__link">
+    DELETE /apps/{APP-SLUG}/builds/{BUILD-SLUG}/artifacts/{ARTIFACT-SLUG}
   </a>
   
     <nav class="md-nav">
@@ -3424,8 +3451,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#post-appsapp-slugbuildsbuild-slugabort" title="POST /apps/{APP-SLUG}/builds/{BUILD-SLUG}/abort" class="md-nav__link">
-    POST /apps/{APP-SLUG}/builds/{BUILD-SLUG}/abort
+  <a href="#post-appsapp-slugbuilds" title="POST /apps/{APP-SLUG}/builds" class="md-nav__link">
+    POST /apps/{APP-SLUG}/builds
   </a>
   
     <nav class="md-nav">
@@ -3440,6 +3467,33 @@
         
           <li class="md-nav__item">
   <a href="#example-response_26" title="Example response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-appsapp-slugbuildsbuild-slugabort" title="POST /apps/{APP-SLUG}/builds/{BUILD-SLUG}/abort" class="md-nav__link">
+    POST /apps/{APP-SLUG}/builds/{BUILD-SLUG}/abort
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-curl-request_31" title="Example curl request" class="md-nav__link">
+    Example curl request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_27" title="Example response" class="md-nav__link">
     Example response
   </a>
   
@@ -4303,7 +4357,7 @@ workflows:
     {
       &quot;abort_reason&quot;: null,
       &quot;branch&quot;: &quot;master&quot;,
-      &quot;build_number&quot;: 34,
+      &quot;build_number&quot;: 35,
       &quot;commit_hash&quot;: null,
       &quot;commit_message&quot;: null,
       &quot;commit_view_url&quot;: null,
@@ -4317,12 +4371,40 @@ workflows:
       &quot;pull_request_id&quot;: 0,
       &quot;pull_request_target_branch&quot;: null,
       &quot;pull_request_view_url&quot;: null,
+      &quot;slug&quot;: &quot;2a0b62127f2a91ec&quot;,
+      &quot;stack_config_type&quot;: &quot;standard1&quot;,
+      &quot;stack_identifier&quot;: &quot;linux-docker-android&quot;,
+      &quot;started_on_worker_at&quot;: null,
+      &quot;status&quot;: 0,
+      &quot;status_text&quot;: &quot;in-progress&quot;,
+      &quot;tag&quot;: null,
+      &quot;triggered_at&quot;: &quot;2018-05-14T12:11:24Z&quot;,
+      &quot;triggered_by&quot;: &quot;bitrise_api_doc&quot;,
+      &quot;triggered_workflow&quot;: &quot;primary&quot;
+    },
+    {
+      &quot;abort_reason&quot;: null,
+      &quot;branch&quot;: &quot;master&quot;,
+      &quot;build_number&quot;: 34,
+      &quot;commit_hash&quot;: null,
+      &quot;commit_message&quot;: null,
+      &quot;commit_view_url&quot;: null,
+      &quot;environment_prepare_finished_at&quot;: &quot;2018-04-19T14:42:28Z&quot;,
+      &quot;finished_at&quot;: &quot;2018-04-19T14:44:00Z&quot;,
+      &quot;is_on_hold&quot;: false,
+      &quot;original_build_params&quot;: {
+        &quot;branch&quot;: &quot;master&quot;,
+        &quot;workflow_id&quot;: &quot;primary&quot;
+      },
+      &quot;pull_request_id&quot;: 0,
+      &quot;pull_request_target_branch&quot;: null,
+      &quot;pull_request_view_url&quot;: null,
       &quot;slug&quot;: &quot;226f809ae60c822d&quot;,
       &quot;stack_config_type&quot;: &quot;standard1&quot;,
       &quot;stack_identifier&quot;: &quot;linux-docker-android&quot;,
       &quot;started_on_worker_at&quot;: &quot;2018-04-19T14:41:22Z&quot;,
-      &quot;status&quot;: 0,
-      &quot;status_text&quot;: &quot;in-progress&quot;,
+      &quot;status&quot;: 1,
+      &quot;status_text&quot;: &quot;success&quot;,
       &quot;tag&quot;: null,
       &quot;triggered_at&quot;: &quot;2018-04-19T14:41:22Z&quot;,
       &quot;triggered_by&quot;: &quot;bitrise_api_doc&quot;,
@@ -4355,40 +4437,12 @@ workflows:
       &quot;triggered_at&quot;: &quot;2018-04-19T11:42:54Z&quot;,
       &quot;triggered_by&quot;: &quot;bitrise_api_doc&quot;,
       &quot;triggered_workflow&quot;: &quot;primary&quot;
-    },
-    {
-      &quot;abort_reason&quot;: null,
-      &quot;branch&quot;: &quot;master&quot;,
-      &quot;build_number&quot;: 32,
-      &quot;commit_hash&quot;: null,
-      &quot;commit_message&quot;: null,
-      &quot;commit_view_url&quot;: null,
-      &quot;environment_prepare_finished_at&quot;: &quot;2018-04-19T11:42:27Z&quot;,
-      &quot;finished_at&quot;: &quot;2018-04-19T11:43:50Z&quot;,
-      &quot;is_on_hold&quot;: false,
-      &quot;original_build_params&quot;: {
-        &quot;branch&quot;: &quot;master&quot;,
-        &quot;workflow_id&quot;: &quot;primary&quot;
-      },
-      &quot;pull_request_id&quot;: 0,
-      &quot;pull_request_target_branch&quot;: null,
-      &quot;pull_request_view_url&quot;: null,
-      &quot;slug&quot;: &quot;5a4c6dfb253fd4df&quot;,
-      &quot;stack_config_type&quot;: &quot;standard1&quot;,
-      &quot;stack_identifier&quot;: &quot;linux-docker-android&quot;,
-      &quot;started_on_worker_at&quot;: &quot;2018-04-19T11:41:26Z&quot;,
-      &quot;status&quot;: 1,
-      &quot;status_text&quot;: &quot;success&quot;,
-      &quot;tag&quot;: null,
-      &quot;triggered_at&quot;: &quot;2018-04-19T11:41:25Z&quot;,
-      &quot;triggered_by&quot;: &quot;bitrise_api_doc&quot;,
-      &quot;triggered_workflow&quot;: &quot;primary&quot;
     }
   ],
   &quot;paging&quot;: {
-    &quot;next&quot;: &quot;8d01153a2176eb92&quot;,
+    &quot;next&quot;: &quot;5a4c6dfb253fd4df&quot;,
     &quot;page_item_limit&quot;: 3,
-    &quot;total_item_count&quot;: 34
+    &quot;total_item_count&quot;: 35
   }
 }</code></pre>
 
@@ -4822,7 +4876,7 @@ workflows:
     {
       &quot;abort_reason&quot;: null,
       &quot;branch&quot;: &quot;master&quot;,
-      &quot;build_number&quot;: 34,
+      &quot;build_number&quot;: 35,
       &quot;commit_hash&quot;: null,
       &quot;commit_message&quot;: null,
       &quot;commit_view_url&quot;: null,
@@ -4836,12 +4890,40 @@ workflows:
       &quot;pull_request_id&quot;: 0,
       &quot;pull_request_target_branch&quot;: null,
       &quot;pull_request_view_url&quot;: null,
+      &quot;slug&quot;: &quot;2a0b62127f2a91ec&quot;,
+      &quot;stack_config_type&quot;: &quot;standard1&quot;,
+      &quot;stack_identifier&quot;: &quot;linux-docker-android&quot;,
+      &quot;started_on_worker_at&quot;: &quot;2018-05-14T12:11:25Z&quot;,
+      &quot;status&quot;: 0,
+      &quot;status_text&quot;: &quot;in-progress&quot;,
+      &quot;tag&quot;: null,
+      &quot;triggered_at&quot;: &quot;2018-05-14T12:11:24Z&quot;,
+      &quot;triggered_by&quot;: &quot;bitrise_api_doc&quot;,
+      &quot;triggered_workflow&quot;: &quot;primary&quot;
+    },
+    {
+      &quot;abort_reason&quot;: null,
+      &quot;branch&quot;: &quot;master&quot;,
+      &quot;build_number&quot;: 34,
+      &quot;commit_hash&quot;: null,
+      &quot;commit_message&quot;: null,
+      &quot;commit_view_url&quot;: null,
+      &quot;environment_prepare_finished_at&quot;: &quot;2018-04-19T14:42:28Z&quot;,
+      &quot;finished_at&quot;: &quot;2018-04-19T14:44:00Z&quot;,
+      &quot;is_on_hold&quot;: false,
+      &quot;original_build_params&quot;: {
+        &quot;branch&quot;: &quot;master&quot;,
+        &quot;workflow_id&quot;: &quot;primary&quot;
+      },
+      &quot;pull_request_id&quot;: 0,
+      &quot;pull_request_target_branch&quot;: null,
+      &quot;pull_request_view_url&quot;: null,
       &quot;slug&quot;: &quot;226f809ae60c822d&quot;,
       &quot;stack_config_type&quot;: &quot;standard1&quot;,
       &quot;stack_identifier&quot;: &quot;linux-docker-android&quot;,
       &quot;started_on_worker_at&quot;: &quot;2018-04-19T14:41:22Z&quot;,
-      &quot;status&quot;: 0,
-      &quot;status_text&quot;: &quot;in-progress&quot;,
+      &quot;status&quot;: 1,
+      &quot;status_text&quot;: &quot;success&quot;,
       &quot;tag&quot;: null,
       &quot;triggered_at&quot;: &quot;2018-04-19T14:41:22Z&quot;,
       &quot;triggered_by&quot;: &quot;bitrise_api_doc&quot;,
@@ -5477,7 +5559,7 @@ workflows:
   ],
   &quot;paging&quot;: {
     &quot;page_item_limit&quot;: 50,
-    &quot;total_item_count&quot;: 23
+    &quot;total_item_count&quot;: 24
   }
 }</code></pre>
 
@@ -5628,7 +5710,7 @@ workflows:
     {
       &quot;abort_reason&quot;: null,
       &quot;branch&quot;: &quot;master&quot;,
-      &quot;build_number&quot;: 34,
+      &quot;build_number&quot;: 35,
       &quot;commit_hash&quot;: null,
       &quot;commit_message&quot;: null,
       &quot;commit_view_url&quot;: null,
@@ -5642,12 +5724,40 @@ workflows:
       &quot;pull_request_id&quot;: 0,
       &quot;pull_request_target_branch&quot;: null,
       &quot;pull_request_view_url&quot;: null,
+      &quot;slug&quot;: &quot;2a0b62127f2a91ec&quot;,
+      &quot;stack_config_type&quot;: &quot;standard1&quot;,
+      &quot;stack_identifier&quot;: &quot;linux-docker-android&quot;,
+      &quot;started_on_worker_at&quot;: &quot;2018-05-14T12:11:25Z&quot;,
+      &quot;status&quot;: 0,
+      &quot;status_text&quot;: &quot;in-progress&quot;,
+      &quot;tag&quot;: null,
+      &quot;triggered_at&quot;: &quot;2018-05-14T12:11:24Z&quot;,
+      &quot;triggered_by&quot;: &quot;bitrise_api_doc&quot;,
+      &quot;triggered_workflow&quot;: &quot;primary&quot;
+    },
+    {
+      &quot;abort_reason&quot;: null,
+      &quot;branch&quot;: &quot;master&quot;,
+      &quot;build_number&quot;: 34,
+      &quot;commit_hash&quot;: null,
+      &quot;commit_message&quot;: null,
+      &quot;commit_view_url&quot;: null,
+      &quot;environment_prepare_finished_at&quot;: &quot;2018-04-19T14:42:28Z&quot;,
+      &quot;finished_at&quot;: &quot;2018-04-19T14:44:00Z&quot;,
+      &quot;is_on_hold&quot;: false,
+      &quot;original_build_params&quot;: {
+        &quot;branch&quot;: &quot;master&quot;,
+        &quot;workflow_id&quot;: &quot;primary&quot;
+      },
+      &quot;pull_request_id&quot;: 0,
+      &quot;pull_request_target_branch&quot;: null,
+      &quot;pull_request_view_url&quot;: null,
       &quot;slug&quot;: &quot;226f809ae60c822d&quot;,
       &quot;stack_config_type&quot;: &quot;standard1&quot;,
       &quot;stack_identifier&quot;: &quot;linux-docker-android&quot;,
       &quot;started_on_worker_at&quot;: &quot;2018-04-19T14:41:22Z&quot;,
-      &quot;status&quot;: 0,
-      &quot;status_text&quot;: &quot;in-progress&quot;,
+      &quot;status&quot;: 1,
+      &quot;status_text&quot;: &quot;success&quot;,
       &quot;tag&quot;: null,
       &quot;triggered_at&quot;: &quot;2018-04-19T14:41:22Z&quot;,
       &quot;triggered_by&quot;: &quot;bitrise_api_doc&quot;,
@@ -6588,7 +6698,7 @@ workflows:
   ],
   &quot;paging&quot;: {
     &quot;page_item_limit&quot;: 50,
-    &quot;total_item_count&quot;: 34
+    &quot;total_item_count&quot;: 35
   }
 }</code></pre>
 
@@ -6658,7 +6768,7 @@ There is also a <code>limit</code> parameter which has 50 as the default value, 
 
 <h4 id="example-response_21">Example response<a class="headerlink" href="#example-response_21" title="Permanent link">⚓</a></h4>
 <pre class="code"><code>{
-  &quot;expiring_raw_log_url&quot;: &quot;https://bitrise-build-log-archives-production.s3.amazonaws.com/build-logs-v2/669403bffbe35909/3247e2920496e846/2194500/3247e2920496e846.log?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026X-Amz-Credential=AKIAIOC7N256G7J2W2TQ%2F20180419%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20180419T144127Z\u0026X-Amz-Expires=600\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=a0adc8f940e60f4c5bee6fe3caa05efd7eb2b92063ce964777348aca2d7ac688&quot;,
+  &quot;expiring_raw_log_url&quot;: &quot;https://bitrise-build-log-archives-production.s3.amazonaws.com/build-logs-v2/669403bffbe35909/3247e2920496e846/2194500/3247e2920496e846.log?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026X-Amz-Credential=AKIAIOC7N256G7J2W2TQ%2F20180514%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20180514T121130Z\u0026X-Amz-Expires=600\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=4f243903b15de7ff46ac833279b769ece35eda942d1a34141e7a65c22c3de60c&quot;,
   &quot;generated_log_chunks_num&quot;: 6,
   &quot;is_archived&quot;: true,
   &quot;log_chunks&quot;: [
@@ -6732,7 +6842,7 @@ There is also a <code>limit</code> parameter which has 50 as the default value, 
 <pre class="code"><code>{
   &quot;data&quot;: {
     &quot;artifact_type&quot;: &quot;file&quot;,
-    &quot;expiring_download_url&quot;: &quot;https://bitrise-prod-build-storage.s3.amazonaws.com/builds/9fb8eaaa4bdd3763/artifacts/2138393/artifact-1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026X-Amz-Credential=AKIAIOC7N256G7J2W2TQ%2F20180419%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20180419T144128Z\u0026X-Amz-Expires=600\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=ab1b6bafd90287acf1b8828f6ac425881bff9c10d6670ebc1bca5dd79d2f9d74&quot;,
+    &quot;expiring_download_url&quot;: &quot;https://bitrise-prod-build-storage.s3.amazonaws.com/builds/9fb8eaaa4bdd3763/artifacts/2138393/artifact-1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026X-Amz-Credential=AKIAIOC7N256G7J2W2TQ%2F20180514%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20180514T121130Z\u0026X-Amz-Expires=600\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=d8fe3209ac5d325de487952e930207d3f0294ed861999c4c4489854dce4c8efc&quot;,
     &quot;file_size_bytes&quot;: 10,
     &quot;is_public_page_enabled&quot;: true,
     &quot;public_install_page_url&quot;: &quot;https://www.bitrise.io/artifact/2138393/p/6e7dc9c2b99492e6aa997a2e5d3f7413&quot;,
@@ -6753,7 +6863,7 @@ There is also a <code>limit</code> parameter which has 50 as the default value, 
 <pre class="code"><code>{
   &quot;data&quot;: {
     &quot;artifact_type&quot;: &quot;android-apk&quot;,
-    &quot;expiring_download_url&quot;: &quot;https://bitrise-prod-build-storage.s3.amazonaws.com/builds/ddf4134555e833d8/artifacts/3205846/app-debug.apk?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026X-Amz-Credential=AKIAIOC7N256G7J2W2TQ%2F20180419%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20180419T144128Z\u0026X-Amz-Expires=600\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=b5dfbae26ab992ff75e1bf3bfb5fde9a45f16c6ca894d09cf6bc0d7916f2dc65&quot;,
+    &quot;expiring_download_url&quot;: &quot;https://bitrise-prod-build-storage.s3.amazonaws.com/builds/ddf4134555e833d8/artifacts/3205846/app-debug.apk?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026X-Amz-Credential=AKIAIOC7N256G7J2W2TQ%2F20180514%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20180514T121131Z\u0026X-Amz-Expires=600\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=f92302b8e4f70a2852506a61cc1bd3bbd3262f8d55770cb8059352d25a35602b&quot;,
     &quot;file_size_bytes&quot;: 607185,
     &quot;is_public_page_enabled&quot;: true,
     &quot;public_install_page_url&quot;: &quot;https://www.bitrise.io/artifact/3205846/p/300e0121b50985fd631fe304d549006f&quot;,
@@ -6763,18 +6873,36 @@ There is also a <code>limit</code> parameter which has 50 as the default value, 
 }</code></pre>
 
 
-<h3 id="post-appsapp-slugbuilds">POST /apps/{APP-SLUG}/builds<a class="headerlink" href="#post-appsapp-slugbuilds" title="Permanent link">⚓</a></h3>
-<p>Trigger a new build.</p>
-<p>You can trigger a new build with the specific trigger parameters defined. You can check the available parameters in the <a href="../../api/build-trigger/">documentation of the Build Trigger API</a></p>
+<h3 id="delete-appsapp-slugbuildsbuild-slugartifactsartifact-slug">DELETE /apps/{APP-SLUG}/builds/{BUILD-SLUG}/artifacts/{ARTIFACT-SLUG}<a class="headerlink" href="#delete-appsapp-slugbuildsbuild-slugartifactsartifact-slug" title="Permanent link">⚓</a></h3>
+<p>Delete a specific artifact.</p>
 <h4 id="example-curl-request_29">Example <code>curl</code> request<a class="headerlink" href="#example-curl-request_29" title="Permanent link">⚓</a></h4>
-<pre class="code"><code>curl -X POST -H 'Authorization: token THE-ACCESS-TOKEN' 'https://api.bitrise.io/v0.1/apps/APP-SLUG/builds' -d '{&quot;hook_info&quot;:{&quot;type&quot;:&quot;bitrise&quot;},&quot;build_params&quot;:{&quot;branch&quot;:&quot;master&quot;,&quot;workflow_id&quot;:&quot;primary&quot;},&quot;triggered_by&quot;:&quot;bitrise_api_doc&quot;}'</code></pre>
+<pre class="code"><code>curl -X DELETE -H 'Authorization: token THE-ACCESS-TOKEN' 'https://api.bitrise.io/v0.1/apps/APP-SLUG/builds/BUILD-SLUG/artifacts/ARTIFACT-SLUG'</code></pre>
 
 
 <h4 id="example-response_25">Example response<a class="headerlink" href="#example-response_25" title="Permanent link">⚓</a></h4>
 <pre class="code"><code>{
-  &quot;build_number&quot;: 34,
-  &quot;build_slug&quot;: &quot;226f809ae60c822d&quot;,
-  &quot;build_url&quot;: &quot;https://www.bitrise.io/build/226f809ae60c822d&quot;,
+  &quot;data&quot;: {
+      &quot;artifact_type&quot;: &quot;android-apk&quot;,
+      &quot;file_size_bytes&quot;: 607185,
+      &quot;is_public_page_enabled&quot;: true,
+      &quot;slug&quot;: &quot;5a9f5da8d5f1057c&quot;,
+      &quot;title&quot;: &quot;app-debug.apk&quot;
+    }
+}</code></pre>
+
+
+<h3 id="post-appsapp-slugbuilds">POST /apps/{APP-SLUG}/builds<a class="headerlink" href="#post-appsapp-slugbuilds" title="Permanent link">⚓</a></h3>
+<p>Trigger a new build.</p>
+<p>You can trigger a new build with the specific trigger parameters defined. You can check the available parameters in the <a href="../../api/build-trigger/">documentation of the Build Trigger API</a></p>
+<h4 id="example-curl-request_30">Example <code>curl</code> request<a class="headerlink" href="#example-curl-request_30" title="Permanent link">⚓</a></h4>
+<pre class="code"><code>curl -X POST -H 'Authorization: token THE-ACCESS-TOKEN' 'https://api.bitrise.io/v0.1/apps/APP-SLUG/builds' -d '{&quot;hook_info&quot;:{&quot;type&quot;:&quot;bitrise&quot;},&quot;build_params&quot;:{&quot;branch&quot;:&quot;master&quot;,&quot;workflow_id&quot;:&quot;primary&quot;},&quot;triggered_by&quot;:&quot;bitrise_api_doc&quot;}'</code></pre>
+
+
+<h4 id="example-response_26">Example response<a class="headerlink" href="#example-response_26" title="Permanent link">⚓</a></h4>
+<pre class="code"><code>{
+  &quot;build_number&quot;: 35,
+  &quot;build_slug&quot;: &quot;2a0b62127f2a91ec&quot;,
+  &quot;build_url&quot;: &quot;https://www.bitrise.io/build/2a0b62127f2a91ec&quot;,
   &quot;message&quot;: &quot;webhook processed&quot;,
   &quot;service&quot;: &quot;bitrise&quot;,
   &quot;slug&quot;: &quot;669403bffbe35909&quot;,
@@ -6793,11 +6921,11 @@ There is also a <code>limit</code> parameter which has 50 as the default value, 
 }</code></pre>
 
 
-<h4 id="example-curl-request_30">Example <code>curl</code> request<a class="headerlink" href="#example-curl-request_30" title="Permanent link">⚓</a></h4>
+<h4 id="example-curl-request_31">Example <code>curl</code> request<a class="headerlink" href="#example-curl-request_31" title="Permanent link">⚓</a></h4>
 <pre class="code"><code>curl -X POST -H 'Authorization: token THE-ACCESS-TOKEN' 'https://api.bitrise.io/v0.1/apps/{APP-SLUG}/builds/{BUILD-SLUG}/abort' -d '{&quot;abort_reason&quot;: &quot;abort with abort_with_success=true test &amp; skip_notifications=true&quot;, &quot;abort_with_success&quot;: true,&quot;skip_notifications&quot;: true}'</code></pre>
 
 
-<h4 id="example-response_26">Example response<a class="headerlink" href="#example-response_26" title="Permanent link">⚓</a></h4>
+<h4 id="example-response_27">Example response<a class="headerlink" href="#example-response_27" title="Permanent link">⚓</a></h4>
 <pre class="code"><code>{
     &quot;status&quot;: &quot;ok&quot;
 }</code></pre>
