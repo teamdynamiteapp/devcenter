@@ -732,6 +732,10 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Install the Bitrise CLI
+      </label>
+    
     <a href="./" title="Install the Bitrise CLI" class="md-nav__link md-nav__link--active">
       Install the Bitrise CLI
     </a>
@@ -740,6 +744,32 @@
 <nav class="md-nav md-nav--secondary">
   
   
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-bitrise-cli-with-curl" title="Installing the Bitrise CLI with curl" class="md-nav__link">
+    Installing the Bitrise CLI with curl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-bitrise-cli-with-homebrew" title="Installing the Bitrise CLI with Homebrew" class="md-nav__link">
+    Installing the Bitrise CLI with Homebrew
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-bitrise-cli" title="Updating the Bitrise CLI" class="md-nav__link">
+    Updating the Bitrise CLI
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
     
@@ -1766,6 +1796,32 @@
   
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-bitrise-cli-with-curl" title="Installing the Bitrise CLI with curl" class="md-nav__link">
+    Installing the Bitrise CLI with curl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-bitrise-cli-with-homebrew" title="Installing the Bitrise CLI with Homebrew" class="md-nav__link">
+    Installing the Bitrise CLI with Homebrew
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-bitrise-cli" title="Updating the Bitrise CLI" class="md-nav__link">
+    Updating the Bitrise CLI
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1781,30 +1837,42 @@
                 
                   <h1>Install the Bitrise CLI</h1>
                 
-                <p>Installing the Bitrise CLI is super simple.</p>
-<p>The Bitrise CLI is distributed as a single binary, so
-you just have to download this binary file, make it executable,
-and run <code>bitrise setup</code> to download all the core plugins
-and tools required for running a build.</p>
-<p><em>If you'd forget to run <code>bitrise setup</code> that's not an issue either,
-the first time you run <code>bitrise run</code> it will perform the <code>setup</code>
-if it was not performed for the current version of the CLI yet.
-<code>bitrise setup</code> can be called any time to validate the CLI installation.</em></p>
-<p>Upgrading the CLI works exactly the same way: just download the
-new binary (overwrite the previous binary), make it executable
-and run <code>bitrise setup</code> (or the next <code>bitrise run</code> will run it
-automatically).</p>
-<p>You can download the release binary on GitHub from the CLI's
-<a href="https://github.com/bitrise-io/bitrise/releases">releases</a> page.
-Every release includes copy paste ready <code>curl</code> commands
-to install the specific version.</p>
-<p>The CLI is also available in <a href="http://brew.sh/">brew</a> on macOS, so it can be installed with</p>
-<pre class="code"><code>brew update &amp;&amp; brew install bitrise</code></pre>
+                <p>Installing the Bitrise CLI is super simple. It is distributed as a single binary which you can acquire in several ways. All you need to do is download it and make it executable. Let's see how!</p>
+<h3 id="installing-the-bitrise-cli-with-curl">Installing the Bitrise CLI with curl<a class="headerlink" href="#installing-the-bitrise-cli-with-curl" title="Permanent link">⚓</a></h3>
+<ol>
+<li>
+<p>Run the following command in a bash shell:</p>
+<pre class="code"><code>sudo curl -o /usr/local/bin/bitrise https://github.com/bitrise-io/bitrise/releases/download/1.16.0/bitrise-$(uname -s)-$(uname -m)</code></pre>
 
 
-<p>if you have Homebrew installed on your Mac.</p>
-<p>You can find more information about the installation in the
-<a href="https://github.com/bitrise-io/bitrise#install-and-setup">Install and Setup section of the CLI's README</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Bitrise CLI version</p>
+<p>You can check the latest release of the Bitrise CLI on its <a href="https://github.com/bitrise-io/bitrise/releases">releases</a> page.</p>
+</div>
+</li>
+<li>
+<p>Make the downloaded binary executable:</p>
+<p><code>sudo chmod +x /usr/local/bin/bitrise</code></p>
+</li>
+<li>
+<p>Run <code>bitrise setup</code>. This will verify if everything that is required for Bitrise to run is installed and available. If you skip this, the CLI will perform the setup anyway the first time you call <code>bitrise run</code>.</p>
+</li>
+</ol>
+<p>In any case, <code>bitrise setup</code> can be called at any time to validate the installation.</p>
+<h3 id="installing-the-bitrise-cli-with-homebrew">Installing the Bitrise CLI with Homebrew<a class="headerlink" href="#installing-the-bitrise-cli-with-homebrew" title="Permanent link">⚓</a></h3>
+<p>If you have the <code>Homebrew</code> package manager installed on your Mac, you can use it to install the Bitrise CLI!</p>
+<ol>
+<li>
+<p>Open the <code>Terminal</code> app on your Mac and run:</p>
+<p><code>brew update &amp;&amp; brew install bitrise</code></p>
+</li>
+<li>
+<p>Run <code>bitrise setup</code>. This will verify if everything that is required for Bitrise to run is installed and available. If you skip this, the CLI will perform the setup anyway the first time you call <code>bitrise run</code>.</p>
+</li>
+</ol>
+<h3 id="updating-the-bitrise-cli">Updating the Bitrise CLI<a class="headerlink" href="#updating-the-bitrise-cli" title="Permanent link">⚓</a></h3>
+<p>Updating the Bitrise CLI is super easy, and it doesn't matter if you installed it with Homebrew or from the GitHub release.</p>
+<p>Simply run <code>bitrise update</code> - that's it! The CLI checks for updates once every day and notifies you as soon as there is a new version.</p>
               
             </article>
           </div>
