@@ -57,6 +57,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/infrastructure/the-environment/</loc>
+     <lastmod>2018-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
@@ -185,6 +191,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
@@ -273,34 +285,6 @@
         
     <url>
      <loc>/bitrise-cli/create-your-own-step/</loc>
-     <lastmod>2018-06-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/android/code-signing/</loc>
-     <lastmod>2018-06-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/android/the-environment/</loc>
-     <lastmod>2018-06-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/android/android-tips-and-tricks/</loc>
-     <lastmod>2018-06-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/android/frequent-android-issues/</loc>
      <lastmod>2018-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -468,6 +452,12 @@
     
         
     <url>
+     <loc>/tips-and-tricks/android-tips-and-tricks/</loc>
+     <lastmod>2018-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/tips-and-tricks/skip-a-build/</loc>
      <lastmod>2018-06-18</lastmod>
      <changefreq>daily</changefreq>
@@ -524,6 +514,12 @@
     
 
     
+        
+    <url>
+     <loc>/troubleshooting/frequent-android-issues/</loc>
+     <lastmod>2018-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
         
     <url>
      <loc>/faq/available-environment-variables/</loc>
