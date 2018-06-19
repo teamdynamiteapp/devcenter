@@ -717,19 +717,6 @@
     Setup webhook on Bitbucket
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#choose-from-triggers" title="Choose from triggers" class="md-nav__link">
-    Choose from triggers
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -743,8 +730,85 @@
           
   <li class="md-nav__item">
     
-      <a href="../trigger-map/" title="Control what to build when, with the Trigger Map" class="md-nav__link">
-        Control what to build when, with the Trigger Map
+      <a href="../adding-a-gitlab-webhook/" title="Adding a Gitlab webhook" class="md-nav__link">
+        Adding a Gitlab webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../adding-a-gogs-webhook/" title="Adding a Gogs webhook" class="md-nav__link">
+        Adding a Gogs webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../adding-a-slack-webhook/" title="Adding a Slack webhook" class="md-nav__link">
+        Adding a Slack webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../adding-a-visual-studio-webhook/" title="Adding a Visual Studio webhook" class="md-nav__link">
+        Adding a Visual Studio webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../adding-assembla-webhook/" title="Adding an Assembla webhook" class="md-nav__link">
+        Adding an Assembla webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../adding-deveo-webhook/" title="Adding a Deveo webhook" class="md-nav__link">
+        Adding a Deveo webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../adding-outgoing-webhooks/" title="Adding outgoing webhooks" class="md-nav__link">
+        Adding outgoing webhooks
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../trigger-map/" title="Using the Trigger Map to trigger builds" class="md-nav__link">
+        Using the Trigger Map to trigger builds
       </a>
     
   </li>
@@ -2046,19 +2110,6 @@
     Setup webhook on Bitbucket
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#choose-from-triggers" title="Choose from triggers" class="md-nav__link">
-    Choose from triggers
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -2088,23 +2139,42 @@ simply skip to the <a href="#choose-from-triggers"><strong>triggers</strong></a>
 and edit your current one according to the screenshot there.</p>
 </div>
 <h2 id="get-the-webhook-url-for-bitbucket">Get the webhook URL for Bitbucket<a class="headerlink" href="#get-the-webhook-url-for-bitbucket" title="Permanent link">⚓</a></h2>
+<ol>
+<li>
 <p>Navigate to the <code>Code</code> tab of your app's page and select <code>Bitbucket</code> from the dropdown at the webhooks section.</p>
 <p><img alt="Screenshot" src="../../img/webhooks/webhooks_bitbucket.png" /></p>
+</li>
+<li>
 <p>Copy the webhook URL for the selected service.</p>
+</li>
+</ol>
 <h2 id="setup-webhook-on-bitbucket">Setup webhook on Bitbucket<a class="headerlink" href="#setup-webhook-on-bitbucket" title="Permanent link">⚓</a></h2>
+<ol>
+<li>
 <p>Navigate to your Bitbucket repository and select <code>Settings</code>.</p>
 <p><img alt="Screenshot" src="../../img/webhooks/bitbucket_settings.png" /></p>
+</li>
+<li>
 <p>Select <code>Webhooks</code> from the left.</p>
 <p><img alt="Screenshot" src="../../img/webhooks/bitbucket_settings_webhooks.png" /></p>
+</li>
+<li>
 <p>Select <code>Add Webhook</code></p>
 <p><img alt="Screenshot" src="../../img/webhooks/bitbucket_add_webhooks.png" /></p>
+</li>
+<li>
 <p>Paste the Bitbucket Webhook URL from Bitrise to the <code>URL</code> and add a <code>Title</code>.</p>
 <p><img alt="Screenshot" src="../../img/webhooks/bitbucket_webhook_info.png" /></p>
-<h3 id="choose-from-triggers">Choose from triggers<a class="headerlink" href="#choose-from-triggers" title="Permanent link">⚓</a></h3>
+</li>
+<li>
 <p>Select <code>Choose from a full list of triggers</code>.</p>
 <p><img alt="Screenshot" src="../../img/webhooks/bitbucket_webhook_trigger.png" /></p>
+</li>
+<li>
 <p>Select Repository <code>Push</code> and Pull Request <code>Created</code> and <code>Updated</code> triggers. After you are ready press the <code>Save</code> button and you are ready to roll!</p>
 <p><img alt="Screenshot" src="../../img/webhooks/bitbucket_webhook_push_and_pr.png" /></p>
+</li>
+</ol>
               
             </article>
           </div>
@@ -2132,13 +2202,13 @@ and edit your current one according to the screenshot there.</p>
           </a>
         
         
-          <a href="../trigger-map/" title="Control what to build when, with the Trigger Map" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../adding-a-gitlab-webhook/" title="Adding a Gitlab webhook" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Control what to build when, with the Trigger Map
+                Adding a Gitlab webhook
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

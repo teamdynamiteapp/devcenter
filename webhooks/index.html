@@ -684,15 +684,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-up-webhooks-automatically" title="Setting up webhooks automatically" class="md-nav__link">
-    Setting up webhooks automatically
+  <a href="#setting-up-incoming-webhooks-automatically" title="Setting up incoming webhooks automatically" class="md-nav__link">
+    Setting up incoming webhooks automatically
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-up-webhooks-by-hand" title="Setting up webhooks by hand" class="md-nav__link">
-    Setting up webhooks by hand
+  <a href="#setting-up-incoming-webhooks-by-hand" title="Setting up incoming webhooks by hand" class="md-nav__link">
+    Setting up incoming webhooks by hand
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-outgoing-webhooks" title="Setting up outgoing webhooks" class="md-nav__link">
+    Setting up outgoing webhooks
   </a>
   
 </li>
@@ -737,8 +744,85 @@
           
   <li class="md-nav__item">
     
-      <a href="trigger-map/" title="Control what to build when, with the Trigger Map" class="md-nav__link">
-        Control what to build when, with the Trigger Map
+      <a href="adding-a-gitlab-webhook/" title="Adding a Gitlab webhook" class="md-nav__link">
+        Adding a Gitlab webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="adding-a-gogs-webhook/" title="Adding a Gogs webhook" class="md-nav__link">
+        Adding a Gogs webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="adding-a-slack-webhook/" title="Adding a Slack webhook" class="md-nav__link">
+        Adding a Slack webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="adding-a-visual-studio-webhook/" title="Adding a Visual Studio webhook" class="md-nav__link">
+        Adding a Visual Studio webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="adding-assembla-webhook/" title="Adding an Assembla webhook" class="md-nav__link">
+        Adding an Assembla webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="adding-deveo-webhook/" title="Adding a Deveo webhook" class="md-nav__link">
+        Adding a Deveo webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="adding-outgoing-webhooks/" title="Adding outgoing webhooks" class="md-nav__link">
+        Adding outgoing webhooks
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="trigger-map/" title="Using the Trigger Map to trigger builds" class="md-nav__link">
+        Using the Trigger Map to trigger builds
       </a>
     
   </li>
@@ -2029,15 +2113,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-up-webhooks-automatically" title="Setting up webhooks automatically" class="md-nav__link">
-    Setting up webhooks automatically
+  <a href="#setting-up-incoming-webhooks-automatically" title="Setting up incoming webhooks automatically" class="md-nav__link">
+    Setting up incoming webhooks automatically
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-up-webhooks-by-hand" title="Setting up webhooks by hand" class="md-nav__link">
-    Setting up webhooks by hand
+  <a href="#setting-up-incoming-webhooks-by-hand" title="Setting up incoming webhooks by hand" class="md-nav__link">
+    Setting up incoming webhooks by hand
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-outgoing-webhooks" title="Setting up outgoing webhooks" class="md-nav__link">
+    Setting up outgoing webhooks
   </a>
   
 </li>
@@ -2068,9 +2159,9 @@
                 
                 <p>Most source code hosting service provides a feature to register webhooks. A webhook is basically an URL which will be called on specified events.</p>
 <p>To have Bitrise automatically start a build every time you push code into your repository you can set up a webhook at your code hosting service which will automatically trigger a build on Bitrise with the code you push to your repository.</p>
-<h2 id="setting-up-webhooks-automatically">Setting up webhooks automatically<a class="headerlink" href="#setting-up-webhooks-automatically" title="Permanent link">⚓</a></h2>
+<h2 id="setting-up-incoming-webhooks-automatically">Setting up incoming webhooks automatically<a class="headerlink" href="#setting-up-incoming-webhooks-automatically" title="Permanent link">⚓</a></h2>
 <p>If you select <code>GitHub</code> or <code>Bitbucket</code> as the source code provider when you add your app Bitrise automatically sets up a webhook for it with a click of a button at the end of your app setup journey. In this case, you can skip this tutorial.</p>
-<h2 id="setting-up-webhooks-by-hand">Setting up webhooks by hand<a class="headerlink" href="#setting-up-webhooks-by-hand" title="Permanent link">⚓</a></h2>
+<h2 id="setting-up-incoming-webhooks-by-hand">Setting up incoming webhooks by hand<a class="headerlink" href="#setting-up-incoming-webhooks-by-hand" title="Permanent link">⚓</a></h2>
 <p>You can manually setup or change your webhooks after you registered your application.
 We support multiple webhook providers. You can find the supported providers in your application's <code>Code</code> tab.</p>
 <p><img alt="Screenshot" src="../img/webhooks/webhook-providers.png" /></p>
@@ -2083,10 +2174,18 @@ We support multiple webhook providers. You can find the supported providers in y
 <ul>
 <li><a href="../webhooks/adding-a-github-webhook">Adding a GitHub webhook</a></li>
 <li><a href="../webhooks/adding-a-bitbucket-webhook">Adding a Bitbucket webhook</a></li>
-<li>Adding webhooks for Gitlab</li>
-<li>Adding webhooks for Visual Studio Online / Visual Studio Team Services</li>
-<li>Adding webhooks for Slack</li>
-<li>Adding webhooks for Gogs</li>
+<li><a href="../webhooks/adding-a-gitlab-webhook">Adding webhooks for Gitlab</a></li>
+<li><a href="../webhooks/adding-a-visual-studio-webhook">Adding webhooks for Visual Studio Online / Visual Studio Team Services</a></li>
+<li><a href="../webhooks/adding-a-slack-webhook">Adding webhooks for Slack</a></li>
+<li><a href="../webhooks/adding-a-gogs-webhook">Adding webhooks for Gogs</a></li>
+<li><a href="../webhooks/adding-deveo-webhook">Adding webhooks for Deveo</a></li>
+<li><a href="../webhooks/adding-assembla-webhook">Adding webhooks for Assembla</a></li>
+</ul>
+<h2 id="setting-up-outgoing-webhooks">Setting up outgoing webhooks<a class="headerlink" href="#setting-up-outgoing-webhooks" title="Permanent link">⚓</a></h2>
+<p>You can also set up outgoing webhooks on Bitrise. With these, Bitrise can notify any selected service about your build events. A build event is:</p>
+<ul>
+<li>when a build is started</li>
+<li>when a build ends.</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">⚓</a></h2>
 <p>See the <a href="../webhooks/troubleshooting">Webhook Troubleshooting</a> guide

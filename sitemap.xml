@@ -176,6 +176,48 @@
     </url>
         
     <url>
+     <loc>/webhooks/adding-a-gitlab-webhook/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/webhooks/adding-a-gogs-webhook/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/webhooks/adding-a-slack-webhook/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/webhooks/adding-a-visual-studio-webhook/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/webhooks/adding-assembla-webhook/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/webhooks/adding-deveo-webhook/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/webhooks/adding-outgoing-webhooks/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/webhooks/trigger-map/</loc>
      <lastmod>2018-06-19</lastmod>
      <changefreq>daily</changefreq>
