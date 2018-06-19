@@ -198,6 +198,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#run-your-builds-on-bitriseio" title="Run your builds on bitrise.io" class="md-nav__link">
+    Run your builds on bitrise.io
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bitrise-cli-the-open-source-offline-automation-runner" title="Bitrise CLI - the open source, offline, automation runner" class="md-nav__link">
     Bitrise CLI - the open source, offline, automation runner
   </a>
@@ -284,15 +291,37 @@
         
           
           
+  <li class="md-nav__item">
+    
+      <a href="getting-started/rolling-builds/" title="Rolling builds" class="md-nav__link">
+        Rolling builds
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="getting-started/selective_builds/" title="Selective builds" class="md-nav__link">
+        Selective builds
+      </a>
+    
+  </li>
+
+        
+          
+          
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
     
-    <label class="md-nav__link" for="nav-2-6">
+    <label class="md-nav__link" for="nav-2-8">
       Triggering builds
     </label>
     <nav class="md-nav" data-md-component="collapsible">
-      <label class="md-nav__title" for="nav-2-6">
+      <label class="md-nav__title" for="nav-2-8">
         Triggering builds
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1967,6 +1996,17 @@
   </li>
 
         
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="troubleshooting/trigger-doesnt-work/" title="Trigger doesnt work" class="md-nav__link">
+        Trigger doesnt work
+      </a>
+    
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2088,6 +2128,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#run-your-builds-on-bitriseio" title="Run your builds on bitrise.io" class="md-nav__link">
+    Run your builds on bitrise.io
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bitrise-cli-the-open-source-offline-automation-runner" title="Bitrise CLI - the open source, offline, automation runner" class="md-nav__link">
     Bitrise CLI - the open source, offline, automation runner
   </a>
@@ -2111,13 +2158,12 @@
                 
                   <h1>Bitrise DevCenter - What is Bitrise?</h1>
                 
-                <p>In short <strong>Bitrise</strong> is a <a href="https://en.wikipedia.org/wiki/Continuous_integration">Continuous Integration</a>
+                <p><strong>Bitrise</strong> is a <a href="https://en.wikipedia.org/wiki/Continuous_integration">Continuous Integration</a>
 and <a href="https://en.wikipedia.org/wiki/Continuous_delivery">Delivery</a> (CI/CD) Platform as a Service (PaaS)
-with a main focus on mobile app development (<code>iOS</code>, <code>Android</code>, <code>Xamarin</code>, ...).</p>
+with a main focus on mobile app development (<code>iOS</code>, <code>Android</code>, <code>Xamarin</code>, ...). It is a collection of tools and services to help you with the development and automation of your software projects</p>
 <p><strong>Automate the testing and deployment of your apps with just a few clicks.</strong></p>
-<p>When you trigger a build a Virtual Machine is assigned to host
-your build and your defined Workflow (series of build Steps) will be executed, step by step.</p>
-<p>A <code>Workflow</code> consists of one or more build <code>Steps</code> (open source git repositories
+<h2 id="run-your-builds-on-bitriseio">Run your builds on bitrise.io<a class="headerlink" href="#run-your-builds-on-bitriseio" title="Permanent link">⚓</a></h2>
+<p>You can run a build of your app on Bitrise by defining a <code>Workflow</code>. A <code>Workflow</code> consists of one or more build <code>Steps</code> (open source git repositories
 which can be executed with the <a href="https://www.bitrise.io/cli">open source Bitrise CLI</a>).
 <a href="https://github.com/bitrise-steplib/step-template">You can create and share your own build Steps too</a>.
 You are able to define more workflows for the very same app,
@@ -2130,6 +2176,8 @@ gather system information about the Virtual Machine
 running the build, notify other users (e.g. on Slack)
 or even <a href="https://github.com/bitrise-io/steps-deploy-to-itunesconnect-deliver">publish to iTunes Connect</a>, and many more.
 You can read more at <a href="./getting-started/builds-and-workflows">Builds and Workflows</a>.</p>
+<p>When you trigger a build a Virtual Machine is assigned to host
+your build and your defined Workflow (series of build Steps) will be executed, step by step.</p>
 <p>After a build is finished the Virtual Machine is destroyed and you can browse
 the logs of every step that ran during the workflow.
 You can read more at <a href="./getting-started/code-security">Code Security</a>.</p>

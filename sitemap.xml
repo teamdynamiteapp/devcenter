@@ -42,6 +42,18 @@
     </url>
         
     <url>
+     <loc>/getting-started/rolling-builds/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/getting-started/selective_builds/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc></loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
@@ -659,6 +671,12 @@
         
     <url>
      <loc>/troubleshooting/known-xcode-issues/</loc>
+     <lastmod>2018-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/troubleshooting/trigger-doesnt-work/</loc>
      <lastmod>2018-06-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
