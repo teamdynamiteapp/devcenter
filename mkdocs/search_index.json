@@ -2318,7 +2318,7 @@
         {
             "location": "/troubleshooting/trigger-doesnt-work/", 
             "text": "Unfortunately, it can happen that your build triggers do not trigger a build automatically on Bitrise. There are many potential issues that can stop your builds - let's take a look!\n\n\n\n\n\n\nCheck your webhooks.\n\n\nCheck that you have the webhook set up correctly. You can find out the webhook URL for your repository's hosting provider on the \nCode\n tab of your app and you can check in your repository's settings if they match.\n\n\nAlso, you have to enable the specific event that you would like to trigger a build. For example, if your repository is hosted at GitLab and you wish to trigger builds with Git Tags, you must enable Tag Push events in your GitLab webhook.\n\n\nCheck in your repository's settings if there are any error messages regarding the delivery attempts related to your webhook.\n\n\nFor more information about potential issues with webhooks, check out \nWebhook troubleshooting\n\n\n\n\n\n\nCheck the branch names and tags you set up with the trigger on bitrise.io.\n\n\nFor example, if you accidentally typed \nmsater\n instead of \nmaster\n, no build will be triggered.\n\n\n\n\n\n\nCheck if you previously enabled Selective Builds for the app. You can find the option on your app's \nSettings\n page. With this feature, you can set that a build should be triggered only if certain files or folders have been changed. \n\n\n\n\n\n\nCheck the status page of your repository's hosting provider to see if there are any known issues.", 
-            "title": "Trigger doesnt work"
+            "title": "Build Trigger does not work"
         }, 
         {
             "location": "/tools/bitrise-tools/", 
