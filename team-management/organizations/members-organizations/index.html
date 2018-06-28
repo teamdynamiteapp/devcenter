@@ -1,0 +1,2487 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs+mkdocs-material#1.0.3">
+    
+    
+      
+        <title>Managing organization members - Bitrise DevCenter</title>
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr-facb31f4a3.js"></script>
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Source+Code+Pro">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Source Code Pro","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-f3ab63f78a.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-02ce7adcc2.palette.css">
+      
+      
+        <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Bitrise DevCenter" class=" md-logo  md-header-nav__button">
+          
+            <img src="../../../img/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Team management
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Organizations
+                </span>
+              
+            
+            Managing organization members
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+              
+
+
+  
+
+
+  <a href="https://github.com/bitrise-io/devcenter" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+            
+          </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <i class=" md-logo  md-nav__button">
+      
+        <img src="../../../img/logo.svg">
+      
+    </i>
+    Bitrise DevCenter
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/bitrise-io/devcenter" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  <li class="md-nav__item">
+    
+      <a href="../../.." title="Bitrise DevCenter - What is Bitrise?" class="md-nav__link">
+        Bitrise DevCenter - What is Bitrise?
+      </a>
+    
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/builds-and-workflows/" title="Builds & Workflows" class="md-nav__link">
+        Builds & Workflows
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/code-security/" title="Code Security" class="md-nav__link">
+        Code Security
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/create-your-first-app-on-bitrise/" title="Create your first App on Bitrise.io" class="md-nav__link">
+        Create your first App on Bitrise.io
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/add-your-first-step-to-your-workflow/" title="Add your first Step to your Workflow" class="md-nav__link">
+        Add your first Step to your Workflow
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/manage-your-bitrise-workflow/" title="Manage your Bitrise workflow" class="md-nav__link">
+        Manage your Bitrise workflow
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/rolling-builds/" title="Rolling builds" class="md-nav__link">
+        Rolling builds
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/Scheduling-Builds/" title="Scheduling your builds" class="md-nav__link">
+        Scheduling your builds
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/selective_builds/" title="Selective builds" class="md-nav__link">
+        Selective builds
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9">
+    
+    <label class="md-nav__link" for="nav-2-9">
+      Triggering builds
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-2-9">
+        Triggering builds
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/triggering-builds/triggering-builds/" title="Triggering builds" class="md-nav__link">
+        Triggering builds
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/triggering-builds/trigger-code-push/" title="Triggering builds with code push" class="md-nav__link">
+        Triggering builds with code push
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/triggering-builds/trigger-pull-request/" title="Triggering builds with pull requests" class="md-nav__link">
+        Triggering builds with pull requests
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/triggering-builds/trigger-git-tags/" title="Triggering builds with Git Tags" class="md-nav__link">
+        Triggering builds with Git Tags
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../getting-started/triggering-builds/status-reporting/" title="Reporting the build status to your git hosting provider" class="md-nav__link">
+        Reporting the build status to your git hosting provider
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-3">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../infrastructure/available-stacks/" title="Available Stacks" class="md-nav__link">
+        Available Stacks
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../infrastructure/virtual-machines/" title="Virtual Machines" class="md-nav__link">
+        Virtual Machines
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../infrastructure/the-environment/" title="The Android/Linux/Docker environment" class="md-nav__link">
+        The Android/Linux/Docker environment
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Signing up
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
+        Signing up
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../signing-up/signing-up-with-github/" title="Signing up with GitHub" class="md-nav__link">
+        Signing up with GitHub
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../signing-up/signing-up-with-bitbucket/" title="Signing up with Bitbucket" class="md-nav__link">
+        Signing up with Bitbucket
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../signing-up/signing-up-with-email/" title="Signing up with email" class="md-nav__link">
+        Signing up with email
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../signing-up/trial-after-signing-up/" title="Trial after signing up" class="md-nav__link">
+        Trial after signing up
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../signing-up/connecting-apple-dev-account/" title="Connecting your Apple Developer Account to Bitrise" class="md-nav__link">
+        Connecting your Apple Developer Account to Bitrise
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Adding a new app
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-5">
+        Adding a new app
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../adding-a-new-app/" title="Adding a new app" class="md-nav__link">
+        Adding a new app
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../adding-a-new-app/connecting-a-repository/" title="Connecting a repository" class="md-nav__link">
+        Connecting a repository
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../adding-a-new-app/setting-up-ssh-keys/" title="Setting up SSH keys" class="md-nav__link">
+        Setting up SSH keys
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../adding-a-new-app/setting-up-configuration/" title="Setting up configuration" class="md-nav__link">
+        Setting up configuration
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Team management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-6">
+        Team management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../" title="Adding a new team member" class="md-nav__link">
+        Adding a new team member
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../changing-the-owner-of-an-app/" title="Changing the owner of an app" class="md-nav__link">
+        Changing the owner of an app
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3" checked>
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Organizations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-6-3">
+        Organizations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../creating-org/" title="Creating organizations" class="md-nav__link">
+        Creating organizations
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../managing-billing-sub/" title="Managing billing and subscription for organizations" class="md-nav__link">
+        Managing billing and subscription for organizations
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../managing-invoices/" title="Managing the invoices of your organizations" class="md-nav__link">
+        Managing the invoices of your organizations
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../org-url/" title="Finding the URL of your organizations" class="md-nav__link">
+        Finding the URL of your organizations
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Managing organization members
+      </label>
+    
+    <a href="./" title="Managing organization members" class="md-nav__link md-nav__link--active">
+      Managing organization members
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-groups-for-organizations" title="Creating groups for organizations" class="md-nav__link">
+    Creating groups for organizations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-members-to-organizations" title="Adding members to organizations" class="md-nav__link">
+    Adding members to organizations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-members-from-organizations" title="Removing members from organizations" class="md-nav__link">
+    Removing members from organizations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removing-group-members" title="Removing group members" class="md-nav__link">
+    Removing group members
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-members-from-the-entire-organization" title="Removing members from the entire organization" class="md-nav__link">
+    Removing members from the entire organization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-groups" title="Deleting groups" class="md-nav__link">
+    Deleting groups
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../org-ownership/" title="Changing the owners of an organization" class="md-nav__link">
+        Changing the owners of an organization
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../managing-apps/" title="Managing the apps of organizations" class="md-nav__link">
+        Managing the apps of organizations
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Webhooks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-7">
+        Webhooks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/" title="Adding webhooks" class="md-nav__link">
+        Adding webhooks
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/adding-a-github-webhook/" title="Adding a GitHub webhook" class="md-nav__link">
+        Adding a GitHub webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/adding-a-bitbucket-webhook/" title="Adding a Bitbucket webhook" class="md-nav__link">
+        Adding a Bitbucket webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/adding-a-gitlab-webhook/" title="Adding a Gitlab webhook" class="md-nav__link">
+        Adding a Gitlab webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/adding-a-gogs-webhook/" title="Adding a Gogs webhook" class="md-nav__link">
+        Adding a Gogs webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/adding-a-slack-webhook/" title="Adding a Slack webhook" class="md-nav__link">
+        Adding a Slack webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/adding-a-visual-studio-webhook/" title="Adding a Visual Studio webhook" class="md-nav__link">
+        Adding a Visual Studio webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/adding-assembla-webhook/" title="Adding an Assembla webhook" class="md-nav__link">
+        Adding an Assembla webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/adding-deveo-webhook/" title="Adding a Deveo webhook" class="md-nav__link">
+        Adding a Deveo webhook
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/adding-outgoing-webhooks/" title="Adding outgoing webhooks" class="md-nav__link">
+        Adding outgoing webhooks
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/trigger-map/" title="Using the Trigger Map to trigger builds" class="md-nav__link">
+        Using the Trigger Map to trigger builds
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../webhooks/troubleshooting/" title="Webhook Troubleshooting" class="md-nav__link">
+        Webhook Troubleshooting
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Code signing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-8">
+        Code signing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
+    
+    <label class="md-nav__link" for="nav-8-1">
+      Android code signing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-8-1">
+        Android code signing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/android-code-signing/android-code-signing-procedures/" title="Android code signing procedures" class="md-nav__link">
+        Android code signing procedures
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/android-code-signing/android-code-signing-using-bitrise-sign-apk-step/" title="Android code signing using Bitrise Sign APK step" class="md-nav__link">
+        Android code signing using Bitrise Sign APK step
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/android-code-signing/android-code-signing-with-android-studio/" title="Android code signing with Android Studio" class="md-nav__link">
+        Android code signing with Android Studio
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/android-code-signing/android-code-signing-in-gradle/" title="Android code signing in Gradle" class="md-nav__link">
+        Android code signing in Gradle
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/xamarin-android-code-signing/xamarin-android-code-signing/" title="Xamarin Android code signing" class="md-nav__link">
+        Xamarin Android code signing
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      iOS code signing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-8-2">
+        iOS code signing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/code-signing/" title="iOS code signing on Bitrise" class="md-nav__link">
+        iOS code signing on Bitrise
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/collecting-files-with-codesigndoc/" title="Collecting and exporting code signing files with codesigndoc" class="md-nav__link">
+        Collecting and exporting code signing files with codesigndoc
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/ios-auto-provisioning/" title="Managing iOS code signing files - automatic provisioning" class="md-nav__link">
+        Managing iOS code signing files - automatic provisioning
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/ios-manual-provisioning/" title="Managing iOS code signing files - manual provisioning" class="md-nav__link">
+        Managing iOS code signing files - manual provisioning
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/create-signed-ipa-for-xcode/" title="Creating a signed .ipa for Xcode projects" class="md-nav__link">
+        Creating a signed .ipa for Xcode projects
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/create-signed-ipa-for-xamarin/" title="Creating a signed .ipa for Xamarin projects" class="md-nav__link">
+        Creating a signed .ipa for Xamarin projects
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/resigning-an-ipa/" title="Re-signing an .ipa" class="md-nav__link">
+        Re-signing an .ipa
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/ionic-cordova-code-signing/" title="Code signing with Ionic and Cordova projects" class="md-nav__link">
+        Code signing with Ionic and Cordova projects
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/protecting-your-code-signing-files/" title="Protecting your code signing files" class="md-nav__link">
+        Protecting your code signing files
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/generating-code-signing-files/" title="Generating code signing files" class="md-nav__link">
+        Generating code signing files
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/exporting-code-signing-files/" title="Exporting code signing files without codesigndoc" class="md-nav__link">
+        Exporting code signing files without codesigndoc
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../code-signing/ios-code-signing/code-signing-ios-frameworks/" title="Code signing iOS frameworks" class="md-nav__link">
+        Code signing iOS frameworks
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Caching
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-9">
+        Caching
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../caching/about-caching/" title="About caching" class="md-nav__link">
+        About caching
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../caching/caching-cocoapods/" title="Caching Cocoapods" class="md-nav__link">
+        Caching Cocoapods
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../caching/caching-gradle/" title="Caching Gradle" class="md-nav__link">
+        Caching Gradle
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../caching/caching-maven/" title="Caching Maven" class="md-nav__link">
+        Caching Maven
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../caching/caching-ruby-gems/" title="Caching Ruby GEMs" class="md-nav__link">
+        Caching Ruby GEMs
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Bitrise CLI and bitrise.yml
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-10">
+        Bitrise CLI and bitrise.yml
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../bitrise-cli/" title="Intro" class="md-nav__link">
+        Intro
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../bitrise-cli/installation/" title="Install the Bitrise CLI" class="md-nav__link">
+        Install the Bitrise CLI
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../bitrise-cli/run-your-first-build/" title="Run your first build" class="md-nav__link">
+        Run your first build
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../bitrise-cli/basics-of-bitrise-yml/" title="Basics of bitrise.yml" class="md-nav__link">
+        Basics of bitrise.yml
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../bitrise-cli/workflows/" title="Workflows" class="md-nav__link">
+        Workflows
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../bitrise-cli/steps/" title="Steps" class="md-nav__link">
+        Steps
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../bitrise-cli/secrets/" title="Secrets" class="md-nav__link">
+        Secrets
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../bitrise-cli/most-important-concepts/" title="Most important concepts" class="md-nav__link">
+        Most important concepts
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../bitrise-cli/create-your-own-step/" title="Create your own Step" class="md-nav__link">
+        Create your own Step
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-11">
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../docker/" title="Docker support on bitrise.io" class="md-nav__link">
+        Docker support on bitrise.io
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../docker/run-your-build-locally-in-docker/" title="How to run your build locally in Docker" class="md-nav__link">
+        How to run your build locally in Docker
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../docker/use-your-own-docker-image/" title="Use your own Docker image" class="md-nav__link">
+        Use your own Docker image
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Xamarin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-12">
+        Xamarin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../xamarin/" title="About Xamarin" class="md-nav__link">
+        About Xamarin
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../xamarin/connect-your-xamarin-account-to-bitrise/" title="Connect your Xamarin account to Bitrise" class="md-nav__link">
+        Connect your Xamarin account to Bitrise
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../xamarin/restore-nuget-packages-and-xamarin-components/" title="Restore NuGet packages and Xamarin Components" class="md-nav__link">
+        Restore NuGet packages and Xamarin Components
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../xamarin/deploy-your-xamarin-app/" title="Deploy your Xamarin app" class="md-nav__link">
+        Deploy your Xamarin app
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../xamarin/add-unit-test-to-your-xamarin-app/" title="Add UITest to your Xamarin app" class="md-nav__link">
+        Add UITest to your Xamarin app
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../xamarin/run-your-tests-in-the-xamarin-test-cloud/" title="Run your tests in the Xamarin Test Cloud" class="md-nav__link">
+        Run your tests in the Xamarin Test Cloud
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../xamarin/add-custom-sources-to-nuget/" title="Add custom sources to NuGet" class="md-nav__link">
+        Add custom sources to NuGet
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Fastlane
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-13">
+        Fastlane
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../fastlane/fastlane-tools-integration/" title="fastlane tools integration" class="md-nav__link">
+        fastlane tools integration
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../fastlane/how-to-configure-fastlane-match-for-bitrise/" title="How to configure fastlane match for Bitrise" class="md-nav__link">
+        How to configure fastlane match for Bitrise
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-14">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/community-created/" title="Community Created Tutorials" class="md-nav__link">
+        Community Created Tutorials
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/hipchat-message/" title="HipChat message with build status and details" class="md-nav__link">
+        HipChat message with build status and details
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/how-to-use-the-generic-file-storage/" title="How to use the Generic File Storage" class="md-nav__link">
+        How to use the Generic File Storage
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/download-or-replace-project-resources/" title="Download or replace project resources" class="md-nav__link">
+        Download or replace project resources
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/efficient-continuous-integration-and-deployment-workflow-for-ios/" title="Efficient Continuous Integration and Deployment Workflow for iOS development" class="md-nav__link">
+        Efficient Continuous Integration and Deployment Workflow for iOS development
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/vpn-configuration/" title="Configure and connect to your VPN" class="md-nav__link">
+        Configure and connect to your VPN
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/auto-deploy-middleman-project/" title="Auto deploy your Middleman blog / static website" class="md-nav__link">
+        Auto deploy your Middleman blog / static website
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/build-with-fake/" title="Build with FAKE (F# Make)" class="md-nav__link">
+        Build with FAKE (F# Make)
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Deployment Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-15">
+        Deployment Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/deploy/bitrise-app-deployment/" title="Bitrise OTA App Deployment" class="md-nav__link">
+        Bitrise OTA App Deployment
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/deploy/publish-your-app-to-appaloosa/" title="Publish your app to Appaloosa" class="md-nav__link">
+        Publish your app to Appaloosa
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tutorials/deploy/deploy-to-testfairy-with-bitrise/" title="Deploy to TestFairy with Bitrise" class="md-nav__link">
+        Deploy to TestFairy with Bitrise
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
+    
+    <label class="md-nav__link" for="nav-16">
+      Tips & Tricks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-16">
+        Tips & Tricks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/android-tips-and-tricks/" title="Android tips and tricks" class="md-nav__link">
+        Android tips and tricks
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/skip-a-build/" title="Skip a Build (skip ci)" class="md-nav__link">
+        Skip a Build (skip ci)
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/attach-any-file-to-build/" title="Attach any file as an Artifact to the Build" class="md-nav__link">
+        Attach any file as an Artifact to the Build
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/expose-environment-variable/" title="Expose an Environment Variable and use it in another Step" class="md-nav__link">
+        Expose an Environment Variable and use it in another Step
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/dont-mark-build-failed-if-step-fails/" title="Don't mark the Build as failed if a given step would fail (ignore the error of the Step)" class="md-nav__link">
+        Don't mark the Build as failed if a given step would fail (ignore the error of the Step)
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/disable-a-step-by-condition/" title="Enable/Disable a step (optionally, based on a condition)" class="md-nav__link">
+        Enable/Disable a step (optionally, based on a condition)
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/xcodebuild-export-options/" title="Xcode Archive: export options" class="md-nav__link">
+        Xcode Archive: export options
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/install-additional-tools/" title="Install Any Additional Tool" class="md-nav__link">
+        Install Any Additional Tool
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/optimize-your-build-times/" title="Optimize your build times" class="md-nav__link">
+        Optimize your build times
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tips-and-tricks/use-bitrise-yml-from-repository/" title="Use bitrise.yml from repository" class="md-nav__link">
+        Use bitrise.yml from repository
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17">
+    
+    <label class="md-nav__link" for="nav-17">
+      Frequently Asked Questions (FAQ)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-17">
+        Frequently Asked Questions (FAQ)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/available-environment-variables/" title="Available Environment Variables" class="md-nav__link">
+        Available Environment Variables
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/how-to-change-the-owner-of-an-app/" title="How to change the owner of an app" class="md-nav__link">
+        How to change the owner of an app
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/organization-faq/" title="Organization FAQ" class="md-nav__link">
+        Organization FAQ
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/adding-projects-with-submodules/" title="Adding projects with submodules or with private CocoaPods repos" class="md-nav__link">
+        Adding projects with submodules or with private CocoaPods repos
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/android-x86-emulator/" title="Android x86 Emulator" class="md-nav__link">
+        Android x86 Emulator
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/how-to-generate-ssh-keypair/" title="How to generate an SSH key pair" class="md-nav__link">
+        How to generate an SSH key pair
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/grant-access-to-github-organization/" title="Grant access to a GitHub Organization" class="md-nav__link">
+        Grant access to a GitHub Organization
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/i-cant-see-my-github-organization-repository-on-the-add-new-app-page/" title="I can't see my GitHub organization / repository on the Add New App page" class="md-nav__link">
+        I can't see my GitHub organization / repository on the Add New App page
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/github-pull-request-status-troubleshooting/" title="GitHub Pull Request / build Status indicator troubleshooting" class="md-nav__link">
+        GitHub Pull Request / build Status indicator troubleshooting
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/no-builds-are-triggered-automatically/" title="No builds are triggered when I push code into the repository" class="md-nav__link">
+        No builds are triggered when I push code into the repository
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/why-my-build-takes-longer-on-bitrise-than-on-my-mac/" title="Why my build takes longer on Bitrise than on my Mac?" class="md-nav__link">
+        Why my build takes longer on Bitrise than on my Mac?
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../faq/should-i-commit-my-dependencies-into-my-repository/" title="Should I commit my dependencies into my repository?" class="md-nav__link">
+        Should I commit my dependencies into my repository?
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+    
+    <label class="md-nav__link" for="nav-18">
+      Troubleshooting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-18">
+        Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../troubleshooting/enabling-bitrise-support-user/" title="Enabling Bitrise Support user for your app" class="md-nav__link">
+        Enabling Bitrise Support user for your app
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../troubleshooting/workflow-editor-doesnt-load/" title="Workflow Editor doesn't load" class="md-nav__link">
+        Workflow Editor doesn't load
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../troubleshooting/frequent-android-issues/" title="Frequent Android issues" class="md-nav__link">
+        Frequent Android issues
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../troubleshooting/frequent-ios-issues/" title="Frequent iOS issues" class="md-nav__link">
+        Frequent iOS issues
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../troubleshooting/known-xcode-issues/" title="List of known Xcode issues" class="md-nav__link">
+        List of known Xcode issues
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../troubleshooting/trigger-doesnt-work/" title="Build Trigger does not work" class="md-nav__link">
+        Build Trigger does not work
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19">
+    
+    <label class="md-nav__link" for="nav-19">
+      Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-19">
+        Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../tools/bitrise-tools/" title="Bitrise tools" class="md-nav__link">
+        Bitrise tools
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-20">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../api/build-trigger/" title="Build Trigger API" class="md-nav__link">
+        Build Trigger API
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../api/app-status-badge/" title="App Status / Badge API" class="md-nav__link">
+        App Status / Badge API
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../api/outgoing-webhooks/" title="Outgoing Webhooks" class="md-nav__link">
+        Outgoing Webhooks
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../../api/v0.1/" title="Bitrise.io API v0.1 (Work In Progress)" class="md-nav__link">
+        Bitrise.io API v0.1 (Work In Progress)
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-groups-for-organizations" title="Creating groups for organizations" class="md-nav__link">
+    Creating groups for organizations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-members-to-organizations" title="Adding members to organizations" class="md-nav__link">
+    Adding members to organizations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-members-from-organizations" title="Removing members from organizations" class="md-nav__link">
+    Removing members from organizations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removing-group-members" title="Removing group members" class="md-nav__link">
+    Removing group members
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-members-from-the-entire-organization" title="Removing members from the entire organization" class="md-nav__link">
+    Removing members from the entire organization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-groups" title="Deleting groups" class="md-nav__link">
+    Deleting groups
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+               
+                 <a href="https://github.com/bitrise-io/devcenter/blob/master/docs/team-management/organizations/members-organizations.md" title="Edit this page" class="md-icon md-content__edit">edit</a>
+               
+              
+                
+                  <h1>Managing organization members</h1>
+                
+                <p>Organizations can have multiple <strong>Groups</strong>. Groups form the "backbones" of organizations: they contain the members of the organizations, they can be assigned to different applications owned by the organizations, with different roles assigned to the different groups. Being a member of an organization means being a member of one of the groups belonging to the organization.</p>
+<p>For example, let's say the organization called <em>TestOrg</em> owns an app called <em>TestApp</em>. <em>TestOrg</em> has the following groups:</p>
+<ul>
+<li><code>Senior Developers</code> - they are assigned to <em>TestApp</em> with an <code>Admin</code> role. Members of this group can assign other groups to the app or add outside contributors, change app settings, manage roles and workflows.</li>
+<li><code>Developers</code> - they are assigned to <em>TestApp</em> with a <code>Developer</code> role. Members of this group can run builds, view build logs and view builds.</li>
+<li><code>Testers</code> - they are assigned to <em>TestApp</em> with a <code>Tester / QA</code> role. They can only view builds.</li>
+</ul>
+<h2 id="creating-groups-for-organizations">Creating groups for organizations<a class="headerlink" href="#creating-groups-for-organizations" title="Permanent link">⚓</a></h2>
+<ol>
+<li>
+<p>Sign in with an account that is an <strong>owner</strong> or an <strong>admin</strong> of an organization and open its profile page.</p>
+</li>
+<li>
+<p>Go to your organization's profile page: click <code>Switch Profile</code> on the top left corner and select the organization you need.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/switch-profile-2.png" /></p>
+</li>
+<li>
+<p>On the left, select <code>Groups</code> from the menu options.</p>
+</li>
+<li>
+<p>Find the <code>Create new Group</code> section at the top.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/create-new-group.png" /></p>
+</li>
+<li>
+<p>Enter a group name in the <code>Enter Group name</code> window, and click <code>Create</code>.</p>
+</li>
+</ol>
+<h2 id="adding-members-to-organizations">Adding members to organizations<a class="headerlink" href="#adding-members-to-organizations" title="Permanent link">⚓</a></h2>
+<p>In practice, adding members to an organization means adding members to a group belonging to an organization. Once you have the groups you need for your organization, adding members to them is very simple.</p>
+<ol>
+<li>
+<p>Sign in with an account that is an <strong>owner</strong> or an <strong>admin</strong> of an organization and open its profile page.</p>
+</li>
+<li>
+<p>Go to your organization's profile page: click <code>Switch Profile</code> on the top left corner and select the organization you need.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/switch-profile-2.png" /></p>
+</li>
+<li>
+<p>On the left, select <code>Groups</code> from the menu options.</p>
+</li>
+<li>
+<p>Find the group you need and click the <code>+</code> sign to the right of the name of the group.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/group-name.png" /></p>
+</li>
+<li>
+<p>Enter a username or an email address.</p>
+<ul>
+<li>If you enter a username, the system will suggest existing Bitrise users that at least partially match your input. Click the user you wish to invite.</li>
+<li>
+<p>If you enter an email address, click the <code>Enter</code> symbol on the right to send the invitation.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/add-group-member.png" /></p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Managing groups from the <code>Team</code> tab</p>
+<p>From the <code>Team</code> tab you can also access all the functions to manage groups. You simply have to click <code>MANAGE GROUP</code> to the right of the group members, and click the action you need in the pop-up window, including removing the group from the app.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/team-group-popup.png" /></p>
+</div>
+<h2 id="removing-members-from-organizations">Removing members from organizations<a class="headerlink" href="#removing-members-from-organizations" title="Permanent link">⚓</a></h2>
+<p>Members can be removed from the entire organization or from one of the groups belonging to an organization. In practice, this means that a single member can be removed from working on any of the apps belonging to the organization or only from selected apps.</p>
+<h3 id="removing-group-members">Removing group members<a class="headerlink" href="#removing-group-members" title="Permanent link">⚓</a></h3>
+<ol>
+<li>
+<p>Sign in with an account that is an <strong>owner</strong> or an <strong>admin</strong> of an organization and open its profile page.</p>
+</li>
+<li>
+<p>Go to your organization's profile page: click <code>Switch Profile</code> on the top left corner and select the organization you need.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/switch-profile-2.png" /></p>
+</li>
+<li>
+<p>On the left, select <code>Groups</code> from the menu options.</p>
+</li>
+<li>
+<p>Find the group and the group member you are looking for, and click the little <code>x</code> in the orange square on the right of the username of the member.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/remove-from-group.png" /></p>
+</li>
+</ol>
+<h3 id="removing-members-from-the-entire-organization">Removing members from the entire organization<a class="headerlink" href="#removing-members-from-the-entire-organization" title="Permanent link">⚓</a></h3>
+<p>Removing members from the entire organization removes them from all the groups they are part of in the organization and they can no longer work on any of the apps unless they are invited back, either as a group member or as an outside contributor.</p>
+<ol>
+<li>
+<p>Sign in with an account that is an <strong>owner</strong> or an <strong>admin</strong> of an organization and open its profile page.</p>
+</li>
+<li>
+<p>Go to your organization's profile page: click <code>Switch Profile</code> on the top left corner and select the organization you need.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/switch-profile-2.png" /></p>
+</li>
+<li>
+<p>On the left, select <code>People</code> from the menu options.</p>
+</li>
+<li>
+<p>Find the member you are looking for, and click the little <code>x</code> in the orange square on the right of the username of the member.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/remove-from-org.png" /></p>
+</li>
+<li>
+<p>In the pop-up window, click <code>Yes</code>.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Removing yourself</p>
+<p>You can remove yourself from the organization this way. You will lose all access rights you had to the organization. Only click <code>Yes</code> in the pop-up window if you are certain you wish to do this.</p>
+</div>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/org-are-you-sure.png" /></p>
+<h2 id="deleting-groups">Deleting groups<a class="headerlink" href="#deleting-groups" title="Permanent link">⚓</a></h2>
+<ol>
+<li>
+<p>Sign in with an account that is an <strong>owner</strong> or an <strong>admin</strong> of an organization and open its profile page.</p>
+</li>
+<li>
+<p>Go to your organization's profile page: click <code>Switch Profile</code> on the top left corner and select the organization you need.</p>
+<p><img alt="Screenshot" src="../../../img/team-management/organization/switch-profile-2.png" /></p>
+</li>
+<li>
+<p>On the left, select <code>Groups</code> from the menu options.</p>
+</li>
+<li>
+<p>Choose the group you wish to delete, and click the dropdown menu indicated by the <code>...</code> symbol.</p>
+</li>
+<li>
+<p>Click <code>Delete group</code> then click <code>Yes</code> in the pop-up window.</p>
+</li>
+</ol>
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../org-url/" title="Finding the URL of your organizations" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Finding the URL of your organizations
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../org-ownership/" title="Changing the owners of an organization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Changing the owners of an organization
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application-2afe21e0b2.js"></script>
+      <script>var config={url:{base:"../../.."}},app=new Application(config);app.initialize()</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
