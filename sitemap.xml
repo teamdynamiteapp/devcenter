@@ -582,6 +582,12 @@
     
         
     <url>
+     <loc>/troubleshooting/frequent-android-issues/</loc>
+     <lastmod>2018-06-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/faq/available-environment-variables/</loc>
      <lastmod>2018-06-28</lastmod>
      <changefreq>daily</changefreq>
@@ -665,12 +671,6 @@
         
     <url>
      <loc>/troubleshooting/workflow-editor-doesnt-load/</loc>
-     <lastmod>2018-06-28</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/troubleshooting/frequent-android-issues/</loc>
      <lastmod>2018-06-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
