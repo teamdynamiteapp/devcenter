@@ -2492,7 +2492,7 @@
                 
                 <h2 id="create-a-signed-apk-with-the-sign-apk-step">Create a signed APK with the <code>Sign APK</code> step<a class="headerlink" href="#create-a-signed-apk-with-the-sign-apk-step" title="Permanent link">⚓</a></h2>
 <p>You can create a signed APK using the <code>Sign APK step</code> in our Bitrise workflow.</p>
-<p>Bitrise Project Scanner provides a <code>deploy workflow</code> which contains the Sign APK step. With this step, you can digitally sign your APK as part of your workflow. This step is configured to run if you have already uploaded your keystore file to Bitrise. All you have to do is upload your keystore file in the <code>Code signing</code> tab of the Workflow Editor.</p>
+<p>Bitrise Project Scanner provides a <code>deploy workflow</code> which contains the <code>Sign APK step</code>. With this step, you can digitally sign your APK as part of your workflow. This step is configured to run if you have already uploaded your keystore file to Bitrise. All you have to do is upload your keystore file in the <code>Code signing</code> tab of the Workflow Editor.</p>
 <p>In this section, we walk you through the code signing steps using our <code>android-multiple-test-results-sample</code> demo app.</p>
 <ol>
 <li>
@@ -2514,13 +2514,19 @@
 </li>
 <li>
 <p>Click on <code>Save metadata</code>.</p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>The <code>Sign APK</code> step will receive your uploaded files.</p>
+</div>
 </li>
 </ol>
-<p>The Sign APK step will receive your uploaded files.</p>
-<p>Bitrise uploads your keystore file and assigns an environment variable (<code>BITRISEIO_ANDROID_KEYSTORE_URL</code>) to the download URL (which is a time-limited, read-only download URL) of the file as the value. You can use this URL to download the keystore file during a build in the future. The Sign APK step in the workflow will track this environment variable and will run if it is set.</p>
+<p>Bitrise uploads your keystore file and assigns an environment variable (<code>BITRISEIO_ANDROID_KEYSTORE_URL</code>) to the download URL (which is a time-limited, read-only download URL) of the file as the value. You can use this URL to download the keystore file during a build in the future. The <code>Sign APK</code> step in the workflow will track this environment variable and will run if it is set.</p>
 <h2 id="download-your-files">Download your files<a class="headerlink" href="#download-your-files" title="Permanent link">⚓</a></h2>
 <p>You can download your files from <code>GENERIC FILE STORAGE</code>(for example, your keystore file) using the <code>File-downloader</code> step:</p>
-<pre class="code"><code>...
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>In this example, we're downloading a keystore file.</p>
+<pre class="code"><code class="language-yaml">... 
 - file-downloader:
    inputs:
    - source: $BITRISEIO_ANDROID_KEYSTORE_URL
@@ -2528,6 +2534,7 @@
 ...
 </code></pre>
 
+</div>
 <p>After this step, <code>my_keystore.jks</code> will be available at <code>$HOME/keystores/my_keystore.jks</code>.</p>
 <h2 id="run-your-deploy-workflow">Run your deploy workflow<a class="headerlink" href="#run-your-deploy-workflow" title="Permanent link">⚓</a></h2>
 <p>You can run a workflow <em>manually</em>.</p>
