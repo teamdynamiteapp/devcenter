@@ -2489,18 +2489,17 @@
 <ol>
 <li>
 <p>Run the following command in a bash shell:</p>
-<div class="codehilite"><pre><span></span>sudo curl -o /usr/local/bin/bitrise https://github.com/bitrise-io/bitrise/releases/download/1.16.0/bitrise-$(uname -s)-$(uname -m)
-</pre></div>
+<pre class="code"><code class="language-bash">curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.16.0/bitrise-$(uname -s)-$(uname -m) &gt; /usr/local/bin/bitrise`</code></pre>
 
-
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Bitrise CLI version</p>
 <p>You can check the latest release of the Bitrise CLI on its <a href="https://github.com/bitrise-io/bitrise/releases">releases</a> page.</p>
 </div>
 </li>
 <li>
 <p>Make the downloaded binary executable:</p>
-<p><code>sudo chmod +x /usr/local/bin/bitrise</code></p>
+<pre class="code"><code class="language-bash">chmod +x /usr/local/bin/bitrise</code></pre>
+
 </li>
 <li>
 <p>Run <code>bitrise setup</code>. This will verify if everything that is required for Bitrise to run is installed and available. If you skip this, the CLI will perform the setup anyway the first time you call <code>bitrise run</code>.</p>
@@ -2512,7 +2511,8 @@
 <ol>
 <li>
 <p>Open the <code>Terminal</code> app on your Mac and run:</p>
-<p><code>brew update &amp;&amp; brew install bitrise</code></p>
+<pre class="code"><code class="language-bash">brew update &amp;&amp; brew install bitrise</code></pre>
+
 </li>
 <li>
 <p>Run <code>bitrise setup</code>. This will verify if everything that is required for Bitrise to run is installed and available. If you skip this, the CLI will perform the setup anyway the first time you call <code>bitrise run</code>.</p>

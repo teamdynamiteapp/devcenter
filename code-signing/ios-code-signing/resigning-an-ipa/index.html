@@ -2403,11 +2403,14 @@
                   <h1>Re-signing an .ipa</h1>
                 
                 <p>During the development of your iOS app you will need multiple types of distributions for different purposes, such as internal testing or deployment to the App Store. The good news is that this does not require setting up two separate workflows on <a href="https://www.bitrise.io">bitrise.io</a>.</p>
-<p>What it <em>does</em> require is:</p>
+<div class="admonition todo">
+<p class="admonition-title">Before you start</p>
+<p>You need to:</p>
 <ul>
-<li>uploading different types of .p12 certificates (for example, developer and distribution certificates)</li>
-<li>uploading the associated Provisioning Profiles (or managing them automatically with the <code>iOS Auto Provisioning</code> step)</li>
+<li>upload different types of .p12 certificates (for example, developer and distribution certificates)</li>
+<li>upload the associated Provisioning Profiles (or managing them automatically with the <code>iOS Auto Provisioning</code> step)</li>
 </ul>
+</div>
 <p>If all your code signing files are in place, proceed to setting up your workflow. In this example we'll be setting up a workflow to create two signed .ipa files: one with the <code>development</code> and one with the <code>app-store</code> export method.</p>
 <ol>
 <li>

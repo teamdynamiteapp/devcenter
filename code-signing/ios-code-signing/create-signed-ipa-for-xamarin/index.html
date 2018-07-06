@@ -2403,11 +2403,14 @@
                   <h1>Creating a signed .ipa for Xamarin projects</h1>
                 
                 <p>You can easily create a signed IPA for your Xamarin project with Bitrise. All you need to do is set the relevant inputs of our <code>Xamarin Archive</code> step!</p>
+<div class="admonition todo">
+<p class="admonition-title">Before you start</p>
 <p>Before setting up IPA export, make sure that:</p>
 <ul>
 <li>your code signing files have been collected: we recommend using our <a href="https://github.com/bitrise-tools/codesigndoc">codesigndoc</a> tool.</li>
-<li>you have the <code>Certificate and profile installer</code> step in your workflow</li>
+<li>you have the <code>Certificate and profile installer</code> step in your workflow.</li>
 </ul>
+</div>
 <p>If you're all set, proceed to setting up IPA export in your workflow:</p>
 <ol>
 <li>
@@ -2424,8 +2427,8 @@ code signing configurations in Xamarin Studio.</p>
 </li>
 </ol>
 <p>If you wish to use more than one code signing type (for example, to create both Ad-hoc and App Store signed apps), create more than one <code>Release</code> configuration in Xamarin Studio. Set the separate configurations to the types you want to use.</p>
-<div class="admonition note">
-<p class="admonition-title">Tip: Copy/clone an existing Release configuration</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip: copy/clone an existing Release configuration</p>
 <p>You can <code>Copy</code> the existing
 <code>Release</code> configuration in Xamarin Studio, to have an identical base configuration,
 where you only change the code signing settings. For example,
@@ -2434,7 +2437,7 @@ set the code signing to App Store for this <code>ReleaseAppStore</code> configur
 and specify this configuration as the <code>Xamarin solution configuration</code>
 input of the <code>Xamarin Archive</code> step.</p>
 </div>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">Changing code signing configurations in a Xamarin project</p>
 <p>Don't forget to run <code>codesigndoc</code> again if you change code signing
 configurations in your Xamarin project, or to manually collect

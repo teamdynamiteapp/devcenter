@@ -2403,7 +2403,7 @@
                   <h1>Managing iOS code signing files - manual provisioning</h1>
                 
                 <p>Manage your code signing files on <a href="https://www.bitrise.io">bitrise.io</a>. With manual provisioning, you can collect your Provisioning Profiles and .p12 certificates with our <a href="https://github.com/bitrise-tools/codesigndoc">codesigndoc</a> tool and then upload them manually or by using the tool.</p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Xcode Automatically manage signing option</p>
 <p>We support using Xcode's
 <em>Automatically manage signing</em> option, introduced in Xcode 8, with your project. In this case, create an IPA of the desired type on your local machine to let Xcode generate the required profiles and then codesigndoc can collect these. If your project changes and Xcode re-generates the profiles, you will need to re-upload these profiles to Bitrise as well.</p>
@@ -2422,7 +2422,7 @@
 <li>
 <p>Make sure that the Provisioning Profile files and the .p12 files are uploaded. If not, add them in the <code>Add Provisioning Profile(s)</code> and the <code>Add the private key (.p12) for signing</code> fields, respectively.</p>
 <p><img alt="Uploading certificates and Provisioning Profiles" src="../../../img/code-signing/ios-code-signing/provisioning-and-certificate-upload.png" /></p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Provisioning Profile file extensions</p>
 <p>For a MacOS project, the Provisioning Profile file extension is <code>.provisionprofile</code>; for an iOS project, the file extension is <code>.mobileprovision</code>.</p>
 </div>
@@ -2433,7 +2433,7 @@
 <p><img alt="Certificate and profile installer step in your workflow" src="../../../img/code-signing/ios-code-signing/workflow-with-cert-prof-inst.png" /></p>
 </li>
 </ol>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">Troubleshooting: missing Distribution signing files</p>
 <p>If <code>codesigndoc</code> does not pick up one or more distribution .p12 files and/or Provisioning Profile(s),
 you can export those manually (.p12 from <code>Keychain Access</code> app, Provisioning Profiles from

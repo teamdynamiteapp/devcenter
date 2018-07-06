@@ -2404,7 +2404,7 @@
                 
                 <p>Manage your code signing files on <a href="https://www.bitrise.io">bitrise.io</a>. You can use iOS automatic provisioning to automatically generate the required Provisioning Profiles for your project.</p>
 <p>With automatic provisioning, the <code>iOS Auto Provision</code> step will manage the Provisioning Profiles. You only have to upload the .p12 certificate files manually to <a href="https://www.bitrise.io">bitrise.io</a>.</p>
-<div class="admonition note">
+<div class="admonition warning">
 <p class="admonition-title">Upload all signing certificates for your project</p>
 <p>We strongly recommend uploading <strong>BOTH</strong> the development and distribution signing certificates for your project. Without the different types of certificates, you will not be able to generate different types of signed IPAs.</p>
 </div>
@@ -2415,7 +2415,7 @@
 <li><a href="../../../signing-up/connecting-apple-dev-account">your Apple Developer account is connected to bitrise.io</a>.</li>
 <li>Apple Developer Portal integration to your Bitrise project is enabled.</li>
 </ul>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Xcode Automatically manage signing option</p>
 <p>The <code>iOS Auto Provision</code> step can automatically manage profiles even if the iOS project uses Xcode's
 <em>Automatically manage signing</em> option, introduced in Xcode 8. The step can detect if the provided iOS
@@ -2436,7 +2436,7 @@ will install them together with the provided certificates.</p>
 <li>
 <p>Make sure you have the .p12 certificate files uploaded. If not, add the .p12 files in the <code>Add the private key (.p12) for signing</code> field.</p>
 <p><img alt="Uploading certificates and Provisioning Profiles" src="../../../img/code-signing/ios-code-signing/provisioning-and-certificate-upload.png" /></p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">Provisioning Profile file extensions</p>
 <p>For a MacOS project, the Provisioning Profile file extension is <code>.provisionprofile</code>; for an iOS project, the file extension is <code>.mobileprovision</code>.</p>
 </div>
@@ -2458,7 +2458,7 @@ will install them together with the provided certificates.</p>
 </ul>
 </li>
 </ol>
-<div class="admonition note">
+<div class="admonition hint">
 <p class="admonition-title">Troubleshooting: missing Distribution signing files</p>
 <p>If <code>codesigndoc</code> does not pick up one or more distribution .p12 files,
 you can export those manually from the <code>Keychain Access</code> app, just like you would when you
