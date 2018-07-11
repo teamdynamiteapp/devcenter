@@ -1365,8 +1365,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../installation/" title="Install the Bitrise CLI" class="md-nav__link">
-      Install the Bitrise CLI
+    <a href="../installation/" title="Install and update the Bitrise CLI" class="md-nav__link">
+      Install and update the Bitrise CLI
     </a>
   </li>
 
@@ -1422,6 +1422,42 @@
   <li class="md-nav__item">
     <a href="../steps/" title="Steps" class="md-nav__link">
       Steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step-inputs/" title="Step inputs" class="md-nav__link">
+      Step inputs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step-outputs/" title="Step outputs" class="md-nav__link">
+      Step outputs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step-timeout/" title="Setting a time limit for steps" class="md-nav__link">
+      Setting a time limit for steps
     </a>
   </li>
 
@@ -2397,12 +2433,12 @@
                   <h1>Basics of bitrise.yml</h1>
                 
                 <p>A bare minimal <code>bitrise.yml</code> is as simple as:</p>
-<pre class="code"><code class="language-yaml">format_version: 1.3.1</code></pre>
+<pre class="code"><code class="language-yaml">format_version: 5</code></pre>
 
 <p>This configuration is valid, everything else is optional, but does not include anything to execute,
 there's nothing to <code>run</code>.</p>
 <p>A minimal configuration which you can <code>bitrise run</code>:</p>
-<pre class="code"><code class="language-yaml">format_version: 1.3.1
+<pre class="code"><code class="language-yaml">format_version: 5
 workflows:
   test:</code></pre>
 
@@ -2411,17 +2447,16 @@ won't give you any errors, but of course there's still nothing declared to do.</
 <p>Let's continue with our example from the previous guide,
 which executes a single Script step when you run it with <code>bitrise run test</code>,
 and talk about what's what in the configuration:</p>
-<pre class="code"><code class="language-yaml">format_version: 1.3.1
+<pre class="code"><code class="language-yaml">format_version: 5
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
-
+project_type: android
 app:
   envs:
   - MY_NAME: My Name
-
 workflows:
   test:
     steps:
-    - script@1.1.3:
+    - script@1.1.5:
         inputs:
         - content: echo &quot;Hello ${MY_NAME}!&quot;</code></pre>
 
@@ -2429,11 +2464,12 @@ workflows:
 <ul>
 <li><code>format_version</code> : this property declares the minimum Bitrise CLI format version.
   You can get your Bitrise CLI's supported highest format version with: <code>bitrise version --full</code>.
-  If you set the <code>format_version</code> to <code>1.3.1</code> that means that Bitrise CLI versions which
-  don't support the format version <code>1.3.1</code> or higher won't be able to run the configuration.
+  If you set the <code>format_version</code> to <code>5</code> that means that Bitrise CLI versions which
+  don't support the format version <code>5</code> or higher won't be able to run the configuration.
   This is important if you use features which are not available in older Bitrise CLI versions.</li>
 <li><code>default_step_lib_source</code> : specifies the source to use when no other source is defined for a step.
-  More info a bit later, in the <code>- script@1.1.3:</code> step description.</li>
+  Read more about it in the <code>- script@1.1.5:</code> step description.</li>
+<li><code>project_type</code> : defines your source project's type. For example, <code>android</code>, <code>ios</code>, <code>xamarin</code>, and so on</li>
 <li><code>app</code> - <code>envs</code> : the <code>app: envs:</code> section specifies Environment Variables which will be available for
   every build, every workflow, every step.</li>
 <li><code>workflows</code> : the workflows section is the collection of separate build configurations
@@ -2443,7 +2479,7 @@ workflows:
 <li><code>steps:</code> : the list of steps which should be executed when the workflow is performed.
   In this example the <code>test</code> workflow includes only a single <code>script</code> step. If more than one
   step is declared, the steps are performed one by one, after each other.</li>
-<li><code>- script@1.1.3:</code> : a step (reference) to perform. This reference does not have a "StepLib Source" declaration,
+<li><code>- script@1.1.5:</code> : a step (reference) to perform. This reference does not have a "StepLib Source" declaration,
   which means that the <code>default_step_lib_source</code> will be used as the StepLib Source.
   For more information check the <a href="../../bitrise-cli/steps/#step-reference">Step reference section of the Steps guide</a>.</li>
 <li><code>inputs:</code> : the inputs you want to specify for the given step.
