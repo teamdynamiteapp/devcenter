@@ -102,7 +102,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#project-configuration-with-automatic-repository-scanner" tabindex="1" class="md-skip">
+      <a href="#automatic-project-configuration" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -696,15 +696,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#project-configuration-with-automatic-repository-scanner" title="Project configuration with automatic repository scanner" class="md-nav__link">
-    Project configuration with automatic repository scanner
+  <a href="#automatic-project-configuration" title="Automatic project configuration" class="md-nav__link">
+    Automatic project configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#skipping-the-scanner-full-manual-configuration" title="Skipping the scanner - full manual configuration" class="md-nav__link">
-    Skipping the scanner - full manual configuration
+  <a href="#manual-project-configuration" title="Manual project configuration" class="md-nav__link">
+    Manual project configuration
   </a>
   
 </li>
@@ -2472,15 +2472,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#project-configuration-with-automatic-repository-scanner" title="Project configuration with automatic repository scanner" class="md-nav__link">
-    Project configuration with automatic repository scanner
+  <a href="#automatic-project-configuration" title="Automatic project configuration" class="md-nav__link">
+    Automatic project configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#skipping-the-scanner-full-manual-configuration" title="Skipping the scanner - full manual configuration" class="md-nav__link">
-    Skipping the scanner - full manual configuration
+  <a href="#manual-project-configuration" title="Manual project configuration" class="md-nav__link">
+    Manual project configuration
   </a>
   
 </li>
@@ -2512,21 +2512,22 @@ and will run an automatic repository scanner script to find the best initial con
 Currently Bitrise will detect <code>iOS</code>, <code>Android</code>, <code>Xamarin</code> and <code>fastlane</code> projects out of the box.</p>
 <p>You can configure other types of projects too, but that will require manual
 configuration.</p>
-<h2 id="project-configuration-with-automatic-repository-scanner">Project configuration with automatic repository scanner<a class="headerlink" href="#project-configuration-with-automatic-repository-scanner" title="Permanent link">⚓</a></h2>
-<p>To validate and automatically scan your project you only need to tell Bitrise
-the default branch of your repository.
-During validation Bitrise will make sure it has access to the given branch,
+<h2 id="automatic-project-configuration">Automatic project configuration<a class="headerlink" href="#automatic-project-configuration" title="Permanent link">⚓</a></h2>
+<p>Enter the name of the default branch of your repository where your project is located. This branch should include the configuration of your project. Once you hit <code>Next</code>, Bitrise will automatically start the validation of the repository.</p>
+<p><img alt="Choosing branch" src="../img/adding-a-new-app/choose-branch.png" /></p>
+<p>During validation Bitrise will make sure it has access to the given branch,
 using the <a href="../../adding-a-new-app/setting-up-ssh-keys">SSH key</a> you set up.</p>
-<p>After successful validation Bitrise will scan your repository and give you a default workflow</p>
-<h2 id="skipping-the-scanner-full-manual-configuration">Skipping the scanner - full manual configuration<a class="headerlink" href="#skipping-the-scanner-full-manual-configuration" title="Permanent link">⚓</a></h2>
-<p>If for some reason you want to skip the scanner, you can choose
-the <strong>Configure manually without project scanning</strong> option,
-in the <strong>Validation setup</strong> section.</p>
-<p><img alt="Configure manually without project scanning" src="../../img/adding-a-new-app/validation_configure_manually.png" /></p>
-<p>By choosing this option <a href="https://www.bitrise.io/">bitrise.io</a> will only
-validate the access to the repository, but it won't run the scanner.
-Instead, it'll present you the manual configuration options
-in the <em>Project build configuration</em> section.</p>
+<p>If the validation is successful, Bitrise will scan your repository and give you a default workflow based on the configuration of the project.</p>
+<h2 id="manual-project-configuration">Manual project configuration<a class="headerlink" href="#manual-project-configuration" title="Permanent link">⚓</a></h2>
+<p>If the validation fails, choose the <code>Restart scanning without validation</code> option.</p>
+<p><img alt="Validation failed" src="../img/adding-a-new-app/validation-failed.png" /></p>
+<p>In this case, you have to configure the project manually. Click <code>Next</code>. You will see the <code>Validating Repository</code> message again but this time Bitrise only checks that we have access to the specified repository.</p>
+<p>Choose the project type (for example, Xamarin) and specify the necessary inputs (for example, the path to the Xamarin Solution file). You can also select the stack on which you wish to run your builds.</p>
+<p><img alt="Choose project type" src="../img/adding-a-new-app/select-project-type.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Restarting validation</p>
+<p>You can restart validation if you want Bitrise to automatically detect your project type. Once you fixed the issue that caused validation to fail for the first time, go to the <code>Project build configuration</code> window and select the <code>Detected</code> tab. Choose the <code>Restart current validation</code> option.</p>
+</div>
                 
                   
                 
