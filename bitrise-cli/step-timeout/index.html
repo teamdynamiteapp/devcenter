@@ -2441,14 +2441,15 @@
 </li>
 <li>
 <p>Add a <code>timeout</code> property before the other step inputs.</p>
-<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="nf">xcode</span><span class="o">-</span><span class="n">test</span><span class="mf">@1.18.14</span><span class="o">:</span>
-     <span class="nl">timeout</span><span class="p">:</span> <span class="mi">120</span>
-     <span class="nl">inputs</span><span class="p">:</span>
-     <span class="o">-</span> <span class="nl">project_path</span><span class="p">:</span> <span class="s">&quot;$BITRISE_PROJECT_PATH&quot;</span>
-     <span class="o">-</span> <span class="nl">scheme</span><span class="p">:</span> <span class="s">&quot;$BITRISE_SCHEME&quot;</span>
-</pre></div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<pre class="code"><code class="language-yaml">- xcode-test@1.18.14:
+     timeout: 120
+     inputs:
+     - project_path: &quot;$BITRISE_PROJECT_PATH&quot;
+     - scheme: &quot;$BITRISE_SCHEME&quot;</code></pre>
 
-
+</div>
 </li>
 </ol>
 <p>And you're done! In our example, the <code>xcode-test</code> step will abort after 120 seconds. Check the build logs to see what caused the step to exceed the limit.</p>
