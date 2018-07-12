@@ -2514,16 +2514,16 @@ Currently Bitrise will detect <code>iOS</code>, <code>Android</code>, <code>Xama
 configuration.</p>
 <h2 id="automatic-project-configuration">Automatic project configuration<a class="headerlink" href="#automatic-project-configuration" title="Permanent link">⚓</a></h2>
 <p>Enter the name of the default branch of your repository where your project is located. This branch should include the configuration of your project. Once you hit <code>Next</code>, Bitrise will automatically start the validation of the repository.</p>
-<p><img alt="Choosing branch" src="../img/adding-a-new-app/choose-branch.png" /></p>
+<p><img alt="Choosing branch" src="../../img/adding-a-new-app/choose-branch.png" /></p>
 <p>During validation Bitrise will make sure it has access to the given branch,
 using the <a href="../../adding-a-new-app/setting-up-ssh-keys">SSH key</a> you set up.</p>
 <p>If the validation is successful, Bitrise will scan your repository and give you a default workflow based on the configuration of the project.</p>
 <h2 id="manual-project-configuration">Manual project configuration<a class="headerlink" href="#manual-project-configuration" title="Permanent link">⚓</a></h2>
 <p>If the validation fails, choose the <code>Restart scanning without validation</code> option.</p>
-<p><img alt="Validation failed" src="../img/adding-a-new-app/validation-failed.png" /></p>
+<p><img alt="Validation failed" src="../../img/adding-a-new-app/validation-failed.png" /></p>
 <p>In this case, you have to configure the project manually. Click <code>Next</code>. You will see the <code>Validating Repository</code> message again but this time Bitrise only checks that we have access to the specified repository.</p>
 <p>Choose the project type (for example, Xamarin) and specify the necessary inputs (for example, the path to the Xamarin Solution file). You can also select the stack on which you wish to run your builds.</p>
-<p><img alt="Choose project type" src="../img/adding-a-new-app/select-project-type.png" /></p>
+<p><img alt="Choose project type" src="../../img/adding-a-new-app/select-project-type.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Restarting validation</p>
 <p>You can restart validation if you want Bitrise to automatically detect your project type. Once you fixed the issue that caused validation to fail for the first time, go to the <code>Project build configuration</code> window and select the <code>Detected</code> tab. Choose the <code>Restart current validation</code> option.</p>
