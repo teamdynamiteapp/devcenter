@@ -1137,23 +1137,23 @@
         }, 
         {
             "location": "/caching/caching-cocoapods/", 
-            "text": "This guide was moved to: \nhttps://discuss.bitrise.io/t/how-to-cache-cocoapods-dependencies/193", 
+            "text": "Before you start, make sure you have the latest version of the \nCocoapods Install\n step in your workflow.\n\n\n\n\n\n\nOpen your app's \nWorkflow Editor\n.\n\n\n\n\n\n\nInsert the \nCache:Pull\n step after the \nGit Clone\n but before the \nCocoapods Install\n steps.\n\n\n\n\nStep version\n\n\nMake sure that your step is version 1.0.0 or newer. With the older versions, you have to manually specify paths for caching.\n\n\n\n\n\n\n\n\nInsert the \nCache:Push\n step to the very end of your workflow.\n\n\n\n\n\n\nAnd that is all you have to do! If you wish to use an earlier version of the \nCache\n steps, you can find more information \nhere\n.", 
             "title": "Caching Cocoapods"
         }, 
         {
             "location": "/caching/caching-gradle/", 
-            "text": "This guide was moved to: \nhttps://discuss.bitrise.io/t/how-to-cache-gradle-dependencies/194", 
+            "text": "Before you start, make sure you have the latest version of the \nAndroid Build\n step in your workflow.\n\n\n\n\n\n\nOpen your app's \nWorkflow Editor\n.\n\n\n\n\n\n\nInsert the \nCache:Pull\n step after the \nGit Clone\n but before the \nAndroid Build\n steps.\n\n\n\n\nStep version\n\n\nMake sure that your step is version 1.0.0 or newer. With the older versions, you have to manually specify paths for caching.\n\n\n\n\n\n\n\n\nInsert the \nCache:Push\n step to the very end of your workflow.\n\n\n\n\n\n\nAnd you're done!", 
             "title": "Caching Gradle"
         }, 
         {
             "location": "/caching/caching-maven/", 
-            "text": "This guide was moved to: \nhttps://discuss.bitrise.io/t/how-to-cache-maven-dependencies/195", 
+            "text": "Open your app's \nWorkflow Editor\n.\n\n\n\n\n\n\nInsert the \nCache:Pull\n step after the \nGit Clone\n but before the \nAndroid Build\n steps.\n\n\n\n\nStep version\n\n\nMake sure that your step is version 1.0.0 or newer.\n\n\n\n\n\n\n\n\nInsert the \nCache:Push\n step to the very end of your workflow.\n\n\n\n\n\n\nIn the \nIgnore Paths from change check\n input of the step, enter \n$HOME/.m2\n.\n\n\n\n\n\n\nAnd you're done!", 
             "title": "Caching Maven"
         }, 
         {
             "location": "/caching/caching-ruby-gems/", 
-            "text": "This guide was moved to: \nhttps://discuss.bitrise.io/t/how-to-cache-ruby-gem-dependencies/196", 
-            "title": "Caching Ruby GEMs"
+            "text": "Ruby Gems are installed into a single directory by default. You can get the location of this directory with gem environment gemdir. If you want to change this directory you can set the \n$GEM_HOME\n environment variable, this will be picked up by gem install and it\u2019ll install the Gems to the location specified by \n$GEM_HOME\n.\n\n\n\n\nSetting \n$GEM_HOME\n\n\nYou cannot simply add \ngem environment gemdir\n to the input of your Cache steps. You can only reference Environment Variables in the inputs directly, and $GEM_HOME is not set by default on the Bitrise.io VMs.\n\n\n\n\n\n\n\n\nOpen your app's \nWorkflow Editor\n.\n\n\n\n\n\n\nAdd a \nScript\n step to your workflow.\n\n\n\n\n\n\nSet the \n$GEM_HOME\n environment variable in the \nScript\n step.\n\n\n- script:\n    title: Set GEM_HOME env var\n    inputs:\n    - content: |-\n        #!/bin/bash\n        set -ev\n        envman add --key GEM_HOME --value \n$(gem environment gemdir)\n\n\n\n\n\n\n\n\n\n\nInsert the \nCache:Pull\n step after the \nGit Clone\n but before the \nAndroid Build\n steps.\n\n\n\n\nStep version\n\n\nMake sure that your step is version 1.0.0 or newer.\n\n\n\n\n\n\n\n\nInsert the \nCache:Push\n step to the very end of your workflow.\n\n\n\n\n\n\nAnd you're done!", 
+            "title": "Caching Ruby Gems"
         }, 
         {
             "location": "/bitrise-cli/", 

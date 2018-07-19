@@ -1384,8 +1384,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../caching-ruby-gems/" title="Caching Ruby GEMs" class="md-nav__link">
-      Caching Ruby GEMs
+    <a href="../caching-ruby-gems/" title="Caching Ruby Gems" class="md-nav__link">
+      Caching Ruby Gems
     </a>
   </li>
 
@@ -2492,7 +2492,23 @@
                 
                   <h1>Caching Gradle</h1>
                 
-                <p>This guide was moved to: <a href="https://discuss.bitrise.io/t/how-to-cache-gradle-dependencies/194">https://discuss.bitrise.io/t/how-to-cache-gradle-dependencies/194</a></p>
+                <p>Before you start, make sure you have the latest version of the <code>Android Build</code> step in your workflow.</p>
+<ol>
+<li>
+<p>Open your app's <code>Workflow Editor</code>.</p>
+</li>
+<li>
+<p>Insert the <code>Cache:Pull</code> step after the <code>Git Clone</code> but before the <code>Android Build</code> steps.</p>
+<div class="admonition note">
+<p class="admonition-title">Step version</p>
+<p>Make sure that your step is version 1.0.0 or newer. With the older versions, you have to manually specify paths for caching.</p>
+</div>
+</li>
+<li>
+<p>Insert the <code>Cache:Push</code> step to the very end of your workflow.</p>
+</li>
+</ol>
+<p>And you're done!</p>
                 
                   
                 
