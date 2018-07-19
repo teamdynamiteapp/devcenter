@@ -76,6 +76,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>/getting-started/triggering-builds/trigger-multiple-workflows/</loc>
+     <lastmod>2018-07-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>/infrastructure/available-stacks/</loc>
      <lastmod>2018-07-19</lastmod>
      <changefreq>daily</changefreq>
