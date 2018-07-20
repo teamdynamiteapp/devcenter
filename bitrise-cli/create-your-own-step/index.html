@@ -36,7 +36,7 @@
     
     
       
-        <title>Create your own Step - Bitrise DevCenter</title>
+        <title>Create and share your own Step - Bitrise DevCenter</title>
       
     
     
@@ -102,6 +102,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#creating-the-step" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -131,11 +135,11 @@
                   
                 
 
-                <span class="md-header-nav__breadcrumbs current">Create your own Step</span>
+                <span class="md-header-nav__breadcrumbs current">Create and share your own Step</span>
 
               </span>
               <span class="md-header-nav__topic">
-                Create your own Step
+                Create and share your own Step
               </span>
             
           
@@ -1497,6 +1501,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../step-properties/" title="Step properties" class="md-nav__link">
+      Step properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../step-inputs/" title="Step inputs" class="md-nav__link">
       Step inputs
     </a>
@@ -1563,9 +1579,77 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-    <a href="./" title="Create your own Step" class="md-nav__link md-nav__link--active">
-      Create your own Step
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Create and share your own Step
+      </label>
+    
+    <a href="./" title="Create and share your own Step" class="md-nav__link md-nav__link--active">
+      Create and share your own Step
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-step" title="Creating the Step" class="md-nav__link">
+    Creating the Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-development-guidelines" title="Step development guidelines" class="md-nav__link">
+    Step development guidelines
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions-versioning-step-id-step-inputs-and-outputs" title="Naming conventions: versioning, Step ID, step inputs and outputs" class="md-nav__link">
+    Naming conventions: versioning, Step ID, step inputs and outputs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-in-steps" title="Environment variables in Steps" class="md-nav__link">
+    Environment variables in Steps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submodules-and-dependencies" title="Submodules and dependencies" class="md-nav__link">
+    Submodules and dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-a-new-step" title="Sharing a new Step" class="md-nav__link">
+    Sharing a new Step
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2494,6 +2578,76 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-step" title="Creating the Step" class="md-nav__link">
+    Creating the Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-development-guidelines" title="Step development guidelines" class="md-nav__link">
+    Step development guidelines
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions-versioning-step-id-step-inputs-and-outputs" title="Naming conventions: versioning, Step ID, step inputs and outputs" class="md-nav__link">
+    Naming conventions: versioning, Step ID, step inputs and outputs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-in-steps" title="Environment variables in Steps" class="md-nav__link">
+    Environment variables in Steps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submodules-and-dependencies" title="Submodules and dependencies" class="md-nav__link">
+    Submodules and dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-a-new-step" title="Sharing a new Step" class="md-nav__link">
+    Sharing a new Step
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -2502,30 +2656,102 @@
                   <a href="https://github.com/bitrise-io/devcenter/blob/master/docs/bitrise-cli/create-your-own-step.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Create your own Step</h1>
+                  <h1>Create and share your own Step</h1>
                 
-                <p>Creating your own Step is as simple as running a <code>bitrise</code> CLI (v1.6.1+) command and following the guide it prints.</p>
-<p><strong>Please make sure that you have at least v1.6.1 of the CLI installed on your Mac/Linux, the step plugin was introduced as a core plugin in that version (related announcement post: <a href="https://discuss.bitrise.io/t/monthly-release-of-bitrise-cli-tools-and-summary-of-updates-may-2017-cli-v1-6-1/1690">https://discuss.bitrise.io/t/monthly-release-of-bitrise-cli-tools-and-summary-of-updates-may-2017-cli-v1-6-1/1690</a>).</strong></p>
-<ul>
-<li>If you don't have the <code>bitrise</code> CLI installed you can find the installation guide <a href="../../bitrise-cli/installation/">here</a></li>
-<li>You can find the <code>step</code> plugin's development discussion thread at <a href="https://discuss.bitrise.io/t/step-create-plugin-quickly-generate-a-new-step/1609">https://discuss.bitrise.io/t/step-create-plugin-quickly-generate-a-new-step/1609</a></li>
-</ul>
-<p>Once you have the Bitrise CLI installed, to generate a new Bitrise Step all you have to do is:</p>
+                <p>Creating your own Step is as simple as running a <code>bitrise</code> CLI (v1.6.1+) command and following the guide it prints. You can generate Steps using either the Bash or Go toolkits.</p>
+<p>If you don't have the Bitrise CLI installed, check the installation guide <a href="../../bitrise-cli/installation/">here</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure you have the latest version of the Bitrise CLI, or at the very least, you have version 1.6.1 or higher. Call <code>bitrise --version</code> to check your Bitrise CLI version. This is important because the CLI uses the <code>:step</code> plugin to create Steps and this plugin was introduced as a core plugin in v1.6.1.</p>
+</div>
+<h2 id="creating-the-step">Creating the Step<a class="headerlink" href="#creating-the-step" title="Permanent link">⚓</a></h2>
+<p>Once the Bitrise CLI is installed, create your own Step with three simple commands.</p>
 <pre class="code"><code class="language-bash"># If this is the very first time you use the CLI / if you just installed the CLI run this:
 bitrise setup
 
-# If you want to update the step plugin to the latest version:
+# If you want to update the Step plugin to the latest version:
 bitrise plugin update step
 
-# And to generate a new step simply run this command and follow the guide it prints:
+# And to generate a new Step, simply run this command and follow the guide it prints:
 bitrise :step create</code></pre>
 
-<p>The generated Step's README also describes how you can run your step locally,
-before you'd even commit the code, as well as how you can test and use your step
-in any build by using <a href="../../bitrise-cli/steps/#special-step-sources">the <code>git::</code> step reference</a>, and finally (and optionally)
-how you can share your step with others through the Bitrise StepLib.</p>
-<p>If you'd have any questions visit our <a href="https://discuss.bitrise.io/">community discussion site</a> or <a href="https://www.bitrise.io/contact">contact us</a>!</p>
-<p><strong>Need some inspiration for a new step idea?</strong> Look no further, we have a list! <a href="https://discuss.bitrise.io/search?q=tags%3Acontrib-this-feature%20tag%3Astep">This way please</a> :)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Running <code>bitrise :step</code> without any commands will print the plugin's help.</p>
+</div>
+<p>Once you are done, you should have a <code>step.yml</code> and, depending on whether you chose Go or Bash, a <code>main.go</code> or a <code>step.sh</code> file in your new Step's repository.</p>
+<ul>
+<li>The <code>step.yml</code> file is the Step interface definition, containing dependencies, Step inputs and Step outputs as well as other step properties.</li>
+<li><code>main.go</code> or <code>step.sh</code> contains the actual functionality of the Step. <strong>DO NOT CHANGE the working directory!</strong></li>
+</ul>
+<p>The generated Step's README describes:</p>
+<ul>
+<li>how you can run your Step locally, before you even commit the code,</li>
+<li>how you can test and use your Step in any build by using <a href="../../bitrise-cli/Steps/#special-Step-sources">the <code>git::</code> Step reference</a>,</li>
+<li>how you can share your Step with others through the Bitrise StepLib if you wish to do so.</li>
+</ul>
+<p>!!! warning Most important concepts
+    Before proceeding with configuring your step, check out [some important concepts you must be aware of]((/bitrise-cli/most-important-concepts.md)!</p>
+<h2 id="step-development-guidelines">Step development guidelines<a class="headerlink" href="#step-development-guidelines" title="Permanent link">⚓</a></h2>
+<p>A newly created Step is a 'skeleton': in the <code>step.yml</code> file, certain properties are assigned default values and example inputs and outputs are created to show the structure of these.</p>
+<p>Many step properties are automatically generated - for example, when sharing the Step - while other properties should be set manually if they are required. When creating a new Step with the plugin, only the <code>project_type_tags</code> property does not get filled with some value by default but of course you can manually modify all properties in the <code>step.yml</code> file.</p>
+<p>Step inputs and outputs are also Step properties. For more information, see <a href="../../bitrise-cli/Step-properties">Step properties</a>, <a href="../../bitrise-cli/Step-inputs">Step inputs</a>, <a href="../../bitrise-cli/Step-outputs">Step outputs</a>.</p>
+<h3 id="naming-conventions-versioning-step-id-step-inputs-and-outputs">Naming conventions: versioning, Step ID, step inputs and outputs<a class="headerlink" href="#naming-conventions-versioning-step-id-step-inputs-and-outputs" title="Permanent link">⚓</a></h3>
+<ul>
+<li>You should use <a href="https://semver.org/">semantic versioning</a> (MAJOR.MINOR.PATCH) for your Step. For example, <code>1.2.3</code>.</li>
+<li>For Step IDs, use hyphens as separator if the ID contains multiple words. For example, <code>set-ios-bundle-identifier</code>.</li>
+<li>For inputs, use <strong>lower</strong> case <a href="https://en.wikipedia.org/wiki/Snake_case">snake case</a> style input IDs. For example, <code>input_path</code>.</li>
+<li>If your step input should accept a list of values, postfix the input ID with <code>_list</code> (for example, <code>input_path_list</code>). We strongly recommend using the pipe character as a separator (for example, <code>first value|second value</code>).</li>
+<li>For outputs, use <strong>upper</strong> case <a href="https://en.wikipedia.org/wiki/Snake_case">snake case</a> style output IDs. For example, <code>OUTPUT_PATH</code>.</li>
+<li>If an output should be able to provide a list of values, postfix the input ID with <code>_LIST</code> (for example, <code>OUTPUT_PATH_LIST</code>). We strongly recommend using the pipe character as a separator (for example, <code>first value|second value</code>).</li>
+<li>Filter out empty items! For example, <code>first value|   |second value</code> should be treated exactly the same way as <code>first value|second value</code>.</li>
+</ul>
+<h3 id="environment-variables-in-steps">Environment variables in Steps<a class="headerlink" href="#environment-variables-in-steps" title="Permanent link">⚓</a></h3>
+<p><strong>Do not use Environment Variables directly in your Step's code</strong>. Instead, expose every outside variable as an input of your Step and set the default value of that input to the Environment Variable you want to use. You can do this in the <code>step.yml</code> file. This way it's easier to test the Step and the user of the Step can easily declare these inputs, without having to scour through code for the required variable.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The <code>xcode-archive</code> Step generates an output Environment Variable <code>$BITRISE_IPA_PATH</code>. Create an input for this in your Step:</p>
+<pre class="code"><code class="language-yaml">inputs:
+  - ipa-path: $BITRISE_IPA_PATH
+    opts:
+        title: &quot;IPA path&quot;</code></pre>
+
+</div>
+<h3 id="submodules-and-dependencies">Submodules and dependencies<a class="headerlink" href="#submodules-and-dependencies" title="Permanent link">⚓</a></h3>
+<p><strong>Do not use submodules, or require any other resource downloaded on-demand in your Step</strong>. Try to include everything required for your Step in the Step's repository. Otherwise you can run into problems if, say, the Step fails to download a resource because of a network error or some authorization problem.</p>
+<p>In the case of submodules, you should include the content of the other repository instead of using it as a submodule of your Step's repository.</p>
+<p>You can, however, declare dependencies that you can fetch from an OS dependency manager, such as <code>apt-get</code> or <code>brew</code>. For more information on declaring dependencies, see <a href="../../bitrise-cli/Step-properties">Step properties</a>.</p>
+<p>If you have any questions visit our <a href="https://discuss.bitrise.io/">community discussion site</a> or <a href="https://www.bitrise.io/contact">contact us</a>!</p>
+<p><strong>Need some inspiration for a new Step idea?</strong> Look no further, we have a list! <a href="https://discuss.bitrise.io/search?q=tags%3Acontrib-this-feature%20tag%3AStep">This way please</a> :)</p>
+<h2 id="sharing-a-new-step">Sharing a new Step<a class="headerlink" href="#sharing-a-new-step" title="Permanent link">⚓</a></h2>
+<p>If you wish to share your newly created Step with the wider world, that's great - and simple!</p>
+<p>We recommend you start with the command <code>bitrise share</code>. This will print you a guide on sharing steps - all you need to do is follow! But we'll summarize the most important things here as well, if you wish to look at the process before even firing up a command line interface.</p>
+<ol>
+<li>
+<p>Make sure your Step is stored in a public git repository.</p>
+</li>
+<li>
+<p>Fork the StepLib repository you want to have your step in. The official Bitrise StepLib can be found here: <a href="https://github.com/bitrise-io/bitrise-steplib">https://github.com/bitrise-io/bitrise-steplib</a></p>
+</li>
+<li>
+<p>Call <code>$ bitrise share start -c https://github.com/[your-username]/bitrise-steplib.git</code>, with the git clone URL of your forked StepLib repository. This will prepare your forked StepLib locally for sharing.</p>
+</li>
+<li>
+<p>Add the step version tag to your Step's repository.</p>
+</li>
+<li>
+<p>Call $ bitrise share create --tag [step-version-tag] --git [step-git-uri].git --stepid [step-id],
+to add your Step to your forked StepLib repository (locally).</p>
+</li>
+<li>
+<p>You can call $ bitrise audit -c <a href="https://github.com/[your-username]/bitrise-steplib.git">https://github.com/[your-username]/bitrise-steplib.git</a>
+to perform a complete health-check on your forked StepLib.</p>
+</li>
+<li>
+<p>Create a Pull Request in the original StepLib repository.</p>
+</li>
+</ol>
+<p>And that's it, you are done! Once your PR is merged, your step will be available to everyone who uses the StepLib repository you chose.</p>
                 
                   
                 

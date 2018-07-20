@@ -1501,6 +1501,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../step-properties/" title="Step properties" class="md-nav__link">
+      Step properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../step-inputs/" title="Step inputs" class="md-nav__link">
       Step inputs
     </a>
@@ -1595,8 +1607,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../create-your-own-step/" title="Create your own Step" class="md-nav__link">
-      Create your own Step
+    <a href="../create-your-own-step/" title="Create and share your own Step" class="md-nav__link">
+      Create and share your own Step
     </a>
   </li>
 
@@ -2565,18 +2577,18 @@
                   <h1>Step outputs</h1>
                 
                 <p>Step outputs are environment items that are the result of running a given step. For example, the <code>deploy-to-bitrise-io</code> step generates the <code>$BITRISE_PUBLIC_INSTALL_PAGE_URL</code> and the <code>$BITRISE_PUBLIC_INSTALL_PAGE_URL_MAP</code> output variables by default. You can check out the default outputs of a step in the <code>Workflow Editor</code> on <a href="https://www.bitrise.io">bitrise.io</a> or in the <code>step.yml</code> file of the step.</p>
-<p>Step outputs can be defined in the <code>bitrise.yml</code> file of the project by setting the <code>outputs</code> attribute. They have the same syntax as every environment property. It consists of two main parts: a <code>KEY: value</code> pair and an <code>opts</code> field. The key and the value are required, the <code>opts</code> field is optional.</p>
-<pre class="code"><code class="language-yaml">- my_key_for_the_env: my value for the env
+<p>Step outputs can be defined in the <code>step.yml</code> file of the project by setting the <code>outputs</code> attribute. They have the same syntax as every environment property. It consists of two main parts: a <code>KEY: value</code> pair and an <code>opts</code> field. The key and the value are required, the <code>opts</code> field is optional.</p>
+<pre class="code"><code class="language-yaml">- MY_KEY_FOR_THE_ENV: my value for the env
   opts:
     title: An example env var item
     is_dont_change_value: false
     category: example</code></pre>
 
-<p><code>my_key_for_the_env</code>: the key of the environment item (required)
+<p><code>MY_KEY_FOR_THE_ENV</code>: the key of the environment item (required)
 <code>my value for the env</code>: the value of the item (required)
 <code>opts</code>: optional attributes.</p>
 <h2 id="exporting-step-outputs-in-output-aliases">Exporting step outputs in output aliases<a class="headerlink" href="#exporting-step-outputs-in-output-aliases" title="Permanent link">⚓</a></h2>
-<p>The default outputs of a step cannot be changed by the user in <code>bitrise.yml</code>. However, you can export the output in a custom environment variable. This is useful, for example, if you have the same step twice in your workflow and you wish to use the generated output of both steps.</p>
+<p>The default outputs of a step cannot be changed by the user in the <code>bitrise.yml</code> file of the project, it can only be changed in the <code>step.yml</code> file. However, you can export the output in a custom environment variable. This is useful, for example, if you have the same step twice in your workflow and you wish to use the generated output of both steps.</p>
 <ol>
 <li>
 <p>Open the <code>bitrise.yml</code> file of your project.</p>
