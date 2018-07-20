@@ -2308,8 +2308,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../faq/i-cant-see-my-github-organization-repository-on-the-add-new-app-page/" title="I can't see my GitHub organization / repository on the Add New App page" class="md-nav__link">
-      I can't see my GitHub organization / repository on the Add New App page
+    <a href="../../faq/grant-access-to-bitbucket-team/" title="Grant access to a Bitbucket team" class="md-nav__link">
+      Grant access to a Bitbucket team
     </a>
   </li>
 
@@ -2320,8 +2320,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../faq/github-pull-request-status-troubleshooting/" title="GitHub Pull Request / build Status indicator troubleshooting" class="md-nav__link">
-      GitHub Pull Request / build Status indicator troubleshooting
+    <a href="../../faq/i-cant-see-my-github-organization-repository-on-the-add-new-app-page/" title="I can't see my GitHub organization / repository on the Add New App page" class="md-nav__link">
+      I can't see my GitHub organization / repository on the Add New App page
     </a>
   </li>
 
@@ -2454,6 +2454,18 @@
   <li class="md-nav__item">
     <a href="../../troubleshooting/trigger-doesnt-work/" title="Build Trigger does not work" class="md-nav__link">
       Build Trigger does not work
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/github-pull-request-status-troubleshooting/" title="Build status indicator on GitHub/GitLab/Bitbucket does not work" class="md-nav__link">
+      Build status indicator on GitHub/GitLab/Bitbucket does not work
     </a>
   </li>
 
@@ -2690,8 +2702,10 @@ bitrise :step create</code></pre>
 <li>how you can test and use your Step in any build by using <a href="../../bitrise-cli/Steps/#special-Step-sources">the <code>git::</code> Step reference</a>,</li>
 <li>how you can share your Step with others through the Bitrise StepLib if you wish to do so.</li>
 </ul>
-<p>!!! warning Most important concepts
-    Before proceeding with configuring your step, check out [some important concepts you must be aware of]((/bitrise-cli/most-important-concepts.md)!</p>
+<div class="admonition warning">
+<p class="admonition-title">Most important concepts</p>
+<p>Before proceeding with configuring your step, check out <a href="../most-important-concepts/">some important concepts you must be aware of</a>!</p>
+</div>
 <h2 id="step-development-guidelines">Step development guidelines<a class="headerlink" href="#step-development-guidelines" title="Permanent link">⚓</a></h2>
 <p>A newly created Step is a 'skeleton': in the <code>step.yml</code> file, certain properties are assigned default values and example inputs and outputs are created to show the structure of these.</p>
 <p>Many step properties are automatically generated - for example, when sharing the Step - while other properties should be set manually if they are required. When creating a new Step with the plugin, only the <code>project_type_tags</code> property does not get filled with some value by default but of course you can manually modify all properties in the <code>step.yml</code> file.</p>

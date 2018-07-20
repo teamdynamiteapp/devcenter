@@ -2236,8 +2236,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../i-cant-see-my-github-organization-repository-on-the-add-new-app-page/" title="I can't see my GitHub organization / repository on the Add New App page" class="md-nav__link">
-      I can't see my GitHub organization / repository on the Add New App page
+    <a href="../grant-access-to-bitbucket-team/" title="Grant access to a Bitbucket team" class="md-nav__link">
+      Grant access to a Bitbucket team
     </a>
   </li>
 
@@ -2248,8 +2248,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../github-pull-request-status-troubleshooting/" title="GitHub Pull Request / build Status indicator troubleshooting" class="md-nav__link">
-      GitHub Pull Request / build Status indicator troubleshooting
+    <a href="../i-cant-see-my-github-organization-repository-on-the-add-new-app-page/" title="I can't see my GitHub organization / repository on the Add New App page" class="md-nav__link">
+      I can't see my GitHub organization / repository on the Add New App page
     </a>
   </li>
 
@@ -2386,6 +2386,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/github-pull-request-status-troubleshooting/" title="Build status indicator on GitHub/GitLab/Bitbucket does not work" class="md-nav__link">
+      Build status indicator on GitHub/GitLab/Bitbucket does not work
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2516,31 +2528,32 @@
                 
                   <h1>Grant access to a GitHub Organization</h1>
                 
-                <p>Steps to grant access for Bitrise.io to a given GitHub Organization:</p>
-<ol>
-<li>Open <a href="https://github.com">https://github.com</a></li>
-<li>In the top right corner click your user / avatar</li>
-<li>In the list select <a href="https://github.com/settings/profile">Settings</a></li>
-<li>On the left side select <a href="https://github.com/settings/applications">Authorized applications</a></li>
-<li>In the left-side navigation, click <strong>Authorized OAuth Apps</strong>, and choose <strong>Bitrise</strong></li>
-<li>Locate the Organization you want to grant access to, and click <code>Grant</code>.</li>
-</ol>
-<p><img alt="Authorized OAuth Apps" src="../../img/faq/authorized-oauth-apps.png" /></p>
-<p>You can now go back to <a href="https://www.bitrise.io">bitrise.io</a> and you
-should see the organization / repository on the Add New App page.</p>
-<p><strong>If there's no <code>Grant access</code> button for the organization in the <em>Organization access</em> section</strong>
-and instead you see a red cross icon, that means that the access was previously granted but then it was revoked.
-You can fix this by selecting the organization on the left side, in the
-<strong>Organization settings</strong> section, then on the <em>Organization settings</em>
-page select <strong>Third-party access</strong>, locate <code>Bitrise</code>, click the <strong>pencil icon</strong>,
-and click the <code>Grant access</code> button there.</p>
+                <p>This guide explains how to grant access for <a href="https://www.bitrise.io/">bitrise.io</a> to your GitHub Organization.</p>
 <div class="admonition note">
-<p class="admonition-title">In case the repository is a fork of another private repository</p>
-<p>In case the repository is a fork of another private repository which belongs to <strong>(another) organization</strong> you
-have to repeat these steps and grant access for Bitrise for the orgianization <em>which owns the original repository</em>.</p>
-<p>This is a GitHub limitation, in order to be able to access a private repository fork
+<p class="admonition-title">Note</p>
+<p>This guide presumes you have already <a href="https://help.github.com/articles/authorizing-oauth-apps/">authorized</a> Bitrise on GitHub.</p>
+</div>
+<ol>
+<li>Open <a href="https://github.com">https://github.com</a>.</li>
+<li>In the top right corner, click your avatar and select <code>Settings</code>.</li>
+<li>On the left side, select <code>Applications</code>.</li>
+<li>Click <code>Authorized OAuth Apps</code>. You will see the list of apps which can access your account.</li>
+<li>Click on <code>Bitrise</code>.</li>
+<li>Scroll down to <code>Organization access</code> and click <code>Grant</code> so that Bitrise can access your Organization's repository.</li>
+</ol>
+<p><img alt="Screenshot" src="../../img/faq/grant-org-access.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Troubleshooting: Can't see <code>Grant</code> button next to app under <code>Organization access</code></p>
+<p>If there's no <code>Grant</code> button but only a <strong>red cross</strong> icon next to the Organization in the <code>Organization access</code> that means that <strong>the access was previously granted but then it was revoked</strong>. You can fix this by first selecting the Organization under <code>Organization settings</code> on the left side, then clicking <code>Third-party access</code>. You can see <code>Bitrise</code> with <code>Denied</code> access. Click the pencil icon and <code>Grant access</code> to Bitrise. Now you can go back to your <code>Authorized OAuth Apps</code> and click on Bitrise. You should see a green tick instead of the red cross icon next to your Organization.</p>
+</div>
+<p><img alt="Screenshot" src="../../img/faq/third-party-access.jpg" /></p>
+<p>You can see the Organization and its repositories if you go back to <a href="https://www.bitrise.io">bitrise.io</a>, click on your avatar, select <code>Add new App</code> and hit <code>Next</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Repository is a fork of another private repository</p>
+<p>If the repository is a fork of another private repository which belongs to <strong>(another) Organization</strong>, you have to repeat these steps and grant access for Bitrise for the Organization <strong>which owns the original repository</strong>.</p>
+<p>This is a GitHub limitation: to be able to access a private repository fork
 <strong>you have to grant access for the service (Bitrise) in both repositories</strong>;
-in the fork and in the original repository/organization too.</p>
+in the fork and in the original repository/Organization too.</p>
 </div>
                 
                   
@@ -2577,13 +2590,13 @@ in the fork and in the original repository/organization too.</p>
           </a>
         
         
-          <a href="../i-cant-see-my-github-organization-repository-on-the-add-new-app-page/" title="I can't see my GitHub organization / repository on the Add New App page" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../grant-access-to-bitbucket-team/" title="Grant access to a Bitbucket team" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                I can't see my GitHub organization / repository on the Add New App page
+                Grant access to a Bitbucket team
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

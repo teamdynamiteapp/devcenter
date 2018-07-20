@@ -626,12 +626,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/faq/i-cant-see-my-github-organization-repository-on-the-add-new-app-page/</loc>
+     <loc>/faq/grant-access-to-bitbucket-team/</loc>
      <lastmod>2018-07-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/faq/github-pull-request-status-troubleshooting/</loc>
+     <loc>/faq/i-cant-see-my-github-organization-repository-on-the-add-new-app-page/</loc>
      <lastmod>2018-07-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -677,6 +677,11 @@
     </url>
     <url>
      <loc>/troubleshooting/trigger-doesnt-work/</loc>
+     <lastmod>2018-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/troubleshooting/github-pull-request-status-troubleshooting/</loc>
      <lastmod>2018-07-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
