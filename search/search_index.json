@@ -1472,7 +1472,7 @@
         }, 
         {
             "location": "/xamarin/", 
-            "text": "With \nXamarin\n integration you can now build your\niOS and Android Xamarin applications on \nBitrise\n.\n\n\nWe have listed a couple of tutorials to help you get started, but if you get stuck,\nfeel free to \ncontact us\n!\n\n\nXamarin tutorials\n\u2693\n\n\nHighlighted\n:\nA great overview and a detailed \"getting started\" tutorial: check out \nJames Montemagno\n's\nvideo session about setting up Xamarin apps on Bitrise here: \nhttps://www.youtube.com/watch?v=1UeNajpjIXY\n\n\nGetting Started\n\u2693\n\n\n\n\nConnect your Xamarin account to Bitrise\n \n\n\nCreating your first App on Bitrise\n\n\nRestore NuGet packages and Xamarin Components\n\n\n\n\nCode Signing\n\u2693\n\n\n\n\niOS code signing\n\n\nAndroid code signing\n \n\n\n\n\nAdvanced\n\u2693\n\n\n\n\nDeploy your Xamarin app\n\n\nAdd Unit Test to your Xamarin app\n\n\nRun your tests in the Xamarin Test Cloud\n\n\nAdd custom sources to NuGet\n \n\n\nBuild with FAKE (F# Make)\n\n\n\n\n\n\nCommunity created tutorials\n\n\nFor more, community created tutorials, see the Xamarin section on the\n\nCommunity Created Tutorials\n page.", 
+            "text": "With \nXamarin\n integration you can now build your\niOS and Android Xamarin applications on \nBitrise\n.\n\n\nWe have listed a couple of tutorials to help you get started, but if you get stuck,\nfeel free to \ncontact us\n!\n\n\nXamarin tutorials\n\u2693\n\n\nHighlighted\n:\nA great overview and a detailed \"getting started\" tutorial: check out \nJames Montemagno\n's\nvideo session about setting up Xamarin apps on Bitrise here: \nhttps://www.youtube.com/watch?v=1UeNajpjIXY\n\n\nGetting Started\n\u2693\n\n\n\n\nCreating your first App on Bitrise\n\n\nRestore NuGet packages\n\n\n\n\nCode Signing\n\u2693\n\n\n\n\niOS code signing\n\n\nAndroid code signing\n\n\n\n\nAdvanced\n\u2693\n\n\n\n\nDeploy your Xamarin app\n\n\nRun your tests in the Visual Studio App Center\n\n\nAdd custom sources to NuGet\n\n\nBuild with FAKE (F# Make)\n\n\n\n\n\n\nCommunity created tutorials\n\n\nFor more, community created tutorials, see the Xamarin section on the\n\nCommunity Created Tutorials\n page.", 
             "title": "About Xamarin"
         }, 
         {
@@ -1482,7 +1482,7 @@
         }, 
         {
             "location": "/xamarin/#getting-started", 
-            "text": "Connect your Xamarin account to Bitrise    Creating your first App on Bitrise  Restore NuGet packages and Xamarin Components", 
+            "text": "Creating your first App on Bitrise  Restore NuGet packages", 
             "title": "Getting Started"
         }, 
         {
@@ -1492,78 +1492,23 @@
         }, 
         {
             "location": "/xamarin/#advanced", 
-            "text": "Deploy your Xamarin app  Add Unit Test to your Xamarin app  Run your tests in the Xamarin Test Cloud  Add custom sources to NuGet    Build with FAKE (F# Make)    Community created tutorials  For more, community created tutorials, see the Xamarin section on the Community Created Tutorials  page.", 
+            "text": "Deploy your Xamarin app  Run your tests in the Visual Studio App Center  Add custom sources to NuGet  Build with FAKE (F# Make)    Community created tutorials  For more, community created tutorials, see the Xamarin section on the Community Created Tutorials  page.", 
             "title": "Advanced"
         }, 
         {
-            "location": "/xamarin/connect-your-xamarin-account-to-bitrise/", 
-            "text": "A connected Xamarin account is required if you use Xamarin Components\nfor example, which requires Xamarin authentication.\n\n\nTo connect your Xamarin account to your Bitrise.io account,\nopen your \nAccount Settings page on bitrise.io\n,\nand click the toggle in the left sidebar where you see \nXamarin\n.\n\n\nHere you can type in your username and password.\nPlease note that \nwe won't store your username or password\n,\nwe send an authentication request with these information to the Xamarin\nserver and store only the returned authentication token.\n\n\nIf you'd want to remove the connection just turn off the toggle.\n\n\nActivating the Xamarin connection for an App on Bitrise.io\n\u2693\n\n\nTo select/activate a Xamarin account connection for an App,\ngo to the app's page on \nbitrise.io\n, select the \nTeam\n tab,\nand set the \nbitrise.io\n user in the \nService credential User\n section.", 
-            "title": "Connect your Xamarin account to Bitrise"
-        }, 
-        {
-            "location": "/xamarin/connect-your-xamarin-account-to-bitrise/#activating-the-xamarin-connection-for-an-app-on-bitriseio", 
-            "text": "To select/activate a Xamarin account connection for an App,\ngo to the app's page on  bitrise.io , select the  Team  tab,\nand set the  bitrise.io  user in the  Service credential User  section.", 
-            "title": "Activating the Xamarin connection for an App on Bitrise.io"
-        }, 
-        {
-            "location": "/xamarin/restore-nuget-packages-and-xamarin-components/", 
-            "text": "To restore your \nNuGet\n packages or \nXamarin Components\n\nsimply navigate to the app on \nbitrise.io\n,\nand select the \nWorkflow\n tab to open the Workflow Editor.\n\n\nRestore Nuget packages\n\u2693\n\n\nAdd the \nNuGet Restore\n step to your workflow, after the \nGit Clone\n step.\nBy default the step will use the same solution file that you have provided when you added your app,\nbut you can simply modify it if you need to.\n\n\nRestore Xamarin Components\n\u2693\n\n\nAdd the \nXamarin Components Restore\n step, after the \nXamarin User Management\n step.\n\n\nXamarin Components requires Xamarin authentication - for more information\nplease see the \nConnect your Xamarin account to Bitrise\n guide!", 
-            "title": "Restore NuGet packages and Xamarin Components"
-        }, 
-        {
-            "location": "/xamarin/restore-nuget-packages-and-xamarin-components/#restore-nuget-packages", 
-            "text": "Add the  NuGet Restore  step to your workflow, after the  Git Clone  step.\nBy default the step will use the same solution file that you have provided when you added your app,\nbut you can simply modify it if you need to.", 
-            "title": "Restore Nuget packages"
-        }, 
-        {
-            "location": "/xamarin/restore-nuget-packages-and-xamarin-components/#restore-xamarin-components", 
-            "text": "Add the  Xamarin Components Restore  step, after the  Xamarin User Management  step.  Xamarin Components requires Xamarin authentication - for more information\nplease see the  Connect your Xamarin account to Bitrise  guide!", 
-            "title": "Restore Xamarin Components"
+            "location": "/xamarin/restore-nuget-packages/", 
+            "text": "To restore your \nNuGet\n packages,\nsimply navigate to the app on \nbitrise.io\n,\nand select the \nWorkflow\n tab to open the Workflow Editor.\n\n\nAdd the \nNuGet Restore\n step to your workflow, after the \nGit Clone\n step.\nBy default the step will use the same solution file that you have provided when you added your app,\nbut you can simply modify it if you need to.", 
+            "title": "Restore NuGet packages"
         }, 
         {
             "location": "/xamarin/deploy-your-xamarin-app/", 
-            "text": "After successfully adding your Xamarin application we will create a default workflow (build configuration) for you.\nThis workflow includes a \nDeploy to bitrise.io\n step by default.\n\n\nBuilding the default workflow will checkout your git repository,\narchive your application and move all the generated applications ( \nipa\n / \napk\n ) to the deployment folder.\nAfter the archive the \nDeploy to bitrise.io\n step will upload these files to Bitrise.\n\n\nWe will not just upload your application,\nbut send out an email to your team as well.\nThey can simply open the email from their mobile device and install the application from there.\nAlso you can send out the build to any tester by providing their email address.\n\n\nBut what if you are already using or want to use another deployment service?\n\u2693\n\n\nBesides the default Bitrise deployment we have \ndozens of other services integrated\n to Bitrise.\nYou can simply modify your workflow and add the ones you would like to,\nlike \nHockeyApp\n, \nAppaloosa\n\nor \nTestFairy\n -\njust filter by the \ndeploy\n tag in the list to see all the available deployment steps.\n\n\nSimply add the integration Step you want to use instead of the \nDeploy to bitrise.io\n step or after that\n(but in any case after the \nXamarin Archive\n step, as that's the step which generates the\ndeployable artifact - \n.ipa\n, \n.apk\n, ...), and fill out the parameters of the step.\n\n\nThe next time you start a build your app will be deployed to the service of your choice!\n\n\nCode signing\n\u2693\n\n\nXamarin.Android\n\u2693\n\n\nFor Xamarin Android project code signing see the \nCreate signed APK on bitrise.io\n tutorial.\n\n\nXamarin.iOS\n\u2693\n\n\nWork in progress\n - this section will be updated soon.\n\n\nRight now the best way to get started with Xamarin.iOS code signing\nis to run \ncodesigndoc\n\nand upload the files it generates, or to manually upload the code signing\nfiles you use locally.\n\n\nCode signing files can be uploaded to \nbitrise.io\n\nin the app's Workflow Editor, under the \nCode signing \n Files\n section of the editor.", 
+            "text": "After successfully adding your Xamarin application we will create a default workflow (build configuration) for you.\nThis workflow includes a \nDeploy to bitrise.io\n step by default.\n\n\nBuilding the default workflow will checkout your git repository,\narchive your application and move all the generated applications ( \nipa\n / \napk\n ) to the deployment folder.\nAfter the archive the \nDeploy to bitrise.io\n step will upload these files to Bitrise.\n\n\nWe will not just upload your application,\nbut send out an email to your team as well.\nThey can simply open the email from their mobile device and install the application from there.\nAlso you can send out the build to any tester by providing their email address.\n\n\nBut what if you are already using or want to use another deployment service?\n\u2693\n\n\nBesides the default Bitrise deployment we have \ndozens of other services integrated\n to Bitrise.\nYou can simply modify your workflow and add the ones you would like to,\nlike \nHockeyApp\n, \nAppaloosa\n\nor \nTestFairy\n -\njust filter by the \ndeploy\n tag in the list to see all the available deployment steps.\n\n\nSimply add the integration Step you want to use instead of the \nDeploy to bitrise.io\n step or after that\n(but in any case after the \nXamarin Archive\n step, as that's the step which generates the\ndeployable artifact - \n.ipa\n, \n.apk\n, ...), and fill out the parameters of the step.\n\n\nFor more information on code signing for Xamarin projects, see \nXamarin Android code signing\n and \nCreating a signed .ipa for Xamarin projects\n.\n\n\nThe next time you start a build your app will be deployed to the service of your choice!", 
             "title": "Deploy your Xamarin app"
         }, 
         {
             "location": "/xamarin/deploy-your-xamarin-app/#but-what-if-you-are-already-using-or-want-to-use-another-deployment-service", 
-            "text": "Besides the default Bitrise deployment we have  dozens of other services integrated  to Bitrise.\nYou can simply modify your workflow and add the ones you would like to,\nlike  HockeyApp ,  Appaloosa \nor  TestFairy  -\njust filter by the  deploy  tag in the list to see all the available deployment steps.  Simply add the integration Step you want to use instead of the  Deploy to bitrise.io  step or after that\n(but in any case after the  Xamarin Archive  step, as that's the step which generates the\ndeployable artifact -  .ipa ,  .apk , ...), and fill out the parameters of the step.  The next time you start a build your app will be deployed to the service of your choice!", 
+            "text": "Besides the default Bitrise deployment we have  dozens of other services integrated  to Bitrise.\nYou can simply modify your workflow and add the ones you would like to,\nlike  HockeyApp ,  Appaloosa \nor  TestFairy  -\njust filter by the  deploy  tag in the list to see all the available deployment steps.  Simply add the integration Step you want to use instead of the  Deploy to bitrise.io  step or after that\n(but in any case after the  Xamarin Archive  step, as that's the step which generates the\ndeployable artifact -  .ipa ,  .apk , ...), and fill out the parameters of the step.  For more information on code signing for Xamarin projects, see  Xamarin Android code signing  and  Creating a signed .ipa for Xamarin projects .  The next time you start a build your app will be deployed to the service of your choice!", 
             "title": "But what if you are already using or want to use another deployment service?"
-        }, 
-        {
-            "location": "/xamarin/deploy-your-xamarin-app/#code-signing", 
-            "text": "", 
-            "title": "Code signing"
-        }, 
-        {
-            "location": "/xamarin/deploy-your-xamarin-app/#xamarinandroid", 
-            "text": "For Xamarin Android project code signing see the  Create signed APK on bitrise.io  tutorial.", 
-            "title": "Xamarin.Android"
-        }, 
-        {
-            "location": "/xamarin/deploy-your-xamarin-app/#xamarinios", 
-            "text": "Work in progress  - this section will be updated soon.  Right now the best way to get started with Xamarin.iOS code signing\nis to run  codesigndoc \nand upload the files it generates, or to manually upload the code signing\nfiles you use locally.  Code signing files can be uploaded to  bitrise.io \nin the app's Workflow Editor, under the  Code signing   Files  section of the editor.", 
-            "title": "Xamarin.iOS"
-        }, 
-        {
-            "location": "/xamarin/add-unit-test-to-your-xamarin-app/", 
-            "text": "Work in progress\n\n\nPrevious, outdated tutorial can be found at: \nhttp://bitrise.readme.io/v1.0/docs/add-unit-test-to-your-xamarin-app\n .", 
-            "title": "Add UITest to your Xamarin app"
-        }, 
-        {
-            "location": "/xamarin/run-your-tests-in-the-xamarin-test-cloud/", 
-            "text": "To add \nXamarin Test Cloud\n to your Xamarin application,\ngo to your app's \nWorkflow\n tab on \nbitrise.io\n to open the Workflow Editor.\n\n\nXamarin Test Cloud for iOS apps\n\u2693\n\n\nIn the Workflow Editor \nadd\n\nthe \nXamarin Test Cloud for iOS\n step to the workflow.\nAfter adding the step you should set the following parameters:\n\n\n\n\nPath to Xamarin UITest Project\n: The relative path to your test project \n(relative to the repository's root directory)\n\n\nUser email\n: Your Xamarin user's email address\n\n\nApi key\n: Your Xamarin Test Cloud API key\n\n\nDevice selection id\n: The device id that you would like to use\n\n\n\n\nXamarin Test Cloud for Android apps\n\u2693\n\n\nIn the Workflow Editor \nadd\n\nadd the \nXamarin Test Cloud for Android\n step to the workflow.\nAfter adding the step you should set the following parameters:\n\n\n\n\nPath to Xamarin UITest Project\n: The relative path to your test project \n(relative to the repository's root directory)\n\n\nUser email\n: Your Xamarin user's email address\n\n\nApi key\n: Your Xamarin Test Cloud API key\n\n\nDevice selection id\n: The device id that you would like to use", 
-            "title": "Run your tests in the Xamarin Test Cloud"
-        }, 
-        {
-            "location": "/xamarin/run-your-tests-in-the-xamarin-test-cloud/#xamarin-test-cloud-for-ios-apps", 
-            "text": "In the Workflow Editor  add \nthe  Xamarin Test Cloud for iOS  step to the workflow.\nAfter adding the step you should set the following parameters:   Path to Xamarin UITest Project : The relative path to your test project  (relative to the repository's root directory)  User email : Your Xamarin user's email address  Api key : Your Xamarin Test Cloud API key  Device selection id : The device id that you would like to use", 
-            "title": "Xamarin Test Cloud for iOS apps"
-        }, 
-        {
-            "location": "/xamarin/run-your-tests-in-the-xamarin-test-cloud/#xamarin-test-cloud-for-android-apps", 
-            "text": "In the Workflow Editor  add \nadd the  Xamarin Test Cloud for Android  step to the workflow.\nAfter adding the step you should set the following parameters:   Path to Xamarin UITest Project : The relative path to your test project  (relative to the repository's root directory)  User email : Your Xamarin user's email address  Api key : Your Xamarin Test Cloud API key  Device selection id : The device id that you would like to use", 
-            "title": "Xamarin Test Cloud for Android apps"
         }, 
         {
             "location": "/xamarin/add-custom-sources-to-nuget/", 
@@ -1599,6 +1544,11 @@
             "location": "/fastlane/how-to-configure-fastlane-match-for-bitrise/", 
             "text": "If you want to use \nfastlane match\n\nin your \nbitrise.io\n build you only have to do three things:\n\n\n\n\nMake sure that a single SSH key can be used to \ngit clone\n both your main repository (the one\n   you register on \nbitrise.io\n) and the \nmatch\n repository.\n   You can find more info \nin this guide\n.\n\n\nAdd an environment variable \nMATCH_PASSWORD\n, as\n   \ndescribed in \nmatch\n's docs\n,\n   to specify the \nEncryption password\n you used for \nmatch\n.\n   On \nbitrise.io\n you should add this as a \nSecret Environment Variable\n,\n   in the \nWorkflow Editor\n.\n   \nMake sure to \ndisable\n the \nReplace variables in input?\n option of the environment\n   variable, to not to cause issues when the value includes the \n$\n (dollar) sign, which is used\n   for environment variable expansion.\n\n   \n\n\nMake sure to use \nmatch\n's \nreadonly\n mode, or else \nmatch\n will try to connect\n   to the Apple Developer Portal, which requires further authorization (providing additional\n   username and password for Apple Dev Portal login)!\n\n\nIf you use \nmatch\n in your \nFastfile\n or \nfastlane\n config: \nmatch(app_identifier: \nmy.domain\n, type: \nappstore\n, readonly: true)\n\n\nIf you use it as a command line tool: \nmatch development --readonly\n\n\nMore info in \nmatch\n's \nofficial readme / docs\n\n\n\n\n\n\n\n\nThat's all, you can now enjoy the utility of \nmatch\n, automated with \nbitrise.io\n \ud83d\ude80", 
             "title": "How to configure fastlane match for Bitrise"
+        }, 
+        {
+            "location": "/testing/run-your-tests-in-the-app-center/", 
+            "text": "Upload and schedule tests on the Visual Studio App Center for your projects. The following testing frameworks are available:\n\n\n\n\nAppium\n\n\nEspresso\n\n\nCalabash\n\n\nXamarin.UITest\n\n\nXCUITest\n\n\n\n\nIn the Workflow Editor \nadd\n\nthe \nApp Center upload and schedule tests\n step to your workflow.\n\n\nThe step has multiple required inputs. Find the value of these inputs by setting up your test on the Visual Studio App Center.\n\n\n\n\n\n\nPrepare your test for upload: \nhttps://docs.microsoft.com/en-us/appcenter/test-cloud/preparing-for-upload/\n\n\n\n\n\n\nCreate an App Center project: \nhttps://appcenter.ms/apps\n\n\n\n\n\n\nNavigate to \nTest runs\n tab and start a \nNew test run\n:\n\n\n\n\nSelect the devices you want to test your app on.\n\n\nConfigure the test run:  choose a test series, a system language and a test framework.\n\n\nOn the \nSubmit\n tab you will find every required input for the step in the \nUpload and schedule test\n section\n.\n\n\nClick on \nDone\n.", 
+            "title": "Run your tests in the Visual Studio App Center"
         }, 
         {
             "location": "/testing/android-run-a-unit-test/", 

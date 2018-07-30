@@ -1693,20 +1693,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../connect-your-xamarin-account-to-bitrise/" title="Connect your Xamarin account to Bitrise" class="md-nav__link">
-      Connect your Xamarin account to Bitrise
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../restore-nuget-packages-and-xamarin-components/" title="Restore NuGet packages and Xamarin Components" class="md-nav__link">
-      Restore NuGet packages and Xamarin Components
+    <a href="../restore-nuget-packages/" title="Restore NuGet packages" class="md-nav__link">
+      Restore NuGet packages
     </a>
   </li>
 
@@ -1746,33 +1734,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#code-signing" title="Code signing" class="md-nav__link">
-    Code signing
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#xamarinandroid" title="Xamarin.Android" class="md-nav__link">
-    Xamarin.Android
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xamarinios" title="Xamarin.iOS" class="md-nav__link">
-    Xamarin.iOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -1781,30 +1742,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../add-unit-test-to-your-xamarin-app/" title="Add UITest to your Xamarin app" class="md-nav__link">
-      Add UITest to your Xamarin app
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../run-your-tests-in-the-xamarin-test-cloud/" title="Run your tests in the Xamarin Test Cloud" class="md-nav__link">
-      Run your tests in the Xamarin Test Cloud
-    </a>
   </li>
 
         
@@ -1891,6 +1828,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../testing/run-your-tests-in-the-app-center/" title="Run your tests in the Visual Studio App Center" class="md-nav__link">
+      Run your tests in the Visual Studio App Center
+    </a>
+  </li>
+
         
           
           
@@ -2642,33 +2591,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#code-signing" title="Code signing" class="md-nav__link">
-    Code signing
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#xamarinandroid" title="Xamarin.Android" class="md-nav__link">
-    Xamarin.Android
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xamarinios" title="Xamarin.iOS" class="md-nav__link">
-    Xamarin.iOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -2708,18 +2630,8 @@ just filter by the <code>deploy</code> tag in the list to see all the available 
 <p>Simply add the integration Step you want to use instead of the <code>Deploy to bitrise.io</code> step or after that
 (but in any case after the <code>Xamarin Archive</code> step, as that's the step which generates the
 deployable artifact - <code>.ipa</code>, <code>.apk</code>, ...), and fill out the parameters of the step.</p>
+<p>For more information on code signing for Xamarin projects, see <a href="../../code-signing/xamarin-android-code-signing/xamarin-android-code-signing">Xamarin Android code signing</a> and <a href="../../code-signing/ios-code-signing/create-signed-ipa-for-xamarin">Creating a signed .ipa for Xamarin projects</a>.</p>
 <p>The next time you start a build your app will be deployed to the service of your choice!</p>
-<h2 id="code-signing">Code signing<a class="headerlink" href="#code-signing" title="Permanent link">⚓</a></h2>
-<h3 id="xamarinandroid">Xamarin.Android<a class="headerlink" href="#xamarinandroid" title="Permanent link">⚓</a></h3>
-<p>For Xamarin Android project code signing see the <a href="../../android/code-signing">Create signed APK on bitrise.io</a> tutorial.</p>
-<h3 id="xamarinios">Xamarin.iOS<a class="headerlink" href="#xamarinios" title="Permanent link">⚓</a></h3>
-<p><strong>Work in progress</strong> - this section will be updated soon.</p>
-<p>Right now the best way to get started with Xamarin.iOS code signing
-is to run <a href="https://github.com/bitrise-tools/codesigndoc#one-liner">codesigndoc</a>
-and upload the files it generates, or to manually upload the code signing
-files you use locally.</p>
-<p><em>Code signing files can be uploaded to <a href="https://www.bitrise.io">bitrise.io</a>
-in the app's Workflow Editor, under the <code>Code signing &amp; Files</code> section of the editor.</em></p>
                 
                   
                 
@@ -2740,7 +2652,7 @@ in the app's Workflow Editor, under the <code>Code signing &amp; Files</code> se
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../restore-nuget-packages-and-xamarin-components/" title="Restore NuGet packages and Xamarin Components" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../restore-nuget-packages/" title="Restore NuGet packages" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2749,19 +2661,19 @@ in the app's Workflow Editor, under the <code>Code signing &amp; Files</code> se
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Restore NuGet packages and Xamarin Components
+                Restore NuGet packages
               </span>
             </div>
           </a>
         
         
-          <a href="../add-unit-test-to-your-xamarin-app/" title="Add UITest to your Xamarin app" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../add-custom-sources-to-nuget/" title="Add custom sources to NuGet" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Add UITest to your Xamarin app
+                Add custom sources to NuGet
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

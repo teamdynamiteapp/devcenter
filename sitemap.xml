@@ -451,27 +451,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/xamarin/connect-your-xamarin-account-to-bitrise/</loc>
-     <lastmod>2018-07-30</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/xamarin/restore-nuget-packages-and-xamarin-components/</loc>
+     <loc>/xamarin/restore-nuget-packages/</loc>
      <lastmod>2018-07-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/xamarin/deploy-your-xamarin-app/</loc>
-     <lastmod>2018-07-30</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/xamarin/add-unit-test-to-your-xamarin-app/</loc>
-     <lastmod>2018-07-30</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/xamarin/run-your-tests-in-the-xamarin-test-cloud/</loc>
      <lastmod>2018-07-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -487,6 +472,11 @@
     </url>
     <url>
      <loc>/fastlane/how-to-configure-fastlane-match-for-bitrise/</loc>
+     <lastmod>2018-07-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/testing/run-your-tests-in-the-app-center/</loc>
      <lastmod>2018-07-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
