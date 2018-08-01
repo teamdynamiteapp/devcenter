@@ -1420,18 +1420,31 @@
     Setup
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-build-cache-configurations" title="Example build cache configurations" class="md-nav__link">
-    Example build cache configurations
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bitrise-steps-for-caching" title="Bitrise steps for caching" class="md-nav__link">
+    Bitrise steps for caching
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-filesdependencies" title="Ignore files/dependencies" class="md-nav__link">
+    Ignore files/dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#downloading-and-deleting-caches" title="Downloading and deleting caches" class="md-nav__link">
-    Downloading and deleting caches
+  <a href="#download-and-delete-caches" title="Download and delete caches" class="md-nav__link">
+    Download and delete caches
   </a>
   
 </li>
@@ -1443,6 +1456,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-cache-feature" title="Build Cache feature" class="md-nav__link">
+    Build Cache feature
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#the-cache-might-or-might-not-be-available" title="The cache might or might not be available" class="md-nav__link">
@@ -1466,8 +1486,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-maindefault-branchs-cache" title="If a build runs on a branch which doesn't have a cache yet, it'll get the main/default Branch's cache" class="md-nav__link">
-    If a build runs on a branch which doesn't have a cache yet, it'll get the main/default Branch's cache
+  <a href="#if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-cache-of-the-maindefault-branch" title="If a build runs on a branch which doesn't have a cache yet, it'll get the cache of the main/default branch" class="md-nav__link">
+    If a build runs on a branch which doesn't have a cache yet, it'll get the cache of the main/default branch
   </a>
   
 </li>
@@ -2680,18 +2700,31 @@
     Setup
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-build-cache-configurations" title="Example build cache configurations" class="md-nav__link">
-    Example build cache configurations
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bitrise-steps-for-caching" title="Bitrise steps for caching" class="md-nav__link">
+    Bitrise steps for caching
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-filesdependencies" title="Ignore files/dependencies" class="md-nav__link">
+    Ignore files/dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#downloading-and-deleting-caches" title="Downloading and deleting caches" class="md-nav__link">
-    Downloading and deleting caches
+  <a href="#download-and-delete-caches" title="Download and delete caches" class="md-nav__link">
+    Download and delete caches
   </a>
   
 </li>
@@ -2703,6 +2736,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-cache-feature" title="Build Cache feature" class="md-nav__link">
+    Build Cache feature
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#the-cache-might-or-might-not-be-available" title="The cache might or might not be available" class="md-nav__link">
@@ -2726,8 +2766,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-maindefault-branchs-cache" title="If a build runs on a branch which doesn't have a cache yet, it'll get the main/default Branch's cache" class="md-nav__link">
-    If a build runs on a branch which doesn't have a cache yet, it'll get the main/default Branch's cache
+  <a href="#if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-cache-of-the-maindefault-branch" title="If a build runs on a branch which doesn't have a cache yet, it'll get the cache of the main/default branch" class="md-nav__link">
+    If a build runs on a branch which doesn't have a cache yet, it'll get the cache of the main/default branch
   </a>
   
 </li>
@@ -2758,64 +2798,78 @@
                 
                   <h1>About caching</h1>
                 
-                <p>The caching will tar all the cached directories and dependencies and store them securely in Amazon S3.
-Note that if you store files which are downloaded from a CDN / cloud storage you might not see any improvement,
-as downloading it from the Bitrise Build Cache storage will probably take about the same time as downloading
-it from its canonical CDN / cloud storage location.
-However Bitrise Caching still might help if you have reliability issues with the resource's, or dependency's canonical download location.</p>
+                <p>The caching will tar all the cached directories and dependencies, and store them securely in Amazon S3.</p>
 <div class="admonition note">
 <p class="admonition-title">Cache Expiring</p>
-<p>The Build Cache related to a <strong><em>specific branch</em></strong> expires / is auto-deleted after 7 days,
+<p>The Build Cache, related to a <strong>specific branch</strong>, expires/is auto-deleted after 7 days,
 <strong>if there's no new build on that branch in the meantime</strong>.</p>
 <p>This means that <strong>if you do builds on a specific branch every day</strong> (more frequently than a week),
-<strong>it'll never expire / will never be deleted automatically</strong>,
-but if you don't start a build on that specific branch for more than 7 days then the related cache
+<strong>it'll never expire/won't get deleted automatically</strong>.
+If you don't start a build on that specific branch for more than 7 days, then the related cache
 will be removed, and your next build will run like the first time, when there was no cache for that branch yet.</p>
 </div>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">⚓</a></h2>
-<p>All you need to get started is adding two Steps to your Workflow:</p>
+<h3 id="bitrise-steps-for-caching">Bitrise steps for caching<a class="headerlink" href="#bitrise-steps-for-caching" title="Permanent link">⚓</a></h3>
+<p>All you need to get started is adding two steps to your Workflow:</p>
 <ul>
-<li>One for downloading the previous cache (if any): <code>Cache:Pull</code></li>
-<li>One for checking the state of the cache and uploading it if required: <code>Cache:Push</code></li>
+<li><code>Bitrise.io Cache:Pull</code> step to download the previous cache (if any)</li>
+<li><code>Bitrise.io Cache:Push</code> step to check the state of the cache and upload it if required</li>
 </ul>
-<p>You should add the <code>Cache:Pull</code> (download) step right before you'd use the cache.
-For example, in case of an iOS app, this can be between the <code>Git Clone</code> and the <code>CocoaPods</code> install steps.
-If you intend to cache your <code>./Pods</code> directory you should not pull the cache before the <code>Git Clone</code>,
-because <code>Git Clone</code> will create the base directory for <code>./Pods</code>.
-Before the <code>Git Clone</code> step your code (and the directories your code creates when git cloned) is not available on the Virtual Machine.</p>
-<p>The <code>Cache:Push</code> step can be the very last step in the Workflow.
-The only thing you have to care about is that it should be after the step(s) which update the cached paths.
-For example in case of <code>CocoaPods</code> you should put the <code>Cache:Push</code> step anywhere after the <code>CocoaPods</code> install,
-because that's the step which generates, or updates the directory (<code>./Pods</code>) which is cached.</p>
-<h2 id="example-build-cache-configurations">Example build cache configurations<a class="headerlink" href="#example-build-cache-configurations" title="Permanent link">⚓</a></h2>
-<p>You can find example build cache configurations / guides at:
-<a href="https://discuss.bitrise.io/tags/build-cache">discuss.bitrise.io/tags/build-cache</a></p>
-<h2 id="downloading-and-deleting-caches">Downloading and deleting caches<a class="headerlink" href="#downloading-and-deleting-caches" title="Permanent link">⚓</a></h2>
-<p>You can download and delete caches, for every branch which generated a cache,
-on the <code>Settings</code> tab of the app, under the <code>Manage Build Caches</code> section.</p>
+<p>You should add the <code>Bitrise.io Cache:Pull</code> (download) step right before you'd use the cache.
+For example, in the case of an iOS app, you can insert the <code>Bitrise.io Cache:Pull</code> step between the <code>Git Clone Repository</code> and the dependency installer steps (for example, the <code>Run CocoaPods install</code> or <code>Carthage</code> steps). You should not put the <code>Bitrise.io Cache:Push</code> step BEFORE the <code>Git Clone Repository</code> step.</p>
+<p>The <code>Bitrise.io Cache:Push</code> step should be the very last step in the workflow.</p>
+<div class="admonition example">
+<p class="admonition-title">Example build cache configurations</p>
+<p>You can find example build cache configurations/guides at our <a href="https://discuss.bitrise.io/tags/build-cache">build-cache discuss page</a>.</p>
+</div>
+<h3 id="ignore-filesdependencies">Ignore files/dependencies<a class="headerlink" href="#ignore-filesdependencies" title="Permanent link">⚓</a></h3>
+<p>You can set the path to the items you want the cache to <strong>ignore</strong> in the <code>Ignore Paths from change check</code> field.</p>
+<ul>
+<li>Paths must be prefixed with <code>!</code> to get ignored from the cache archive. If you don't prefix the path with an <code>!</code>, the path will NOT get ignored from the cache archive.
+  If a path is located inside a specified cache path item and the path is NOT prefixed with an <code>!</code>, the path will be included in the cache archive, but it will not be checked for changes.</li>
+</ul>
+<p>To ignore a path element, part of a path or exclude a full directory, check out these elements:</p>
+<ul>
+<li>
+<p><code>*</code> replaces a path element, for example, <code>a/*/b</code> will match <code>a/x/b</code>.</p>
+</li>
+<li>
+<p><code>**</code> replaces a part of the path, for example, <code>a/**/b</code> will match <code>a/x/y/z/b</code>.</p>
+</li>
+<li>
+<p><code>/</code> excludes a full directory if <code>/</code> is placed AFTER a directory, for example, <code>/my/full/path</code> will look like this <code>/my/full/path/</code>.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Invalid cache item</p>
+<p>You can't ignore a path which results in an invalid cache item.</p>
+<p>For example, if you specify <code>a/path/to/cache</code> path to be cached, you can't ignore <code>a/path/to</code>, as that would ignore every file and wouldn't check for changes, hence no fingerprint could be generated for <code>a/path/to/cache</code>.</p>
+<p>You can, however, ignore paths INSIDE a cache path. For example, if your path is <code>a/path/to/cache</code>, you can ignore <code>a/path/to/cache/.ignore-me</code>, unless that's the only file inside <code>a/path/to/cache</code>.</p>
+</div>
+<h2 id="download-and-delete-caches">Download and delete caches<a class="headerlink" href="#download-and-delete-caches" title="Permanent link">⚓</a></h2>
+<p>You can download and delete caches for every branch which generated a cache in the <code>Manage Build Caches</code> section of your app's <code>Settings</code> tab.</p>
 <div class="admonition warning">
 <p class="admonition-title">Delete a single branch's cache</p>
 <p>If you only want to delete the cache which is related to a single branch,
 you should also delete the default branch's cache too!
-For more detail see the
+For more details, see the
 <a href="#if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-maindefault-branchs-cache">If a build runs on a branch which doesn't have a cache yet, it'll get the main/default Branch's cache</a>
 section.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can see the size of the caches and the last time a given cache was used in the popup.</p>
+<p>You can see the size of the caches and the last time a given cache was used in the popup window.</p>
 </div>
 <h2 id="technical-notes">Technical notes<a class="headerlink" href="#technical-notes" title="Permanent link">⚓</a></h2>
+<h3 id="build-cache-feature">Build Cache feature<a class="headerlink" href="#build-cache-feature" title="Permanent link">⚓</a></h3>
 <p>The Build Cache feature is split into two parts, the <code>Build Cache API</code> and the <code>Steps</code>.</p>
-<p>The <code>Build Cache API</code> is actually a really simple API, with only one responsibility:
-you can request a download or an upload URL from the API.
-Of course it also makes sure that you have the required access rights to the resource (Build Cache Archive),
-but other than that its only responsibility is providing the secure - time limited and expiring - download and upload URLs.
+<p>The <code>Build Cache API</code> is a simple API, with only one responsibility: you can request a download or an upload URL from the API.
+It also makes sure that you have the required access rights to the resource (Build Cache Archive), but other than that its only responsibility is providing the secure - time-limited and expiring - download and upload URLs.
 It does not process the files.</p>
-<p>The <code>Steps</code> are the place where the "magic" happens.
-The whole logic of comparing caches to see if there was any relevant change and creating the cache archives is done by the Steps.
+<p>The Steps are the place where the "magic" happens.
+The whole logic of comparing caches (to see if there was any relevant change) and creating the cache archives is done by the Steps.
 This also means that you can write your own Steps and implement your own comparison and compression logic.
-The step just has to use the Build Cache API to get download and upload URLs, there's no restriction on the cache file format or on its content.</p>
+The Step just has to use the Build Cache API to get download and upload URLs, there's no restriction on the cache file format or on its content.</p>
 <div class="admonition idea">
 <p class="admonition-title">Advanced notes</p>
 <ul>
@@ -2826,31 +2880,22 @@ The step just has to use the Build Cache API to get download and upload URLs, th
 <h3 id="the-cache-might-or-might-not-be-available">The cache might or might not be available<a class="headerlink" href="#the-cache-might-or-might-not-be-available" title="Permanent link">⚓</a></h3>
 <p>You should write your code in a way that it won't fail if the cache can't be accessed.</p>
 <h3 id="the-cache-is-downloaded-over-the-internet">The cache is downloaded over the internet<a class="headerlink" href="#the-cache-is-downloaded-over-the-internet" title="Permanent link">⚓</a></h3>
-<p>Which means that if you store files which are downloaded from a CDN / cloud storage you might not see
-any speed improvement,
-as downloading it from the Bitrise Build Cache storage will probably take about the same time as
-downloading it from it's canonical CDN / cloud storage location.</p>
-<p>One important note: storing a dependency in Bitrise Build Cache might help if you have <strong>reliability</strong>
-issues with the resource's / dependency's canonical download location.
-Popular tools / dependencies might get rate limited (<a href="https://github.com/Medium/phantomjs/issues/501">example: PhantomJS</a>).
-CDN servers might have availability issues, like jCenter/Bintray. A few examples: <a href="http://status.bitrise.io/incidents/gcx1qn5lj7yt">#1</a>, <a href="http://status.bitrise.io/incidents/3ztgwxvwq7rm">#2</a>, <a href="http://status.bitrise.io/incidents/dqpby9m1n274">#3</a>.
-If that's the case, storing the dependency in Bitrise Build Cache might help.
-It might not improve the build time but <strong>it definitely can improve the reliability</strong>.</p>
+<p>This means that if you store files which are downloaded from a CDN/cloud storage, you might not see
+any speed improvement, as downloading it from the Bitrise Build Cache storage will probably take about the same time as downloading it from its canonical CDN/cloud storage location.</p>
+<div class="admonition important">
+<p class="admonition-title">Reliability issues with canonical download location</p>
+<p>Storing a dependency in Bitrise Build Cache might help if you have <strong>reliability</strong> issues with the resource's/dependency's canonical download location. Popular tools/dependencies might get rate limited (for example, <a href="https://github.com/Medium/phantomjs/issues/501">PhantomJS</a>). CDN servers might have availability issues, like jCenter/Bintray. Here are a few examples: <a href="http://status.bitrise.io/incidents/gcx1qn5lj7yt">#1</a>, <a href="http://status.bitrise.io/incidents/3ztgwxvwq7rm">#2</a>, and <a href="http://status.bitrise.io/incidents/dqpby9m1n274">#3</a>.
+If that's the case, storing the dependency in Bitrise Build Cache might help you. It might not improve the build time but <strong>it definitely can improve the reliability</strong>.</p>
+</div>
 <h3 id="the-cache-is-stored-as-one-archive-file">The cache is stored as one archive file<a class="headerlink" href="#the-cache-is-stored-as-one-archive-file" title="Permanent link">⚓</a></h3>
-<p>So if you have multiple paths you want to cache and any
-of the paths gets updated <strong>it'll update the whole cache archive</strong>,
-including all the paths you cache.</p>
-<h3 id="if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-maindefault-branchs-cache">If a build runs on a branch which doesn't have a cache yet, it'll get the main/default Branch's cache<a class="headerlink" href="#if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-maindefault-branchs-cache" title="Permanent link">⚓</a></h3>
-<p>The build on a non default branch, to speed up things,
-can (read-only) access the <code>primary</code> branch's cache, until a successful
-build on the new branch. Once a build on the new branch
-pushes a cache, new builds on that branch will get the branch's cache.
-<em>Caches are stored and available for every branch separately.</em></p>
+<p>So if you have multiple paths you want to cache and any of the paths gets updated, <strong>it'll update the whole cache archive</strong>, including all the paths you cache.</p>
+<h3 id="if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-cache-of-the-maindefault-branch">If a build runs on a branch which doesn't have a cache yet, it'll get the cache of the main/default branch<a class="headerlink" href="#if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-cache-of-the-maindefault-branch" title="Permanent link">⚓</a></h3>
+<p>The build on a non-default branch, to speed things up, can access (read-only) the cache of the <code>primary</code> branch, until a successful build is found on the new branch. Once a build on the new branch pushes a cache, new builds on that branch will get the cache of the branch. <em>Caches are stored and available for every branch separately.</em></p>
 <div class="admonition note">
 <p class="admonition-title">Default branch</p>
-<p>You can see which is your <strong>default branch</strong> on your
-<a href="https://www.bitrise.io">bitrise.io</a> app's <code>Settings</code> tab.</p>
+<p>You can see which is your <strong>default branch</strong> if you click the <code>Settings</code> tab of your app.</p>
 </div>
+<p>If a build was started with a code push, the cache will be available on the push branch and will be pulled from the same push branch. If you start a Pull Request (PR), the cache of the PR source branch will be pulled and pushed to the same source branch. In the case of a tag event, there is no code change so there is nothing to cache.</p>
                 
                   
                 
