@@ -256,6 +256,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>/builds/build-numbering-and-app-versioning/</loc>
+     <lastmod>2018-08-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>/builds/available-environment-variables/</loc>
      <lastmod>2018-08-06</lastmod>
      <changefreq>daily</changefreq>
