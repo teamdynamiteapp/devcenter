@@ -904,6 +904,19 @@
     Adding an outgoing webhook
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-custom-headers-to-outgoing-webhooks" title="Adding custom headers to outgoing webhooks" class="md-nav__link">
+    Adding custom headers to outgoing webhooks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2644,6 +2657,19 @@
     Adding an outgoing webhook
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-custom-headers-to-outgoing-webhooks" title="Adding custom headers to outgoing webhooks" class="md-nav__link">
+    Adding custom headers to outgoing webhooks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2680,7 +2706,7 @@
 <li>when a build ends.</li>
 </ul>
 <p>You can use this notification to share build statuses with your git provider if we don’t support it yet, notify only the right team about build success or failure, or use it to automate your in-house release pipeline.</p>
-<p>You can add, remove and edit your webhooks as well.</p>
+<p>You can add, remove and edit your webhooks easily on the website interface.</p>
 <h2 id="adding-an-outgoing-webhook">Adding an outgoing webhook<a class="headerlink" href="#adding-an-outgoing-webhook" title="Permanent link">⚓</a></h2>
 <p>You can set up and configure the webhooks sent by Bitrise on the web UI. Let's see how!</p>
 <ol>
@@ -2689,7 +2715,7 @@
 </li>
 <li>
 <p>Click <code>+ Add webhook</code>.</p>
-<p><img alt="Adding outgoing webhook" src="../../img/webhooks/adding-outgoing.jpeg" /></p>
+<p><img alt="Adding outgoing webhook" src="../../img/webhooks/adding-outgoing.png" /></p>
 </li>
 <li>
 <p>Enter the URL of the service where you wish to send the notification in the <code>URL</code> field.</p>
@@ -2706,6 +2732,29 @@
 </li>
 </ol>
 <p>And you're done! You can modify your webhook at any time by clicking <code>Edit</code> next to the webhook URL displayed.</p>
+<h3 id="adding-custom-headers-to-outgoing-webhooks">Adding custom headers to outgoing webhooks<a class="headerlink" href="#adding-custom-headers-to-outgoing-webhooks" title="Permanent link">⚓</a></h3>
+<p>You can add extra headers to your outgoing webhooks via the <code>Code</code> tab of the web interface. For example, if you have an API listening to the webhook, you can track the requests with API keys set as a custom header.</p>
+<p>You can add custom headers either when:</p>
+<ul>
+<li><a href="../../webhooks/adding-outgoing-webhooks#adding-an-outgoing-webhook">creating a new outgoing webhook</a>.</li>
+<li>modifying an existing outgoing webhook by clicking the <code>Edit</code> button next to the URL.</li>
+</ul>
+<p>Add the header:</p>
+<ol>
+<li>
+<p>Find the <code>WEBHOOK HEADERS</code> section.</p>
+<p><img alt="Webhook headers" src="../../img/webhooks/webhook-headers.png" /></p>
+</li>
+<li>
+<p>Add a key and a value to the header. You need both to be able to save the header.</p>
+</li>
+<li>
+<p>Click <code>Add header</code>.</p>
+</li>
+<li>
+<p>Click <code>Create webhook</code>/<code>Update webhook</code>.</p>
+</li>
+</ol>
 <h2 id="checking-and-resending-webhook-deliveries">Checking and resending webhook deliveries<a class="headerlink" href="#checking-and-resending-webhook-deliveries" title="Permanent link">⚓</a></h2>
 <p>You can check if the notifications were successfully sent or not, and you can check both the payload and the response. The deliveries are marked with appropriate status code, depending on whether the delivery was successful. If it was, you will see a green check mark; if it failed, you will see an orange triangle.</p>
 <ol>
