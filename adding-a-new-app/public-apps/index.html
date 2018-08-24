@@ -36,7 +36,7 @@
     
     
       
-        <title>Connecting a repository - Bitrise DevCenter</title>
+        <title>Public apps - Bitrise DevCenter</title>
       
     
     
@@ -102,6 +102,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#add-a-new-app-as-public" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -131,11 +135,11 @@
                   
                 
 
-                <span class="md-header-nav__breadcrumbs current">Connecting a repository</span>
+                <span class="md-header-nav__breadcrumbs current">Public apps</span>
 
               </span>
               <span class="md-header-nav__topic">
-                Connecting a repository
+                Public apps
               </span>
             
           
@@ -547,18 +551,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Connecting a repository" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../connecting-a-repository/" title="Connecting a repository" class="md-nav__link">
       Connecting a repository
     </a>
-    
   </li>
 
         
@@ -590,11 +587,45 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../public-apps/" title="Public apps" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Public apps
+      </label>
+    
+    <a href="./" title="Public apps" class="md-nav__link md-nav__link--active">
       Public apps
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-app-as-public" title="Add a new app as public" class="md-nav__link">
+    Add a new app as public
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2626,48 +2657,79 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-app-as-public" title="Add a new app as public" class="md-nav__link">
+    Add a new app as public
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bitrise-io/devcenter/blob/master/docs/adding-a-new-app/connecting-a-repository.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/bitrise-io/devcenter/blob/master/docs/adding-a-new-app/public-apps.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Connecting a repository</h1>
+                  <h1>Public apps</h1>
                 
-                <p>After you've selected adding a new app, you will find yourself on the <code>Create app</code> page.</p>
-<p>Select your app's privacy setting: it can be either public or private.</p>
+                <p>Open source projects are great - we all love them! They can be a pain to maintain, however, especially with CI/CD in the picture. That's why we have introduced the Public Apps feature for Bitrise: to make everyone's life a lot easier!</p>
+<p>If your Bitrise app is public, anyone who has the build URL can see the build logs. For example, if the CI status check on GitHub fails on a pull request, anyone can click on the build URL and view the build logs. As such, outside contributors can troubleshoot issues easier, find out why, for example, a pull request of theirs resulted in a failed build. They do not have to be invited to a Bitrise team to be able to view Bitrise logs and they do not need the help of a Bitrise team member, either.</p>
+<p>Of course, this does not mean anyone can do anything with your public app on Bitrise. If the user viewing the logs is not invited to work on the app in some role, they will only be able to:</p>
 <ul>
-<li>
-<p>Private apps are only accessible to you, your organization members and those who are invited to work on an app. They require authentication to access the repository of the app.</p>
-</li>
-<li>
-<p><a href="../../adding-a-new-app/public-apps">Public apps</a> expose their <code>bitrise.yml</code> and their build logs to everyone. If you have the build URL of a public app, you can view its build log, to help with troubleshooting, for example. Public apps do not require authentication and they cannot have SSH keys.</p>
-</li>
+<li>view the build logs</li>
+<li>download the build logs</li>
+<li>view the build's <code>bitrise.yml</code> file.</li>
 </ul>
-<p>Bitrise will give you options to connect any kind of git repository to it. <code>GitHub</code>, <code>GitLab</code> and <code>Bitbucket</code> are supported out of the box.</p>
-<p>If you've already authorized Bitrise, for example, with your GitHub,
-you will see Bitrise automatically listing all your repositories, so you can just click on the one you'd like to connect.</p>
-<div class="admonition note">
-<p class="admonition-title">Connect any git repository to Bitrise</p>
-<p>You can connect any private or public git repository to Bitrise.
-We will automatically create an SSH key that you can use to setup the connection with your provider.</p>
-</div>
-<p><img alt="Screenshot" src="../../img/adding-a-new-app/connect-repo.png" /></p>
-<p>If you haven't authorized Bitrise against the provider hosting your repository, it will ask for permission.</p>
-<p><img alt="Screenshot" src="../../img/adding-a-new-app/authorize-at-provider.png" /></p>
-<p>It will then list your repositories as above. If you'd like to connect git repository hosted by other than GitHub or Bitbucket,
-select the <code>Other / Manual</code> tab.</p>
-<p><img alt="Screenshot" src="../../img/adding-a-new-app/add-other-repo.png" /></p>
-<p>You will have to add the git url of the repository you would like to connect.</p>
 <div class="admonition warning">
-<p class="admonition-title">Use SSH URLs for private repositories</p>
-<p>Please note, that if you are connecting a private repository,
-Bitrise will try to clone it through SSH, so it's necessary to provide an SSH URL to your repository here.</p>
+<p class="admonition-title">Warning</p>
+<p><strong>You can only set an app to public when adding the app to Bitrise!</strong> Once an app has been added, its privacy settings <strong>CANNOT</strong> be changed again.</p>
 </div>
-<p>Bitrise will add an SSH key to your repository at a later step.
-Read more about how to add SSH keys automatically, or manually at <a href="../../adding-a-new-app/setting-up-ssh-keys/">SSH keys</a>.</p>
+<h3 id="add-a-new-app-as-public">Add a new app as public<a class="headerlink" href="#add-a-new-app-as-public" title="Permanent link">⚓</a></h3>
+<p>Adding a new app as a public app is incredibly simple: at the start of the process of adding a new app, you will be asked to choose between a private and a public option for the app. Choosing the public option does not change anything about the process itself, it only determines the accessibility of the app.</p>
+<ol>
+<li>
+<p>Click the <code>+</code> symbol on the top menu bar.</p>
+</li>
+<li>
+<p>Click <code>Add app</code>.</p>
+</li>
+<li>
+<p>Choose the account you wish to use for the app.</p>
+</li>
+<li>
+<p>Set the privacy of the app to <code>Public</code>.</p>
+</li>
+</ol>
+<p><img alt="Set the app to Public" src="../../img/adding-a-new-app/public-app.png" /></p>
+<p>After this, proceed as usual to set up the app.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remember: a public app's build logs and <code>bitrise.yml</code> file can be seen by anyone - make sure these files do not expose anything you do not want to be seen!</p>
+</div>
                 
                   
                 
@@ -2688,7 +2750,7 @@ Read more about how to add SSH keys automatically, or manually at <a href="../..
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../registering-a-test-device/" title="Registering a test device" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../setting-up-configuration/" title="Setting up configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2697,19 +2759,19 @@ Read more about how to add SSH keys automatically, or manually at <a href="../..
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Registering a test device
+                Setting up configuration
               </span>
             </div>
           </a>
         
         
-          <a href="../setting-up-ssh-keys/" title="Setting up SSH keys" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../self-hosted-gitlab/" title="Connecting self-hosted GitLab instances" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Setting up SSH keys
+                Connecting self-hosted GitLab instances
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
