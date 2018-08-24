@@ -664,18 +664,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../public-apps/" title="Public apps" class="md-nav__link">
-      Public apps
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../self-hosted-gitlab/" title="Connecting self-hosted GitLab instances" class="md-nav__link">
       Connecting self-hosted GitLab instances
     </a>
@@ -2778,26 +2766,22 @@
                 
                   <h1>Setting up SSH keys</h1>
                 
-                <p>SSH keys serve the role of secure transfer between services. In the case of Bitrise, it will ask for your permission to be authorized at your git source provider, for example, GitHub. Read more about how to <a href="../../adding-a-new-app/connecting-a-repository">authorize Bitrise</a>.</p>
+                <p>SSH keys serve the role of secure transfer between services. In the case of Bitrise, it will ask for your permission to be authorized at your git source provider, e.g. GitHub. Read more about how to <a href="../../adding-a-new-app/connecting-a-repository">authorize Bitrise</a>.</p>
 <p>The reason behind the need for being authorized, is that Bitrise has to have a working SSH connection to your repository to be able to clone it. There are several ways to make it work. Automatically, by adding it manually, or by using your own key.</p>
 <div class="admonition warning">
-<p class="admonition-title">Use SSH URLs everywhere for private apps</p>
-<p>Most services support SSH key based authentication <strong>only</strong> for SSH URLs (for example, <code>git@github.com:bitrise-io/bitrise.git</code>), and <strong>not</strong> for HTTPS URLs (for example, <code>https://github.com/bitrise-io/bitrise.git</code>)! This means, that <strong>every private repository you want to use has to be addressed with the SSH URL</strong>. If you have direct private git repository references in your CocoaPods <code>Podfile</code>, you'll have to use the SSH URL there as well! Same applies for <code>submodules</code> and every other private git repository URL you want to use with the SSH key you register on <a href="https://www.bitrise.io/">Bitrise.io</a>!</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Use HTTPS URLs for public apps</p>
-<p>Public apps cannot have SSH keys. If you set your app's privacy settings to Public, no authentication is required. For public apps, use HTTPS URLs.</p>
+<p class="admonition-title">Use SSH URLs everywhere</p>
+<p>Most services support SSH key based authentication <strong>only</strong> for SSH URLs (ex: <code>git@github.com:bitrise-io/bitrise.git</code>), and <strong>not</strong> for HTTPS URLs (ex: <code>https://github.com/bitrise-io/bitrise.git</code>)! This means, that <strong>every private repository you want to use have to be addressed with the SSH URL</strong>. If you have direct private git repo references in your <code>Podfile</code> you'll have to use the SSH URL there as well! Same applies for <code>submodules</code> and every other private git repository URL you want to use with the SSH key you register on <a href="https://www.bitrise.io/">Bitrise.io</a>!</p>
 </div>
 <h2 id="automatic-setup">Automatic setup<a class="headerlink" href="#automatic-setup" title="Permanent link">⚓</a></h2>
-<p>In the case of GitHub, GitLab and Bitbucket repository setups, Bitrise will generate a public and private SSH key pair and ask whether you like the idea of adding that into your repository automatically as deploy key, or you'd like to add it by hand.</p>
+<p>In case of <code>GitHub</code> and <code>Bitbucket</code> repository setups, Bitrise will generate a public and private SSH key pair and ask whether you like the idea of adding that into your repository automatically as deploy key, or you'd like to add it by hand.</p>
 <p><img alt="Screenshot" src="../../img/adding-a-new-app/bitrise_auto_add_ssh_key.png" /></p>
-<p>You need admin rights to the repository to be able to auto-add the key to it. In any other case, copy the public key from here and add it to your repository at your provider.</p>
+<p>As the description tells, you are able to auto-add the key to the repository if you have admin rights for it. In any other case, you are able to copy the public key from here and add it to your repository at your provider.</p>
 <p>The auto-add option will add the generated key as a read-only <a href="https://developer.github.com/guides/managing-deploy-keys/#deploy-keys">deploy key</a> to your repository, it's the best for your security.</p>
 <h2 id="manual-setup">Manual setup<a class="headerlink" href="#manual-setup" title="Permanent link">⚓</a></h2>
-<p>If you have private dependencies or submodules, you have to add the generated SSH key manually to your profile at your provider instead. That's because deploy keys are only valid for one repository.</p>
+<p>If you have private dependencies, you have to add the generated SSH key manually to your profile at your provider instead. That's because deploy keys are only valid for only one repository.</p>
 <div class="admonition note">
 <p class="admonition-title">A bot user</p>
-<p>A simple workaround is adding a \"bot\" user with the SSH key to the repositories. <strong>Add the SSH key you would like to use to the user and add the user to the projects</strong>. It is enough to assign read permissions to the bot user. After that you can use the SSH key to clone to the repository or any submodule.</p>
+<p>There's an easy way to work around modifying your own profile by adding a \"bot\" user with the SSH key to the repositories. <strong>Add the SSH key you would like to use to the user and add the user to the projects</strong>. You don't have to add the \"bot\" user with read and write permission, it is enough to assign read permissions. After that you can use the SSH key to clone to the repository or any submodule. It’s that simple.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
