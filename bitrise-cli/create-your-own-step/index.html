@@ -2795,7 +2795,7 @@ bitrise :step create</code></pre>
 <p>The generated Step's README describes:</p>
 <ul>
 <li>how you can run your Step locally, before you even commit the code,</li>
-<li>how you can test and use your Step in any build by using <a href="../../bitrise-cli/Steps/#special-Step-sources">the <code>git::</code> Step reference</a>,</li>
+<li>how you can test and use your Step in any build by using <a href="../../bitrise-cli/steps/#special-Step-sources">the <code>git::</code> Step reference</a>,</li>
 <li>how you can share your Step with others through the Bitrise StepLib if you wish to do so.</li>
 </ul>
 <div class="admonition warning">
@@ -2805,7 +2805,7 @@ bitrise :step create</code></pre>
 <h2 id="step-development-guidelines">Step development guidelines<a class="headerlink" href="#step-development-guidelines" title="Permanent link">⚓</a></h2>
 <p>A newly created Step is a 'skeleton': in the <code>step.yml</code> file, certain properties are assigned default values and example inputs and outputs are created to show the structure of these.</p>
 <p>Many step properties are automatically generated - for example, when sharing the Step - while other properties should be set manually if they are required. When creating a new Step with the plugin, only the <code>project_type_tags</code> property does not get filled with some value by default but of course you can manually modify all properties in the <code>step.yml</code> file.</p>
-<p>Step inputs and outputs are also Step properties. For more information, see <a href="../../bitrise-cli/Step-properties">Step properties</a>, <a href="../../bitrise-cli/Step-inputs">Step inputs</a>, <a href="../../bitrise-cli/Step-outputs">Step outputs</a>.</p>
+<p>Step inputs and outputs are also Step properties. For more information, see <a href="../../bitrise-cli/step-properties">Step properties</a>, <a href="../../bitrise-cli/step-inputs">Step inputs</a>, <a href="../../bitrise-cli/step-outputs">Step outputs</a>.</p>
 <h3 id="naming-conventions-versioning-step-id-step-inputs-and-outputs">Naming conventions: versioning, Step ID, step inputs and outputs<a class="headerlink" href="#naming-conventions-versioning-step-id-step-inputs-and-outputs" title="Permanent link">⚓</a></h3>
 <ul>
 <li>You should use <a href="https://semver.org/">semantic versioning</a> (MAJOR.MINOR.PATCH) for your Step. For example, <code>1.2.3</code>.</li>
@@ -2830,7 +2830,7 @@ bitrise :step create</code></pre>
 <h3 id="submodules-and-dependencies">Submodules and dependencies<a class="headerlink" href="#submodules-and-dependencies" title="Permanent link">⚓</a></h3>
 <p><strong>Do not use submodules, or require any other resource downloaded on-demand in your Step</strong>. Try to include everything required for your Step in the Step's repository. Otherwise you can run into problems if, say, the Step fails to download a resource because of a network error or some authorization problem.</p>
 <p>In the case of submodules, you should include the content of the other repository instead of using it as a submodule of your Step's repository.</p>
-<p>You can, however, declare dependencies that you can fetch from an OS dependency manager, such as <code>apt-get</code> or <code>brew</code>. For more information on declaring dependencies, see <a href="../../bitrise-cli/Step-properties">Step properties</a>.</p>
+<p>You can, however, declare dependencies that you can fetch from an OS dependency manager, such as <code>apt-get</code> or <code>brew</code>. For more information on declaring dependencies, see <a href="../../bitrise-cli/step-properties">Step properties</a>.</p>
 <p>If you have any questions visit our <a href="https://discuss.bitrise.io/">community discussion site</a> or <a href="https://www.bitrise.io/contact">contact us</a>!</p>
 <p><strong>Need some inspiration for a new Step idea?</strong> Look no further, we have a list! <a href="https://discuss.bitrise.io/search?q=tags%3Acontrib-this-feature%20tag%3AStep">This way please</a> :)</p>
 <h2 id="sharing-a-new-step">Sharing a new Step<a class="headerlink" href="#sharing-a-new-step" title="Permanent link">⚓</a></h2>
