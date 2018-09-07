@@ -46,6 +46,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>/getting-started/signing-up/self-hosted-gitlab/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>/getting-started/adding-a-new-app/</loc>
      <lastmod>2018-09-07</lastmod>
      <changefreq>daily</changefreq>
