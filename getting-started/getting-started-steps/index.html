@@ -36,7 +36,7 @@
     
     
       
-        <title>Add your first Step to your Workflow - Bitrise DevCenter</title>
+        <title>Steps - Bitrise DevCenter</title>
       
     
     
@@ -102,7 +102,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#add-a-new-step-to-the-workflow" tabindex="1" class="md-skip">
+      <a href="#add-a-new-step" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,11 +135,11 @@
                   
                 
 
-                <span class="md-header-nav__breadcrumbs current">Add your first Step to your Workflow</span>
+                <span class="md-header-nav__breadcrumbs current">Steps</span>
 
               </span>
               <span class="md-header-nav__topic">
-                Add your first Step to your Workflow
+                Steps
               </span>
             
           
@@ -335,6 +335,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../getting-started-workflows/" title="Workflows" class="md-nav__link">
+      Workflows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -344,11 +356,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Add your first Step to your Workflow
+        Steps
       </label>
     
-    <a href="./" title="Add your first Step to your Workflow" class="md-nav__link md-nav__link--active">
-      Add your first Step to your Workflow
+    <a href="./" title="Steps" class="md-nav__link md-nav__link--active">
+      Steps
     </a>
     
       
@@ -360,8 +372,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#add-a-new-step-to-the-workflow" title="Add a new Step to the Workflow" class="md-nav__link">
-    Add a new Step to the Workflow
+  <a href="#add-a-new-step" title="Add a new step" class="md-nav__link">
+    Add a new step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-a-step" title="Remove a step" class="md-nav__link">
+    Remove a step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-step-versions" title="Managing Step versions" class="md-nav__link">
+    Managing Step versions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-inputs" title="Step inputs" class="md-nav__link">
+    Step inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-as-step-inputs" title="Environment variables as Step inputs" class="md-nav__link">
+    Environment variables as Step inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-steps" title="Skipping Steps" class="md-nav__link">
+    Skipping Steps
   </a>
   
 </li>
@@ -374,18 +421,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../manage-your-bitrise-workflow/" title="Manage your Bitrise workflow" class="md-nav__link">
-      Manage your Bitrise workflow
-    </a>
   </li>
 
         
@@ -2669,8 +2704,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#add-a-new-step-to-the-workflow" title="Add a new Step to the Workflow" class="md-nav__link">
-    Add a new Step to the Workflow
+  <a href="#add-a-new-step" title="Add a new step" class="md-nav__link">
+    Add a new step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-a-step" title="Remove a step" class="md-nav__link">
+    Remove a step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-step-versions" title="Managing Step versions" class="md-nav__link">
+    Managing Step versions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-inputs" title="Step inputs" class="md-nav__link">
+    Step inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-as-step-inputs" title="Environment variables as Step inputs" class="md-nav__link">
+    Environment variables as Step inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-steps" title="Skipping Steps" class="md-nav__link">
+    Skipping Steps
   </a>
   
 </li>
@@ -2691,38 +2761,141 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bitrise-io/devcenter/blob/master/docs/getting-started/add-your-first-step-to-your-workflow.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/bitrise-io/devcenter/blob/master/docs/getting-started/getting-started-steps.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Add your first Step to your Workflow</h1>
+                  <h1>Steps</h1>
                 
-                <p>When you've registered an app you can start modifying its Workflow,
-that is to customize how a build should work.</p>
-<p>To edit your App's Workflow you should open the <code>Workflow Editor</code>:</p>
+                <p>Steps represent a block of script execution with predefined input and output variables. <a href="../../bitrise-cli/steps">Read more about Steps in the Bitrise CLI section</a>.</p>
+<p>Steps can be managed directly from the <a href="../../getting-started/getting-started-workflows">Workflow Editor</a>. In the Workflow Editor, you can:</p>
+<ul>
+<li>Add and remove Steps in workflows</li>
+<li>Rearrange the order of Steps in any workflow</li>
+<li>Specify the version of the Step you wish to run in a given workflow</li>
+<li>Specify the inputs of the Steps you need</li>
+<li>Set a Step to run only if the previous Step succeeded.</li>
+</ul>
+<h3 id="add-a-new-step">Add a new step<a class="headerlink" href="#add-a-new-step" title="Permanent link">⚓</a></h3>
+<p>You can add any Step to your workflow - there are absolutely no restrictions. Please note that this means that it's possible to add a Step specific to, for example, iOS apps to a workflow of an Android app. Always make sure you only add the relevant Steps to your workflow!</p>
 <ol>
-<li>After <a href="https://www.bitrise.io">logging in</a>, select your App on your <a href="https://www.bitrise.io/dashboard">Dashboard</a></li>
-<li>Select the <code>Workflow</code> tab</li>
+<li>
+<p>Open your app by clicking on the app's name on your <a href="https://app.bitrise.io/dashboard"><code>Dashboard</code></a>.</p>
+</li>
+<li>
+<p>Click the <code>Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</p>
+</li>
+<li>
+<p>Select the workflow you need in the <code>WORKFLOW</code> dropdown menu on the top left.  </p>
+</li>
+<li>
+<p>Click the <code>+</code> symbol between two Steps to insert a Step at that position.</p>
+</li>
 </ol>
-<p>In the Workflow Editor you can see a preset list of Steps based on your app we added to your Workflow.</p>
-<h2 id="add-a-new-step-to-the-workflow">Add a new Step to the Workflow<a class="headerlink" href="#add-a-new-step-to-the-workflow" title="Permanent link">⚓</a></h2>
-<p>If you want to <strong>add a new Step</strong> to the Workflow,
-just click the <code>+</code> sign button between the Steps you want the new one to be.</p>
 <p><img alt="Add step button in Workflow Editor" src="../../img/getting-started/add-your-first-step.png" /></p>
 <p>This will show you a list of available Steps in our <strong>Step Library</strong>.
-You can search and filter these steps if you want to, or just browse through the collection.
-Clicking the Step will add it to your Workflow.</p>
-<p>You can <strong>Drag and Drop</strong> to reorder your list of Steps. During a build,
-steps will be executed one by one, in top-to-bottom order.</p>
-<p>Once you're happy with your Workflow Save it on the top right!
-That's all, your next build will automatically use the current, <strong>saved</strong> Workflow!</p>
+You can search and filter these steps: enter a search expression in the <code>Search steps</code> field and set the platform on the right of the field. Note that by default, you will only see the Steps that are relevant to the platform of your project: click <code>ALL</code> to search within all the available Steps.</p>
+<p>Clicking the Step will add it to the selected workflow. Don't forget to save the workflow when you are done!</p>
 <div class="admonition note">
-<p class="admonition-title">Multiple Workflows</p>
-<p>You can create as many workflows as you like, and then
-specify which one to use for which build trigger event in the <code>Triggers</code> section
-of the Workflow Editor.
-You can read more about Triggers and workflow selection in the
-<a href="../../webhooks/trigger-map/">Control what to build when, with the Trigger Map</a> guide.</p>
+<p class="admonition-title">Cloning steps</p>
+<p>You can also clone a Step by clicking the <strong>Clone icon</strong> on the right side and then you can <strong>Drag and Drop</strong> it to its place.</p>
 </div>
+<h3 id="remove-a-step">Remove a step<a class="headerlink" href="#remove-a-step" title="Permanent link">⚓</a></h3>
+<ol>
+<li>
+<p>Open your app by clicking on the app's name on your <a href="https://app.bitrise.io/dashboard"><code>Dashboard</code></a>.</p>
+</li>
+<li>
+<p>Click the <code>Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</p>
+</li>
+<li>
+<p>Select the workflow you need in the <code>WORKFLOW</code> dropdown menu on the top left.</p>
+</li>
+<li>
+<p>Click the Step you want to remove.</p>
+</li>
+<li>
+<p>Click the trash bin icon on the right.</p>
+</li>
+<li>
+<p>Click Save.</p>
+</li>
+</ol>
+<h3 id="managing-step-versions">Managing Step versions<a class="headerlink" href="#managing-step-versions" title="Permanent link">⚓</a></h3>
+<p>If a Step has an orange dot on it, it indicates you do not have the latest version of that Step in your workflow. You have two options to modify the version:</p>
+<ul>
+<li>
+<p>Clicking the orange dot automatically upgrades the Step to the latest version.</p>
+</li>
+<li>
+<p>Click on the Step then find the <code>Version</code> menu on the right. Open the dropdown menu and select the version you need. If you select <code>always latest</code>, the Step will always run the latest version available in our Step library.</p>
+</li>
+</ul>
+<p><img alt="Update steps in Workflow Editor" src="../../img/getting-started/update-steps.png" /></p>
+<h3 id="step-inputs">Step inputs<a class="headerlink" href="#step-inputs" title="Permanent link">⚓</a></h3>
+<p>Click on a Step to bring up its input variables on the right of the currently selected workflow. Steps have required and optional inputs: required inputs are marked as such in the Workflow Editor. <strong>If required inputs do not have valid values, the step will fail</strong>.</p>
+<p><img alt="Required input" src="../../img/getting-started/step-inputs.png" /></p>
+<p>Modify a Step input by either:</p>
+<ul>
+<li>clicking into the input field</li>
+<li>clicking the <code>CHANGE</code> option next to the input field</li>
+</ul>
+<p>You can use environment variables as Step inputs for any Step. But make sure that the environment variable in question has a valid value for the given input.</p>
+<h3 id="environment-variables-as-step-inputs">Environment variables as Step inputs<a class="headerlink" href="#environment-variables-as-step-inputs" title="Permanent link">⚓</a></h3>
+<p>Click into any input field of a Step and a green <code>Insert Variable</code> button will appear.</p>
+<p><img alt="Insert variable" src="../../img/getting-started/insert-variable.png" /></p>
+<p>Click this button and you'll get a full list of <a href="../../builds/available-environment-variables">available Environment Variables</a>. You can search this list, and when you find the one you're looking for just click it, and it'll be inserted into the input field for you.</p>
+<p>Under every Step input field you can see one of these two indicators:</p>
+<ul>
+<li><code>Environment Variables will be replaced in input</code></li>
+<li>or <code>Environment Variables won't be replaced in input</code></li>
+</ul>
+<p>It's the status of the <code>is_expand</code> option of the input.
+<em>You can change this only in YAML mode (<code>bitrise.yml</code> tab of the editor).</em></p>
+<p>What does this option do?</p>
+<ul>
+<li>If <strong>enabled</strong> it'll replace Environment Variables (e.g. <code>$HOME</code> or <code>${HOME}</code>)
+  inside the input text with the Environment Variable's value <strong>before</strong> it would be passed to the Step.</li>
+<li>If <strong>disabled</strong> it won't replace anything in the input text, the whole text will be passed to the Step "as-it-is".</li>
+</ul>
+<p><strong>What does this mean?</strong> For example, if you have <code>$HOME</code> in the input text
+and you enable this option, it'll replace every occurrence of <code>$HOME</code> in that input
+with the value of the <code>HOME</code> environment variable
+(in this case, the home folder's path, for example, <code>/Users/[user]</code> or <code>/home/[user]</code>).
+If it's disabled then it won't be replaced,
+the value you specify for the input will be passed as text (<code>$HOME</code>),
+and <em>the Step itself might or might not expand</em> the value.</p>
+<p><strong>Usually you should leave this option on the default value</strong>.</p>
+<p>In general you should <em>not</em> change this option, but if you have to,
+you can do that in YML mode, by adding <code>is_expand: true</code> or <code>is_expand: false</code> to the input's <code>opts</code> list.</p>
+<p>The only reason to change it is if your input includes the <code>$</code> character (in a password for example),
+and you want to keep the <code>$</code> character in the input, instead of
+replacing it with an environment variable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to reference another environment variable, even if that one's value includes the $ character, you have to <strong>enable</strong> this option, or else your reference won't work. In such a case, <strong>disable this option where you specify the value with $ in it</strong>, and enable the option everywhere else where you reference that environment variable.</p>
+</div>
+<h3 id="skipping-steps">Skipping Steps<a class="headerlink" href="#skipping-steps" title="Permanent link">⚓</a></h3>
+<p>There is no point in running, for example, a unit test Step if the previous Step failed to build your app. Therefore, you can easily tell Bitrise to not even try: set up any Step to be skipped if the previous Step failed.</p>
+<p>Of course, there are examples when it's better to run a Step even if the previous Step failed. For example, if the <code>Bitrise.io Cache:Pull</code> Step fails, there is no reason not to run the next Step - in fact, if the next Step is one that installs dependencies then it's a very bad idea to skip that Step if pulling the cache is unsuccessful.</p>
+<p>This guide walks you through on how to skip a given Step that has been set to run even if the previous Step failed.</p>
+<ol>
+<li>
+<p>Open your app by clicking on the app's name on your <a href="https://app.bitrise.io/dashboard"><code>Dashboard</code></a>.</p>
+</li>
+<li>
+<p>Click the <code>Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</p>
+</li>
+<li>
+<p>Select the workflow you need in the <code>WORKFLOW</code> dropdown menu on the top left.</p>
+</li>
+<li>
+<p>Click the Step you want to skip.</p>
+</li>
+<li>
+<p>On the right, use the toggle to disable the <code>Run if previous Step failed</code> option.</p>
+<p><img alt="Run if previous failed" src="../../img/getting-started/run-if-failed.png" /></p>
+</li>
+</ol>
                 
                   
                 
@@ -2743,7 +2916,7 @@ You can read more about Triggers and workflow selection in the
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../create-your-first-app-on-bitrise/" title="Create your first App on Bitrise.io" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../getting-started-workflows/" title="Workflows" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2752,19 +2925,19 @@ You can read more about Triggers and workflow selection in the
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Create your first App on Bitrise.io
+                Workflows
               </span>
             </div>
           </a>
         
         
-          <a href="../manage-your-bitrise-workflow/" title="Manage your Bitrise workflow" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../infrastructure/available-stacks/" title="Available Stacks" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Manage your Bitrise workflow
+                Available Stacks
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
