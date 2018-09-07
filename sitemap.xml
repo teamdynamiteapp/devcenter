@@ -71,6 +71,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>/getting-started/adding-a-new-app/public-apps/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>/getting-started/builds-and-workflows/</loc>
      <lastmod>2018-09-07</lastmod>
      <changefreq>daily</changefreq>
@@ -267,6 +272,16 @@
     </url>
     <url>
      <loc>/builds/build-numbering-and-app-versioning/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/builds/env-vars-secret-env-vars/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/builds/sensitive-input-field/</loc>
      <lastmod>2018-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
