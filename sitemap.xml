@@ -6,6 +6,61 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>/getting-started/signing-up/signing-up-with-github/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/signing-up/signing-up-with-bitbucket/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/signing-up/signing-up-with-gitlab/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/signing-up/signing-up-with-email/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/signing-up/trial-after-signing-up/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/signing-up/connecting-account-bitrise/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/signing-up/connecting-apple-dev-account/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/adding-a-new-app/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/adding-a-new-app/connecting-a-repository/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/adding-a-new-app/setting-up-ssh-keys/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/getting-started/adding-a-new-app/setting-up-configuration/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>/getting-started/builds-and-workflows/</loc>
      <lastmod>2018-09-07</lastmod>
      <changefreq>daily</changefreq>
@@ -47,66 +102,6 @@
     </url>
     <url>
      <loc>/infrastructure/the-environment/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/signing-up/signing-up-with-github/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/signing-up/signing-up-with-bitbucket/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/signing-up/signing-up-with-email/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/signing-up/trial-after-signing-up/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/signing-up/connecting-apple-dev-account/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/adding-a-new-app/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/adding-a-new-app/registering-a-test-device/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/adding-a-new-app/connecting-a-repository/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/adding-a-new-app/setting-up-ssh-keys/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/adding-a-new-app/setting-up-configuration/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/adding-a-new-app/public-apps/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/adding-a-new-app/self-hosted-gitlab/</loc>
      <lastmod>2018-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -497,6 +492,11 @@
     </url>
     <url>
      <loc>/fastlane/how-to-configure-fastlane-match-for-bitrise/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/testing/registering-a-test-device/</loc>
      <lastmod>2018-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
