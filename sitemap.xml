@@ -6,6 +6,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>/getting-started/</loc>
+     <lastmod>2018-09-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>/getting-started/signing-up/signing-up-with-github/</loc>
      <lastmod>2018-09-07</lastmod>
      <changefreq>daily</changefreq>
@@ -72,11 +77,6 @@
     </url>
     <url>
      <loc>/getting-started/account-security/</loc>
-     <lastmod>2018-09-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/getting-started/create-your-first-app-on-bitrise/</loc>
      <lastmod>2018-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
