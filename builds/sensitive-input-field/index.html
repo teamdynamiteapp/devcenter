@@ -1962,9 +1962,10 @@ To make the sensitive input fields obvious in our Workflow Editor, we’ve marke
 
 <p><strong>IMPORTANT:</strong> note that you cannot modify the input manually in the input field marked with the <code class="highlighter-rouge">SENSITIVE</code> label! Instead, click on the field and then click the <code class="highlighter-rouge">Select secret variable</code> to <strong>replace</strong> the existing input with another secret env var from the list or to <strong>create a new one</strong> in the <code class="highlighter-rouge">Insert variable</code> pop-up.</p>
 
-<p>- <strong>Do not add private information in the</strong> <code class="highlighter-rouge">**Env Var**</code> <strong>tab</strong>! Our <code class="highlighter-rouge">Secret</code> tab is designed to hold encrypted inputs as secret env vars which will not be exposed in <code class="highlighter-rouge">bitrise.yml</code> or in public app PRs.</p>
-
-<p>- Note that secret env vars can only hide sensitive information <strong>in the build logs of your public app</strong>. If you <strong>attach any other file to your build log</strong> which contains sensitive information but it is not encrypted, then sensitive information will be visible to anyone who has the build URL!</p>
+<ul>
+  <li><strong>Do not add private information in the</strong> <code class="highlighter-rouge">**Env Var**</code> <strong>tab</strong>! Our <code class="highlighter-rouge">Secret</code> tab is designed to hold encrypted inputs as secret env vars which will not be exposed in <code class="highlighter-rouge">bitrise.yml</code> or in public app PRs.</li>
+  <li>Note that secret env vars can only hide sensitive information <strong>in the build logs of your public app</strong>. If you <strong>attach any other file to your build log</strong> which contains sensitive information but it is not encrypted, then sensitive information will be visible to anyone who has the build URL!</li>
+</ul>
 
 			</main>
 		</div>
