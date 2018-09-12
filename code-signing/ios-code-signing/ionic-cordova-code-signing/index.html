@@ -1996,8 +1996,8 @@
 
     <p><strong>Development distribution example</strong>:</p>
 
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="pi">-</span> <span class="na">generate-cordova-build-configuration</span><span class="pi">:</span> 
-<span class="err"> 	</span><span class="na">inputs</span><span class="pi">:</span> 
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="pi">-</span> <span class="na">generate-cordova-build-configuration</span><span class="pi">:</span>
+<span class="err"> 	</span><span class="na">inputs</span><span class="pi">:</span>
      <span class="pi">-</span> <span class="na">development_team</span><span class="pi">:</span> <span class="s">$BITRISE_DEVELOPER_TEAM</span> 
      <span class="pi">-</span> <span class="na">package_type</span><span class="pi">:</span> <span class="s">development</span> 
      <span class="pi">-</span> <span class="na">code_sign_identity</span><span class="pi">:</span> <span class="s">$BITRISE_DEVELOPMENT_CODESIGN_IDENTITY</span> 
@@ -2005,9 +2005,10 @@
      <span class="pi">-</span> <span class="na">configuration</span><span class="pi">:</span> <span class="s">debug</span>
 </code></pre></div>    </div>
 
-    <p><strong>Production distribution example</strong></p>
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">generate-cordova-build-configuration</span><span class="pi">:</span><span class="err">	</span>
-<span class="err">	</span><span class="na">inputs</span><span class="pi">:</span>
+    <p><strong>Production distribution example</strong>:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">generate-cordova-build-configuration</span><span class="pi">:</span>
+    <span class="na">inputs</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">development_team</span><span class="pi">:</span> <span class="s">$BITRISE_DEVELOPER_TEAM</span> 
     <span class="pi">-</span> <span class="na">package_type</span><span class="pi">:</span> <span class="s">app-store</span> 
     <span class="pi">-</span> <span class="na">code_sign_identity</span><span class="pi">:</span> <span class="s">$BITRISE_PRODUCTION_CODESIGN_IDENTITY</span> 

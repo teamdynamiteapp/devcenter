@@ -352,6 +352,9 @@ main.content {
       padding: 0.8rem 1.2rem;
       padding-left: 4.4rem;
       font-weight: 700; }
+      main.content .message-box .message-title.message-title > p {
+        margin-top: 0;
+        margin-bottom: 0; }
     main.content .message-box .message-content {
       border-top: 0.1rem solid rgba(68, 138, 255, 0.1);
       padding: 0.8rem 1.2rem; }
