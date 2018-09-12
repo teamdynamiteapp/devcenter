@@ -2034,8 +2034,7 @@ you can do that in YML mode, by adding <code class="highlighter-rouge">is_expand
 and you want to keep the <code class="highlighter-rouge">$</code> character in the input, instead of
 replacing it with an environment variable.</p>
 
-<p>!!! note
-If you want to reference another environment variable, even if that one’s value includes the $ character, you have to <strong>enable</strong> this option, or else your reference won’t work. In such a case, <strong>disable this option where you specify the value with $ in it</strong>, and enable the option everywhere else where you reference that environment variable.</p>
+<p><strong>IMPORTANT:</strong> If you want to reference another environment variable, even if that one’s value includes the $ character, you have to <strong>enable</strong> this option, or else your reference won’t work. In such a case, <strong>disable this option where you specify the value with $ in it</strong>, and enable the option everywhere else where you reference that environment variable.</p>
 
 <h3 id="skipping-steps">Skipping Steps <a href="#skipping-steps" class="anchor-symbol">⚓</a></h3>
 
