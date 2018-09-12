@@ -1928,21 +1928,19 @@ tool runs a clean Xcode/Xamarin Studio Archive <em>on your Mac</em>, and analyze
 <h3 id="collecting-the-files-with-codesigndoc">Collecting the files with codesigndoc <a href="#collecting-the-files-with-codesigndoc" class="anchor-symbol">⚓</a></h3>
 
 <ol>
-  <li>
-    <p>Open the <code class="highlighter-rouge">Terminal</code>.</p>
-  </li>
+  <li>Open the <code class="highlighter-rouge">Terminal</code>.</li>
   <li>Enter the appropriate one-liner command, depending on your project type.
     <ul>
       <li>
         <p>For an <strong>Xcode</strong> project:</p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  bash <span class="nt">-l</span> <span class="nt">-c</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-sfL</span> https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap-xcode.sh<span class="k">)</span><span class="s2">"</span>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash <span class="nt">-l</span> <span class="nt">-c</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-sfL</span> https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap-xcode.sh<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>        </div>
       </li>
       <li>
         <p>For a <strong>Xamarin</strong> project:</p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  bash <span class="nt">-l</span> <span class="nt">-c</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-sfL</span> https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap-xamarin.sh<span class="k">)</span><span class="s2">"</span>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash <span class="nt">-l</span> <span class="nt">-c</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-sfL</span> https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap-xamarin.sh<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>        </div>
       </li>
     </ul>
@@ -1956,7 +1954,7 @@ tool runs a clean Xcode/Xamarin Studio Archive <em>on your Mac</em>, and analyze
   <li>
     <p>Once the code signing files are collected, <code class="highlighter-rouge">codesigndoc</code> will ask if you wish to upload the files to Bitrise:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Do you want to upload the provisioning profiles and certificates to Bitrise? [yes/no] :
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Do you want to upload the provisioning profiles and certificates to Bitrise? [yes/no] :
 </code></pre></div>    </div>
 
     <p>If you wish to upload the files with <code class="highlighter-rouge">codesigndoc</code>, type <code class="highlighter-rouge">yes</code> and press <code class="highlighter-rouge">Enter</code>.</p>
@@ -1964,17 +1962,17 @@ tool runs a clean Xcode/Xamarin Studio Archive <em>on your Mac</em>, and analyze
   <li>
     <p>Provide your Bitrise access token.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Please copy your personal access token to Bitrise.
- (To acquire a Personal Access Token for your user, sign in with that user on bitrise.io,
- go to your Account Settings page, and select the Security tab on the left side.) :
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please copy your personal access token to Bitrise.
+(To acquire a Personal Access Token for your user, sign in with that user on bitrise.io,
+go to your Account Settings page, and select the Security tab on the left side.) :
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Select the Bitrise project as a target for the collected files:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Fetching your application list from Bitrise...
- Select the app which you want to upload the provisioning profiles
- Please select from the list:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fetching your application list from Bitrise...
+Select the app which you want to upload the provisioning profiles
+Please select from the list:
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -1985,26 +1983,30 @@ tool runs a clean Xcode/Xamarin Studio Archive <em>on your Mac</em>, and analyze
 
 <p>You can also install and run <code class="highlighter-rouge">codesigndoc</code> manually. For more information, check out the <a href="https://github.com/bitrise-tools/codesigndoc">tool’s Readme</a>!</p>
 
-<p>!!! tip “Troubleshooting: ensure the correct state of the code”
-    You get the most accurate result if you run <code class="highlighter-rouge">codesigndoc</code> on the same state of your
-    repository/code which is available after a clean <code class="highlighter-rouge">git clone</code>, as that will
-    be the state of the code after the build server checks it out (for example,
-    you might have files on your Mac which are in <code class="highlighter-rouge">.gitignore</code>, so it exists
-    on your Mac but not in the repository or after a <code class="highlighter-rouge">git clone</code> on a new Mac).</p>
+<h3 id="best-practices">Best practices <a href="#best-practices" class="anchor-symbol">⚓</a></h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>So, for the best results, we recommend you to:
-1. __Do a clean `git clone` of the repository__ (into a new directory) on your Mac.
+<p>You get the most accurate result if you run <code class="highlighter-rouge">codesigndoc</code> on the same state of your
+repository/code which is available after a clean <code class="highlighter-rouge">git clone</code>, as that will
+be the state of the code after the build server checks it out (for example,
+you might have files on your Mac which are in <code class="highlighter-rouge">.gitignore</code>, so it exists
+on your Mac but not in the repository or after a <code class="highlighter-rouge">git clone</code> on a new Mac).</p>
 
-2. Run `codesigndoc` in this directory (not in the directory
-   where you usually work on the project).
-</code></pre></div></div>
+<p>So, for the best results, we recommend you to:</p>
 
-<p>!!! tip “Troubleshooting: make sure you can export an IPA from Xcode.app”
-    It’s also advised to do a full Archive + Export (until you get a signed <code class="highlighter-rouge">.ipa</code>)
-    of your project from <code class="highlighter-rouge">Xcode.app</code> first, and run <code class="highlighter-rouge">codesigndoc</code> <strong>after that</strong>.
-    The reason is that <code class="highlighter-rouge">Xcode.app</code> might download or update profiles in the background
-    during the IPA export. If you run <code class="highlighter-rouge">codesigndoc</code> after you exported an <code class="highlighter-rouge">.ipa</code>
-    from Xcode, <code class="highlighter-rouge">codesigndoc</code> will able to collect all the files.</p>
+<ol>
+  <li>
+    <p><strong>Do a clean <code class="highlighter-rouge">git clone</code> of the repository</strong> (into a new directory) on your Mac.</p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">codesigndoc</code> in this directory (not in the directory where you usually work on the project).</p>
+  </li>
+</ol>
+
+<p>It’s also advised to do a full Archive + Export (until you get a signed <code class="highlighter-rouge">.ipa</code>)
+of your project from <code class="highlighter-rouge">Xcode.app</code> first, and run <code class="highlighter-rouge">codesigndoc</code> <strong>after that</strong>.
+The reason is that <code class="highlighter-rouge">Xcode.app</code> might download or update profiles in the background
+during the IPA export. If you run <code class="highlighter-rouge">codesigndoc</code> after you exported an <code class="highlighter-rouge">.ipa</code>
+from Xcode, <code class="highlighter-rouge">codesigndoc</code> will able to collect all the files.</p>
 
 			</main>
 		</div>
