@@ -1923,21 +1923,14 @@
 					</div>
 				
 				<ol>
-  <li>
-    <p>Open your app’s <code class="highlighter-rouge">Workflow Editor</code>.</p>
-  </li>
+  <li>Open your app’s <code class="highlighter-rouge">Workflow Editor</code>.</li>
   <li>
     <p>Insert the <code class="highlighter-rouge">Cache:Pull</code> step after the <code class="highlighter-rouge">Git Clone</code> but before the <code class="highlighter-rouge">Android Build</code> steps.</p>
 
-    <p>!!! note “Step version”
-     Make sure that your step is version 1.0.0 or newer.</p>
+    <p><strong>IMPORTANT</strong>: Make sure that your step is version 1.0.0 or newer.</p>
   </li>
-  <li>
-    <p>Insert the <code class="highlighter-rouge">Cache:Push</code> step to the very end of your workflow.</p>
-  </li>
-  <li>
-    <p>In the <code class="highlighter-rouge">Ignore Paths from change check</code> input of the step, enter <code class="highlighter-rouge">$HOME/.m2</code>.</p>
-  </li>
+  <li>Insert the <code class="highlighter-rouge">Cache:Push</code> step to the very end of your workflow.</li>
+  <li>In the <code class="highlighter-rouge">Ignore Paths from change check</code> input of the step, enter <code class="highlighter-rouge">$HOME/.m2</code>.</li>
 </ol>
 
 <p>And you’re done!</p>
