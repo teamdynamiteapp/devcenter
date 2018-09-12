@@ -1996,9 +1996,9 @@
 
 <p>Let’s say you have an app and you are about to run its fifth build on Bitrise. You wish to offset the Build Number by 6 as the app had six builds before starting to use Bitrise. The following configuration is used:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Version Code: $BITRISE_BUILD_NUMBER
-- Version Code Offset: 6
-- Version Name: 1.0.5
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">Version Code</span><span class="pi">:</span> <span class="s">$BITRISE_BUILD_NUMBER</span>
+<span class="pi">-</span> <span class="na">Version Code Offset</span><span class="pi">:</span> <span class="s">6</span>
+<span class="pi">-</span> <span class="na">Version Name</span><span class="pi">:</span> <span class="s">1.0.5</span>
 </code></pre></div></div>
 
 <p>The value of <code class="highlighter-rouge">$BITRISE_BUILD_NUMBER</code> (which equals 5 in our example) will be added to the <code class="highlighter-rouge">Version Code Offset</code> value. As such, <code class="highlighter-rouge">android:versionName</code> value will be set to 1.0.5 (11), indicating it’s the 11th build of the 1.0.5 version of your app.</p>
@@ -2007,9 +2007,9 @@
 
 <p>Let’s say you have an app and you are about to run its fifth build on Bitrise. You wish to offset the Build Number by 6 as the app had six builds before starting to use Bitrise. The following configuration is used:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Build Number: $BITRISE_BUILD_NUMBER
-- Build Number Offset: 6
-- Version Number: 1.1
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">Build Number</span><span class="pi">:</span> <span class="s">$BITRISE_BUILD_NUMBER</span>
+<span class="pi">-</span> <span class="na">Build Number Offset</span><span class="pi">:</span> <span class="s">6</span>
+<span class="pi">-</span> <span class="na">Version Number</span><span class="pi">:</span> <span class="s">1.1</span>
 </code></pre></div></div>
 
 <p>The value of <code class="highlighter-rouge">$BITRISE_BUILD_NUMBER</code> (which equals 5 in our example) will be added to the <code class="highlighter-rouge">Build Number Offset</code> value. As such, <code class="highlighter-rouge">CFBundleShortVersionString</code> will be set to 1.1 (11), indicating it’s the 11th build of the 1.1 version of your app.</p>
