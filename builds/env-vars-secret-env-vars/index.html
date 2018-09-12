@@ -1935,8 +1935,7 @@ As an example, if you click into an input of the third step of your workflow, th
 
 <p>You can also replace the variable for a new one in <code class="highlighter-rouge">Env Vars</code>. Delete the old value and set the new one. If you toggle the <code class="highlighter-rouge">Replace variables in inputs</code> to the right, the new value will be used everywhere in your workflow.</p>
 
-<p>!!! warning “Do not add secrets to your <code class="highlighter-rouge">Env Vars</code>”
-    Contrary to <a href="#about-secrets/">secret env vars</a>, env vars are fully exposed in builds triggered by pull requests so you should not add any sensitive information to <code class="highlighter-rouge">Env Vars</code>.</p>
+<p><strong>IMPORTANT</strong>: Contrary to <a href="#about-secrets/">secret env vars</a>, env vars are fully exposed in builds triggered by pull requests so you should not add any sensitive information to <code class="highlighter-rouge">Env Vars</code>.</p>
 
 <h3 id="setting-an-env-var-in-everyin-a-specific-workflow">Setting an env var in every/in a specific workflow <a href="#setting-an-env-var-in-everyin-a-specific-workflow" class="anchor-symbol">⚓</a></h3>
 
@@ -1960,9 +1959,12 @@ As an example, if you click into an input of the third step of your workflow, th
 
 <p>The <code class="highlighter-rouge">Expose for Pull Request</code> can be enabled if you want your secrets to be exposed in your build logs in PRs.</p>
 
-<p>!!! warning “Public apps and sensitive information”
-    * In the case of <a href="/adding-a-new-app/public-apps/">public apps</a>, step input fields containing sensitive information are marked with a <a href="/builds/sensitive-input-fields/"><code class="highlighter-rouge">SENSITIVE</code></a> label and only secret env vars can be used there!
-    * The <code class="highlighter-rouge">Expose for Pull Request</code> toggle is by <strong>default disabled</strong> and cannot be enabled since your secrets must be kept hidden in publicly accessible build logs!</p>
+<p><strong>IMPORTANT:</strong></p>
+
+<ul>
+  <li>In the case of <a href="/adding-a-new-app/public-apps/">public apps</a>, step input fields containing sensitive information are marked with a <code class="highlighter-rouge">[SENSITIVE](/builds/sensitive-input-fields/)</code> label and only secret env vars can be used there!</li>
+  <li>The <code class="highlighter-rouge">Expose for Pull Request</code> toggle is by <strong>default disabled</strong> and cannot be enabled since your secrets must be kept hidden in publicly accessible build logs!</li>
+</ul>
 
 <p>Head over to <a href="/bitrise-cli/secrets/">Secrets</a> for more information on <a href="/bitrise-cli/secrets/#secret-filtering-with-bitrise-cli/">secret filtering</a>.</p>
 
