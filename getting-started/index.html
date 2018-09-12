@@ -1845,17 +1845,15 @@
 
 <ul>
   <li><a href="/getting-started/adding-a-new-app/connecting-a-repository">Connect a repository from a connected GitHub/GitLab/Bitbucket account</a>. Bitrise will then automatically display all the available repositories from the selected service, all you need to do is choose one.</li>
+  <li>Manually add the location of the source code: choose the <code class="highlighter-rouge">Other/Manual</code> option then paste an <strong>HTTPS git clone URL</strong>.</li>
+  <li>You can also use a repository that is on <a href="getting-started/adding-a-new-app/self-hosted-gitlab">a self-hosted GitLab instance</a>.</li>
 </ul>
 
-<p>&lt;div class=“message-box note”&gt;&lt;div class=“message-title”&gt; Why does Bitrise need write permissions on Github/Bitbucket/GitLab? &lt;/div&gt; &lt;div class=“message-content”&gt; Connecting your GitHub/GitLab/Bitbucket account gives Bitrise write permission to the repositories. There are two things that Bitrise couldn’t do without it:</p>
+<p><strong>Why does Bitrise need write permissions on Github/Bitbucket/GitLab?</strong> Connecting your GitHub/GitLab/Bitbucket account gives Bitrise write permission to the repositories. There are two things that Bitrise couldn’t do without it:</p>
 
 <ul>
   <li>Adding an SSH key to the selected repository</li>
-  <li>
-    <p>Registering a Webhook for the repository&lt;/div&gt;&lt;/div&gt;</p>
-  </li>
-  <li>Manually add the location of the source code: choose the <code class="highlighter-rouge">Other/Manual</code> option then paste an <strong>HTTPS git clone URL</strong>.</li>
-  <li>You can also use a repository that is on <a href="getting-started/adding-a-new-app/self-hosted-gitlab">a self-hosted GitLab instance</a>.</li>
+  <li>Registering a Webhook for the repository</li>
 </ul>
 
 <h3 id="setup-repository-access">Setup repository access <a href="#setup-repository-access" class="anchor-symbol">⚓</a></h3>
