@@ -1978,24 +1978,22 @@ generated or transformed. These meta properties are.</em></li>
   </li>
   <li>
     <p>Add the template expression to the step’s <code class="highlighter-rouge">content</code>.</p>
-
-    <p>!!! example
-     ``` Go
-     - script:
-       title: Template example
-       inputs:
-       - content: |-</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       echo "CI mode"
-          
-       echo "not CI mode"
-          
-     opts:
-       is_template: true
- ```
-</code></pre></div>    </div>
   </li>
 </ol>
+
+<p><strong>Example:</strong></p>
+<pre><code class="language-Go">- script:
+  title: Template example
+  inputs:
+  - content: |-
+      
+      echo "CI mode"
+      
+      echo "not CI mode"
+      
+    opts:
+      is_template: true
+</code></pre>
 
 <p>Check out the template utility <a href="https://github.com/bitrise-io/bitrise/blob/master/bitrise/template_util.go#L17">on GitHub</a>!</p>
 
