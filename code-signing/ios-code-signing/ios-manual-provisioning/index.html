@@ -1924,29 +1924,20 @@
 				
 				<p>Manage your code signing files on <a href="https://www.bitrise.io">bitrise.io</a>. With manual provisioning, you can collect your Provisioning Profiles and .p12 certificates with our <a href="https://github.com/bitrise-tools/codesigndoc">codesigndoc</a> tool and then upload them manually or by using the tool.</p>
 
-<p>!!! info “Xcode Automatically manage signing option”
-    We support using Xcode’s
-    <em>Automatically manage signing</em> option, introduced in Xcode 8, with your project. In this case, create an IPA of the desired type on your local machine to let Xcode generate the required profiles and then codesigndoc can collect these. If your project changes and Xcode re-generates the profiles, you will need to re-upload these profiles to Bitrise as well.</p>
+<p>We support <em>Automatically manage signing</em> option, introduced in Xcode 8, with your project. In this case, create an IPA of the desired type on your local machine to let Xcode generate the required profiles and then codesigndoc can collect these. If your project changes and Xcode re-generates the profiles, you will need to re-upload these profiles to Bitrise as well.</p>
 
 <p>If you collected all the necessary files with the codesigndoc tool, proceed to uploading them and setting up your workflow. In this example, we’ll be uploading the code signing files manually - however, you can do this with the codesigndoc tool, too!</p>
 
 <ol>
-  <li>
-    <p>Open your app on your <code class="highlighter-rouge">Dashboard</code>.</p>
-  </li>
-  <li>
-    <p>Select the <code class="highlighter-rouge">Workflow Editor</code> tab.</p>
-  </li>
-  <li>
-    <p>Select the <code class="highlighter-rouge">Code Signing</code> tab.</p>
-  </li>
+  <li>Open your app on your <code class="highlighter-rouge">Dashboard</code>.</li>
+  <li>Select the <code class="highlighter-rouge">Workflow Editor</code> tab.</li>
+  <li>Select the <code class="highlighter-rouge">Code Signing</code> tab.</li>
   <li>
     <p>Make sure that the Provisioning Profile files and the .p12 files are uploaded. If not, add them in the <code class="highlighter-rouge">Add Provisioning Profile(s)</code> and the <code class="highlighter-rouge">Add the private key (.p12) for signing</code> fields, respectively.</p>
 
     <p><img src="/img/code-signing/ios-code-signing/provisioning-and-certificate-upload.png" alt="Uploading certificates and Provisioning Profiles" /></p>
 
-    <p>!!! info “Provisioning Profile file extensions”
-     For a MacOS project, the Provisioning Profile file extension is <code class="highlighter-rouge">.provisionprofile</code>; for an iOS project, the file extension is <code class="highlighter-rouge">.mobileprovision</code>.</p>
+    <p>For a MacOS project, the Provisioning Profile file extension is <code class="highlighter-rouge">.provisionprofile</code>; for an iOS project, the file extension is <code class="highlighter-rouge">.mobileprovision</code>.</p>
   </li>
   <li>
     <p>Make sure you have the <code class="highlighter-rouge">Certificate and profile installer</code> step in your app’s Workflow. You can check it on the <code class="highlighter-rouge">Workflow</code> tab of the <code class="highlighter-rouge">Workflow Editor</code>.</p>
@@ -1957,18 +1948,9 @@
   </li>
 </ol>
 
-<p>!!! tip “Troubleshooting: missing Distribution signing files”
-    If <code class="highlighter-rouge">codesigndoc</code> does not pick up one or more distribution .p12 files and/or Provisioning Profile(s),
-    you can export those manually (.p12 from <code class="highlighter-rouge">Keychain Access</code> app, Provisioning Profiles from
-    <a href="https://developer.apple.com/">Apple Developer Portal</a>), just like you would when you
-    transfer these files between Macs.</p>
+<p>If <code class="highlighter-rouge">codesigndoc</code> does not pick up one or more distribution .p12 files and/or Provisioning Profile(s), you can export those manually (.p12 from <code class="highlighter-rouge">Keychain Access</code> app, Provisioning Profiles from <a href="https://developer.apple.com/">Apple Developer Portal</a>), just like you would when you transfer these files between Macs.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>But __even if `codesigndoc` does not find
-all the files, you should upload all the files collected by `codesigndoc`!__
-The base files collected by `codesigndoc` are essential for your project's
-code signing: without those it's not possible to create a signed IPA
-for the project!
-</code></pre></div></div>
+<p>But <strong>even if <code class="highlighter-rouge">codesigndoc</code> does not find all the files, you should upload all the files collected by <code class="highlighter-rouge">codesigndoc</code>!</strong> The base files collected by <code class="highlighter-rouge">codesigndoc</code> are essential for your project’s code signing: without those it’s not possible to create a signed IPA for the project!</p>
 
 			</main>
 		</div>
