@@ -12,7 +12,7 @@
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
 		<meta property="og:locale" content="en_US">
-		<meta property="og:url" content="https://devcenter.bitrise.io">
+		<meta property="og:url" content="https://devcenter.bitrise.io/">
 		<meta property="og:site_name" content="Bitrise DevCenter">
 		<meta name="theme-color" content="#7e57c2">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -21,7 +21,7 @@
 		<link rel="apple-touch-icon" href="/apple-touch-icon-76x76.png" type="image/png" sizes="76x76">
 		<link rel="apple-touch-icon" href="/apple-touch-icon-120x120.png" type="image/png" sizes="120x120">
 		<link rel="apple-touch-icon" href="/apple-touch-icon-152x152.png" type="image/png" sizes="152x152">
-		<link rel="canonical" href="https://devcenter.bitrise.io">
+		<link rel="canonical" href="https://devcenter.bitrise.io/">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="/assets/main.css">
@@ -1932,11 +1932,9 @@
   <li>Insert the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step AFTER the step/s that generate the artifacts or even better if the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step is <strong>at the very end of your workflow</strong>. For more information, check out <a href="https://devcenter.bitrise.io/tips-and-tricks/attach-any-file-to-build/">Attach any file as an Artifact to the Build</a>.</li>
 </ol>
 
-<p>!!! important
-    Add the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step in the right place. If you insert the step before other steps that generate files during the build, then <code class="highlighter-rouge">Deploy to Bitrise.io</code> will have nothing to deploy.</p>
+<p><strong>IMPORTANT:</strong> Add the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step in the right place. If you insert the step before other steps that generate files during the build, then <code class="highlighter-rouge">Deploy to Bitrise.io</code> will have nothing to deploy.</p>
 
-<p>!!! note
-    Note that the content of any sub-directories found in the deploy directory will not be displayed in the <code class="highlighter-rouge">APPS and Artifacts</code> section of your build. You can, however, <strong>compress your artifacts</strong> into a zip file if you modify the default <code class="highlighter-rouge">false</code> value to <code class="highlighter-rouge">true</code> in the <code class="highlighter-rouge">Compress the artifacts into one file</code> field in the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step. This will compress the whole directory along with its sub-directories and deploy to <code class="highlighter-rouge">APPS &amp; Artifacts</code>.</p>
+<p>Note that the content of any sub-directories found in the deploy directory will not be displayed in the <code class="highlighter-rouge">APPS and Artifacts</code> section of your build. You can, however, <strong>compress your artifacts</strong> into a zip file if you modify the default <code class="highlighter-rouge">false</code> value to <code class="highlighter-rouge">true</code> in the <code class="highlighter-rouge">Compress the artifacts into one file</code> field in the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step. This will compress the whole directory along with its sub-directories and deploy to <code class="highlighter-rouge">APPS &amp; Artifacts</code>.</p>
 
 <h3 id="modify-target-directory-path">Modify target directory path <a href="#modify-target-directory-path" class="anchor-symbol">⚓</a></h3>
 
