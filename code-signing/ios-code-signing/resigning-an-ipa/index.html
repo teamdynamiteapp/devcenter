@@ -1924,12 +1924,12 @@
 				
 				<p>During the development of your iOS app you will need multiple types of distributions for different purposes, such as internal testing or deployment to the App Store. The good news is that this does not require setting up two separate workflows on <a href="https://www.bitrise.io">bitrise.io</a>.</p>
 
-<p>!!! todo “Before you start”
-    You need to:</p>
+<p>Before you start, you need to:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* upload different types of .p12 certificates (for example, developer and distribution certificates)
-* upload the associated Provisioning Profiles (or managing them automatically with the `iOS Auto Provisioning` step)
-</code></pre></div></div>
+<ul>
+  <li>upload different types of .p12 certificates (for example, developer and distribution certificates)</li>
+  <li>upload the associated Provisioning Profiles (or managing them automatically with the <code class="highlighter-rouge">iOS Auto Provisioning</code> step)</li>
+</ul>
 
 <p>If all your code signing files are in place, proceed to setting up your workflow. In this example we’ll be setting up a workflow to create two signed .ipa files: one with the <code class="highlighter-rouge">development</code> and one with the <code class="highlighter-rouge">app-store</code> export method.</p>
 
@@ -1944,9 +1944,7 @@
 
     <p><img src="/img/code-signing/ios-code-signing/xcode-archive-export-method.png" alt="Select export method for Xcode Archive for iOS" /></p>
   </li>
-  <li>
-    <p>Add the <code class="highlighter-rouge">Export iOS and tvOS Xcode archive</code> step to your workflow.</p>
-  </li>
+  <li>Add the <code class="highlighter-rouge">Export iOS and tvOS Xcode archive</code> step to your workflow.</li>
   <li>
     <p>In the list of input variables, navigate to <code class="highlighter-rouge">Select method for export</code> and select <code class="highlighter-rouge">app-store</code> from the dropdown menu.</p>
 
