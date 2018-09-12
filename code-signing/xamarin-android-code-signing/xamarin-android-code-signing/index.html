@@ -1927,56 +1927,33 @@
 <p>You can specify the code signing configuration for your Xamarin Android project by creating a signed APK in <a href="https://www.visualstudio.com/xamarin/">Xamarin Studio</a>.</p>
 
 <ol>
-  <li>
-    <p>Log into your <code class="highlighter-rouge">Xamarin Studio</code>.</p>
-  </li>
-  <li>
-    <p>Double click on your Xamarin Android project to open <code class="highlighter-rouge">Project Option</code>.</p>
-  </li>
-  <li>
-    <p>Select the <code class="highlighter-rouge">Android Package Signing</code> in <code class="highlighter-rouge">Build group</code>.</p>
-  </li>
-  <li>
-    <p>Select your platform in the <code class="highlighter-rouge">Configuration - Platform</code>.</p>
-  </li>
-  <li>
-    <p>Check the <code class="highlighter-rouge">Sign .APK file using the following keystore details</code>.</p>
-  </li>
-  <li>
-    <p>Fill out the signing information.</p>
-  </li>
+  <li>Log into your <code class="highlighter-rouge">Xamarin Studio</code>.</li>
+  <li>Double click on your Xamarin Android project to open <code class="highlighter-rouge">Project Option</code>.</li>
+  <li>Select the <code class="highlighter-rouge">Android Package Signing</code> in <code class="highlighter-rouge">Build group</code>.</li>
+  <li>Select your platform in the <code class="highlighter-rouge">Configuration - Platform</code>.</li>
+  <li>Check the <code class="highlighter-rouge">Sign .APK file using the following keystore details</code>.</li>
+  <li>Fill out the signing information.</li>
 </ol>
 
 <h2 id="use-the-same-keystore-path-locally-and-on-bitriseio-for-xamarin-android">Use the same keystore path locally and on <a href="https://www.bitrise.io">bitrise.io</a> for Xamarin Android <a href="#use-the-same-keystore-path-locally-and-on-bitriseio-for-xamarin-android" class="anchor-symbol">⚓</a></h2>
 
-<p>!!! warning “Do not use environment variables in keystore path”
-    You <strong>cannot use environment variables</strong> in your keystore path in your Xamarin project! The keystore path has to be relative to the folder of your Xamarin Android project. You can also use an absolute path.</p>
+<p>You <strong>cannot use environment variables</strong> in your keystore path in your Xamarin project! The keystore path has to be relative to the folder of your Xamarin Android project. You can also use an absolute path.</p>
 
 <p>You can use the same path on your local machine and on <a href="https://www.bitrise.io">bitrise.io</a> by putting your keystore into your repository.</p>
 
-<p>!!! attention
-    Don’t forget to gitignore your keystore in your repository.</p>
+<p><strong>IMPORTANT</strong>: Don’t forget to gitignore your keystore in your repository.</p>
 
 <p>Since your keystore is gitignored, you have to upload your keystore to the <code class="highlighter-rouge">GENERIC FILE STORAGE</code> of Bitrise and download it to the same location in the build.</p>
 
 <ol>
+  <li>On the <code class="highlighter-rouge">Dashboard</code>, click on your <code class="highlighter-rouge">Workflow</code> tab.</li>
+  <li>Click on <code class="highlighter-rouge">Code signing</code>.</li>
+  <li>Scroll down to the <code class="highlighter-rouge">GENERIC FILE STORAGE</code> field.</li>
   <li>
-    <p>On the <code class="highlighter-rouge">Dashboard</code>, click on your <code class="highlighter-rouge">Workflow</code> tab.</p>
-  </li>
-  <li>
-    <p>Click on <code class="highlighter-rouge">Code signing</code>.</p>
-  </li>
-  <li>
-    <p>Scroll down to the <code class="highlighter-rouge">GENERIC FILE STORAGE</code> field.</p>
-  </li>
-  <li>
-    <p>Type your environment variable name here in the first field.</p>
+    <p>Type your environment variable name here in the first field.
+In our example, we use <code class="highlighter-rouge">XAMARIN_KEYSTORE</code>.</p>
 
-    <p>!!! example
-     In our example, we use <code class="highlighter-rouge">XAMARIN_KEYSTORE</code>.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ![Screenshot](/img/android-code-signing/generic-file-storage-xm.png)
-</code></pre></div>    </div>
+    <p><img src="/img/android-code-signing/generic-file-storage-xm.png" alt="Screenshot" /></p>
   </li>
   <li>
     <p>Upload your keystore file in the <code class="highlighter-rouge">Upload file field</code>.</p>
@@ -1985,24 +1962,15 @@
 
     <p><img src="/img/android-code-signing/download-url.png" alt="Screenshot" /></p>
   </li>
-  <li>
-    <p>Navigate back to your workflow.</p>
-  </li>
-  <li>
-    <p>Insert the <code class="highlighter-rouge">File Downloader</code> step before the <code class="highlighter-rouge">Xamarin Archive</code> step. The <code class="highlighter-rouge">File Downloader</code> step will get a <code class="highlighter-rouge">Download source url</code> input.</p>
-  </li>
-  <li>
-    <p>Type your environment variable, for example, <code class="highlighter-rouge">$BITRISEIO_XAMARIN_KEYSTORE_URL</code> in the <code class="highlighter-rouge">Download source url</code> field.</p>
-  </li>
-  <li>
-    <p>Set your keystore path in the <code class="highlighter-rouge">Download destination path</code>.</p>
-  </li>
+  <li>Navigate back to your workflow.</li>
+  <li>Insert the <code class="highlighter-rouge">File Downloader</code> step before the <code class="highlighter-rouge">Xamarin Archive</code> step. The <code class="highlighter-rouge">File Downloader</code> step will get a <code class="highlighter-rouge">Download source url</code> input.</li>
+  <li>Type your environment variable, for example, <code class="highlighter-rouge">$BITRISEIO_XAMARIN_KEYSTORE_URL</code> in the <code class="highlighter-rouge">Download source url</code> field.</li>
+  <li>Set your keystore path in the <code class="highlighter-rouge">Download destination path</code>.</li>
 </ol>
 
 <p><img src="/img/android-code-signing/file-downloader.png" alt="Screenshot" /></p>
 
-<p>!!! important “Ensure the same keystore path”
-    Ensure that your Bitrise keystore path is the same as your local path relative to your project root. For example, if <code class="highlighter-rouge">keystore.jks</code>is in your project’s root, then your Bitrise keystore path has to be <code class="highlighter-rouge">$BITRISE_SOURCE_DIR/keystore.jks</code>.</p>
+<p><strong>IMPORTANT</strong>: Ensure that your Bitrise keystore path is the same as your local path relative to your project root. For example, if <code class="highlighter-rouge">keystore.jks</code>is in your project’s root, then your Bitrise keystore path has to be <code class="highlighter-rouge">$BITRISE_SOURCE_DIR/keystore.jks</code>.</p>
 
 			</main>
 		</div>
