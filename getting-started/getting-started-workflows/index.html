@@ -1948,18 +1948,10 @@
 <p>The <code class="highlighter-rouge">primary</code> workflow is not the same for every app you create: it contains different Steps depending on the project type. For example, an Android project’s <code class="highlighter-rouge">primary</code> workflow will include the <code class="highlighter-rouge">Install missing Android SDK components</code>, the <code class="highlighter-rouge">Android Lint</code> and the <code class="highlighter-rouge">Android Unit Test</code> Steps. But overall, <code class="highlighter-rouge">primary</code> is a “basic” workflow that always performs the following actions:</p>
 
 <ul>
-  <li>
-    <p>Activates the SSH key, if one has been added to the app. The step saves it to file and then loads it into the user’s ssh-agent with the <code class="highlighter-rouge">ssh-add</code> command. The step, by default, does not run if there is no SSH key added.</p>
-  </li>
-  <li>
-    <p>Clones the Git repository of the project with the <code class="highlighter-rouge">Git Clone Repository</code> Step.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">Bitrise.io Cache:Pull</code> and <code class="highlighter-rouge">Bitrise.io Cache:Push</code> Steps. Read more about <a href="/caching/about-caching">caching on Bitrise</a>.</p>
-  </li>
-  <li>
-    <p>Deploys build artifacts with the <code class="highlighter-rouge">Deploy to Bitrise.io</code> Step.</p>
-  </li>
+  <li>Activates the SSH key, if one has been added to the app. The step saves it to file and then loads it into the user’s ssh-agent with the <code class="highlighter-rouge">ssh-add</code> command. The step, by default, does not run if there is no SSH key added.</li>
+  <li>Clones the Git repository of the project with the <code class="highlighter-rouge">Git Clone Repository</code> Step.</li>
+  <li><code class="highlighter-rouge">Bitrise.io Cache:Pull</code> and <code class="highlighter-rouge">Bitrise.io Cache:Push</code> Steps. Read more about <a href="/caching/about-caching">caching on Bitrise</a>.</li>
+  <li>Deploys build artifacts with the <code class="highlighter-rouge">Deploy to Bitrise.io</code> Step.</li>
 </ul>
 
 <h3 id="the-deploy-workflow">The <code class="highlighter-rouge">deploy</code> workflow <a href="#the-deploy-workflow" class="anchor-symbol">⚓</a></h3>
@@ -1980,9 +1972,7 @@
 <p>If, for example, you create a workflow based on your <code class="highlighter-rouge">primary</code> one, it means that it will be created with the exact same Steps as the <code class="highlighter-rouge">primary</code> workflow.</p>
 
 <ol>
-  <li>
-    <p>Click the app’s <code class="highlighter-rouge">Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</p>
-  </li>
+  <li>Click the app’s <code class="highlighter-rouge">Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</li>
   <li>
     <p>Click <code class="highlighter-rouge">+ Workflow</code></p>
 
@@ -1993,9 +1983,7 @@
 
     <p><img src="/img/getting-started/add-new-workflow.png" alt="Add new workflow" /></p>
   </li>
-  <li>
-    <p>Add the Steps you need to your workflow. Click the <code class="highlighter-rouge">+</code> symbol between two Steps to insert a Step at that position. Remove Steps you do not need by clicking on the Step and clicking the little trash bin symbol.</p>
-  </li>
+  <li>Add the Steps you need to your workflow. Click the <code class="highlighter-rouge">+</code> symbol between two Steps to insert a Step at that position. Remove Steps you do not need by clicking on the Step and clicking the little trash bin symbol.</li>
   <li>
     <p>Click <code class="highlighter-rouge">Save</code> in the top right corner.</p>
 
@@ -2007,13 +1995,10 @@
 
 <p>You can set up multiple workflows to run in succession. The order of these workflows can be rearranged, new workflows can be added to the “chain” and existing workflows can be removed from it at any time.</p>
 
-<p>!!! note Chaining workflows vs the <code class="highlighter-rouge">Bitrise Start Build</code> Step
-    Be aware that if you chain workflows together as described in this guide, all the workflows will still run on the same Virtual Machine. However, if you use the <code class="highlighter-rouge">Bitrise Start Build</code> step as described in <a href="/builds/triggering-builds/trigger-multiple-workflows">this guide</a>, each of the triggered workflows will run on a separate Virtual Machine.</p>
+<p><strong>IMPORTANT</strong>: Be aware that if you chain workflows together as described in this guide, all the workflows will still run on the same Virtual Machine. However, if you use the <code class="highlighter-rouge">Bitrise Start Build</code> step as described in <a href="/builds/triggering-builds/trigger-multiple-workflows">this guide</a>, each of the triggered workflows will run on a separate Virtual Machine.</p>
 
 <ol>
-  <li>
-    <p>Click the app’s <code class="highlighter-rouge">Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</p>
-  </li>
+  <li>Click the app’s <code class="highlighter-rouge">Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</li>
   <li>
     <p>Open the <code class="highlighter-rouge">WORKFLOW</code> menu on the left and select a workflow. The default is the <code class="highlighter-rouge">primary</code> workflow. You can chain workflows before and after the selected workflow.</p>
 
@@ -2024,9 +2009,7 @@
 
     <p><img src="/img/getting-started/chain-workflow.png" alt="Chaining workflows" /></p>
   </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Save</code> in the top right corner.</p>
-  </li>
+  <li>Click <code class="highlighter-rouge">Save</code> in the top right corner.</li>
 </ol>
 
 <h2 id="rearranging-workflows">Rearranging workflows <a href="#rearranging-workflows" class="anchor-symbol">⚓</a></h2>
@@ -2034,20 +2017,14 @@
 <p>Once you have a “chain”, you can easily rearrange the order of workflows in a drag-and-drop menu.</p>
 
 <ol>
-  <li>
-    <p>Click the app’s <code class="highlighter-rouge">Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</p>
-  </li>
-  <li>
-    <p>Open the <code class="highlighter-rouge">WORKFLOW</code> menu on the left and select a workflow that is part of a “chain”.</p>
-  </li>
+  <li>Click the app’s <code class="highlighter-rouge">Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</li>
+  <li>Open the <code class="highlighter-rouge">WORKFLOW</code> menu on the left and select a workflow that is part of a “chain”.</li>
   <li>
     <p>Click <code class="highlighter-rouge">Rearrange</code> to bring up a drag-and-drop menu where you can rearrange the workflows of the chain.</p>
 
     <p><img src="/img/getting-started/rearrange-workflows.png" alt="Rearranging workflows" /></p>
   </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Save</code> in the top right corner.</p>
-  </li>
+  <li>Click <code class="highlighter-rouge">Save</code> in the top right corner.</li>
 </ol>
 
 <h2 id="renaming-workflows">Renaming workflows <a href="#renaming-workflows" class="anchor-symbol">⚓</a></h2>
@@ -2055,23 +2032,15 @@
 <p>Rename your workflows at any time you feel necessary: it’s quick and simple.</p>
 
 <ol>
-  <li>
-    <p>Click the app’s <code class="highlighter-rouge">Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</p>
-  </li>
-  <li>
-    <p>Open the <code class="highlighter-rouge">WORKFLOW</code> menu on the left and select a workflow.</p>
-  </li>
+  <li>Click the app’s <code class="highlighter-rouge">Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</li>
+  <li>Open the <code class="highlighter-rouge">WORKFLOW</code> menu on the left and select a workflow.</li>
   <li>
     <p>Click <code class="highlighter-rouge">RENAME</code> next to the name of the workflow.</p>
 
     <p><img src="/img/getting-started/selecting-workflows.png" alt="Selecting workflows" /></p>
   </li>
-  <li>
-    <p>Type the new name then click the check mark to save the new name.</p>
-  </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Save</code> in the top right corner.</p>
-  </li>
+  <li>Type the new name then click the check mark to save the new name.</li>
+  <li>Click <code class="highlighter-rouge">Save</code> in the top right corner.</li>
 </ol>
 
 			</main>
