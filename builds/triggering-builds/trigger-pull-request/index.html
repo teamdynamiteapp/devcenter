@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Protecting your code signing files - Bitrise DevCenter
+				Triggering builds with pull requests - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Protecting your code signing files
+							Triggering builds with pull requests
 						
 					</div>
 				</div>
@@ -591,7 +591,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/builds/triggering-builds/trigger-pull-request/" title="Triggering builds with pull requests">Triggering builds with pull requests</a>
+				<a href="/builds/triggering-builds/trigger-pull-request/" title="Triggering builds with pull requests" class="current">Triggering builds with pull requests</a>
 			
 		
 		
@@ -861,7 +861,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/code-signing/ios-code-signing/protecting-your-code-signing-files/" title="Protecting your code signing files" class="current">Protecting your code signing files</a>
+				<a href="/code-signing/ios-code-signing/protecting-your-code-signing-files/" title="Protecting your code signing files">Protecting your code signing files</a>
 			
 		
 		
@@ -1918,37 +1918,41 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Protecting your code signing files</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/code-signing/ios-code-signing/protecting-your-code-signing-files/.md" target="_blank"></a>
+						<h1>Triggering builds with pull requests</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/builds/triggering-builds/trigger-pull-request/.md" target="_blank"></a>
 					</div>
 				
-				<h2 id="protecting-your-code-signing-files">Protecting your code signing files <a href="#protecting-your-code-signing-files" class="anchor-symbol">⚓</a></h2>
+				<p>You can set up a trigger so that every time a pull request is opened from a specified source branch to a specified target branch of your repository, a build is automatically triggered on Bitrise.</p>
 
-<p>You can set your code signing files to <code class="highlighter-rouge">Protected</code> mode: this means they cannot be downloaded from your <a href="https://www.bitrise.io">bitrise.io</a> account. Your builds will be able to use these protected files, of course. But if you make the file protected, no one will be able to reveal it and the only way to overwrite it is by deleting the current one and creating a new one.</p>
+<p>Note that this requires an incoming webhook set up with the hosting service of your repository. Read more in the <a href="/webhooks">Webhooks</a> section.</p>
+
+<p>By default, every new app you add will have a trigger that triggers a build every time any pull request is opened in your repository.</p>
 
 <ol>
+  <li>Open your app on <a href="hhtps://www.bitrise.io">bitrise.io</a>.</li>
+  <li>Open the <code class="highlighter-rouge">Workflow Editor</code>.</li>
+  <li>Select the <code class="highlighter-rouge">Triggers</code> tab.</li>
   <li>
-    <p>Select your App on your <code class="highlighter-rouge">Dashboard</code>.</p>
-  </li>
-  <li>
-    <p>Select the <code class="highlighter-rouge">Workflow</code> tab.</p>
-  </li>
-  <li>
-    <p>Select the <code class="highlighter-rouge">Code Signing</code> tab.</p>
-  </li>
-  <li>
-    <p>Locate the file you wish to make protected and open the dropdown menu.</p>
+    <p>Select the <code class="highlighter-rouge">PULL REQUEST</code> option.</p>
 
-    <p><img src="/img/code-signing/ios-code-signing/provisioning-and-certificate-protect.png" alt="Make code signing files protected" /></p>
+    <p><img src="/img/getting-started/triggering-builds/pull-request-trigger.png" alt="PR trigger" /></p>
   </li>
   <li>
-    <p>Select the <code class="highlighter-rouge">Make protected</code> option.</p>
+    <p>In the existing trigger, click the <code class="highlighter-rouge">SOURCE BRANCH</code> and <code class="highlighter-rouge">TARGET BRANCH</code> options.</p>
 
-    <p>A pop-up window will warn you that this change is irreversible once you confirm it. You do not need to separately save your changes.</p>
+    <p>!!! note “<code class="highlighter-rouge">+ ADD TRIGGER</code> option”
+If you have your own trigger set up already, click the <code class="highlighter-rouge">+ ADD TRIGGER</code> option to set up a new one.</p>
   </li>
+  <li>
+    <p>Type the names of the source branch and the target branch. Make sure there are no spelling errors, otherwise the trigger won’t work.</p>
+
+    <p>You can leave either the source or target branch fields, or both, empty: the trigger will work accordingly. For example, if you leave both empty, as is the default with new apps, every pull request will trigger a build.</p>
+  </li>
+  <li>Select the workflow you wish to trigger (for example, <code class="highlighter-rouge">primary</code>).</li>
+  <li>Click <code class="highlighter-rouge">Save</code> in the top right corner.</li>
 </ol>
 
-<p>Once you are done, your only option in the file’s dropdown menu will be <code class="highlighter-rouge">Delete</code>.</p>
+<p>And you’re done! From now on, if a pull request is opened in your repository, Bitrise will trigger a build with the selected workflow!</p>
 
 			</main>
 		</div>
