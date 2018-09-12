@@ -1939,20 +1939,14 @@
 <p>The basic workflow of code signing is pretty straightforward:</p>
 
 <ol>
-  <li>
-    <p><a href="/code-signing/ios-code-signing/collecting-files-with-codesigndoc">Collect the required files with our codesigndoc tool</a>.</p>
-  </li>
-  <li>
-    <p>Upload your code signing files to <a href="https://www.bitrise.io">bitrise.io</a>. You can upload the files using <code class="highlighter-rouge">codesigndoc</code> or manually on the website. For Provisioning Profiles, you can use:</p>
-
+  <li><a href="/code-signing/ios-code-signing/collecting-files-with-codesigndoc">Collect the required files with our codesigndoc tool</a>.</li>
+  <li>Upload your code signing files to <a href="https://www.bitrise.io">bitrise.io</a>. You can upload the files using <code class="highlighter-rouge">codesigndoc</code> or manually on the website. For Provisioning Profiles, you can use:
     <ul>
       <li><a href="/code-signing/ios-code-signing/ios-manual-provisioning">manual provisioning</a></li>
       <li><a href="/code-signing/ios-code-signing/ios-auto-provisioning">automatic provisioning</a>.</li>
     </ul>
   </li>
-  <li>
-    <p>Use the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> or the <code class="highlighter-rouge">Xamarin Archive</code> step to create a signed <code class="highlighter-rouge">.ipa</code>:</p>
-
+  <li>Use the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> or the <code class="highlighter-rouge">Xamarin Archive</code> step to create a signed <code class="highlighter-rouge">.ipa</code>:
     <ul>
       <li>Xcode projects: <a href="/code-signing/ios-code-signing/create-signed-ipa-for-xcode">Create a signed .ipa for Xcode projects</a></li>
       <li>Xamarin projects: <a href="/code-signing/ios-code-signing/create-signed-ipa-for-xamarin">Create a signed .ipa for Xamarin projects</a></li>
@@ -1965,21 +1959,10 @@
 <p>You can use third party tools to manage code signing on Bitrise, such as <a href="https://github.com/fastlane/fastlane/tree/master/match">fastlane match</a>
 or <a href="https://github.com/fastlane/fastlane/tree/master/sigh">fastlane sigh</a>. However, we recommend using our own steps and tools.</p>
 
-<p>!!! warning
-    If you decide to use a third party tool for code signing management,
-    please consult the tool’s documentation and issue tracker,
-    we only provide customer support for our own Step (<code class="highlighter-rouge">Certificate and profile installer</code>)
-    and tools (<code class="highlighter-rouge">codesigndoc</code>)!</p>
+<p><strong>IMPORTANT</strong>: If you decide to use a third party tool for code signing management, please consult the tool’s documentation and issue tracker, we only provide customer support for our own Step (<code class="highlighter-rouge">Certificate and profile installer</code>)
+and tools (<code class="highlighter-rouge">codesigndoc</code>)!</p>
 
-<p>!!! note “<code class="highlighter-rouge">Certificate and profile installer</code> step”
-    Even if you use a third party tool to manage your code signing files,
-    and you don’t plan to upload any code signing file to bitrise.io,
-    you should keep the <code class="highlighter-rouge">Certificate and profile installer</code> step in your
-    Workflow. This is because certain tools were not designed to work
-    in an ephemeral environment, or in a full clean macOS install,
-    and the <code class="highlighter-rouge">Certificate and profile installer</code> includes common
-    workarounds for this situation. It’s not guaranteed that it will help with
-    the tool of your choice, but it won’t cause any issue either.</p>
+<p>Even if you use a third party tool to manage your code signing files, and you don’t plan to upload any code signing file to bitrise.io, you should keep the <code class="highlighter-rouge">Certificate and profile installer</code> step in your Workflow. This is because certain tools were not designed to work in an ephemeral environment, or in a full clean macOS install, and the <code class="highlighter-rouge">Certificate and profile installer</code> includes common workarounds for this situation. It’s not guaranteed that it will help with the tool of your choice, but it won’t cause any issue either.</p>
 
 			</main>
 		</div>
