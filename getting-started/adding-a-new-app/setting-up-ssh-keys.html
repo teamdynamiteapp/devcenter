@@ -1859,15 +1859,15 @@
 						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/getting-started/adding-a-new-app/setting-up-ssh-keys.md" target="_blank"></a>
 					</div>
 				
-				<p>SSH keys serve the role of secure transfer between services. In the case of Bitrise, it will ask for your permission to be authorized at your git source provider, for example, GitHub. Read more about how to <a href="/adding-a-new-app/connecting-a-repository">authorize Bitrise</a>.</p>
+				<p>SSH keys serve the role of secure transfer between services. In the case of Bitrise, it will ask for your permission to be authorized at your git source provider, for example, GitHub. Read more about how to <a href="/getting-started/adding-a-new-app/connecting-a-repository">authorize Bitrise</a>.</p>
 
 <p>The reason behind the need for being authorized, is that Bitrise has to have a working SSH connection to your repository to be able to clone it. There are several ways to make it work. Automatically, by adding it manually, or by using your own key.</p>
 
 <p>!!! warning “Use SSH URLs everywhere for private apps”
-    Most services support SSH key based authentication <strong>only</strong> for SSH URLs (for example, <code class="highlighter-rouge">git@github.com:bitrise-io/bitrise.git</code>), and <strong>not</strong> for HTTPS URLs (for example, <code class="highlighter-rouge">https://github.com/bitrise-io/bitrise.git</code>)! This means, that <strong>every private repository you want to use has to be addressed with the SSH URL</strong>. If you have direct private git repository references in your CocoaPods <code class="highlighter-rouge">Podfile</code>, you’ll have to use the SSH URL there as well! Same applies for <code class="highlighter-rouge">submodules</code> and every other private git repository URL you want to use with the SSH key you register on <a href="https://www.bitrise.io/">Bitrise.io</a>!</p>
+Most services support SSH key based authentication <strong>only</strong> for SSH URLs (for example, <code class="highlighter-rouge">git@github.com:bitrise-io/bitrise.git</code>), and <strong>not</strong> for HTTPS URLs (for example, <code class="highlighter-rouge">https://github.com/bitrise-io/bitrise.git</code>)! This means, that <strong>every private repository you want to use has to be addressed with the SSH URL</strong>. If you have direct private git repository references in your CocoaPods <code class="highlighter-rouge">Podfile</code>, you’ll have to use the SSH URL there as well! Same applies for <code class="highlighter-rouge">submodules</code> and every other private git repository URL you want to use with the SSH key you register on <a href="https://www.bitrise.io/">Bitrise.io</a>!</p>
 
 <p>!!! note “Use HTTPS URLs for public apps”
-    Public apps cannot have SSH keys. If you set your app’s privacy settings to Public, no authentication is required. For public apps, use HTTPS URLs.</p>
+Public apps cannot have SSH keys. If you set your app’s privacy settings to Public, no authentication is required. For public apps, use HTTPS URLs.</p>
 
 <h2 id="automatic-setup">Automatic setup <a href="#automatic-setup" class="anchor-symbol">⚓</a></h2>
 
@@ -1888,10 +1888,10 @@
 <p><img src="/img/adding-a-new-app/own-ssh.png" alt="Add own SSH key" /></p>
 
 <p>!!! note “A bot user”
-    A simple workaround is adding a "bot" user with the SSH key to the repositories. <strong>Add the SSH key you would like to use to the user and add the user to the projects</strong>. It is enough to assign read permissions to the bot user. After that you can use the SSH key to clone to the repository or any submodule.</p>
+A simple workaround is adding a “bot” user with the SSH key to the repositories. <strong>Add the SSH key you would like to use to the user and add the user to the projects</strong>. It is enough to assign read permissions to the bot user. After that you can use the SSH key to clone to the repository or any submodule.</p>
 
 <p>!!! warning
-    <strong>Do not</strong> add the key to the repository Deploy Keys. Add it to the user’s account who has access to the repositories.</p>
+<strong>Do not</strong> add the key to the repository Deploy Keys. Add it to the user’s account who has access to the repositories.</p>
 
 <h3 id="github">GitHub <a href="#github" class="anchor-symbol">⚓</a></h3>
 
