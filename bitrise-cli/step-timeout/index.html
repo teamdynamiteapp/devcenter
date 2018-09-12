@@ -1934,17 +1934,16 @@
   </li>
   <li>
     <p>Add a <code class="highlighter-rouge">timeout</code> property before the other step inputs.</p>
-
-    <p>!!! example
-     <code class="highlighter-rouge">yaml
-     - xcode-test@1.18.14:
-          timeout: 120
-          inputs:
-          - project_path: "$BITRISE_PROJECT_PATH"
-          - scheme: "$BITRISE_SCHEME"
-    </code></p>
   </li>
 </ol>
+
+<p><strong>Example</strong>:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="s">xcode-test@1.18.14</span><span class="pi">:</span>
+     <span class="na">timeout</span><span class="pi">:</span> <span class="s">120</span>
+     <span class="na">inputs</span><span class="pi">:</span>
+     <span class="pi">-</span> <span class="na">project_path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">$BITRISE_PROJECT_PATH"</span>
+     <span class="pi">-</span> <span class="na">scheme</span><span class="pi">:</span> <span class="s2">"</span><span class="s">$BITRISE_SCHEME"</span>
+</code></pre></div></div>
 
 <p>And you’re done! In our example, the <code class="highlighter-rouge">xcode-test</code> step will abort after 120 seconds. Check the build logs to see what caused the step to exceed the limit.</p>
 
