@@ -1924,8 +1924,7 @@
 				
 				<p>Ruby Gems are installed into a single directory by default. You can get the location of this directory with gem environment gemdir. If you want to change this directory you can set the <code class="highlighter-rouge">$GEM_HOME</code> environment variable, this will be picked up by gem install and it’ll install the Gems to the location specified by <code class="highlighter-rouge">$GEM_HOME</code>.</p>
 
-<p>!!! warning “Setting <code class="highlighter-rouge">$GEM_HOME</code>”
-    You cannot simply add <code class="highlighter-rouge">gem environment gemdir</code> to the input of your Cache steps. You can only reference Environment Variables in the inputs directly, and $GEM_HOME is not set by default on the Bitrise.io VMs.</p>
+<p><strong>IMPORTANT</strong>: You cannot simply add <code class="highlighter-rouge">gem environment gemdir</code> to the input of your Cache steps. You can only reference Environment Variables in the inputs directly, and $GEM_HOME is not set by default on the Bitrise.io VMs.</p>
 
 <ol>
   <li>
