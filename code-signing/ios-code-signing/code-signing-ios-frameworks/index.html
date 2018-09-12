@@ -1925,18 +1925,12 @@
 				<h2 id="developing-ios-frameworks">Developing iOS frameworks <a href="#developing-ios-frameworks" class="anchor-symbol">⚓</a></h2>
 
 <p>When you are developing an iOS framework you have to distribute a code signed version of your framework, however you don’t need to sign it with your <code class="highlighter-rouge">Distribution</code> profile, the <code class="highlighter-rouge">Developer</code> profile will be enough.
-After distribution the framework will be re-codesigned by the frameworks’ consumer during the code signing process.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+After distribution the framework will be re-codesigned by the frameworks’ consumer during the code signing process.</p>
 
 <p>If you attempt to build it without code signing Xcode won’t produce a <code class="highlighter-rouge">.framework</code> file and you will receive the following error:</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CodeSign error: code signing is required for product type 'Framework' in SDK 'iOS 10.2'
 </code></pre></div></div>
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>http://stackoverflow.com/questions/30963294/creating-ios-osx-frameworks-is-it-necessary-to-codesign-them-before-distributin <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
 
 			</main>
 		</div>
