@@ -1952,20 +1952,19 @@
   </li>
   <li>
     <p>Set the <code class="highlighter-rouge">outputs</code> attribute: specify the original environment key - the default output that the step generates - and the alias.</p>
-
-    <p>!!! example
-     <code class="highlighter-rouge">yaml
-     workflows:
-       primary:
-       steps:
-       - gradle-runner:
-           outputs:
-           - BITRISE_APK_PATH: ALIAS_APK_PATH
-    </code></p>
-
-    <p>In the example, the value for the <code class="highlighter-rouge">BITRISE_APK_PATH</code> environment variable will be exported under the <code class="highlighter-rouge">ALIAS_APK_PATH</code> key.</p>
   </li>
 </ol>
+
+<p><strong>Example</strong>:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">primary</span><span class="pi">:</span>
+  <span class="na">steps</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">gradle-runner</span><span class="pi">:</span>
+      <span class="na">outputs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">BITRISE_APK_PATH</span><span class="pi">:</span> <span class="s">ALIAS_APK_PATH</span>
+</code></pre></div></div>
+
+<p>In the example, the value for the <code class="highlighter-rouge">BITRISE_APK_PATH</code> environment variable will be exported under the <code class="highlighter-rouge">ALIAS_APK_PATH</code> key.</p>
 
 			</main>
 		</div>
