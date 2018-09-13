@@ -1,3 +1,24 @@
+<h3 id="front-matter-and-menus">Front matter and menus</h3>
+
+<p>In Forestry, the front matter of the articles determine their place in the menu. That means you can manipulate an article’s location in the menu system by editing their front matter.</p>
+
+<p>In the <code class="highlighter-rouge">Front matter</code> of Forestry, you can create new front matter templates. Create a  menu front matter template this way:</p>
+
+<ol>
+  <li>Click <code class="highlighter-rouge">Add template</code> in the top right corner.</li>
+  <li>Add a template name (for example, new-menu-item)</li>
+  <li>Add a <code class="highlighter-rouge">Field Group</code> on the right. When its settings appear, enter <code class="highlighter-rouge">menu</code> as the label. The same will be entered automatically as the name.</li>
+  <li>In the green box on the left, click the <code class="highlighter-rouge">&gt;</code> sign.</li>
+  <li>On the right, select <code class="highlighter-rouge">Field Group</code> again.</li>
+  <li>Enter <code class="highlighter-rouge">new-menu-item</code> as the label. The same will be entered automatically as the name.</li>
+  <li>In the green box on the left, click the <code class="highlighter-rouge">&gt;</code> sign.</li>
+  <li>On the right, select <code class="highlighter-rouge">Text field</code>.</li>
+  <li>Enter <code class="highlighter-rouge">weight</code> as the label. The same will be entered automatically as the name.</li>
+  <li>Click <code class="highlighter-rouge">Create template</code>.</li>
+</ol>
+
+<p>That’s it, you are done! Alternatively, you can go to any article that has front matter applied to it, click <code class="highlighter-rouge">...</code> then click <code class="highlighter-rouge">Create template</code> - Forestry will create the same template, you just need to change the relevant labels AND names - the names won’t be automatically updated with the labels in this case!</p>
+
 <h3 id="creating-a-new-menu-item">Creating a new menu item</h3>
 
 <p>Creating a new menu item in Forestry is slightly complicated. Unfortunately, we have to directly edit a .yml files in the GitHub repository.</p>
@@ -19,7 +40,7 @@
     <p>The weight specifies the menu item’s position relative to the other menu items - enter any value you want, later you can easily change this in Forestry.</p>
   </li>
   <li>
-    <p>Add an article that has a front matter menu entry corresponding to the identifier of the menu item. It can be an empty dummy article. You can do this in Forestry by creating a new front matter template or in GitHub, manually.</p>
+    <p>Add an article that has a front matter menu entry corresponding to the identifier of the menu item. It can be an empty dummy article. You can do this in Forestry by creating a new front matter template and applying that to a dummy article (see <a href="#using-a-front-matter-template">Using a front matter template</a>) or in GitHub, manually.</p>
 
     <p>Example:</p>
 
@@ -30,4 +51,37 @@ menu:
 </code></pre></div>    </div>
   </li>
   <li>Go to Forestry and you should see your new menu item in the Menus section.</li>
+</ol>
+
+<h3 id="adding-an-article-to-an-existing-menu">Adding an article to an existing menu</h3>
+
+<p>Once you have an article ready, you want to place it in the menu system so that it is visible on DevCenter. The article has to be in one of the directories on the sidebar!</p>
+
+<p>There are two options:</p>
+
+<ul>
+  <li>adding the article to a menu in the <code class="highlighter-rouge">Menus</code> section  (recommended in most cases)</li>
+  <li>giving the article a front matter template (recommended if you are creating a new main menu item)</li>
+</ul>
+
+<h4 id="using-the-menus-section">Using the Menus section</h4>
+
+<ol>
+  <li>Enter the <code class="highlighter-rouge">Menus</code> section.</li>
+  <li>Click the menu you wish to place the article in (for example, iOS Code Signing).</li>
+  <li>Click <code class="highlighter-rouge">Add link</code>.</li>
+  <li>Change it to <code class="highlighter-rouge">Internal</code>.</li>
+  <li>From the dropdown menu, select the article.</li>
+  <li>Enter its title as the name of the article.</li>
+  <li>Click <code class="highlighter-rouge">Done</code>.</li>
+  <li>Click <code class="highlighter-rouge">Save</code> in the top right corner.</li>
+</ol>
+
+<h4 id="using-a-front-matter-template">Using a front matter template</h4>
+
+<ol>
+  <li>Open the sidebar section where the article is located and click on the article.</li>
+  <li>Click the <code class="highlighter-rouge">...</code> sign on the top right corner.</li>
+  <li>Select <code class="highlighter-rouge">Change template</code>.</li>
+  <li>Choose the front matter template of the menu where you wish to place the article (for example, ios-code-signing).</li>
 </ol>
