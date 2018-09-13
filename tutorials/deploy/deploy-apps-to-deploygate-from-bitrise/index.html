@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Deploy your Xamarin app - Bitrise DevCenter
+				Deploy apps to DeployGate from Bitrise - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Deploy your Xamarin app
+							Deploy apps to DeployGate from Bitrise
 						
 					</div>
 				</div>
@@ -1230,7 +1230,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/tutorials/xamarin/deploy-your-xamarin-app/" title="Deploy your Xamarin app" class="current">Deploy your Xamarin app</a>
+				<a href="/tutorials/xamarin/deploy-your-xamarin-app/" title="Deploy your Xamarin app">Deploy your Xamarin app</a>
 			
 		
 		
@@ -1792,37 +1792,109 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Deploy your Xamarin app</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/tutorials/xamarin/deploy-your-xamarin-app/.md" target="_blank"></a>
+						<h1>Deploy apps to DeployGate from Bitrise</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/tutorials/deploy/deploy-apps-to-deploygate-from-bitrise/.md" target="_blank"></a>
 					</div>
 				
-				<p>After successfully adding your Xamarin application, we will create a default workflow (build configuration) for you.
-This workflow includes a <code class="highlighter-rouge">Deploy to bitrise.io</code> step by default.</p>
+				<h2 id="what-is-deploygate">What is DeployGate? <a href="#what-is-deploygate" class="anchor-symbol">⚓</a></h2>
 
-<p>Building the default workflow will checkout your git repository,
-archive your application and move all the generated applications ( <code class="highlighter-rouge">ipa</code> / <code class="highlighter-rouge">apk</code> ) to the deployment folder.
-After the archive, the <code class="highlighter-rouge">Deploy to bitrise.io</code> step will upload these files to Bitrise.</p>
+<p><strong><a href="https://deploygate.com?locale=en">DeployGate</a></strong> is a mobile app distribution platform for iOS/Android. DeployGate delivers your in-development iOS/Android apps to your development team, members, employees, and QA testing team in your organization or to testers outside of your company.</p>
 
-<p>We will not just upload your application,
-but send out an email to your team as well.
-They can simply open the email from their mobile device and install the application from there.
-Also you can send out the build to any tester by providing their email address.</p>
+<p>DeployGate have many features to acceralate your app development cycle including QA testing and app improvement with beta tester’s feedbacks.</p>
 
-<h2 id="but-what-if-you-are-already-using-or-want-to-use-another-deployment-service">But what if you are already using or want to use another deployment service? <a href="#but-what-if-you-are-already-using-or-want-to-use-another-deployment-service" class="anchor-symbol">⚓</a></h2>
+<p>Features:</p>
+<ul>
+  <li>App binary version control</li>
+  <li>Flexible user account management</li>
+  <li>Access control and device management</li>
+  <li>git-like multi track distribution and user/device grouping in the same app</li>
+</ul>
 
-<p>Besides the default Bitrise deployment we have <a href="http://www.bitrise.io/integrations#?filter=deploy">dozens of other services integrated</a> to Bitrise.
-You can simply modify your workflow and add the ones you would like to,
-like <a href="http://hockeyapp.net/">HockeyApp</a>, <a href="/tutorials/deploy/publish-your-app-to-appaloosa/">Appaloosa</a>, <a href="/tutorials/deploy/deploy-to-testfairy-with-bitrise/">TestFairy</a>
-or <a href="/tutorials/deploy/deploy-apps-to-deploygate-from-bitrise/">DeployGate</a> -
-just filter by the <code class="highlighter-rouge">deploy</code> tag in the list to see all the available deployment steps.</p>
+<p>With DeployGate and Bitrise, you can easily build fully automated in-house dog fooding environment for your team. To see more details, please visit <a href="https://deploygate.com/features?locale=en">DeployGate Features</a>.</p>
 
-<p>Simply add the integration Step you want to use instead of the <code class="highlighter-rouge">Deploy to bitrise.io</code> step or after that
-(but in any case after the <code class="highlighter-rouge">Xamarin Archive</code> step, as that’s the step which generates the
-deployable artifact - <code class="highlighter-rouge">.ipa</code>, <code class="highlighter-rouge">.apk</code>, …), and fill out the parameters of the step.</p>
+<p><img src="/img/tutorials/deploy/deploygate/flow.png" alt="Automated app distribution workflow" /></p>
 
-<p>For more information on code signing for Xamarin projects, see <a href="/code-signing/xamarin-android-code-signing/xamarin-android-code-signing">Xamarin Android code signing</a> and <a href="/code-signing/ios-code-signing/create-signed-ipa-for-xamarin">Creating a signed .ipa for Xamarin projects</a>.</p>
+<h2 id="upload-your-app-to-deploygate-via-bitrise">Upload your app to DeployGate via Bitrise <a href="#upload-your-app-to-deploygate-via-bitrise" class="anchor-symbol">⚓</a></h2>
 
-<p>The next time you start a build, your app will be deployed to the service of your choice!</p>
+<p>To upload your app to DeployGate, you just add <code class="highlighter-rouge">DeployGate Upload</code> step to your bitrise workflow.</p>
+
+<p><img src="/img/tutorials/deploy/deploygate/step.png" alt="DeployGate Workflow Step" /></p>
+
+<p>This step should be added after the app building process to have a fully built binary app file before uploading.</p>
+
+<p>You need to set several required params as below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input Variables</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>API Key</td>
+      <td>Set upload user’s DeployGate API Key from <a href="https://deploygate.com/settings">Account Settings</a>. <br />If you want to upload apps as organization account, please use the organization’s API Key. The upload account will be shown on the activity timeline.</td>
+    </tr>
+    <tr>
+      <td>Owner Name</td>
+      <td>App owner’s account name in DeployGate. <br /> You can use user name or organization name.</td>
+    </tr>
+    <tr>
+      <td>App file path</td>
+      <td>App’s binary file (.ipa/apk) to be uploaded.<br />For default setting, use <code class="highlighter-rouge">$BITRISE_APK_PATH</code> for Android or <code class="highlighter-rouge">$BITRISE_IPA_PATH</code> for iOS.</td>
+    </tr>
+    <tr>
+      <td>App Visibility</td>
+      <td>You can list your app name and icon on your DeployGate profile page. This is just for visibility, not for allowing download or install by anonymous.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can also set optional variables to use advanced features as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input Variables</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Short Message</td>
+      <td>Summary of update shown on DeployGate.<br />You can use <code class="highlighter-rouge">$GIT_CLONE_COMMIT_MESSAGE_SUBJECT</code> if you want to use the same message as git commit.</td>
+    </tr>
+    <tr>
+      <td>Distribution Key</td>
+      <td>You can make multiple public install links (called distribution page) for different versions of the app binary in the same apps. <br />By specifying the distribution page’s hash, that distribution page will be updated simultaneously. The “xxxx” portion of the distributed page’s URL reads as follows: https://deploygate.com/distributions/xxxx</td>
+    </tr>
+    <tr>
+      <td>Distribution Name</td>
+      <td>Specify the name of the updated distribution page. If nothing exists, a new distribution page will be created. Possible usage includes creating distribution pages for each Git branch name (for example, <code class="highlighter-rouge">$BITRISE_GIT_BRANCH</code>).</td>
+    </tr>
+    <tr>
+      <td>Release Note</td>
+      <td>Message for new release in distribution page. This message will be notified to your distribution page’s testers.</td>
+    </tr>
+    <tr>
+      <td>Disable Notify(iOS Only)</td>
+      <td>There is no DeployGate client apps in iOS platform. By default, email notifications are used for release updates. If you don’t need email notification, please set this option as <code class="highlighter-rouge">true</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>!!! note
+    These options are based on <strong><a href="https://docs.deploygate.com/reference">DeloyGate API</a></strong>. For more details, please read the references at <a href="https://deploygate.com?locale=en">DeployGate.com</a>.</p>
+
+<h2 id="how-distribution-page-works">How <code class="highlighter-rouge">Distribution Page</code> works? <a href="#how-distribution-page-works" class="anchor-symbol">⚓</a></h2>
+
+<p><img src="/img/tutorials/deploy/deploygate/distribution_page.png" alt="Distribution Page" /></p>
+
+<p>Distribution Page (Public install link) generates a landing page for app installation of your app’s specific version. When uploading your app to DeployGate, a unique sequencial number is assigned (<code class="highlighter-rouge">Revision Number</code>) to your app binary. By using this revision number to make a distribution page, you can select and distribute specific revisions of the app binary to each tester groups.
+This feature is very useful to separately distribute your apps to multi-tester groups for different purposes (for example, for QA, Dog Fooding, or Test Merketing).</p>
+
+<p>You can also generate the distribution link when you upload an app from <a href="https://www.bitrise.io">bitrise.io</a> with the DeployGate Upload step. Please refer to the optional variables above.</p>
 
 			</main>
 		</div>
