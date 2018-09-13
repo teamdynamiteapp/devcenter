@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				About Xamarin - Bitrise DevCenter
+				Deploy your Xamarin app - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							About Xamarin
+							Deploy your Xamarin app
 						
 					</div>
 				</div>
@@ -1170,7 +1170,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/fastlane/fastlane-tools-integration/" title="Fastlane tools integration">Fastlane tools integration</a>
+				<a href="/tutorials/fastlane/fastlane-tools-integration/" title="Fastlane tools integration">Fastlane tools integration</a>
 			
 		
 		
@@ -1179,7 +1179,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/fastlane/how-to-configure-fastlane-match-for-bitrise/" title="How to configure fastlane match for Bitrise">How to configure fastlane match for Bitrise</a>
+				<a href="/tutorials/fastlane/how-to-configure-fastlane-match-for-bitrise/" title="How to configure fastlane match for Bitrise">How to configure fastlane match for Bitrise</a>
 			
 		
 		
@@ -1203,7 +1203,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/index/" title="About Xamarin" class="current">About Xamarin</a>
+				<a href="/tutorials/xamarin/index/" title="About Xamarin">About Xamarin</a>
 			
 		
 		
@@ -1212,7 +1212,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/restore-nuget-packages/" title="Restore NuGet packages">Restore NuGet packages</a>
+				<a href="/tutorials/xamarin/restore-nuget-packages/" title="Restore NuGet packages">Restore NuGet packages</a>
 			
 		
 		
@@ -1221,7 +1221,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/add-custom-sources-to-nuget/" title="Add custom sources to NuGet">Add custom sources to NuGet</a>
+				<a href="/tutorials/xamarin/add-custom-sources-to-nuget/" title="Add custom sources to NuGet">Add custom sources to NuGet</a>
 			
 		
 		
@@ -1230,7 +1230,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/deploy-your-xamarin-app/" title="Deploy your Xamarin app">Deploy your Xamarin app</a>
+				<a href="/tutorials/xamarin/deploy-your-xamarin-app/" title="Deploy your Xamarin app" class="current">Deploy your Xamarin app</a>
 			
 		
 		
@@ -1254,7 +1254,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/docker/index/" title="Docker support on bitrise.io">Docker support on bitrise.io</a>
+				<a href="/tutorials/docker/index/" title="Docker support on bitrise.io">Docker support on bitrise.io</a>
 			
 		
 		
@@ -1263,7 +1263,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/docker/run-your-build-locally-in-docker/" title="How to run your build locally in Docker">How to run your build locally in Docker</a>
+				<a href="/tutorials/docker/run-your-build-locally-in-docker/" title="How to run your build locally in Docker">How to run your build locally in Docker</a>
 			
 		
 		
@@ -1272,7 +1272,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/docker/use-your-own-docker-image/" title="Use your own Docker image">Use your own Docker image</a>
+				<a href="/tutorials/docker/use-your-own-docker-image/" title="Use your own Docker image">Use your own Docker image</a>
 			
 		
 		
@@ -1792,51 +1792,37 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>About Xamarin</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/xamarin/index/.md" target="_blank"></a>
+						<h1>Deploy your Xamarin app</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/tutorials/xamarin/deploy-your-xamarin-app/.md" target="_blank"></a>
 					</div>
 				
-				<p>With <a href="https://xamarin.com">Xamarin</a> integration you can now build your
-iOS and Android Xamarin applications on <a href="https://www.bitrise.io">Bitrise</a>.</p>
+				<p>After successfully adding your Xamarin application we will create a default workflow (build configuration) for you.
+This workflow includes a <code class="highlighter-rouge">Deploy to bitrise.io</code> step by default.</p>
 
-<p>We have listed a couple of tutorials to help you get started, but if you get stuck,
-feel free to <a href="https://www.bitrise.io/contact">contact us</a>!</p>
+<p>Building the default workflow will checkout your git repository,
+archive your application and move all the generated applications ( <code class="highlighter-rouge">ipa</code> / <code class="highlighter-rouge">apk</code> ) to the deployment folder.
+After the archive the <code class="highlighter-rouge">Deploy to bitrise.io</code> step will upload these files to Bitrise.</p>
 
-<h2 id="xamarin-tutorials">Xamarin tutorials <a href="#xamarin-tutorials" class="anchor-symbol">⚓</a></h2>
+<p>We will not just upload your application,
+but send out an email to your team as well.
+They can simply open the email from their mobile device and install the application from there.
+Also you can send out the build to any tester by providing their email address.</p>
 
-<p><strong>Highlighted</strong>:
-A great overview and a detailed “getting started” tutorial: check out <a href="https://twitter.com/JamesMontemagno">James Montemagno</a>’s
-video session about setting up Xamarin apps on Bitrise here: <a href="https://www.youtube.com/watch?v=1UeNajpjIXY">https://www.youtube.com/watch?v=1UeNajpjIXY</a></p>
+<h2 id="but-what-if-you-are-already-using-or-want-to-use-another-deployment-service">But what if you are already using or want to use another deployment service? <a href="#but-what-if-you-are-already-using-or-want-to-use-another-deployment-service" class="anchor-symbol">⚓</a></h2>
 
-<h3 id="getting-started">Getting Started <a href="#getting-started" class="anchor-symbol">⚓</a></h3>
+<p>Besides the default Bitrise deployment we have <a href="http://www.bitrise.io/integrations#?filter=deploy">dozens of other services integrated</a> to Bitrise.
+You can simply modify your workflow and add the ones you would like to,
+like <a href="http://hockeyapp.net/">HockeyApp</a>, <a href="/tutorials/deploy/publish-your-app-to-appaloosa/">Appaloosa</a>
+or <a href="/tutorials/deploy/deploy-to-testfairy-with-bitrise/">TestFairy</a> -
+just filter by the <code class="highlighter-rouge">deploy</code> tag in the list to see all the available deployment steps.</p>
 
-<ul>
-  <li><a href="/getting-started/create-your-first-app-on-bitrise">Creating your first App on Bitrise</a></li>
-  <li><a href="/xamarin/restore-nuget-packages">Restore NuGet packages</a></li>
-</ul>
+<p>Simply add the integration Step you want to use instead of the <code class="highlighter-rouge">Deploy to bitrise.io</code> step or after that
+(but in any case after the <code class="highlighter-rouge">Xamarin Archive</code> step, as that’s the step which generates the
+deployable artifact - <code class="highlighter-rouge">.ipa</code>, <code class="highlighter-rouge">.apk</code>, …), and fill out the parameters of the step.</p>
 
-<h3 id="code-signing">Code Signing <a href="#code-signing" class="anchor-symbol">⚓</a></h3>
+<p>For more information on code signing for Xamarin projects, see <a href="/code-signing/xamarin-android-code-signing/xamarin-android-code-signing">Xamarin Android code signing</a> and <a href="/code-signing/ios-code-signing/create-signed-ipa-for-xamarin">Creating a signed .ipa for Xamarin projects</a>.</p>
 
-<ul>
-  <li><a href="/code-signing/ios-code-signing/code-signing">iOS code signing</a></li>
-  <li><a href="/code-signing/android-code-signing//android-code-signing-procedures">Android code signing</a></li>
-</ul>
-
-<h3 id="advanced">Advanced <a href="#advanced" class="anchor-symbol">⚓</a></h3>
-
-<ul>
-  <li><a href="/xamarin/deploy-your-xamarin-app">Deploy your Xamarin app</a></li>
-  <li><a href="/testing/run-your-tests-in-the-app-center">Run your tests in the Visual Studio App Center</a></li>
-  <li><a href="/xamarin/add-custom-sources-to-nuget">Add custom sources to NuGet</a></li>
-  <li><a href="/tutorials/build-with-fake">Build with FAKE (F# Make)</a></li>
-</ul>
-
-<div class="message-box note"><div class="message-title">
-    <p>Community created tutorials</p>
-  </div><div class="message-content">
-
-    <p>For more, community created tutorials, see the Xamarin section on the <a href="/tutorials/community-created">Community Created Tutorials</a> page.</p>
-  </div></div>
+<p>The next time you start a build your app will be deployed to the service of your choice!</p>
 
 			</main>
 		</div>

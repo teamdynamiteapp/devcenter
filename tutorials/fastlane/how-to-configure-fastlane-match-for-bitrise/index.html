@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Docker support on bitrise.io - Bitrise DevCenter
+				How to configure fastlane match for Bitrise - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Docker support on bitrise.io
+							How to configure fastlane match for Bitrise
 						
 					</div>
 				</div>
@@ -1170,7 +1170,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/fastlane/fastlane-tools-integration/" title="Fastlane tools integration">Fastlane tools integration</a>
+				<a href="/tutorials/fastlane/fastlane-tools-integration/" title="Fastlane tools integration">Fastlane tools integration</a>
 			
 		
 		
@@ -1179,7 +1179,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/fastlane/how-to-configure-fastlane-match-for-bitrise/" title="How to configure fastlane match for Bitrise">How to configure fastlane match for Bitrise</a>
+				<a href="/tutorials/fastlane/how-to-configure-fastlane-match-for-bitrise/" title="How to configure fastlane match for Bitrise" class="current">How to configure fastlane match for Bitrise</a>
 			
 		
 		
@@ -1203,7 +1203,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/index/" title="About Xamarin">About Xamarin</a>
+				<a href="/tutorials/xamarin/index/" title="About Xamarin">About Xamarin</a>
 			
 		
 		
@@ -1212,7 +1212,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/restore-nuget-packages/" title="Restore NuGet packages">Restore NuGet packages</a>
+				<a href="/tutorials/xamarin/restore-nuget-packages/" title="Restore NuGet packages">Restore NuGet packages</a>
 			
 		
 		
@@ -1221,7 +1221,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/add-custom-sources-to-nuget/" title="Add custom sources to NuGet">Add custom sources to NuGet</a>
+				<a href="/tutorials/xamarin/add-custom-sources-to-nuget/" title="Add custom sources to NuGet">Add custom sources to NuGet</a>
 			
 		
 		
@@ -1230,7 +1230,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/deploy-your-xamarin-app/" title="Deploy your Xamarin app">Deploy your Xamarin app</a>
+				<a href="/tutorials/xamarin/deploy-your-xamarin-app/" title="Deploy your Xamarin app">Deploy your Xamarin app</a>
 			
 		
 		
@@ -1254,7 +1254,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/docker/index/" title="Docker support on bitrise.io" class="current">Docker support on bitrise.io</a>
+				<a href="/tutorials/docker/index/" title="Docker support on bitrise.io">Docker support on bitrise.io</a>
 			
 		
 		
@@ -1263,7 +1263,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/docker/run-your-build-locally-in-docker/" title="How to run your build locally in Docker">How to run your build locally in Docker</a>
+				<a href="/tutorials/docker/run-your-build-locally-in-docker/" title="How to run your build locally in Docker">How to run your build locally in Docker</a>
 			
 		
 		
@@ -1272,7 +1272,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/docker/use-your-own-docker-image/" title="Use your own Docker image">Use your own Docker image</a>
+				<a href="/tutorials/docker/use-your-own-docker-image/" title="Use your own Docker image">Use your own Docker image</a>
 			
 		
 		
@@ -1792,36 +1792,38 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Docker support on bitrise.io</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/docker/index/.md" target="_blank"></a>
+						<h1>How to configure fastlane match for Bitrise</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/tutorials/fastlane/how-to-configure-fastlane-match-for-bitrise/.md" target="_blank"></a>
 					</div>
 				
-				<p><a href="https://www.docker.com/">Docker</a> is an ideal tool to create, use and share custom environments,
-as well as to provide a lightweight way to do builds in emphemeral environments (where
-the environment is destroyed after the build, and a new one is created when the next build starts).</p>
+				<p>If you want to use <a href="https://github.com/fastlane/fastlane/tree/master/match">fastlane match</a>
+in your <a href="https://www.bitrise.io/">bitrise.io</a> build you only have to do three things:</p>
 
-<p>Unfortunately Docker can only be used to <strong>run</strong> Linux <strong>guest</strong> systems right now,
-and since Windows Server 2016 it’s now possible to run Windows docker containers (guest system)
-but only from Windows Server 2016 and on Windows 10 with Anniversary Update.</p>
+<ol>
+  <li>Make sure that a single SSH key can be used to <code class="highlighter-rouge">git clone</code> both your main repository (the one
+you register on <a href="https://www.bitrise.io/">bitrise.io</a>) and the <code class="highlighter-rouge">match</code> repository.
+You can find more info <a href="/faq/adding-projects-with-submodules/">in this guide</a>.</li>
+  <li>Add an environment variable <code class="highlighter-rouge">MATCH_PASSWORD</code>, as
+<a href="https://github.com/fastlane/fastlane/tree/master/match#encryption-password">described in <code class="highlighter-rouge">match</code>’s docs</a>,
+to specify the <code class="highlighter-rouge">Encryption password</code> you used for <code class="highlighter-rouge">match</code>.
+On <a href="https://www.bitrise.io/">bitrise.io</a> you should add this as a <code class="highlighter-rouge">Secret Environment Variable</code>,
+in the <a href="http://devcenter.bitrise.io/docs/add-your-first-step-to-your-apps-workflow">Workflow Editor</a>.
+<em>Make sure to <strong>disable</strong> the <code class="highlighter-rouge">Replace variables in input?</code> option of the environment
+variable, to not to cause issues when the value includes the <code class="highlighter-rouge">$</code> (dollar) sign, which is used
+for environment variable expansion.</em>
+<img src="/img/tips-and-tricks/fastlane-match-password-secret-env.png" alt="Screenshot - Fastlane match secret env var setup" /></li>
+  <li>Make sure to use <code class="highlighter-rouge">match</code>’s <code class="highlighter-rouge">readonly</code> mode, or else <code class="highlighter-rouge">match</code> will try to connect
+to the Apple Developer Portal, which requires further authorization (providing additional
+username and password for Apple Dev Portal login)!
+    <ul>
+      <li>If you use <code class="highlighter-rouge">match</code> in your <code class="highlighter-rouge">Fastfile</code> or <code class="highlighter-rouge">fastlane</code> config: <code class="highlighter-rouge">match(app_identifier: "my.domain", type: "appstore", readonly: true)</code></li>
+      <li>If you use it as a command line tool: <code class="highlighter-rouge">match development --readonly</code></li>
+      <li>More info in <code class="highlighter-rouge">match</code>’s <a href="https://docs.fastlane.tools/actions/match/">official readme / docs</a></li>
+    </ul>
+  </li>
+</ol>
 
-<p>Docker can be installed on Linux, macOS and Windows, but the environment (container)
-it runs can only be Linux (and Windows, on Windows Server 2016 and on Windows 10 with Anniversary Update).
-Linux containers (guest) can run on all platforms where you can install <code class="highlighter-rouge">docker</code> (Linux, Windows, macOS, …).</p>
-
-<p><em>This is why our Android/Linux environment is provided as a docker image, but not our macOS Stacks.</em></p>
-
-<p>Our Linux/Android stacks have full <code class="highlighter-rouge">docker</code> support, which means that you can run
-any <code class="highlighter-rouge">docker</code> command during the build, and when a build runs on a Linux/Android
-stack, the build actually runs inside a docker container (but, for security,
-every Linux/Android build gets its own Virtual Machine too, in which the build
-runs in a docker container).</p>
-
-<p><em>It is possible to set a custom docker image for your builds if you select the Linux/Android
-stack, on the app’s Bitrise.io page, on the <code class="highlighter-rouge">Settings</code> tab,
-<strong>but in most cases you should not change this image</strong>,
-instead you should run <code class="highlighter-rouge">docker</code> commands yourself during the build, e.g. using a <code class="highlighter-rouge">Script</code> step.</em></p>
-
-<p>For more Docker related information see the sub sections.</p>
+<p>That’s all, you can now enjoy the utility of <code class="highlighter-rouge">match</code>, automated with <a href="https://www.bitrise.io/">bitrise.io</a> 🚀</p>
 
 			</main>
 		</div>

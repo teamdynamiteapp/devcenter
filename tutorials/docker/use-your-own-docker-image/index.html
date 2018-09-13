@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Add custom sources to NuGet - Bitrise DevCenter
+				Use your own Docker image - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Add custom sources to NuGet
+							Use your own Docker image
 						
 					</div>
 				</div>
@@ -1170,7 +1170,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/fastlane/fastlane-tools-integration/" title="Fastlane tools integration">Fastlane tools integration</a>
+				<a href="/tutorials/fastlane/fastlane-tools-integration/" title="Fastlane tools integration">Fastlane tools integration</a>
 			
 		
 		
@@ -1179,7 +1179,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/fastlane/how-to-configure-fastlane-match-for-bitrise/" title="How to configure fastlane match for Bitrise">How to configure fastlane match for Bitrise</a>
+				<a href="/tutorials/fastlane/how-to-configure-fastlane-match-for-bitrise/" title="How to configure fastlane match for Bitrise">How to configure fastlane match for Bitrise</a>
 			
 		
 		
@@ -1203,7 +1203,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/index/" title="About Xamarin">About Xamarin</a>
+				<a href="/tutorials/xamarin/index/" title="About Xamarin">About Xamarin</a>
 			
 		
 		
@@ -1212,7 +1212,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/restore-nuget-packages/" title="Restore NuGet packages">Restore NuGet packages</a>
+				<a href="/tutorials/xamarin/restore-nuget-packages/" title="Restore NuGet packages">Restore NuGet packages</a>
 			
 		
 		
@@ -1221,7 +1221,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/add-custom-sources-to-nuget/" title="Add custom sources to NuGet" class="current">Add custom sources to NuGet</a>
+				<a href="/tutorials/xamarin/add-custom-sources-to-nuget/" title="Add custom sources to NuGet">Add custom sources to NuGet</a>
 			
 		
 		
@@ -1230,7 +1230,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/xamarin/deploy-your-xamarin-app/" title="Deploy your Xamarin app">Deploy your Xamarin app</a>
+				<a href="/tutorials/xamarin/deploy-your-xamarin-app/" title="Deploy your Xamarin app">Deploy your Xamarin app</a>
 			
 		
 		
@@ -1254,7 +1254,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/docker/index/" title="Docker support on bitrise.io">Docker support on bitrise.io</a>
+				<a href="/tutorials/docker/index/" title="Docker support on bitrise.io">Docker support on bitrise.io</a>
 			
 		
 		
@@ -1263,7 +1263,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/docker/run-your-build-locally-in-docker/" title="How to run your build locally in Docker">How to run your build locally in Docker</a>
+				<a href="/tutorials/docker/run-your-build-locally-in-docker/" title="How to run your build locally in Docker">How to run your build locally in Docker</a>
 			
 		
 		
@@ -1272,7 +1272,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/docker/use-your-own-docker-image/" title="Use your own Docker image">Use your own Docker image</a>
+				<a href="/tutorials/docker/use-your-own-docker-image/" title="Use your own Docker image" class="current">Use your own Docker image</a>
 			
 		
 		
@@ -1792,34 +1792,316 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Add custom sources to NuGet</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/xamarin/add-custom-sources-to-nuget/.md" target="_blank"></a>
+						<h1>Use your own Docker image</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/tutorials/docker/use-your-own-docker-image/.md" target="_blank"></a>
 					</div>
 				
-				<p>If you are using third-party NuGet packages in your application
-you have to add these sources to your NuGet package sources.</p>
+				<p>!!! note “Have a question or suggestion? Join the discussion!”
+    You can find this guide’s discussion topic at:
+    <a href="http://discuss.bitrise.io/t/how-to-use-your-own-docker-image-for-your-builds/69">discuss.bitrise.io/t/69</a></p>
 
-<p>Simply add a new <code class="highlighter-rouge">Script</code> step to your workflow with the following bash script as the content:</p>
+<p>There are two ways to use <code class="highlighter-rouge">docker</code> on <a href="https://www.bitrise.io">bitrise.io</a>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-<span class="nb">set</span> <span class="nt">-ex</span>
+<ol>
+  <li>Run <code class="highlighter-rouge">docker</code> commands yourself, e.g. with a <code class="highlighter-rouge">Script</code> step</li>
+  <li>Use a Linux/Android stack and set the environment docker image for the app (<code class="highlighter-rouge">Settings</code> tab)</li>
+</ol>
 
-nuget sources add <span class="nt">-Name</span> NAME_FOR_SOURCE <span class="nt">-Source</span> SOURCE_URL
+<p><strong>The first option is strongly preferred, you should not change the base environment docker image (on the <code class="highlighter-rouge">Settings</code> tab on bitrise.io)
+unless you really have to!</strong> Running the <code class="highlighter-rouge">docker</code> commands yourself during the build is way more flexible,
+and provides an overall better control.</p>
+
+<h2 id="run-docker-commands-during-the-build">Run docker commands during the build <a href="#run-docker-commands-during-the-build" class="anchor-symbol">⚓</a></h2>
+
+<p><strong>This is the preferred way of using docker</strong>, both locally and on <a href="https://www.bitrise.io">bitrise.io</a>.</p>
+
+<p>All you have to do is:</p>
+
+<ol>
+  <li>Add a <code class="highlighter-rouge">Script</code> step to your workflow</li>
+  <li>And in the <code class="highlighter-rouge">Script</code> step run the <code class="highlighter-rouge">docker</code> (or <code class="highlighter-rouge">docker-compose</code>, etc.) command you want to</li>
+  <li>Additionally, if you want to run the build on <a href="https://www.bitrise.io">bitrise.io</a>, make sure that you select
+a Linux/Android stack for the app; those stacks have <code class="highlighter-rouge">docker</code> preinstalled and ready to use our of the box.</li>
+</ol>
+
+<p><em>You can find a sample repository on GitHub,
+which is configure to run on your Mac/Linux using the <a href="https://www.bitrise.io/cli">Bitrise CLI</a>:
+<a href="https://github.com/bitrise-samples/minimal-docker">https://github.com/bitrise-samples/minimal-docker</a></em></p>
+
+<h3 id="running-docker-hello-world">Running docker hello-world <a href="#running-docker-hello-world" class="anchor-symbol">⚓</a></h3>
+
+<p>Following the official “getting started” guide for example, to run the “hello world” docker image
+your bitrise build configuration yml can be as simple as:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+format_version: 1.3.1
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+trigger_map:
+- push_branch: "*"
+  workflow: primary
+- pull_request_source_branch: "*"
+  workflow: primary
+workflows:
+  primary:
+    steps:
+    - activate-ssh-key@3.1.1:
+        run_if: ''
+    - git-clone@3.4.1: {}
+    - script@1.1.3:
+        title: docker run hello-world
+        inputs:
+        - content: |-
+            #!/bin/bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+
+            docker run hello-world
 </code></pre></div></div>
 
-<p>!!! warning
-    Don’t forget to update the <code class="highlighter-rouge">NAME_FOR_SOURCE</code> and <code class="highlighter-rouge">SOURCE_URL</code> parameters,
-    and make sure to place the <code class="highlighter-rouge">Script</code> step before the <code class="highlighter-rouge">NuGet Restore Step</code>.</p>
+<h3 id="build-and-run-a-dockerfile">Build and run a Dockerfile <a href="#build-and-run-a-dockerfile" class="anchor-symbol">⚓</a></h3>
 
-<h3 id="custom-nuget-source-with-credentials">Custom NuGet source with credentials <a href="#custom-nuget-source-with-credentials" class="anchor-symbol">⚓</a></h3>
+<p>A bit more complex example, using your own <code class="highlighter-rouge">Dockerfile</code> in your repository to define the docker environment:</p>
 
-<p>If you need to set credentials for your NuGet source you can modify the <code class="highlighter-rouge">Script</code> above in the following way:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+format_version: 1.3.1
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+trigger_map:
+- push_branch: "*"
+  workflow: primary
+- pull_request_source_branch: "*"
+  workflow: primary
+workflows:
+  primary:
+    steps:
+    - activate-ssh-key@3.1.1:
+        run_if: ''
+    - git-clone@3.4.1: {}
+    - script@1.1.3:
+        title: docker run
+        inputs:
+        - content: |-
+            #!/bin/bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-<span class="nb">set</span> <span class="nt">-ex</span>
-
-nuget sources add <span class="nt">-Name</span> NAME_FOR_SOURCE <span class="nt">-Source</span> SOURCE_URL <span class="nt">-UserName</span> NUGET_USERNAME <span class="nt">-Password</span> NUGET_PASSWORD
+            docker build -t bitrise-minimal-sample .
+            docker run --rm bitrise-minimal-sample
 </code></pre></div></div>
+
+<p>This workflow will:</p>
+
+<ol>
+  <li>Git Clone your repository</li>
+  <li>And then run <code class="highlighter-rouge">docker build -t bitrise-minimal-sample .</code> and <code class="highlighter-rouge">docker run --rm bitrise-minimal-sample</code> in the repository’s root.</li>
+</ol>
+
+<p>If you have a <code class="highlighter-rouge">Dockerfile</code> like this in the root of the repository:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM alpine:3.3
+
+CMD cat /etc/alpine-release
+</code></pre></div></div>
+
+<p>The output will be something like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------------------------------------------------------------------------------+
+| (2) docker run hello-world                                                   |
++------------------------------------------------------------------------------+
+| id: script                                                                   |
+| version: 1.1.3                                                               |
+| collection: https://github.com/bitrise-io/bitrise-steplib.git                |
+| toolkit: bash                                                                |
+| time: 2016-11-21T14:28:23Z                                                   |
++------------------------------------------------------------------------------+
+|                                                                              |
++ docker build -t bitrise-minimal-sample .
+Sending build context to Docker daemon 69.12 kB
+
+Step 1 : FROM alpine:3.3
+3.3: Pulling from library/alpine
+985c5f84712b: Pulling fs layer
+985c5f84712b: Verifying Checksum
+985c5f84712b: Download complete
+985c5f84712b: Pull complete
+Digest: sha256:ec40755933414575748cecf929f1f2012cace2d2e0f8147e77e652d600ff17d7
+Status: Downloaded newer image for alpine:3.3
+ ---&gt; 6c2aa2137d97
+Step 2 : CMD cat /etc/alpine-release
+ ---&gt; Running in 507cfb961cc7
+ ---&gt; 02a0da3ac697
+Removing intermediate container 507cfb961cc7
+Successfully built 02a0da3ac697
++ docker run --rm bitrise-minimal-sample
+3.3.3
+|                                                                              |
++---+---------------------------------------------------------------+----------+
+| ✓ | docker run hello-world                                        | 4.24 sec |
++---+---------------------------------------------------------------+----------+
+</code></pre></div></div>
+
+<p><em>You can find a sample repository on GitHub,
+which is configure to run on your Mac/Linux using the <a href="https://www.bitrise.io/cli">Bitrise CLI</a>:
+<a href="https://github.com/bitrise-samples/minimal-docker">https://github.com/bitrise-samples/minimal-docker</a></em></p>
+
+<h3 id="using-docker-compose">Using docker-compose <a href="#using-docker-compose" class="anchor-symbol">⚓</a></h3>
+
+<p>The previous example could be even shorter using <a href="https://docs.docker.com/compose/">docker-compose</a>.</p>
+
+<p>For example, if you have a <code class="highlighter-rouge">docker-compose.yml</code> like this in your repository root (where the <code class="highlighter-rouge">Dockerfile</code> is):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '2'
+services:
+  sample-app:
+    build: .
+</code></pre></div></div>
+
+<p>You can replace the</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t bitrise-minimal-sample .
+docker run --rm bitrise-minimal-sample
+</code></pre></div></div>
+
+<p>lines with a single <code class="highlighter-rouge">docker-compose</code> call:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose run --rm sample-app
+</code></pre></div></div>
+
+<p>Docker compose will build and run the image automatically, you don’t have to specify a <code class="highlighter-rouge">-t</code> tag - the <code class="highlighter-rouge">services</code>
+name will be used by <code class="highlighter-rouge">docker-compose</code> to tag the image automatically.</p>
+
+<p><em>You can find a sample repository on GitHub,
+which is configure to run on your Mac/Linux using the <a href="https://www.bitrise.io/cli">Bitrise CLI</a>:
+<a href="https://github.com/bitrise-samples/minimal-docker">https://github.com/bitrise-samples/minimal-docker</a></em></p>
+
+<h2 id="using-bitriseio-custom-docker-image-option">Using bitrise.io custom docker image option <a href="#using-bitriseio-custom-docker-image-option" class="anchor-symbol">⚓</a></h2>
+
+<blockquote>
+  <p>Use a Linux/Android stack and set the environment docker image for the app (<code class="highlighter-rouge">Settings</code> tab)</p>
+</blockquote>
+
+<p>!!! warning “Custom Android docker image”
+    Creating and maintaining your own Android Docker image can be quite time consuming!
+    <strong>If what you need is just to install a couple of additional tools, you should do that with e.g. a Script step instead!</strong>
+    For more information see the <a href="/tips-and-tricks/install-additional-tools/">Install Any Additional Tool</a> guide.
+    <em>You should only use your own Android docker image if you really have to!</em></p>
+
+<p>If you want to run your build in a custom docker environment,
+<strong>you should base your own docker image on one of our base Docker images</strong>, as those have every base tool pre-installed,
+the standard bitrise directories created, the Environments (like <code class="highlighter-rouge">$BITRISE_DEPLOY_DIR</code>) set,
+and are pre-cached on the build virtual machines.
+<strong>If you decide to create your own Docker image please read this guide, from start to finish!</strong></p>
+
+<p><strong>Feel free to send Pull Request for our images if you think we missed something, which would be useful for everyone who uses our images!</strong></p>
+
+<p>The bare-minimum base image can be found at:</p>
+
+<ul>
+  <li>Docker Hub: <a href="https://hub.docker.com/r/bitriseio/docker-bitrise-base/">https://hub.docker.com/r/bitriseio/docker-bitrise-base/</a></li>
+  <li>GitHub: <a href="https://github.com/bitrise-docker/bitrise-base">https://github.com/bitrise-docker/bitrise-base</a></li>
+</ul>
+
+<p>Android base image, built on the bare-minimum base image, adding Android specific tools and Envs:</p>
+
+<ul>
+  <li>Docker Hub: <a href="https://hub.docker.com/r/bitriseio/docker-android/">https://hub.docker.com/r/bitriseio/docker-android/</a></li>
+  <li>GitHub: <a href="https://github.com/bitrise-docker/android">https://github.com/bitrise-docker/android</a></li>
+</ul>
+
+<p>Android NDK image, built on the Android base image, adding a pre-installed Android NDK and Envs:</p>
+
+<ul>
+  <li>Docker Hub: <a href="https://hub.docker.com/r/bitriseio/android-ndk/">https://hub.docker.com/r/bitriseio/android-ndk/</a></li>
+  <li>GitHub: <a href="https://github.com/bitrise-docker/android-ndk">https://github.com/bitrise-docker/android-ndk</a></li>
+</ul>
+
+<p>As you can see, if you want to base your own image on one of our available images you can do that by specifying
+it at the very top of your <code class="highlighter-rouge">Dockerfile</code> with a <code class="highlighter-rouge">FROM bitriseio/IMAGE-ID:latest</code>,
+for example: <code class="highlighter-rouge">FROM bitriseio/docker-bitrise-base:latest</code></p>
+
+<p>!!! warning “Don’t use the <code class="highlighter-rouge">-alpha</code> images for your builds”
+    For every docker image we have on Docker Hub we have a <code class="highlighter-rouge">-alpha</code> post fixed version too.
+    the <code class="highlighter-rouge">-alpha</code> ones are rebuilt frequently and are <strong>not precached on <a href="https://www.bitrise.io">bitrise.io</a></strong>,
+    so you should avoid those. The only purpose of the <code class="highlighter-rouge">-alpha</code> images is to provide
+    ready to use test environments for us, before we would publish a non <code class="highlighter-rouge">-alpha</code> version.</p>
+
+<p><strong>Important</strong>: you have to use the <strong>Docker Hub ID</strong> of the image you want to use as
+the base image (ex: <code class="highlighter-rouge">bitriseio/docker-android</code>, <code class="highlighter-rouge">bitriseio/android-ndk</code> or <code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>).</p>
+
+<p>You can find an example project which extends our Android image by
+installing additional SDKs at: <a href="https://github.com/viktorbenei/docker-bitrise-android-ext">https://github.com/viktorbenei/docker-bitrise-android-ext</a></p>
+
+<h3 id="create-the-docker-image-to-be-able-to-use-it-on-bitriseio">Create the Docker Image, to be able to use it on bitrise.io <a href="#create-the-docker-image-to-be-able-to-use-it-on-bitriseio" class="anchor-symbol">⚓</a></h3>
+
+<p>You can create it any way you want to and push it into any Docker registry.
+The only requirement is that it have to be a <strong>public</strong> image, private images are not (yet) supported.</p>
+
+<p>We’ll show a quick example with GitHub and Docker Hub, using Docker Hub’s
+automatic builds (it’ll automatically create a new Docker image for you every time you change your Dockerfile on GitHub).</p>
+
+<p>What you need for this guide:</p>
+
+<ul>
+  <li><a href="https://github.com">GitHub account</a></li>
+  <li><a href="https://hub.docker.com">Docker Hub account</a></li>
+</ul>
+
+<p>First, you have to create a new repository on GitHub, and add at least a <code class="highlighter-rouge">Dockerfile</code>, with a <code class="highlighter-rouge">FROM bitriseio/IMAGE-ID:latest</code>
+statement at the top of the <code class="highlighter-rouge">Dockerfile</code>, like the one you can see at:
+<a href="https://github.com/viktorbenei/docker-bitrise-android-ext/blob/master/Dockerfile#L1">https://github.com/viktorbenei/docker-bitrise-android-ext/blob/master/Dockerfile#L1</a>
+(<em>don’t forget to commit &amp; push it!</em>).</p>
+
+<p>!!! note “Which image to use?”
+    1. If you don’t need the Android tools you should base your image on
+       the <strong>bitrise-base</strong> (<code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>) image
+       and install just the things you need.
+    1. If you need the Android tools then you should use
+       the <strong>android</strong> (<code class="highlighter-rouge">bitriseio/docker-android</code>) image
+       or the <strong>bitrise-base</strong> (<code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>) image.
+    1. You should only use the <strong>android-ndk</strong> (<code class="highlighter-rouge">bitriseio/android-ndk</code>) image
+       as the base image if you actually need the NDK.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>From a performance perspective: you should install the least amount of tools in your image,
+as it'll make your image smaller, which means faster download &amp; build start.
+</code></pre></div></div>
+
+<p>You now have the description of your image. Go to <a href="https://hub.docker.com">Docker Hub</a>, click <code class="highlighter-rouge">Create</code> in the top menu and select <code class="highlighter-rouge">Create Automated Build</code>.
+If you haven’t linked your GitHub account to your Docker Hub account you’ll have to do it now.
+Once the link between GitHub and Docker Hub is established you’ll see a list of your GitHub repositories.
+Select the repository you just created (the one with the <code class="highlighter-rouge">Dockerfile</code> in its root), and follow the guide.</p>
+
+<p>Congratulation! You now have a fully automatic Docker image creation, based on your GitHub repository!
+This means that every time you change the repository, commit &amp; push the change Docker Hub will pick up the new <code class="highlighter-rouge">Dockerfile</code> and will build a Docker image for you.</p>
+
+<p><strong>One more thing you should do is to Link your image to our base image you use, so that every time our base image is updated your image will update as well.</strong></p>
+
+<p><em>This is especially important if you base your Docker image on one of our Android images.
+Those images are quite large, and if we have to do a change in the base Docker image and you don’t build a new image,
+<strong>your image will require the old base image, which won’t be pre-cached</strong> on the build Virtual Machines anymore!
+This means that to <code class="highlighter-rouge">docker pull</code> your image it won’t be enough to download just the diffs anymore,
+<strong>the whole image will have to be pulled</strong> which might even result in errors like “no space left on the device” -
+to <code class="highlighter-rouge">docker pull</code> the base Android image, if no cache is available, it already requires ~10GB disk space, and the Android NDK image is even larger!</em></p>
+
+<p><strong>Link your image to one of ours</strong>: you can do this on DockerHub, on the <code class="highlighter-rouge">Build Settings</code> tab,
+under the <code class="highlighter-rouge">Repository Links</code> section. Just specify the ID of our Docker image (ex: <code class="highlighter-rouge">bitriseio/docker-android</code>),
+save the link and the next time the specified image is updated your image will be re-built as well (using the <code class="highlighter-rouge">Dockerfile</code> in <strong>your</strong> repository).</p>
+
+<h3 id="use-your-own-public-docker-image-for-your-builds">Use your own (public) Docker image for your builds <a href="#use-your-own-public-docker-image-for-your-builds" class="anchor-symbol">⚓</a></h3>
+
+<p>Once you have your own Docker image and you verified that it can be <code class="highlighter-rouge">docker pull</code>-ed,
+you can set its ID on the <code class="highlighter-rouge">Settings</code> tab of your app on <a href="https://www.bitrise.io">bitrise.io</a>,
+in the <code class="highlighter-rouge">Stack Selector</code> section.</p>
+
+<p>You just have to copy paste the ID of your image (e.g. <code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>)
+into the <code class="highlighter-rouge">Docker image to use</code> field and click the <code class="highlighter-rouge">Save</code> button.
+Your next build will use the image you specified.</p>
+
+<p>!!! note “Have a question or suggestion? Join the discussion!”
+    You can find this guide’s discussion topic at:
+    <a href="http://discuss.bitrise.io/t/how-to-use-your-own-docker-image-for-your-builds/69">discuss.bitrise.io/t/69</a></p>
 
 			</main>
 		</div>
