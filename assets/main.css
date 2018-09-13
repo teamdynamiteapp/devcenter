@@ -343,6 +343,8 @@ main.content {
     main.content h1:hover a.anchor-symbol:hover, main.content h1:hover a.anchor-symbol:focus, main.content h2:hover a.anchor-symbol:hover, main.content h2:hover a.anchor-symbol:focus, main.content h3:hover a.anchor-symbol:hover, main.content h3:hover a.anchor-symbol:focus, main.content h4:hover a.anchor-symbol:hover, main.content h4:hover a.anchor-symbol:focus, main.content h5:hover a.anchor-symbol:hover, main.content h5:hover a.anchor-symbol:focus, main.content h6:hover a.anchor-symbol:hover, main.content h6:hover a.anchor-symbol:focus {
       opacity: 1; }
   main.content .message-box {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     border-left: .4rem solid;
     border-radius: .2rem;
     font-size: 1.28rem;
@@ -356,8 +358,9 @@ main.content {
         margin-top: 0;
         margin-bottom: 0; }
     main.content .message-box .message-content {
-      border-top: 0.1rem solid rgba(68, 138, 255, 0.1);
       padding: 0.8rem 1.2rem; }
+    main.content .message-box .message-title + .message-content {
+      border-top: 0.1rem solid rgba(68, 138, 255, 0.1); }
     main.content .message-box.attention, main.content .message-box.warning {
       border-left-color: #ff9100; }
       main.content .message-box.attention .message-title, main.content .message-box.warning .message-title {
