@@ -1861,14 +1861,18 @@ See the <a href="https://github.com/bitrise-steplib/step-template">step-template
 easier to just reference your steps with their _<code class="highlighter-rouge">_git clone_</code></em> URL directly
 if you don’t want to share it with others._</p>
 
-<p>!!! note “Custom StepLib support in tools”
-The Bitrise CLI tools can work with custom step libraries, but other
-tools like the Visual Workflow Editor on <a href="https://www.bitrise.io">bitrise.io</a>
-might be limited in functionality for steps not available in the main
-<a href="https://github.com/bitrise-io/bitrise-steplib">Bitrise StepLib</a>.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Custom StepLib support in tools</p>
+  </div>
 
-<p>If possible you should share your steps in the
-main <a href="https://github.com/bitrise-io/bitrise-steplib">Bitrise StepLib</a>,
+<div class="message-content">
+
+    <p>The Bitrise CLI tools can work with custom step libraries, but other tools like the Visual Workflow Editor on <a href="https://www.bitrise.io">bitrise.io</a> might be limited in functionality for steps not available in the main <a href="https://github.com/bitrise-io/bitrise-steplib">Bitrise StepLib</a>.</p>
+  </div>
+</div>
+
+<p>If possible, you should share your steps in the main <a href="https://github.com/bitrise-io/bitrise-steplib">Bitrise StepLib</a>,
 to help others as well as for the extra reliability the StepLib offers.</p>
 
 <p><em>Custom StepLibs can also provide fallbacks (alternative download URLs, caches),
