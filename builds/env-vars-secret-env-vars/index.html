@@ -1840,7 +1840,7 @@ As an example, if you click into an input of the third step of your workflow, th
 
 <p><img src="/img/builds/workflow-env-var.png" alt="Screenshot" /></p>
 
-<p>Check out our list of <a href="/builds/available-environment-variables/">Available Environment Variables</a> exposed by Bitrise CLI and bitrise.io.</p>
+<p>Check out our list of <a href="/builds/available-environment-variables/">Available Environment Variables</a> exposed by Bitrise CLI and [bitrise.io] (<a href="https://www.bitrise.io/" title="https://www.bitrise.io/">https://www.bitrise.io/</a>).</p>
 
 <h2 id="about-secrets">About <code class="highlighter-rouge">Secrets</code> <a href="#about-secrets" class="anchor-symbol">⚓</a></h2>
 
@@ -1852,12 +1852,15 @@ As an example, if you click into an input of the third step of your workflow, th
 
 <p>The <code class="highlighter-rouge">Expose for Pull Request</code> can be enabled if you want your secrets to be exposed in your build logs in PRs.</p>
 
-<p><strong>IMPORTANT:</strong></p>
+<div class="message-box important">
+<div class="message-title">
+    <p>About <code class="highlighter-rouge">SENSITIVE</code> label</p>
+  </div>
 
-<ul>
-  <li>In the case of <a href="/adding-a-new-app/public-apps/">public apps</a>, step input fields containing sensitive information are marked with a <code class="highlighter-rouge">[SENSITIVE](/builds/sensitive-input-fields/)</code> label and only secret env vars can be used there!</li>
-  <li>The <code class="highlighter-rouge">Expose for Pull Request</code> toggle is by <strong>default disabled</strong> and cannot be enabled since your secrets must be kept hidden in publicly accessible build logs!</li>
-</ul>
+<div class="message-content">
+    <p>In the case of <a href="/adding-a-new-app/public-apps/">public apps</a>, step input fields containing sensitive information are marked with a <code class="highlighter-rouge">[SENSITIVE]</code> label and only secret env vars can be used there! The <code class="highlighter-rouge">Expose for Pull Request</code> toggle is by <strong>default disabled</strong> and cannot be enabled since your secrets must be kept hidden in publicly accessible build logs!</p>
+  </div>
+</div>
 
 <p>Head over to <a href="/bitrise-cli/secrets/">Secrets</a> for more information on <a href="/bitrise-cli/secrets/#secret-filtering-with-bitrise-cli/">secret filtering</a>.</p>
 
