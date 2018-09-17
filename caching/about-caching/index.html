@@ -1913,8 +1913,15 @@ The Step just has to use the Build Cache API to get download and upload URLs, th
 <p>This means that if you store files which are downloaded from a CDN/cloud storage, you might not see
 any speed improvement, as downloading it from the Bitrise Build Cache storage will probably take about the same time as downloading it from its canonical CDN/cloud storage location.</p>
 
-<p><strong>IMPORTANT</strong>: Storing a dependency in Bitrise Build Cache might help if you have <strong>reliability</strong> issues with the resource’s/dependency’s canonical download location. Popular tools/dependencies might get rate limited (for example, <a href="https://github.com/Medium/phantomjs/issues/501">PhantomJS</a>). CDN servers might have availability issues, like jCenter/Bintray. Here are a few examples: <a href="http://status.bitrise.io/incidents/gcx1qn5lj7yt">#1</a>, <a href="http://status.bitrise.io/incidents/3ztgwxvwq7rm">#2</a>, and <a href="http://status.bitrise.io/incidents/dqpby9m1n274">#3</a>.
-If that’s the case, storing the dependency in Bitrise Build Cache might help you. It might not improve the build time but <strong>it definitely can improve the reliability</strong>.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>When to store a dependency in Bitrise Build Cache</p>
+  </div>
+
+<div class="message-content">
+    <p>Storing a dependency in Bitrise Build Cache might help if you have <strong>reliability</strong> issues with the resource’s/dependency’s canonical download location. Popular tools/dependencies might get rate limited (for example, <a href="https://github.com/Medium/phantomjs/issues/501">PhantomJS</a>). CDN servers might have availability issues, like jCenter/Bintray. Here are a few examples: <a href="http://status.bitrise.io/incidents/gcx1qn5lj7yt">#1</a>, <a href="http://status.bitrise.io/incidents/3ztgwxvwq7rm">#2</a>, and <a href="http://status.bitrise.io/incidents/dqpby9m1n274">#3</a>. If that’s the case, storing the dependency in Bitrise Build Cache might help you. It might not improve the build time but <strong>it definitely can improve the reliability</strong>.</p>
+  </div>
+</div>
 
 <h3 id="the-cache-is-stored-as-one-archive-file">The cache is stored as one archive file <a href="#the-cache-is-stored-as-one-archive-file" class="anchor-symbol">⚓</a></h3>
 
