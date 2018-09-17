@@ -1817,15 +1817,20 @@ which is responsible for interpreting the build configuration and executing it.<
 and <strong>it’s a tool which you can install and run on your own Mac/PC!</strong></p>
 
 <p>This section of the DevCenter is dedicated to this runner (<code class="highlighter-rouge">Bitrise CLI</code>) and the
-<code class="highlighter-rouge">bitrise.yml</code> configuration format, <strong>the things described here don’t even require a
-<a href="https://www.bitrise.io">bitrise.io</a> account</strong>, the only requirement is that
+<code class="highlighter-rouge">bitrise.yml</code> configuration format, <strong>the things described here don’t even require a</strong>
+<a href="https://www.bitrise.io"><strong>bitrise.io</strong></a> <strong>account</strong>, the only requirement is that
 you install the <code class="highlighter-rouge">Bitrise CLI</code> on your Mac/PC.</p>
 
-<p>!!! note “Bitrise CLI on bitrise.io”
-    The CLI you can install is exactly the same as what’s used on <a href="https://www.bitrise.io">bitrise.io</a>.
-    When a build starts on <a href="https://www.bitrise.io">bitrise.io</a>, a virtual machine
-    is created for the build with the Bitrise CLI preinstalled,
-    and once the virtual machine is ready, the build is performed through the Bitrise CLI.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Bitrise CLI on bitrise.io</p>
+  </div>
+
+<div class="message-content">
+
+    <p>The CLI you can install is exactly the same as what’s used on <a href="https://www.bitrise.io">bitrise.io</a>. When a build starts on <a href="https://www.bitrise.io">bitrise.io</a>, a virtual machine is created for the build with the Bitrise CLI preinstalled, and once the virtual machine is ready, the build is performed through the Bitrise CLI.</p>
+  </div>
+</div>
 
 <h2 id="bitrise-cli---the-open-source-offline-automation-runner">Bitrise CLI - the open source, offline, automation runner <a href="#bitrise-cli---the-open-source-offline-automation-runner" class="anchor-symbol">⚓</a></h2>
 
@@ -1841,9 +1846,9 @@ as that’s the expected file name the configuration should be saved with.</p>
 
 <p><em>Technically the CLI can also accept the configuration in JSON format,
 and the file name can be changed too, but if you save the configuration
-into a file named <code class="highlighter-rouge">bitrise.yml</code>, you can simply <code class="highlighter-rouge">bitrise run</code> in that directory,
+into a file named _<code class="highlighter-rouge">_bitrise.yml_</code></em>, you can simply_ <code class="highlighter-rouge">_bitrise run_</code>_ in that directory,
 without specifying any configuration path, and the CLI will read the
-configuration from <code class="highlighter-rouge">bitrise.yml</code> automatically.</em></p>
+configuration from <em><code class="highlighter-rouge">_bitrise.yml_</code> _automatically.</em></p>
 
 <h2 id="step-library-steplib">Step Library (StepLib) <a href="#step-library-steplib" class="anchor-symbol">⚓</a></h2>
 
@@ -1853,14 +1858,14 @@ are all open source, <strong>you can write your own</strong> too and then share 
 See the <a href="https://github.com/bitrise-steplib/step-template">step-template</a> for more information.</p>
 
 <p><em>You can also create your own Step Library if you want to, but it’s usually
-easier to just reference your steps with their <code class="highlighter-rouge">git clone</code> URL directly
-if you don’t want to share it with others.</em></p>
+easier to just reference your steps with their _<code class="highlighter-rouge">_git clone_</code></em> URL directly
+if you don’t want to share it with others._</p>
 
 <p>!!! note “Custom StepLib support in tools”
-    The Bitrise CLI tools can work with custom step libraries, but other
-    tools like the Visual Workflow Editor on <a href="https://www.bitrise.io">bitrise.io</a>
-    might be limited in functionality for steps not available in the main
-    <a href="https://github.com/bitrise-io/bitrise-steplib">Bitrise StepLib</a>.</p>
+The Bitrise CLI tools can work with custom step libraries, but other
+tools like the Visual Workflow Editor on <a href="https://www.bitrise.io">bitrise.io</a>
+might be limited in functionality for steps not available in the main
+<a href="https://github.com/bitrise-io/bitrise-steplib">Bitrise StepLib</a>.</p>
 
 <p>If possible you should share your steps in the
 main <a href="https://github.com/bitrise-io/bitrise-steplib">Bitrise StepLib</a>,
