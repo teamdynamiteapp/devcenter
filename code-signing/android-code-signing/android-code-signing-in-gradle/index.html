@@ -1865,16 +1865,25 @@
 
 <p>You get these environment variables when you upload your keystore to the <code class="highlighter-rouge">GENERIC FILE STORAGE</code> field of the <code class="highlighter-rouge">Code Signing</code> tab in your Workflow Editor.</p>
 
-<p><strong>IMPORTANT</strong>: Do not forget to define the used environment variables on <a href="https://www.bitrise.io">bitrise.io</a> as well.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Define the used env vars</p>
+  </div>
 
-<p>When you upload a keystore file in the <code class="highlighter-rouge">Android keystore file</code> section and you have all the fields filled out, Bitrise will export these environment variables automatically:</p>
+<div class="message-content">
+    <p>Do not forget to define the used environment variables on <a href="https://www.bitrise.io">bitrise.io</a> as well.</p>
 
-<ul>
-  <li><code class="highlighter-rouge">BITRISEIO_ANDROID_KEYSTORE_ALIAS</code></li>
-  <li><code class="highlighter-rouge">BITRISEIO_ANDROID_KEYSTORE_PASSWORD</code></li>
-  <li><code class="highlighter-rouge">BITRISEIO_ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD</code></li>
-  <li><code class="highlighter-rouge">BITRISEIO_ANDROID_KEYSTORE_URL</code></li>
-</ul>
+    <p>When you upload a keystore file in the <code class="highlighter-rouge">Android keystore file</code> section and you have all the fields filled out, Bitrise will export these environment variables automatically.</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">BITRISEIO_ANDROID_KEYSTORE_ALIAS</code></li>
+      <li><code class="highlighter-rouge">BITRISEIO_ANDROID_KEYSTORE_PASSWORD</code></li>
+      <li><code class="highlighter-rouge">BITRISEIO_ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD</code></li>
+      <li><code class="highlighter-rouge">BITRISEIO_ANDROID_KEYSTORE_URL</code></li>
+    </ul>
+
+  </div>
+</div>
 
 			</main>
 		</div>
