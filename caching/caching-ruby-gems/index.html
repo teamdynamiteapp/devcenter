@@ -1810,12 +1810,8 @@
 <p><strong>IMPORTANT</strong>: You cannot simply add <code class="highlighter-rouge">gem environment gemdir</code> to the input of your Cache steps. You can only reference Environment Variables in the inputs directly, and $GEM_HOME is not set by default on the Bitrise.io VMs.</p>
 
 <ol>
-  <li>
-    <p>Open your app’s <code class="highlighter-rouge">Workflow Editor</code>.</p>
-  </li>
-  <li>
-    <p>Add a <code class="highlighter-rouge">Script</code> step to your workflow.</p>
-  </li>
+  <li>Open your app’s <code class="highlighter-rouge">Workflow Editor</code>.</li>
+  <li>Add a <code class="highlighter-rouge">Script</code> step to your workflow.</li>
   <li>
     <p>Set the <code class="highlighter-rouge">$GEM_HOME</code> environment variable in the <code class="highlighter-rouge">Script</code> step.</p>
 
@@ -1831,12 +1827,9 @@
   <li>
     <p>Insert the <code class="highlighter-rouge">Cache:Pull</code> step after the <code class="highlighter-rouge">Git Clone</code> but before the <code class="highlighter-rouge">Android Build</code> steps.</p>
 
-    <p>!!! note “Step version”
-     Make sure that your step is version 1.0.0 or newer.</p>
+    <p><strong>IMPORTANT!</strong> Make sure that your step is version 1.0.0 or newer.</p>
   </li>
-  <li>
-    <p>Insert the <code class="highlighter-rouge">Cache:Push</code> step to the very end of your workflow.</p>
-  </li>
+  <li>Insert the <code class="highlighter-rouge">Cache:Push</code> step to the very end of your workflow.</li>
 </ol>
 
 <p>And you’re done!</p>
