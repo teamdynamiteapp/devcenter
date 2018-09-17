@@ -1807,7 +1807,16 @@
 				
 				<p>The caching will tar all the cached directories and dependencies, and store them securely in Amazon S3.</p>
 
-<p><strong>IMPORTANT</strong>: The Build Cache, related to a <strong>specific branch</strong>, expires/is auto-deleted after 7 days, <strong>if there’s no new build on that branch in the meantime</strong>. This means that <strong>if you do builds on a specific branch every day</strong> (more frequently than a week), <strong>it’ll never expire/won’t get deleted automatically</strong>. If you don’t start a build on that specific branch for more than 7 days, then the related cache will be removed, and your next build will run like the first time, when there was no cache for that branch yet.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>When does the Build Cache gets auto-deleted</p>
+  </div>
+
+<div class="message-content">
+    <p>The Build Cache, related to a <strong>specific branch</strong>, expires/is auto-deleted after 7 days, <strong>if there’s no new build on that branch in the meantime</strong>. This means that <strong>if you do builds on a specific branch every day</strong> (more frequently than a week), <strong>it’ll never expire/won’t get deleted automatically</strong>. If you don’t start a build on that specific branch for more than 7 days, then the related cache will be removed, and your next build will run like the first time, when there was no cache for that branch yet.</p>
+
+  </div>
+</div>
 
 <h2 id="setup">Setup <a href="#setup" class="anchor-symbol">⚓</a></h2>
 
@@ -1833,21 +1842,15 @@ For example, in the case of an iOS app, you can insert the <code class="highligh
 
 <ul>
   <li>Paths must be prefixed with <code class="highlighter-rouge">!</code> to get ignored from the cache archive. If you don’t prefix the path with an <code class="highlighter-rouge">!</code>, the path will NOT get ignored from the cache archive.
-  If a path is located inside a specified cache path item and the path is NOT prefixed with an <code class="highlighter-rouge">!</code>, the path will be included in the cache archive, but it will not be checked for changes.</li>
+If a path is located inside a specified cache path item and the path is NOT prefixed with an <code class="highlighter-rouge">!</code>, the path will be included in the cache archive, but it will not be checked for changes.</li>
 </ul>
 
 <p>To ignore a path element, part of a path or exclude a full directory, check out these elements:</p>
 
 <ul>
-  <li>
-    <p><code class="highlighter-rouge">*</code> replaces a path element, for example, <code class="highlighter-rouge">a/*/b</code> will match <code class="highlighter-rouge">a/x/b</code>.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">**</code> replaces a part of the path, for example, <code class="highlighter-rouge">a/**/b</code> will match <code class="highlighter-rouge">a/x/y/z/b</code>.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">/</code> excludes a full directory if <code class="highlighter-rouge">/</code> is placed AFTER a directory, for example, <code class="highlighter-rouge">/my/full/path</code> will look like this <code class="highlighter-rouge">/my/full/path/</code>.</p>
-  </li>
+  <li><code class="highlighter-rouge">*</code> replaces a path element, for example, <code class="highlighter-rouge">a/*/b</code> will match <code class="highlighter-rouge">a/x/b</code>.</li>
+  <li><code class="highlighter-rouge">**</code> replaces a part of the path, for example, <code class="highlighter-rouge">a/**/b</code> will match <code class="highlighter-rouge">a/x/y/z/b</code>.</li>
+  <li><code class="highlighter-rouge">/</code> excludes a full directory if <code class="highlighter-rouge">/</code> is placed AFTER a directory, for example, <code class="highlighter-rouge">/my/full/path</code> will look like this <code class="highlighter-rouge">/my/full/path/</code>.</li>
 </ul>
 
 <p><strong>IMPORTANT</strong>: You can’t ignore a path which results in an invalid cache item.</p>
@@ -1862,11 +1865,11 @@ You can, however, ignore paths INSIDE a cache path. For example, if your path is
 <p>You can download and delete caches for every branch which generated a cache in the <code class="highlighter-rouge">Manage Build Caches</code> section of your app’s <code class="highlighter-rouge">Settings</code> tab.</p>
 
 <p>!!! warning “Delete a single branch’s cache”
-    If you only want to delete the cache which is related to a single branch,
-    you should also delete the default branch’s cache too!
-    For more details, see the
-    <a href="#if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-maindefault-branchs-cache">If a build runs on a branch which doesn’t have a cache yet, it’ll get the main/default Branch’s cache</a>
-    section.</p>
+If you only want to delete the cache which is related to a single branch,
+you should also delete the default branch’s cache too!
+For more details, see the
+<a href="#if-a-build-runs-on-a-branch-which-doesnt-have-a-cache-yet-itll-get-the-maindefault-branchs-cache">If a build runs on a branch which doesn’t have a cache yet, it’ll get the main/default Branch’s cache</a>
+section.</p>
 
 <p>You can see the size of the caches and the last time a given cache was used in the popup window.</p>
 
@@ -1902,7 +1905,7 @@ The Step just has to use the Build Cache API to get download and upload URLs, th
 any speed improvement, as downloading it from the Bitrise Build Cache storage will probably take about the same time as downloading it from its canonical CDN/cloud storage location.</p>
 
 <p><strong>IMPORTANT</strong>: Storing a dependency in Bitrise Build Cache might help if you have <strong>reliability</strong> issues with the resource’s/dependency’s canonical download location. Popular tools/dependencies might get rate limited (for example, <a href="https://github.com/Medium/phantomjs/issues/501">PhantomJS</a>). CDN servers might have availability issues, like jCenter/Bintray. Here are a few examples: <a href="http://status.bitrise.io/incidents/gcx1qn5lj7yt">#1</a>, <a href="http://status.bitrise.io/incidents/3ztgwxvwq7rm">#2</a>, and <a href="http://status.bitrise.io/incidents/dqpby9m1n274">#3</a>.
-    If that’s the case, storing the dependency in Bitrise Build Cache might help you. It might not improve the build time but <strong>it definitely can improve the reliability</strong>.</p>
+If that’s the case, storing the dependency in Bitrise Build Cache might help you. It might not improve the build time but <strong>it definitely can improve the reliability</strong>.</p>
 
 <h3 id="the-cache-is-stored-as-one-archive-file">The cache is stored as one archive file <a href="#the-cache-is-stored-as-one-archive-file" class="anchor-symbol">⚓</a></h3>
 
