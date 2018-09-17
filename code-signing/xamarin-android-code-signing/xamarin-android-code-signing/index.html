@@ -1824,7 +1824,15 @@
 
 <p>You can use the same path on your local machine and on <a href="https://www.bitrise.io">bitrise.io</a> by putting your keystore into your repository.</p>
 
-<p><strong>IMPORTANT</strong>: Don’t forget to gitignore your keystore in your repository.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Gitignore your keystore</p>
+  </div>
+
+<div class="message-content">
+    <p>Don’t forget to gitignore your keystore in your repository!</p>
+  </div>
+</div>
 
 <p>Since your keystore is gitignored, you have to upload your keystore to the <code class="highlighter-rouge">GENERIC FILE STORAGE</code> of Bitrise and download it to the same location in the build.</p>
 
@@ -1853,7 +1861,17 @@ In our example, we use <code class="highlighter-rouge">XAMARIN_KEYSTORE</code>.<
 
 <p><img src="/img/android-code-signing/file-downloader.png" alt="Screenshot" /></p>
 
-<p><strong>IMPORTANT</strong>: Ensure that your Bitrise keystore path is the same as your local path relative to your project root. For example, if <code class="highlighter-rouge">keystore.jks</code>is in your project’s root, then your Bitrise keystore path has to be <code class="highlighter-rouge">$BITRISE_SOURCE_DIR/keystore.jks</code>.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Bitrise keystore path</p>
+  </div>
+
+<div class="message-content">
+
+    <p>Ensure that your Bitrise keystore path is the same as your local path relative to your project root. For example, if <code class="highlighter-rouge">keystore.jks</code>is in your project’s root, then your Bitrise keystore path has to be <code class="highlighter-rouge">$BITRISE_SOURCE_DIR/keystore.jks</code></p>
+
+  </div>
+</div>
 
 			</main>
 		</div>
