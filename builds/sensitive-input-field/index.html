@@ -1843,7 +1843,15 @@ To make the sensitive input fields obvious in our Workflow Editor, we’ve marke
 
 <p>The selected or newly created secret env var will get automatically saved into the input field of the step.</p>
 
-<p><strong>IMPORTANT:</strong> note that you cannot modify the input manually in the input field marked with the <code class="highlighter-rouge">SENSITIVE</code> label! Instead, click on the field and then click the <code class="highlighter-rouge">Select secret variable</code> to <strong>replace</strong> the existing input with another secret env var from the list or to <strong>create a new one</strong> in the <code class="highlighter-rouge">Insert variable</code> pop-up.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p><code class="highlighter-rouge">Select secret variable</code></p>
+  </div>
+
+<div class="message-content">
+    <p>Note that you cannot modify the input manually in the input field marked with the <code class="highlighter-rouge">SENSITIVE</code> label! Instead, click on the field and then click the <code class="highlighter-rouge">Select secret variable</code> to <strong>replace</strong> the existing input with another secret env var from the list or to <strong>create a new one</strong> in the <code class="highlighter-rouge">Insert variable</code> pop-up.</p>
+  </div>
+</div>
 
 <ul>
   <li><strong>Do not add private information in the</strong> <code class="highlighter-rouge">**Env Var**</code> <strong>tab</strong>! Our <code class="highlighter-rouge">Secret</code> tab is designed to hold encrypted inputs as secret env vars which will not be exposed in <code class="highlighter-rouge">bitrise.yml</code> or in public app PRs.</li>
