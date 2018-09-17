@@ -1812,10 +1812,18 @@
 <p>Artifacts are deployed into the <code class="highlighter-rouge">APPS &amp; Artifacts</code> section in your build’s page with the help of the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step. It deploys all the files which have been generated during the build and stores them in the <code class="highlighter-rouge">$BITRISE_DEPLOY_DIR</code> directory. You can change the target directory path in the <code class="highlighter-rouge">Deploy directory or file path</code> field under the <code class="highlighter-rouge">Config</code> section of the step.</p>
 
 <ol>
-  <li>Insert the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step AFTER the step/s that generate the artifacts or even better if the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step is <strong>at the very end of your workflow</strong>. For more information, check out <a href="https://devcenter.bitrise.io/tips-and-tricks/attach-any-file-to-build/">Attach any file as an Artifact to the Build</a>.</li>
+  <li>Insert the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step AFTER the step/s that generate the artifacts or even better if the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step is <strong>at the very end of your workflow</strong>. For more information, check out our <a href="https://devcenter.bitrise.io/tips-and-tricks/attach-any-file-to-build/">Attach any file as an Artifact to the Build</a> article.</li>
 </ol>
 
-<p><strong>IMPORTANT:</strong> Add the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step in the right place. If you insert the step before other steps that generate files during the build, then <code class="highlighter-rouge">Deploy to Bitrise.io</code> will have nothing to deploy.</p>
+<div class="message-box Where to insert \`Deploy to Bitrise.io">
+<div class="message-title">
+    <p>My message</p>
+  </div>
+
+<div class="message-content">
+    <p>Add the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step in the right place. If you insert the step before other steps that generate files during the build, then <code class="highlighter-rouge">Deploy to Bitrise.io</code> will have nothing to deploy.</p>
+  </div>
+</div>
 
 <p>Note that the content of any sub-directories found in the deploy directory will not be displayed in the <code class="highlighter-rouge">APPS and Artifacts</code> section of your build. You can, however, <strong>compress your artifacts</strong> into a zip file if you modify the default <code class="highlighter-rouge">false</code> value to <code class="highlighter-rouge">true</code> in the <code class="highlighter-rouge">Compress the artifacts into one file</code> field in the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step. This will compress the whole directory along with its sub-directories and deploy to <code class="highlighter-rouge">APPS &amp; Artifacts</code>.</p>
 
