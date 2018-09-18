@@ -1831,13 +1831,8 @@ and filtering in Step lists.</li>
   <li><code class="highlighter-rouge">deps</code> : specifies the required dependencies of the Step. To declare a dependency, specify a package manager and then the dependency you wish to install.</li>
 </ul>
 
-<p>!!! example
-    <code class="highlighter-rouge">yaml
-    deps:
-      brew:
-        - name: curl
-        - name: git
-   </code></p>
+<p>An example: 
+<code class="highlighter-rouge">yaml deps: brew: - name: curl - name: git</code></p>
 
 <ul>
   <li><code class="highlighter-rouge">inputs</code> : inputs (Environments) of the Step. For more info, see <a href="/bitrise-cli/step-inputs">Step inputs</a>.</li>
