@@ -1809,14 +1809,16 @@
 
 <p>Step inputs can be defined in the <code class="highlighter-rouge">step.yml</code> file of the project by setting the <code class="highlighter-rouge">inputs</code> property. They have the same syntax as every environment property. It consists of two main parts: a <code class="highlighter-rouge">KEY: value</code> pair and an <code class="highlighter-rouge">opts</code> field. The key and the value are required, the <code class="highlighter-rouge">opts</code> field is optional.</p>
 
-<p>!!! example
-    <code class="highlighter-rouge">yaml
-    - my_key_for_the_env: my value for the env
-      opts:
-        title: An example env var item
-        is_dont_change_value: false
-        category: example
-   </code></p>
+<div class="message-box example">
+<div class="message-title">
+    <p>Step input</p>
+  </div>
+
+<div class="message-content">
+    <p><code class="highlighter-rouge">yaml - my_key_for_the_env: my value for the env opts: title: An example env var item is_dont_change_value: false category: example</code></p>
+
+  </div>
+</div>
 
 <ul>
   <li><code class="highlighter-rouge">my_key_for_the_env</code>: the key of the environment item (required)</li>
@@ -1847,24 +1849,15 @@ generated or transformed. These meta properties are.</em></li>
 <p>Set the <code class="highlighter-rouge">is_template</code> property in the <code class="highlighter-rouge">step.yml</code> file of your project to use template expressions.</p>
 
 <ol>
-  <li>
-    <p>Open the <code class="highlighter-rouge">step.yml</code> file of your project.</p>
-  </li>
-  <li>
-    <p>Find the step in which you wish to use a template expression.</p>
-  </li>
-  <li>
-    <p>Add an <code class="highlighter-rouge">opts</code> field to the <code class="highlighter-rouge">content</code> of the step.</p>
-  </li>
-  <li>
-    <p>Add the <code class="highlighter-rouge">is_template</code> property to <code class="highlighter-rouge">opts</code> and set its value to <code class="highlighter-rouge">true</code>.</p>
-  </li>
-  <li>
-    <p>Add the template expression to the step’s <code class="highlighter-rouge">content</code>.</p>
-  </li>
+  <li>Open the <code class="highlighter-rouge">step.yml</code> file of your project.</li>
+  <li>Find the step in which you wish to use a template expression.</li>
+  <li>Add an <code class="highlighter-rouge">opts</code> field to the <code class="highlighter-rouge">content</code> of the step.</li>
+  <li>Add the <code class="highlighter-rouge">is_template</code> property to <code class="highlighter-rouge">opts</code> and set its value to <code class="highlighter-rouge">true</code>.</li>
+  <li>Add the template expression to the step’s <code class="highlighter-rouge">content</code>.</li>
 </ol>
 
 <p><strong>Example:</strong></p>
+
 <pre><code class="language-Go">- script:
   title: Template example
   inputs:
