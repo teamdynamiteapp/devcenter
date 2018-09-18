@@ -1810,34 +1810,21 @@
 <p>In this guide, you will learn how to:</p>
 
 <ul>
-  <li>
-    <p>create an Android project on <a href="https://www.bitrise.io">bitrise.io</a></p>
-  </li>
-  <li>
-    <p>set up a <a href="https://play.google.com/store">Google Play Store</a> project</p>
-  </li>
-  <li>
-    <p>set up <a href="https://developers.google.com/android-publisher/getting_started">Google Play API</a> access</p>
-  </li>
-  <li>
-    <p><a href="#deploy-to-google-play-store-using-bitrise-google-play-deploy-step">deploy to Google Play Store</a> using Bitrise’s <code class="highlighter-rouge">Google Play Deploy</code> step</p>
-  </li>
+  <li>create an Android project on <a href="https://www.bitrise.io">bitrise.io</a></li>
+  <li>set up a <a href="https://play.google.com/store">Google Play Store</a> project</li>
+  <li>set up <a href="https://developers.google.com/android-publisher/getting_started">Google Play API</a> access</li>
+  <li><a href="#deploy-to-google-play-store-using-bitrise-google-play-deploy-step">deploy to Google Play Store</a> using Bitrise’s <code class="highlighter-rouge">Google Play Deploy</code> step</li>
 </ul>
 
 <h2 id="create-your-android-project-on-bitriseio">Create your Android project on <a href="https://www.bitrise.io">bitrise.io</a> <a href="#create-your-android-project-on-bitriseio" class="anchor-symbol">⚓</a></h2>
 
 <ul>
-  <li>
-    <p>Log into <a href="htts://www.bitrise.io">bitrise.io</a>.</p>
-  </li>
-  <li>
-    <p>Create a <a href="/adding-a-new-app">new Bitrise project</a>. Bitrise scans your Android project and creates the initial configuration for it.</p>
-  </li>
+  <li>Log into <a href="htts://www.bitrise.io">bitrise.io</a>.</li>
+  <li>Create a <a href="getting-started/adding-a-new-app">new Bitrise project</a>. Bitrise scans your Android project and creates the initial configuration for it.</li>
   <li>
     <p>Sign your <code class="highlighter-rouge">APK</code> file <a href="/code-signing/android-code-signing/android-code-signing-using-bitrise-sign-APK-step/">digitally</a>.</p>
 
-    <p>!!! note “Keystore file”
-      Do not forget to upload your keystore file to <a href="htts://www.bitrise.io">bitrise.io</a>.</p>
+    <p>Do not forget to <strong>upload your keystore file</strong> to <a href="htts://www.bitrise.io">bitrise.io</a>.</p>
 
     <p>Once your code signing is completed, your config will look like this:</p>
 
@@ -1859,32 +1846,23 @@
   <span class="pi">-</span> <span class="s">deploy-to-bitrise-io@1.3.12</span><span class="pi">:</span> <span class="pi">{}</span>
   <span class="pi">-</span> <span class="s">cache-push@2.0.5</span><span class="pi">:</span> <span class="pi">{}</span>
 </code></pre></div>    </div>
-    <h2 id="register-to-google-play-store-and-set-up-your-first-project">Register to Google Play Store and set up your first project <a href="#register-to-google-play-store-and-set-up-your-first-project" class="anchor-symbol">⚓</a></h2>
   </li>
 </ul>
 
+<h2 id="register-to-google-play-store-and-set-up-your-first-project">Register to Google Play Store and set up your first project <a href="#register-to-google-play-store-and-set-up-your-first-project" class="anchor-symbol">⚓</a></h2>
+
 <ol>
-  <li>
-    <p>Register a <a href="https://developer.android.com/distribute/console/">Google Play Developer Account</a>.
-  If you already have a Google Play Developer account, and you have already deployed your app to Google Play Store, skip to <a href="#set-up-google-play-API-access">Set up Google Play API access</a>.</p>
-  </li>
-  <li>
-    <p>Go through the <a href="https://support.google.com/googleplay/android-developer/answer/7159011?hl=en">Prepare &amp; roll out steps</a>.</p>
-  </li>
+  <li>Register a <a href="https://developer.android.com/distribute/console/">Google Play Developer Account</a>.
+If you already have a Google Play Developer account, and you have already deployed your app to Google Play Store, skip to <a href="#set-up-google-play-API-access">Set up Google Play API access</a>.</li>
+  <li>Go through the <a href="https://support.google.com/googleplay/android-developer/answer/7159011?hl=en">Prepare &amp; roll out steps</a>.</li>
 </ol>
 
 <h2 id="set-up-google-play-api-access">Set up Google Play API access <a href="#set-up-google-play-api-access" class="anchor-symbol">⚓</a></h2>
 
 <ol>
-  <li>
-    <p>Link your API project by <code class="highlighter-rouge">Creating a new API project</code> or <code class="highlighter-rouge">Using an existing API project</code>.</p>
-  </li>
-  <li>
-    <p>Set up <code class="highlighter-rouge">API Access Clients</code> using a service account and grant <code class="highlighter-rouge">Release manager</code> role to the service account.</p>
-  </li>
-  <li>
-    <p><strong>Save the downloaded JSON key of your service account</strong> now because you will need it later.</p>
-  </li>
+  <li>Link your API project by <code class="highlighter-rouge">Creating a new API project</code> or <code class="highlighter-rouge">Using an existing API project</code>.</li>
+  <li>Set up <code class="highlighter-rouge">API Access Clients</code> using a service account and grant <code class="highlighter-rouge">Release manager</code> role to the service account.</li>
+  <li><strong>Save the downloaded JSON key of your service account</strong> now because you will need it later.</li>
 </ol>
 
 <p>Check out the <a href="https://developers.google.com/android-publisher/getting_started">Google Play Developer API</a> guide if you need more information on the process.</p>
@@ -1894,18 +1872,10 @@
 <h2 id="deploy-to-google-play-store-using-bitrise-google-play-deploy-step">Deploy to Google Play Store using Bitrise <code class="highlighter-rouge">Google Play Deploy</code> step <a href="#deploy-to-google-play-store-using-bitrise-google-play-deploy-step" class="anchor-symbol">⚓</a></h2>
 
 <ol>
-  <li>
-    <p>Log in to <a href="https://www.bitrise.io">bitrise.io</a>.</p>
-  </li>
-  <li>
-    <p>Select your project and go to your <code class="highlighter-rouge">Workflow Editor</code>.</p>
-  </li>
-  <li>
-    <p>Open the <code class="highlighter-rouge">Code Signing</code> tab of your <code class="highlighter-rouge">Workflow Editor</code>.</p>
-  </li>
-  <li>
-    <p>Upload the service account JSON key into the <code class="highlighter-rouge">GENERIC FILE STORAGE</code>.</p>
-  </li>
+  <li>Log in to <a href="https://www.bitrise.io">bitrise.io</a>.</li>
+  <li>Select your project and go to your <code class="highlighter-rouge">Workflow Editor</code>.</li>
+  <li>Open the <code class="highlighter-rouge">Code Signing</code> tab of your <code class="highlighter-rouge">Workflow Editor</code>.</li>
+  <li>Upload the service account JSON key into the <code class="highlighter-rouge">GENERIC FILE STORAGE</code>.</li>
   <li>
     <p>Copy the env key which stores your uploaded file’s url.</p>
 
@@ -1913,23 +1883,13 @@
 
     <p><code class="highlighter-rouge">BITRISEIO_SERVICE_ACCOUNT_JSON_KEY_URL</code></p>
   </li>
-  <li>
-    <p>Go back to your <code class="highlighter-rouge">Workflow Editor</code> and add the <code class="highlighter-rouge">Google Play Deploy</code> step to the end of your Workflow.</p>
-  </li>
-  <li>
-    <p>Fill out the required input fields which are:</p>
-
+  <li>Go back to your <code class="highlighter-rouge">Workflow Editor</code> and add the <code class="highlighter-rouge">Google Play Deploy</code> step to the end of your Workflow.</li>
+  <li>Fill out the required input fields which are:
     <ul>
-      <li>
-        <p><code class="highlighter-rouge">Service Account JSON key file path</code>: This field can accept a remote url so you have to provide the environment which contains your uploaded service account JSON key.
- For example: <code class="highlighter-rouge">$BITRISEIO_SERVICE_ACCOUNT_JSON_KEY_URL</code></p>
-      </li>
-      <li>
-        <p><code class="highlighter-rouge">Package name</code>: the package name of your Android app</p>
-      </li>
-      <li>
-        <p><code class="highlighter-rouge">Track</code>: the track where you want to deploy your APK (alpha/beta/rollout/production)</p>
-      </li>
+      <li><code class="highlighter-rouge">Service Account JSON key file path</code>: This field can accept a remote url so you have to provide the environment which contains your uploaded service account JSON key.
+For example: <code class="highlighter-rouge">$BITRISEIO_SERVICE_ACCOUNT_JSON_KEY_URL</code></li>
+      <li><code class="highlighter-rouge">Package name</code>: the package name of your Android app</li>
+      <li><code class="highlighter-rouge">Track</code>: the track where you want to deploy your APK (alpha/beta/rollout/production)</li>
     </ul>
   </li>
 </ol>
