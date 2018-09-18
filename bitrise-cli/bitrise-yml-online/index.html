@@ -1807,30 +1807,32 @@
 				
 				<p>Every bitrise.yml file is stored for your builds on <a href="https://www.bitrise.io">bitrise.io</a>. They come in handy when you’d like to check the configuration with which a specific build has run. To do that, you can either use the online <code class="highlighter-rouge">Workflow Editor</code> or your build’s online bitrise.yml file. If you choose the latter, you can compare changes, restore the current build to the original version, edit the config, and download the file to your Mac/PC.</p>
 
-<p>!!! tip “Using filters on your Builds Board”
-    If an app has multiple builds on <a href="https://www.bitrise.io">bitrise.io</a> and you want to pick a specific build out of those, then these filters will help you a lot. Click on your app in your <code class="highlighter-rouge">Dashboard</code> and use the following fields:</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Using filters on your Builds Board</p>
+  </div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* You can search for a build number or commit message in the `Try build number or commit message` grey field.
+<div class="message-content">
 
-* You can pick which of these triggers was used for your build: `Pushes`, `Pull Requests`, `Tags` or all of these.
+    <p>If an app has multiple builds on <a href="https://www.bitrise.io">bitrise.io</a> and you want to pick a specific build out of those, then these filters will help you a lot. Click on your app in your <code class="highlighter-rouge">Dashboard</code> and use the following fields:</p>
 
-* You can pick which `branch` the build was started on.
-
-* You can select either the `primary` or the `deploy workflow` of the build.
-</code></pre></div></div>
+    <ul>
+      <li>You can search for a build number or commit message in the `Try build number or commit message` grey field.</li>
+      <li>You can pick which of these triggers was used for your build: <code class="highlighter-rouge">Pushes</code>, <code class="highlighter-rouge">Pull Requests</code>, <code class="highlighter-rouge">Tags</code> or all of these.</li>
+      <li>You can pick which <code class="highlighter-rouge">branch</code> the build was started on.</li>
+      <li>You can select either the <code class="highlighter-rouge">primary</code> or the <code class="highlighter-rouge">deploy workflow</code> of the build.</li>
+    </ul>
+  </div>
+</div>
 
 <p><img src="/img/bitrise-cli-bitrise-yml/build-filters.png" alt="Screenshot" /></p>
 
 <h2 id="accessing-a-builds-bitriseyml">Accessing a build’s bitrise.yml <a href="#accessing-a-builds-bitriseyml" class="anchor-symbol">⚓</a></h2>
 
 <ol>
-  <li>
-    <p>Select an application on your <code class="highlighter-rouge">Dashboard</code> and select one of its builds.</p>
-  </li>
-  <li>
-    <p>Click the <code class="highlighter-rouge">Show bitrise.yml</code> button at the top OR at the bottom of your inline log.
-You should see your build’s bitrise.yml content displayed in ace editor but it’s not editable here. See where you can <a href="#editing-and-downloading-bitriseyml-online">edit the bitrise.yml online</a>.</p>
-  </li>
+  <li>Select an application on your <code class="highlighter-rouge">Dashboard</code> and select one of its builds.</li>
+  <li>Click the <code class="highlighter-rouge">Show bitrise.yml</code> button at the top OR at the bottom of your inline log.
+You should see your build’s bitrise.yml content displayed in ace editor but it’s not editable here. See where you can <a href="#editing-and-downloading-bitriseyml-online">edit the bitrise.yml online</a>.</li>
 </ol>
 
 <h2 id="checking-changes-in-bitriseyml-online">Checking changes in bitrise.yml online <a href="#checking-changes-in-bitriseyml-online" class="anchor-symbol">⚓</a></h2>
@@ -1838,15 +1840,9 @@ You should see your build’s bitrise.yml content displayed in ace editor but it
 <p>Once you’ve clicked <code class="highlighter-rouge">Show bitrise.yml</code>, you will see the <code class="highlighter-rouge">BUILD'S BITRISE YML</code> pop-up window displaying your builds’ configuration details. If the <code class="highlighter-rouge">build's bitrise.yml</code> content differs from the <code class="highlighter-rouge">current build's bitrise.yml</code>, you will see two editors displayed side-by-side in the <code class="highlighter-rouge">BITRISE.YML CHANGES</code> pop-up window. The differences between the builds are highlighted in the following colors:</p>
 
 <ul>
-  <li>
-    <p>green means added content</p>
-  </li>
-  <li>
-    <p>blue means modified content</p>
-  </li>
-  <li>
-    <p>orange means deleted content</p>
-  </li>
+  <li>green means added content</li>
+  <li>blue means modified content</li>
+  <li>orange means deleted content</li>
 </ul>
 
 <p><img src="/img/bitrise-cli-bitrise-yml/bitrise-yml-changes.png" alt="Screenshot" /></p>
@@ -1856,15 +1852,9 @@ You should see your build’s bitrise.yml content displayed in ace editor but it
 <p>If you don’t like the changes made to your <em>current</em> bitrise.yml, you can easily restore it to the build’s original bitrise.yml.</p>
 
 <ol>
-  <li>
-    <p>Click the <code class="highlighter-rouge">Show bitrise.yml</code> button at the top OR at the bottom of your inline log on <a href="https://www.bitrise.io/">bitrise.io</a>.</p>
-  </li>
-  <li>
-    <p>In the <code class="highlighter-rouge">BITRISE.YML CHANGES</code> pop-up window, click the orange <code class="highlighter-rouge">Restore</code> button.</p>
-  </li>
-  <li>
-    <p>Hit <code class="highlighter-rouge">OK</code> in the <code class="highlighter-rouge">Are you sure?</code> pop-up window to confirm and override the current bitrise.yml.</p>
-  </li>
+  <li>Click the <code class="highlighter-rouge">Show bitrise.yml</code> button at the top OR at the bottom of your inline log on <a href="https://www.bitrise.io/">bitrise.io</a>.</li>
+  <li>In the <code class="highlighter-rouge">BITRISE.YML CHANGES</code> pop-up window, click the orange <code class="highlighter-rouge">Restore</code> button.</li>
+  <li>Hit <code class="highlighter-rouge">OK</code> in the <code class="highlighter-rouge">Are you sure?</code> pop-up window to confirm and override the current bitrise.yml.</li>
 </ol>
 
 <p><img src="/img/bitrise-cli-bitrise-yml/confirm-bitrise-yml-changes.png" alt="Screenshot" /></p>
