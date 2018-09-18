@@ -1821,17 +1821,28 @@ in the commit message.</p>
 [ci skip]
 </code></pre></div></div>
 
-<p>!!! warning “Only the head/last commit message is checked!”
-    <strong>If you push more than one commit</strong>, only the last (“head”) commit’s
-    message will be checked for the skip ci pattern!</p>
+<div class="message-box warning">
+<div class="message-title">
+    <p>Only the head/last commit message is checked!</p>
+  </div>
+
+<div class="message-content">
+    <p><strong>If you push more than one commit</strong>, only the last (head) commit’s message will be checked for the skip ci pattern!</p>
+  </div>
+</div>
 
 <p>If you’d decide that you still want to start a build you’ll have to
 either rebase that commit (e.g. just change its commit message), or push another commit.</p>
 
-<p>!!! note “You can push an empty commit”
-    Git allows to create and push empty commits, so if you’d decide that you
-    still want to build a skipped build you can do <code class="highlighter-rouge">git commit --allow-empty -m "I decided to run this"</code>
-    on the related branch and push the commit.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Push an empty commit</p>
+  </div>
+
+<div class="message-content">
+    <p>Git allows to create and push empty commits, so if you’d decide that you still want to build a skipped build you can do <code class="highlighter-rouge">git commit --allow-empty -m "I decided to run this"</code> on the related branch and push the commit.</p>
+  </div>
+</div>
 
 <h2 id="pull-requests">Pull Requests <a href="#pull-requests" class="anchor-symbol">⚓</a></h2>
 
@@ -1845,10 +1856,17 @@ This “branch” (ref) is also removed / made unaccessible after you close the 
 Other services like Bitbucket doesn’t even create this virtual branch / ref, the pull request is just
 a virtual data but can’t be accessed through <code class="highlighter-rouge">git</code> directly.</p>
 
-<p>!!! note “What’s the commit message of a Pull Request?”
-    In any case this means that <strong>the Pull Request itself</strong> is treated as a (virtual) commit,
-    where <strong>the commit message is the title + description of the Pull Request</strong> and
-    not the commit(s) of the pull request!</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>What’s the commit message of a Pull Request?</p>
+  </div>
+
+<div class="message-content">
+
+    <p>In any case this means that <strong>the Pull Request itself</strong> is treated as a (virtual) commit, where <strong>the commit message is the title + description of the Pull Request</strong> and not the commit(s) of the pull request!</p>
+
+  </div>
+</div>
 
 <p>This means that, <strong>if you want to skip a pull request</strong>, you have to include the Skip CI
 pattern <strong>in the Pull Request’s title or description</strong>, and not in the commit’s message!</p>
