@@ -1830,9 +1830,17 @@ and anyone who has access to the Build page can download it from there.</em></p>
 <p>That’s all, your next build will attach the OS X system log file
 to your build - you’ll see it at the top of the Build’s page.</p>
 
-<p>!!! note “By default the <strong>Deploy to Bitrise.io</strong> will always run”
-    By default the <code class="highlighter-rouge">Deploy to Bitrise.io</code> will always run,
-    even if a previous step fails, <strong>so you can deploy failed step/tool logs too.</strong></p>
+<div class="message-box note">
+<div class="message-title">
+    <p>By default the <strong>Deploy to Bitrise.io</strong> will always run</p>
+  </div>
+
+<div class="message-content">
+
+    <p>By default the <code class="highlighter-rouge">Deploy to Bitrise.io</code> will always run, even if a previous step fails, <strong>so you can deploy failed step/tool logs too.</strong></p>
+
+  </div>
+</div>
 
 <h2 id="deploy-a-directory">Deploy a directory <a href="#deploy-a-directory" class="anchor-symbol">⚓</a></h2>
 
@@ -1854,14 +1862,17 @@ the compressed file, instead of deploying files one by one.</p>
         - is_compress: 'true'
 </code></pre></div></div>
 
-<p><em>Note: as every input’s, <code class="highlighter-rouge">is_compress</code>’s value have to be a <strong>string</strong>, that’s why <code class="highlighter-rouge">true</code> is surrounded with quotes.</em></p>
+<p><em>Note: as every input’s,</em> <code class="highlighter-rouge">_is_compress_</code><em>’s value have to be a <strong>string</strong>, that’s why</em> <code class="highlighter-rouge">_true_</code> <em>is surrounded with quotes.</em></p>
 
-<p>!!! note “Using more than one <code class="highlighter-rouge">Deploy to Bitrise.io</code> step”
-    You can use as many <code class="highlighter-rouge">Deploy to Bitrise.io</code> steps as you want to,
-    even in a single build / workflow.
-    Alternatively of course you can move all the files you want to deploy
-    into a single directory, and deploy that directory with the step,
-    it’s up to you to decide which solution works best for you.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Using more than one <code class="highlighter-rouge">Deploy to Bitrise.io</code> step</p>
+  </div>
+
+<div class="message-content">
+    <p>You can use as many <code class="highlighter-rouge">Deploy to Bitrise.io</code> steps as you want to, even in a single build / workflow. Alternatively of course you can move all the files you want to deploy into a single directory, and deploy that directory with the step, it’s up to you to decide which solution works best for you.</p>
+  </div>
+</div>
 
 			</main>
 		</div>
