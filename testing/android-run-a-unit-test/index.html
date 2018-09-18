@@ -1811,17 +1811,26 @@
 
 <p>This tutorial tells you how to run a unit test against your app and how to generate test reports using your primary workflow.</p>
 
-<p>Luckily, your Android primary workflow already contains the <code class="highlighter-rouge">Android Unit Test</code> and the <code class="highlighter-rouge">Android Lint </code> steps which are responsible for performing unit test on your build.</p>
+<p>Luckily, your Android primary workflow already contains the <code class="highlighter-rouge">Android Unit Test</code> and the <code class="highlighter-rouge">Android Lint</code> steps which are responsible for performing unit test on your build.</p>
 
-<p>!!! note
-    If you use custom steps or scripts, our <code class="highlighter-rouge">Deploy to Bitrise.io</code> step by default deploys files/build artifacts from the <code class="highlighter-rouge">$BITRISE_DEPLOY_DIR</code> directory, so make sure that you move the generated app there, or set the deploy directory or the file path input of the step to point to the location of the files/build artifacts. Please note, that if the specified path is a directory, then every file in that directory will be deployed. If there are subdirectories in the specified directory, they won’t get uploaded! You can upload a directory’s content recursively, if you use the <strong>Compress</strong> option, which will compress the whole directory including every subdirectory. And finally, if you specify a file path, then only the specified file will get deployed.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>My message</p>
+  </div>
+
+<div class="message-content">
+
+    <p>If you use custom steps or scripts, our <code class="highlighter-rouge">Deploy to Bitrise.io</code> step by default deploys files/build artifacts from the <code class="highlighter-rouge">$BITRISE_DEPLOY_DIR</code> directory, so make sure that you move the generated app there, or set the deploy directory or the file path input of the step to point to the location of the files/build artifacts. Please note, that if the specified path is a directory, then every file in that directory will be deployed. If there are subdirectories in the specified directory, they won’t get uploaded! You can upload a directory’s content recursively, if you use the <strong>Compress</strong> option, which will compress the whole directory including every subdirectory. And finally, if you specify a file path, then only the specified file will get deployed.</p>
+
+  </div>
+</div>
 
 <h2 id="generate-test-reports">Generate test reports <a href="#generate-test-reports" class="anchor-symbol">⚓</a></h2>
 
 <p>The <code class="highlighter-rouge">Android Unit Test</code> step generates and exports unit test reports into the <code class="highlighter-rouge">$BITRISE_DEPLOY_DIR</code> folder. Then the <code class="highlighter-rouge">Deploy to Bitrise.io</code> step exports those reports from the <code class="highlighter-rouge">$BITRISE_DEPLOY_DIR</code> folder to the respective build’s <code class="highlighter-rouge">APPS &amp; Artifacts</code> tab on <a href="https://www.bitrise.io">bitrise.io</a>. You can view or download those reports to your local computer.</p>
 
 <p>!!! note “Troubleshooting: Failed build”
-    If your build has failed running, click on <code class="highlighter-rouge">Download logs</code>. In the last lines of your Step log, you can view the error message and fix the error accordingly. If you’re done, commit your changes to your repository, and a new build should start automatically.</p>
+If your build has failed running, click on <code class="highlighter-rouge">Download logs</code>. In the last lines of your Step log, you can view the error message and fix the error accordingly. If you’re done, commit your changes to your repository, and a new build should start automatically.</p>
 
 			</main>
 		</div>
