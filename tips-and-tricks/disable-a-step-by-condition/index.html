@@ -1807,12 +1807,9 @@
 				
 				<h2 id="disable-a-step">Disable a Step <a href="#disable-a-step" class="anchor-symbol">⚓</a></h2>
 
-<p>If you don’t want to remove the Step from your Workflow and you don’t want to
-duplicate the Workflow either (which is the preferred way if you want to experiment with new things;
-you can just create a “backup” clone of your original Workflow)
-then you can simply disable a Step by specifying <code class="highlighter-rouge">run_if: false</code> .</p>
+<p>If you don’t want to remove the Step from your Workflow and you don’t want to duplicate the Workflow either (which is the preferred way if you want to experiment with new things; you can just create a “backup” clone of your original Workflow) then you can simply disable a Step by specifying <code class="highlighter-rouge">run_if: false</code>.</p>
 
-<p>Example:</p>
+<p>An example:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- script:
     run_if: false
@@ -1837,16 +1834,21 @@ and so you don’t want to do a <code class="highlighter-rouge">Git Clone</code>
 property of any step, so you can specify a <code class="highlighter-rouge">run_if: true</code> for the <code class="highlighter-rouge">Git Clone</code>
 step if you want to run it locally too.</p>
 
-<p>!!! note
-    CI mode can be enabled on your own Mac/PC by setting the <code class="highlighter-rouge">CI</code> environment to <code class="highlighter-rouge">true</code>
-    (e.g. with <code class="highlighter-rouge">export CI=true</code> in your Bash Terminal), or by running
-    <code class="highlighter-rouge">bitrise run</code> with the <code class="highlighter-rouge">--ci</code> flag: <code class="highlighter-rouge">bitrise --ci run ...</code>._</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Enable CI mode</p>
+  </div>
+
+<div class="message-content">
+    <p>CI mode can be enabled on your own Mac/PC by setting the <code class="highlighter-rouge">CI</code> environment to <code class="highlighter-rouge">true</code> (e.g. with <code class="highlighter-rouge">export CI=true</code> in your Bash Terminal), or by running <code class="highlighter-rouge">bitrise run</code> with the <code class="highlighter-rouge">--ci</code> flag: <code class="highlighter-rouge">bitrise --ci run ...</code>.</p>
+  </div>
+</div>
 
 <h2 id="run-a-step-only-if-the-build-failed">Run a Step only if the Build failed <a href="#run-a-step-only-if-the-build-failed" class="anchor-symbol">⚓</a></h2>
 
-<p><em>To do this you have to switch to <code class="highlighter-rouge">bitrise.yml</code> mode
-(open the Workflow Editor on bitrise.io -&gt; left side: click on <code class="highlighter-rouge">bitrise.yml</code>
-to switch to the interactive <code class="highlighter-rouge">bitrise.yml</code> editor).</em></p>
+<p><em>To do this you have to switch to</em> <code class="highlighter-rouge">_bitrise.yml_</code>_ mode
+(open the Workflow Editor on bitrise.io -&gt; left side: click on <em><code class="highlighter-rouge">_bitrise.yml_</code>
+_to switch to the interactive</em> <code class="highlighter-rouge">_bitrise.yml_</code> <em>editor).</em></p>
 
 <p>You have to add two properties to the Step you <strong>only</strong> want to run when
 the Build failed (at that point, when the Step would run):</p>
@@ -1867,15 +1869,23 @@ the Build failed (at that point, when the Step would run):</p>
         echo "Build Failed!"
 </code></pre></div></div>
 
-<p>!!! note “A <strong>run_if</strong> can be any valid <strong>Go</strong> template”
-    A <code class="highlighter-rouge">run_if</code> can be any valid <a href="https://golang.org/pkg/text/template/">Go template</a>, as long as it evaluates to <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> (or any of the String representation, e.g. <code class="highlighter-rouge">"True"</code>, <code class="highlighter-rouge">"t"</code>, <code class="highlighter-rouge">"yes"</code> or <code class="highlighter-rouge">"y"</code> are all considered to be <code class="highlighter-rouge">true</code>). If the template evaluates to <code class="highlighter-rouge">true</code> the Step will run, otherwise it won’t.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>A <strong>run_if</strong> can be any valid <strong>Go</strong> template</p>
+  </div>
+
+<div class="message-content">
+
+    <p>A <code class="highlighter-rouge">run_if</code> can be any valid <a href="https://golang.org/pkg/text/template/">Go template</a>, as long as it evaluates to <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> (or any of the String representation, e.g. <code class="highlighter-rouge">"True"</code>, <code class="highlighter-rouge">"t"</code>, <code class="highlighter-rouge">"yes"</code> or <code class="highlighter-rouge">"y"</code> are all considered to be <code class="highlighter-rouge">true</code>). If the template evaluates to <code class="highlighter-rouge">true</code> the Step will run, otherwise it won’t.</p>
+
+  </div>
+</div>
 
 <p>An example <code class="highlighter-rouge">run_if</code> to check a <strong>custom environment variable</strong> (you
 can expose environment variables from your scripts too,
 using <a href="https://github.com/bitrise-io/envman/">envman</a>):</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>run_if: |-
-  
 </code></pre></div></div>
 
 <p>This <code class="highlighter-rouge">run_if</code> will skip the step in every case when the value of <code class="highlighter-rouge">CUSTOM_ENV_VAR_KEY</code>
