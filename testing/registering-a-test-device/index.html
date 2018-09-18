@@ -1810,40 +1810,18 @@
 <p>The most comfortable way to register your iOS test device on <a href="https://www.bitrise.io">bitrise.io</a> is to open <a href="https://www.bitrise.io">bitrise.io</a> with Safari so that we can open your device’s Settings and create a temporary profile to get your Unique Device Identifier (UDID). This way you don’t have to look for it and manually copy/paste it.</p>
 
 <ol>
-  <li>
-    <p>Open Safari in <strong>non-incognito mode</strong> on your iOS device and log into <a href="https://www.bitrise.io">bitrise.io</a>.</p>
-  </li>
-  <li>
-    <p>Go to your <code class="highlighter-rouge">Profile</code>.</p>
-  </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Account Settings</code>.</p>
-  </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Test devices</code> on the left.</p>
-  </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Register this device</code>.</p>
-  </li>
-  <li>
-    <p>In the pop-up window, click <code class="highlighter-rouge">Allow</code> so that <a href="https://www.bitrise.io">bitrise.io</a> can show your configuration profile.</p>
-  </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Install</code> when the <code class="highlighter-rouge">Install Profile</code> dialog appears.</p>
-  </li>
-  <li>
-    <p>Enter your devices’s passcode.</p>
-  </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Install</code> on the <code class="highlighter-rouge">Install Profile</code> again.
-  Now you can see your UDID and your iOS device name in the <code class="highlighter-rouge">Register device</code> dialog.</p>
-  </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Register device</code>.</p>
-  </li>
-  <li>
-    <p>Register this test device to the <a href="https://developer.apple.com/">Apple Developer Portal</a> with the correct provisioning profile added to your device or use our <a href="/code-signing/ios-code-signing/ios-auto-provisioning">Auto Provisioning</a> step with enabling profile generation.</p>
-  </li>
+  <li>Open Safari in <strong>non-incognito mode</strong> on your iOS device and log into <a href="https://www.bitrise.io">bitrise.io</a>.</li>
+  <li>Go to your <code class="highlighter-rouge">Profile</code>.</li>
+  <li>Click <code class="highlighter-rouge">Account Settings</code>.</li>
+  <li>Click <code class="highlighter-rouge">Test devices</code> on the left.</li>
+  <li>Click <code class="highlighter-rouge">Register this device</code>.</li>
+  <li>In the pop-up window, click <code class="highlighter-rouge">Allow</code> so that <a href="https://www.bitrise.io">bitrise.io</a> can show your configuration profile.</li>
+  <li>Click <code class="highlighter-rouge">Install</code> when the <code class="highlighter-rouge">Install Profile</code> dialog appears.</li>
+  <li>Enter your devices’s passcode.</li>
+  <li>Click <code class="highlighter-rouge">Install</code> on the <code class="highlighter-rouge">Install Profile</code> again.
+Now you can see your UDID and your iOS device name in the <code class="highlighter-rouge">Register device</code> dialog.</li>
+  <li>Click <code class="highlighter-rouge">Register device</code>.</li>
+  <li>Register this test device to the <a href="https://developer.apple.com/">Apple Developer Portal</a> with the correct provisioning profile added to your device or use our <a href="/code-signing/ios-code-signing/ios-auto-provisioning">Auto Provisioning</a> step with enabling profile generation.</li>
 </ol>
 
 <p>If you go back to <code class="highlighter-rouge">Test devices</code>, you can see the registered device:</p>
@@ -1855,27 +1833,13 @@
 <h2 id="register-a-test-device-manually">Register a test device manually <a href="#register-a-test-device-manually" class="anchor-symbol">⚓</a></h2>
 
 <ol>
-  <li>
-    <p>Go to your <code class="highlighter-rouge">Profile</code> on <a href="https://www.bitrise.io">bitrise.io</a>.</p>
-  </li>
-  <li>
-    <p>Click <code class="highlighter-rouge">Test devices</code> on the left.</p>
-  </li>
-  <li>
-    <p>Click on <code class="highlighter-rouge">Register manually</code>.</p>
-  </li>
-  <li>
-    <p>In the <code class="highlighter-rouge">Register device</code> dialog, fill out the <code class="highlighter-rouge">Title</code> field and the <code class="highlighter-rouge">Identifier</code> field with your device’s UDID.</p>
-  </li>
-  <li>
-    <p>Hit <code class="highlighter-rouge">Register Device</code>.</p>
-
-    <p>!!! tip “How do I get my device’s UDID?”
-     You can get your UDID if you plug your device into a computer, and open iTunes. Under <code class="highlighter-rouge">Summary</code>, you should see a Serial Number. If you click on it, it will reveal your device’s <code class="highlighter-rouge">UDID</code> which you can paste into the <code class="highlighter-rouge">Identifier</code> field on our <a href="https://www.bitrise.io/me/profile#/test_devices"><code class="highlighter-rouge">Test Devices</code></a>.</p>
-  </li>
-  <li>
-    <p>Register this test device to the <a href="https://developer.apple.com/">Apple Developer Portal</a> with the correct provisioning profile added to your device or use our <a href="/code-signing/ios-code-signing/ios-auto-provisioning">Auto Provisioning</a> step with enabling profile generation.</p>
-  </li>
+  <li>Go to your <code class="highlighter-rouge">Profile</code> on <a href="https://www.bitrise.io">bitrise.io</a>.</li>
+  <li>Click <code class="highlighter-rouge">Test devices</code> on the left.</li>
+  <li>Click on <code class="highlighter-rouge">Register manually</code>.</li>
+  <li>In the <code class="highlighter-rouge">Register device</code> dialog, fill out the <code class="highlighter-rouge">Title</code> field and the <code class="highlighter-rouge">Identifier</code> field with your device’s UDID.</li>
+  <li>Hit <code class="highlighter-rouge">Register Device</code>.
+You can <strong>get your UDID</strong> if you plug your device into a computer, and open iTunes. Under <code class="highlighter-rouge">Summary</code>, you should see a Serial Number. If you click on it, it will reveal your device’s <code class="highlighter-rouge">UDID</code> which you can paste into the <code class="highlighter-rouge">Identifier</code> field on our <code class="highlighter-rouge">[Test Devices](https://www.bitrise.io/me/profile#/test_devices)</code>.</li>
+  <li>Register this test device to the <a href="https://developer.apple.com/">Apple Developer Portal</a> with the correct provisioning profile added to your device or use our <a href="/code-signing/ios-code-signing/ios-auto-provisioning">Auto Provisioning</a> step with enabling profile generation.</li>
 </ol>
 
 <p>Now you can see your registered test device under <a href="https://www.bitrise.io/me/profile#/test_devices">Registered test devices</a>.</p>
