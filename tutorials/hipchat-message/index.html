@@ -1821,12 +1821,15 @@ color of the message, …),</li>
 defined by Bitrise and by the steps which run before the HipChat Message step.</li>
 </ol>
 
-<p>!!! note
-    If you click into any Step input field, an <strong>Insert Variable</strong> button will appear.
-    With this you can insert environment variables defined by Bitrise
-    (for example the App’s title, the Build’s unique ID or the Build’s URL on Bitrise)
-    and environment variables exported by Steps which ran before this step
-    (for example an Xcode Build’s status or the generated IPA path).</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>How to insert environment variables</p>
+  </div>
+
+<div class="message-content">
+    <p>If you click into any Step input field, an <strong>Insert Variable</strong> button will appear. With this you can insert environment variables defined by Bitrise (for example the App’s title, the Build’s unique ID or the Build’s URL on Bitrise) and environment variables exported by Steps which ran before this step (for example, an Xcode Build’s status or the generated IPA path).</p>
+  </div>
+</div>
 
 <p>Fill out the HipChat steps’ required input fields, and for the HipChat Message
 step’s <code class="highlighter-rouge">Message</code> input include the build’s url with the <code class="highlighter-rouge">$BITRISE_BUILD_URL</code> environment variable,
