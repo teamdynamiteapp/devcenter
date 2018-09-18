@@ -1901,14 +1901,10 @@ committed into your repository, e.g. files which are in <code class="highlighter
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run --privileged --env CI=false --volume "$(pwd):/bitrise/src" --volume "/var/run/docker.sock:/var/run/docker.sock" --rm bitriseio/docker-android:latest bitrise run WORKFLOW
 </code></pre></div></div>
 
-<p>!!! note
-If you want to just jump into the container and experiment inside, you can replace <code class="highlighter-rouge">--rm bitriseio/docker-android:latest bitrise run WORKFLOW</code> with <code class="highlighter-rouge">-it bitriseio/docker-android:latest bash</code> to start an interactive bash shell inside the container.
-E.g.: <code class="highlighter-rouge">docker run --privileged --env CI=false --volume "$(pwd):/bitrise/src" --volume "/var/run/docker.sock:/var/run/docker.sock" -it bitriseio/docker-android:latest bash</code>.
-After this, if you want to, you can run <code class="highlighter-rouge">bitrise run WORKFLOW</code>, which will run the workflow inside the container.
-To exit from the container just run <code class="highlighter-rouge">exist</code>.</p>
+<p>If you want to just jump into the container and experiment inside, you can replace <code class="highlighter-rouge">--rm bitriseio/docker-android:latest bitrise run WORKFLOW</code> with <code class="highlighter-rouge">-it bitriseio/docker-android:latest bash</code> to start an interactive bash shell inside the container. E.g.: <code class="highlighter-rouge">docker run --privileged --env CI=false --volume "$(pwd):/bitrise/src" --volume "/var/run/docker.sock:/var/run/docker.sock" -it bitriseio/docker-android:latest bash</code>. After this, if you want to, you can run <code class="highlighter-rouge">bitrise run WORKFLOW</code>, which will run the workflow inside the container. To exit from the container, just run <code class="highlighter-rouge">exist</code>.</p>
 
-<p><em>Don’t forget to replace</em> <code class="highlighter-rouge">_WORKFLOW_</code> <em>with the actual ID of your workflow in your</em> <code class="highlighter-rouge">_bitrise.yml_</code><em>,
-with something like _<code class="highlighter-rouge">_primary_</code></em>!_</p>
+<p><em>Don’t forget to replace</em> <code class="highlighter-rouge">_WORKFLOW_</code> <em>with the actual ID of your workflow in your</em> <code class="highlighter-rouge">_bitrise.yml_</code>_,
+with something like _<code class="highlighter-rouge">__primary__</code>!</p>
 
 <p>This command will share the current directory (the directory of your repository)
 as a shared volume with the docker container, and will make it available <strong>inside</strong> the
