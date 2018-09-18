@@ -1898,7 +1898,7 @@ To achieve an automated workflow like the one described in the previous section 
 
 <ol>
   <li><strong>Register your App’s repository</strong> on <a href="https://www.bitrise.io/">Bitrise</a>
-(<em>Don’t forget to setup a <a href="/webhooks/">webhook</a>!</em> If you connect your repository through
+(<em>Don’t forget to setup a</em> <a href="/webhooks/"><em>webhook</em></a><em>!</em> If you connect your repository through
 our GitHub or Bitbucket integration options, Bitrise will do this automatically for you).</li>
   <li>Prepare your App’s <strong>Primary Workflow</strong> to include the <em>tests</em> you would like to run on every code change.</li>
   <li>Create a <strong>new Workflow for your develop branch</strong> and add the <em>deployment</em>
@@ -1916,10 +1916,16 @@ maybe even <a href="https://github.com/bitrise-io/steps-sms-text-message">Send a
 You can customize your Workflows the way you want and you can
 <strong>control everything with nothing but your code repository!</strong></p>
 
-<p>!!! note
-    You can create unlimited number of Workflows
-    so if you have a more complex branching model
-    you can configure your automations to support the way you work.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Unlimited number of workflows</p>
+  </div>
+
+<div class="message-content">
+    <p>You can create unlimited number of Workflows so if you have a more complex branching model you can configure your automations to support the way you work.</p>
+
+  </div>
+</div>
 
 <p>We have a great amount of Steps you can choose from
 and <strong>all of these Steps are open source</strong>,
