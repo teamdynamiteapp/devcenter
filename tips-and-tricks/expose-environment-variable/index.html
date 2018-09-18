@@ -1832,20 +1832,21 @@ pipe the value:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>envman add --key MY_RELEASE_NOTE --valuefile ./some/file/path
 </code></pre></div></div>
 
-<p><em>You can read more about how <code class="highlighter-rouge">envman</code> can
-be used on it’s <a href="https://github.com/bitrise-io/envman/">GitHub page</a>.</em></p>
+<p><em>You can read more about how</em> <code class="highlighter-rouge">_envman_</code>_ can
+be used on it’s <em><a href="https://github.com/bitrise-io/envman/">_GitHub page_</a></em>._</p>
 
-<p>!!! warning “Env Var value size limit”
-    Environment Variable values set through <code class="highlighter-rouge">envman</code> are limited to 10KB by default.
-    This is done in order to prevent issues with common tools.
-    Different tools have different environment size constraints,
-    e.g. <code class="highlighter-rouge">Bash</code> will start to fail on OS X once the environments set
-    exceed ~120KB (<strong>in total, not a single variable!</strong>).</p>
+<div class="message-box warning">
+<div class="message-title">
+    <p>Env Var value size limit</p>
+  </div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>For larger data you should use files or other solutions,
-and use environment variables to point to the file / to the
-ID or location of where the data is stored.
-</code></pre></div></div>
+<div class="message-content">
+
+    <p>Environment Variable values set through <code class="highlighter-rouge">envman</code> are limited to 10KB by default. This is done in order to prevent issues with common tools. Different tools have different environment size constraints, e.g. <code class="highlighter-rouge">Bash</code> will start to fail on OS X once the environments set exceed ~120KB (<strong>in total, not a single variable!</strong>).</p>
+  </div>
+</div>
+
+<p><strong>For larger data</strong> you should use files or other solutions, and use environment variables to point to the file / to the ID or location of where the data is stored.</p>
 
 <p>Once the environment variable is exposed you can use it like
 any other environment variable. In <code class="highlighter-rouge">bash</code> you can reference
@@ -1908,12 +1909,12 @@ read the current value and expose it under the new key.</p>
 <p>After this, subsequent steps can get the value of <code class="highlighter-rouge">BITRISE_BUILD_NUMBER</code> from the
 <code class="highlighter-rouge">MY_BUILD_NUMBER</code> environment variable.</p>
 
-<p><em>Note: if you change the value of <code class="highlighter-rouge">BITRISE_BUILD_NUMBER</code> after this, the
-value of <code class="highlighter-rouge">MY_BUILD_NUMBER</code> won’t be modified, that will still hold the original value!</em></p>
+<p><em>Note: if you change the value of</em> <code class="highlighter-rouge">_BITRISE_BUILD_NUMBER_</code>_ after this, the
+value of <em><code class="highlighter-rouge">_MY_BUILD_NUMBER_</code> _won’t be modified, that will still hold the original value!</em></p>
 
 <h2 id="overwrite-an-environment-variable-if-another-one-is-set">Overwrite an Environment Variable if another one is set <a href="#overwrite-an-environment-variable-if-another-one-is-set" class="anchor-symbol">⚓</a></h2>
 
-<p>E.g. if a custom environment variable is set through the Build Trigger API.</p>
+<p>For example, if a custom environment variable is set through the Build Trigger API.</p>
 
 <p>The best way to do this, to make sure that no matter what, you overwrite the other env var,
 is to use a Script step, as described above, and check whether the custom env var is set.</p>
