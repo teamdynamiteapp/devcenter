@@ -1809,7 +1809,15 @@
 
 <p>If you don’t have the Bitrise CLI installed, check the installation guide <a href="/bitrise-cli/installation/">here</a>.</p>
 
-<p><strong>IMPORTANT</strong>: Make sure you have the latest version of the Bitrise CLI, or at the very least, you have version 1.6.1 or higher. Call <code class="highlighter-rouge">bitrise --version</code> to check your Bitrise CLI version. This is important because the CLI uses the <code class="highlighter-rouge">:step</code> plugin to create Steps and this plugin was introduced as a core plugin in v1.6.1.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Use the latest Bitrise CLI</p>
+  </div>
+
+<div class="message-content">
+    <p>Make sure you have the latest version of the Bitrise CLI, or at the very least, you have version 1.6.1 or higher. Call <code class="highlighter-rouge">bitrise --version</code> to check your Bitrise CLI version. This is important because the CLI uses the <code class="highlighter-rouge">:step</code> plugin to create Steps and this plugin was introduced as a core plugin in v1.6.1.</p>
+  </div>
+</div>
 
 <h2 id="creating-the-step">Creating the Step <a href="#creating-the-step" class="anchor-symbol">⚓</a></h2>
 
@@ -1838,11 +1846,20 @@ bitrise :step create
 
 <ul>
   <li>how you can run your Step locally, before you even commit the code,</li>
-  <li>how you can test and use your Step in any build by using <a href="/bitrise-cli/steps/#special-Step-sources">the <code class="highlighter-rouge">git::</code> Step reference</a>,</li>
+  <li>how you can test and use your Step in any build by using <a href="/bitrise-cli/steps/#special-Step-sources">the </a><code class="highlighter-rouge">[git::](/bitrise-cli/steps/#special-Step-sources)</code><a href="/bitrise-cli/steps/#special-Step-sources"> Step reference</a>,</li>
   <li>how you can share your Step with others through the Bitrise StepLib if you wish to do so.</li>
 </ul>
 
-<p><strong>IMPORTANT</strong>: Before proceeding with configuring your step, check out <a href="/bitrise-cli/most-important-concepts.md">some important concepts you must be aware of</a>!</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Before proceeding with step configuration</p>
+  </div>
+
+<div class="message-content">
+    <p>Check out <a href="/bitrise-cli/most-important-concepts.md">some important concepts you must be aware of</a>!</p>
+
+  </div>
+</div>
 
 <h2 id="step-development-guidelines">Step development guidelines <a href="#step-development-guidelines" class="anchor-symbol">⚓</a></h2>
 
@@ -1861,7 +1878,7 @@ bitrise :step create
   <li>If your step input should accept a list of values, postfix the input ID with <code class="highlighter-rouge">_list</code> (for example, <code class="highlighter-rouge">input_path_list</code>). We strongly recommend using the pipe character as a separator (for example, <code class="highlighter-rouge">first value|second value</code>).</li>
   <li>For outputs, use <strong>upper</strong> case <a href="https://en.wikipedia.org/wiki/Snake_case">snake case</a> style output IDs. For example, <code class="highlighter-rouge">OUTPUT_PATH</code>.</li>
   <li>If an output should be able to provide a list of values, postfix the input ID with <code class="highlighter-rouge">_LIST</code> (for example, <code class="highlighter-rouge">OUTPUT_PATH_LIST</code>). We strongly recommend using the pipe character as a separator (for example, <code class="highlighter-rouge">first value|second value</code>).</li>
-  <li>Filter out empty items! For example, <code class="highlighter-rouge">first value|   |second value</code> should be treated exactly the same way as <code class="highlighter-rouge">first value|second value</code>.</li>
+  <li>Filter out empty items! For example, <code class="highlighter-rouge">first value| |second value</code> should be treated exactly the same way as <code class="highlighter-rouge">first value|second value</code>.</li>
 </ul>
 
 <h3 id="environment-variables-in-steps">Environment variables in Steps <a href="#environment-variables-in-steps" class="anchor-symbol">⚓</a></h3>
@@ -1897,29 +1914,15 @@ bitrise :step create
 <p>We recommend you start with the command <code class="highlighter-rouge">bitrise share</code>. This will print you a guide on sharing steps - all you need to do is follow! But we’ll summarize the most important things here as well, if you wish to look at the process before even firing up a command line interface.</p>
 
 <ol>
-  <li>
-    <p>Make sure your Step is stored in a public git repository.</p>
-  </li>
-  <li>
-    <p>Fork the StepLib repository you want to have your step in. The official Bitrise StepLib can be found here: https://github.com/bitrise-io/bitrise-steplib</p>
-  </li>
-  <li>
-    <p>Call <code class="highlighter-rouge">$ bitrise share start -c https://github.com/[your-username]/bitrise-steplib.git</code>, with the git clone URL of your forked StepLib repository. This will prepare your forked StepLib locally for sharing.</p>
-  </li>
-  <li>
-    <p>Add the step version tag to your Step’s repository.</p>
-  </li>
-  <li>
-    <p>Call $ bitrise share create –tag [step-version-tag] –git [step-git-uri].git –stepid [step-id],
-to add your Step to your forked StepLib repository (locally).</p>
-  </li>
-  <li>
-    <p>You can call $ bitrise audit -c https://github.com/[your-username]/bitrise-steplib.git
-to perform a complete health-check on your forked StepLib.</p>
-  </li>
-  <li>
-    <p>Create a Pull Request in the original StepLib repository.</p>
-  </li>
+  <li>Make sure your Step is stored in a public git repository.</li>
+  <li>Fork the StepLib repository you want to have your step in. The official Bitrise StepLib can be found here: https://github.com/bitrise-io/bitrise-steplib</li>
+  <li>Call <code class="highlighter-rouge">$ bitrise share start -c https://github.com/[your-username]/bitrise-steplib.git</code>, with the git clone URL of your forked StepLib repository. This will prepare your forked StepLib locally for sharing.</li>
+  <li>Add the step version tag to your Step’s repository.</li>
+  <li>Call $ bitrise share create –tag [step-version-tag] –git [step-git-uri].git –stepid [step-id],
+to add your Step to your forked StepLib repository (locally).</li>
+  <li>You can call $ bitrise audit -c https://github.com/[your-username]/bitrise-steplib.git
+to perform a complete health-check on your forked StepLib.</li>
+  <li>Create a Pull Request in the original StepLib repository.</li>
 </ol>
 
 <p>And that’s it, you are done! Once your PR is merged, your step will be available to everyone who uses the StepLib repository you chose.</p>
