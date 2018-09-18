@@ -1805,9 +1805,15 @@
 						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/tutorials/docker/use-your-own-docker-image.md" target="_blank"></a>
 					</div>
 				
-				<p>!!! note “Have a question or suggestion? Join the discussion!”
-    You can find this guide’s discussion topic at:
-    <a href="http://discuss.bitrise.io/t/how-to-use-your-own-docker-image-for-your-builds/69">discuss.bitrise.io/t/69</a></p>
+				<div class="message-box note">
+<div class="message-title">
+    <p>Have a question or suggestion</p>
+  </div>
+
+<div class="message-content">
+    <p>Join the discussion! You can find this guide’s discussion topic at: <a href="http://discuss.bitrise.io/t/how-to-use-your-own-docker-image-for-your-builds/69">discuss.bitrise.io/t/69</a>.</p>
+  </div>
+</div>
 
 <p>There are two ways to use <code class="highlighter-rouge">docker</code> on <a href="https://www.bitrise.io">bitrise.io</a>:</p>
 
@@ -1816,8 +1822,8 @@
   <li>Use a Linux/Android stack and set the environment docker image for the app (<code class="highlighter-rouge">Settings</code> tab)</li>
 </ol>
 
-<p><strong>The first option is strongly preferred, you should not change the base environment docker image (on the <code class="highlighter-rouge">Settings</code> tab on bitrise.io)
-unless you really have to!</strong> Running the <code class="highlighter-rouge">docker</code> commands yourself during the build is way more flexible,
+<p><strong>The first option is strongly preferred, you should not change the base environment docker image (on the</strong> <code class="highlighter-rouge">**Settings**</code>** tab on bitrise.io)
+unless you really have to!** Running the <code class="highlighter-rouge">docker</code> commands yourself during the build is way more flexible,
 and provides an overall better control.</p>
 
 <h2 id="run-docker-commands-during-the-build">Run docker commands during the build <a href="#run-docker-commands-during-the-build" class="anchor-symbol">⚓</a></h2>
@@ -1833,9 +1839,9 @@ and provides an overall better control.</p>
 a Linux/Android stack for the app; those stacks have <code class="highlighter-rouge">docker</code> preinstalled and ready to use our of the box.</li>
 </ol>
 
-<p><em>You can find a sample repository on GitHub,
-which is configure to run on your Mac/Linux using the <a href="https://www.bitrise.io/cli">Bitrise CLI</a>:
-<a href="https://github.com/bitrise-samples/minimal-docker">https://github.com/bitrise-samples/minimal-docker</a></em></p>
+<p>_You can find a sample repository on GitHub,
+which is configure to run on your Mac/Linux using the _<a href="https://www.bitrise.io/cli"><em>Bitrise CLI</em></a>:
+<a href="https://github.com/bitrise-samples/minimal-docker"><em>https://github.com/bitrise-samples/minimal-docker</em></a></p>
 
 <h3 id="running-docker-hello-world">Running docker hello-world <a href="#running-docker-hello-world" class="anchor-symbol">⚓</a></h3>
 
@@ -1952,9 +1958,9 @@ Successfully built 02a0da3ac697
 +---+---------------------------------------------------------------+----------+
 </code></pre></div></div>
 
-<p><em>You can find a sample repository on GitHub,
-which is configure to run on your Mac/Linux using the <a href="https://www.bitrise.io/cli">Bitrise CLI</a>:
-<a href="https://github.com/bitrise-samples/minimal-docker">https://github.com/bitrise-samples/minimal-docker</a></em></p>
+<p>_You can find a sample repository on GitHub,
+which is configure to run on your Mac/Linux using the _<a href="https://www.bitrise.io/cli"><em>Bitrise CLI</em></a>:
+<a href="https://github.com/bitrise-samples/minimal-docker"><em>https://github.com/bitrise-samples/minimal-docker</em></a></p>
 
 <h3 id="using-docker-compose">Using docker-compose <a href="#using-docker-compose" class="anchor-symbol">⚓</a></h3>
 
@@ -1982,9 +1988,9 @@ docker run --rm bitrise-minimal-sample
 <p>Docker compose will build and run the image automatically, you don’t have to specify a <code class="highlighter-rouge">-t</code> tag - the <code class="highlighter-rouge">services</code>
 name will be used by <code class="highlighter-rouge">docker-compose</code> to tag the image automatically.</p>
 
-<p><em>You can find a sample repository on GitHub,
-which is configure to run on your Mac/Linux using the <a href="https://www.bitrise.io/cli">Bitrise CLI</a>:
-<a href="https://github.com/bitrise-samples/minimal-docker">https://github.com/bitrise-samples/minimal-docker</a></em></p>
+<p>_You can find a sample repository on GitHub,
+which is configure to run on your Mac/Linux using the _<a href="https://www.bitrise.io/cli"><em>Bitrise CLI</em></a>:
+<a href="https://github.com/bitrise-samples/minimal-docker"><em>https://github.com/bitrise-samples/minimal-docker</em></a></p>
 
 <h2 id="using-bitriseio-custom-docker-image-option">Using bitrise.io custom docker image option <a href="#using-bitriseio-custom-docker-image-option" class="anchor-symbol">⚓</a></h2>
 
@@ -1992,11 +1998,15 @@ which is configure to run on your Mac/Linux using the <a href="https://www.bitri
   <p>Use a Linux/Android stack and set the environment docker image for the app (<code class="highlighter-rouge">Settings</code> tab)</p>
 </blockquote>
 
-<p>!!! warning “Custom Android docker image”
-    Creating and maintaining your own Android Docker image can be quite time consuming!
-    <strong>If what you need is just to install a couple of additional tools, you should do that with e.g. a Script step instead!</strong>
-    For more information see the <a href="/tips-and-tricks/install-additional-tools/">Install Any Additional Tool</a> guide.
-    <em>You should only use your own Android docker image if you really have to!</em></p>
+<div class="message-box warning">
+<div class="message-title">
+    <p>Custom Android docker image</p>
+  </div>
+
+<div class="message-content">
+    <p>Creating and maintaining your own Android Docker image can be quite time consuming! <strong>If what you need is just to install a couple of additional tools, you should do that with, for example, a Script step instead!</strong> For more information, see the <a href="/tips-and-tricks/install-additional-tools/">Install Any Additional Tool</a> guide. <em>You should only use your own Android docker image if you really have to!</em></p>
+  </div>
+</div>
 
 <p>If you want to run your build in a custom docker environment,
 <strong>you should base your own docker image on one of our base Docker images</strong>, as those have every base tool pre-installed,
@@ -2031,14 +2041,25 @@ and are pre-cached on the build virtual machines.
 it at the very top of your <code class="highlighter-rouge">Dockerfile</code> with a <code class="highlighter-rouge">FROM bitriseio/IMAGE-ID:latest</code>,
 for example: <code class="highlighter-rouge">FROM bitriseio/docker-bitrise-base:latest</code></p>
 
-<p>!!! warning “Don’t use the <code class="highlighter-rouge">-alpha</code> images for your builds”
-    For every docker image we have on Docker Hub we have a <code class="highlighter-rouge">-alpha</code> post fixed version too.
-    the <code class="highlighter-rouge">-alpha</code> ones are rebuilt frequently and are <strong>not precached on <a href="https://www.bitrise.io">bitrise.io</a></strong>,
-    so you should avoid those. The only purpose of the <code class="highlighter-rouge">-alpha</code> images is to provide
-    ready to use test environments for us, before we would publish a non <code class="highlighter-rouge">-alpha</code> version.</p>
+<div class="message-box warning">
+<div class="message-title">
+    <p>Don’t use the <code class="highlighter-rouge">-alpha</code> images for your builds</p>
+  </div>
 
-<p><strong>Important</strong>: you have to use the <strong>Docker Hub ID</strong> of the image you want to use as
-the base image (ex: <code class="highlighter-rouge">bitriseio/docker-android</code>, <code class="highlighter-rouge">bitriseio/android-ndk</code> or <code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>).</p>
+<div class="message-content">
+    <p>For every docker image we have on Docker Hub, we have a <code class="highlighter-rouge">-alpha</code> post fixed version too. the <code class="highlighter-rouge">-alpha</code> ones are rebuilt frequently and are <strong>not precached on</strong> <a href="https://www.bitrise.io"><strong>bitrise.io</strong></a>, so you should avoid those. The only purpose of the <code class="highlighter-rouge">-alpha</code> images is to provide ready to use test environments for us, before we would publish a non <code class="highlighter-rouge">-alpha</code> version.</p>
+  </div>
+</div>
+
+<div class="message-box important">
+<div class="message-title">
+    <p>Docker Hub ID</p>
+  </div>
+
+<div class="message-content">
+    <p>You have to use the <strong>Docker Hub ID</strong> of the image you want to use as the base image (ex: <code class="highlighter-rouge">bitriseio/docker-android</code>, <code class="highlighter-rouge">bitriseio/android-ndk</code> or <code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>).</p>
+  </div>
+</div>
 
 <p>You can find an example project which extends our Android image by
 installing additional SDKs at: <a href="https://github.com/viktorbenei/docker-bitrise-android-ext">https://github.com/viktorbenei/docker-bitrise-android-ext</a></p>
@@ -2063,19 +2084,28 @@ statement at the top of the <code class="highlighter-rouge">Dockerfile</code>, l
 <a href="https://github.com/viktorbenei/docker-bitrise-android-ext/blob/master/Dockerfile#L1">https://github.com/viktorbenei/docker-bitrise-android-ext/blob/master/Dockerfile#L1</a>
 (<em>don’t forget to commit &amp; push it!</em>).</p>
 
-<p>!!! note “Which image to use?”
-    1. If you don’t need the Android tools you should base your image on
-       the <strong>bitrise-base</strong> (<code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>) image
-       and install just the things you need.
-    1. If you need the Android tools then you should use
-       the <strong>android</strong> (<code class="highlighter-rouge">bitriseio/docker-android</code>) image
-       or the <strong>bitrise-base</strong> (<code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>) image.
-    1. You should only use the <strong>android-ndk</strong> (<code class="highlighter-rouge">bitriseio/android-ndk</code>) image
-       as the base image if you actually need the NDK.</p>
+<div class="message-box info">
+<div class="message-title">
+    <p>Which image to use?</p>
+  </div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>From a performance perspective: you should install the least amount of tools in your image,
-as it'll make your image smaller, which means faster download &amp; build start.
-</code></pre></div></div>
+<div class="message-content">
+
+    <ul>
+      <li>If you don’t need the Android tools you should base yo <strong>image</strong> the <strong>bitrise-base</strong> (<code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>) image and install just the things you need.</li>
+      <li>If you need the Android tools then you should use the <strong>android</strong> (<code class="highlighter-rouge">bitriseio/docker-android</code>) image
+or the <strong>bitrise-base</strong> (<code class="highlighter-rouge">bitriseio/docker-bitrise-base</code>) image.</li>
+      <li>
+        <p>You should only use the <strong>android-ndk</strong> (<code class="highlighter-rouge">bitriseio/android-ndk</code>) image
+as the base image if you actually need the NDK.</p>
+
+        <p>From a performance perspective: you should install the least amount of tools in your image,</p>
+
+        <p>as it’ll make your image smaller, which means faster download &amp; build start.</p>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <p>You now have the description of your image. Go to <a href="https://hub.docker.com">Docker Hub</a>, click <code class="highlighter-rouge">Create</code> in the top menu and select <code class="highlighter-rouge">Create Automated Build</code>.
 If you haven’t linked your GitHub account to your Docker Hub account you’ll have to do it now.
@@ -2087,12 +2117,10 @@ This means that every time you change the repository, commit &amp; push the chan
 
 <p><strong>One more thing you should do is to Link your image to our base image you use, so that every time our base image is updated your image will update as well.</strong></p>
 
-<p><em>This is especially important if you base your Docker image on one of our Android images.
-Those images are quite large, and if we have to do a change in the base Docker image and you don’t build a new image,
-<strong>your image will require the old base image, which won’t be pre-cached</strong> on the build Virtual Machines anymore!
-This means that to <code class="highlighter-rouge">docker pull</code> your image it won’t be enough to download just the diffs anymore,
+<p>This is especially important if you base your Docker image on one of our Android images. Those images are quite large, and if we have to do a change in the base Docker image and you don’t build a new image, <strong>your image will require the old base image, which won’t be pre-cached</strong> on the build Virtual Machines anymore!
+This means that to <em><code class="highlighter-rouge">_docker pull_</code> _your image it won’t be enough to download just the diffs anymore,
 <strong>the whole image will have to be pulled</strong> which might even result in errors like “no space left on the device” -
-to <code class="highlighter-rouge">docker pull</code> the base Android image, if no cache is available, it already requires ~10GB disk space, and the Android NDK image is even larger!</em></p>
+to _<code class="highlighter-rouge">_docker pull_</code> _the base Android image, if no cache is available, it already requires ~10GB disk space, and the Android NDK image is even larger!</em></p>
 
 <p><strong>Link your image to one of ours</strong>: you can do this on DockerHub, on the <code class="highlighter-rouge">Build Settings</code> tab,
 under the <code class="highlighter-rouge">Repository Links</code> section. Just specify the ID of our Docker image (ex: <code class="highlighter-rouge">bitriseio/docker-android</code>),
@@ -2108,9 +2136,15 @@ in the <code class="highlighter-rouge">Stack Selector</code> section.</p>
 into the <code class="highlighter-rouge">Docker image to use</code> field and click the <code class="highlighter-rouge">Save</code> button.
 Your next build will use the image you specified.</p>
 
-<p>!!! note “Have a question or suggestion? Join the discussion!”
-    You can find this guide’s discussion topic at:
-    <a href="http://discuss.bitrise.io/t/how-to-use-your-own-docker-image-for-your-builds/69">discuss.bitrise.io/t/69</a></p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Have a question or suggestion</p>
+  </div>
+
+<div class="message-content">
+    <p>Join the discussion! You can find this guide’s discussion topic at: <a href="http://discuss.bitrise.io/t/how-to-use-your-own-docker-image-for-your-builds/69">discuss.bitrise.io/t/69</a>.</p>
+  </div>
+</div>
 
 			</main>
 		</div>
