@@ -1807,11 +1807,12 @@
 				
 				<h2 id="what-is-deploygate">What is DeployGate? <a href="#what-is-deploygate" class="anchor-symbol">⚓</a></h2>
 
-<p><strong><a href="https://deploygate.com?locale=en">DeployGate</a></strong> is a mobile app distribution platform for iOS/Android. DeployGate delivers your in-development iOS/Android apps to your development team, members, employees, and QA testing team in your organization or to testers outside of your company.</p>
+<p><a href="https://deploygate.com?locale=en"><strong>DeployGate</strong></a> is a mobile app distribution platform for iOS/Android. DeployGate delivers your in-development iOS/Android apps to your development team, members, employees, and QA testing team in your organization or to testers outside of your company.</p>
 
 <p>DeployGate have many features to acceralate your app development cycle including QA testing and app improvement with beta tester’s feedbacks.</p>
 
 <p>Features:</p>
+
 <ul>
   <li>App binary version control</li>
   <li>Flexible user account management</li>
@@ -1843,7 +1844,7 @@
   <tbody>
     <tr>
       <td>API Key</td>
-      <td>Set upload user’s DeployGate API Key from <a href="https://deploygate.com/settings">Account Settings</a>. <br />If you want to upload apps as organization account, please use the organization’s API Key. The upload account will be shown on the activity timeline.</td>
+      <td>Set upload user’s DeployGate API Key from Account Settings. <br />If you want to upload apps as organization account, please use the organization’s API Key. The upload account will be shown on the activity timeline.</td>
     </tr>
     <tr>
       <td>Owner Name</td>
@@ -1851,7 +1852,7 @@
     </tr>
     <tr>
       <td>App file path</td>
-      <td>App’s binary file (.ipa/apk) to be uploaded.<br />For default setting, use <code class="highlighter-rouge">$BITRISE_APK_PATH</code> for Android or <code class="highlighter-rouge">$BITRISE_IPA_PATH</code> for iOS.</td>
+      <td>App’s binary file (.ipa/apk) to be uploaded.<br />For default setting, use $BITRISE_APK_PATH for Android or $BITRISE_IPA_PATH for iOS.</td>
     </tr>
     <tr>
       <td>App Visibility</td>
@@ -1872,7 +1873,7 @@
   <tbody>
     <tr>
       <td>Short Message</td>
-      <td>Summary of update shown on DeployGate.<br />You can use <code class="highlighter-rouge">$GIT_CLONE_COMMIT_MESSAGE_SUBJECT</code> if you want to use the same message as git commit.</td>
+      <td>Summary of update shown on DeployGate.<br />You can use $GIT_CLONE_COMMIT_MESSAGE_SUBJECT if you want to use the same message as git commit.</td>
     </tr>
     <tr>
       <td>Distribution Key</td>
@@ -1880,7 +1881,7 @@
     </tr>
     <tr>
       <td>Distribution Name</td>
-      <td>Specify the name of the updated distribution page. If nothing exists, a new distribution page will be created. Possible usage includes creating distribution pages for each Git branch name (for example, <code class="highlighter-rouge">$BITRISE_GIT_BRANCH</code>).</td>
+      <td>Specify the name of the updated distribution page. If nothing exists, a new distribution page will be created. Possible usage includes creating distribution pages for each Git branch name (for example, $BITRISE_GIT_BRANCH).</td>
     </tr>
     <tr>
       <td>Release Note</td>
@@ -1888,13 +1889,21 @@
     </tr>
     <tr>
       <td>Disable Notify(iOS Only)</td>
-      <td>There is no DeployGate client apps in iOS platform. By default, email notifications are used for release updates. If you don’t need email notification, please set this option as <code class="highlighter-rouge">true</code>.</td>
+      <td>There is no DeployGate client apps in iOS platform. By default, email notifications are used for release updates. If you don’t need email notification, please set this option as true.</td>
     </tr>
   </tbody>
 </table>
 
-<p>!!! note
-    These options are based on <strong><a href="https://docs.deploygate.com/reference">DeloyGate API</a></strong>. For more details, please read the references at <a href="https://deploygate.com?locale=en">DeployGate.com</a>.</p>
+<div class="message-box info">
+<div class="message-title">
+    <p>More info on DeployGate</p>
+  </div>
+
+<div class="message-content">
+    <p>These options are based on <a href="https://docs.deploygate.com/reference"><strong>DeloyGate API</strong></a>. For more details, please read the references at <a href="https://deploygate.com?locale=en">DeployGate.com</a>.</p>
+
+  </div>
+</div>
 
 <h2 id="how-distribution-page-works">How <code class="highlighter-rouge">Distribution Page</code> works? <a href="#how-distribution-page-works" class="anchor-symbol">⚓</a></h2>
 
