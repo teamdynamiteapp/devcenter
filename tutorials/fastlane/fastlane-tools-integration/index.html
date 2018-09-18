@@ -1815,12 +1815,15 @@ We love how <a href="https://krausefx.com">Felix Krause</a> sought to solve this
 creating <a href="https://fastlane.tools">fastlane</a>. So by the combined force of earth, water, fire and wind…
 we integrated the whole <a href="https://fastlane.tools">fastlane toolkit</a> - booyah! How cool is that!</p>
 
-<p>!!! note “Bitrise offline CLI”
-    We have an open source, offline CLI, which can be used in a similar way as <em>fastlane</em>.
-    If you’re interested, you can find the CLI’s website <a href="https://www.bitrise.io/cli">here</a>,
-    and its GitHub repository <a href="https://github.com/bitrise-io/bitrise">here</a>.
-    You can use this CLI to run your bitrise configurations locally, which can
-    include runing <em>fastlane</em> too as part of the build, as described below ;)</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Bitrise offline CLI</p>
+  </div>
+
+<div class="message-content">
+    <p>We have an open source, offline CLI, which can be used in a similar way as <em>fastlane</em>. If you’re interested, you can find the CLI’s website <a href="https://www.bitrise.io/cli">here</a>, and its GitHub repository <a href="https://github.com/bitrise-io/bitrise">here</a>. You can use this CLI to run your bitrise configurations locally, which can include runing <em>fastlane</em> too as part of the build, as described below. ;)</p>
+  </div>
+</div>
 
 <h2 id="what-is-fastlane">What is fastlane? <a href="#what-is-fastlane" class="anchor-symbol">⚓</a></h2>
 
@@ -1833,27 +1836,34 @@ and upload or update to the App Store.</p>
 
 <h2 id="how-to-get-started">How to get started? <a href="#how-to-get-started" class="anchor-symbol">⚓</a></h2>
 
-<p>Using <em>fastlane</em> for your workflow is easy as pie. Just <a href="/getting-started/manage-your-bitrise-workflow">add the <code class="highlighter-rouge">Fastlane</code> step to your
+<p>Using <em>fastlane</em> for your workflow is easy as pie. Just <a href="/getting-started/manage-your-bitrise-workflow">add the </a><code class="highlighter-rouge">[Fastlane](/getting-started/manage-your-bitrise-workflow)</code><a href="/getting-started/manage-your-bitrise-workflow"> step to your
 workflow</a>,
 after the <code class="highlighter-rouge">Git Clone</code> step (and any other dependency step).</p>
 
-<p>!!! note
-    You should also add/keep the <code class="highlighter-rouge">Certificate and profile installer</code> step in the workflow,
-    to download your <em>.p12 Certificates</em> and <em>Provisioning Profiles</em> uploaded to <a href="https://www.bitrise.io">bitrise.io</a>
-    and to install them. <strong>Even if you don’t upload your files to <a href="https://www.bitrise.io">bitrise.io</a>
-    and instead you use a fastlane tool to manage your code signing files you should
-    still keep this step in the workflow</strong>. Read more about <a href="/ios/code-signing/#use-a-third-party-tool-to-manage-your-code-signing-files">iOS Code Signing using
-    third party tools</a>.</p>
+<div class="message-box warning">
+<div class="message-title">
+    <p>Have Certificate and profile installer step in your workflow!</p>
+  </div>
 
-<p>With adding the <em>fastlane</em> step we ensure that you are running on the latest <em>fastlane</em> version,
-as it is pre-installed on all our VMs.
-Inside the step you can set the <em>fastlane</em> action and we will run it automatically every time you push a new code change.</p>
+<div class="message-content">
+    <p>TYou should also add/keep the <code class="highlighter-rouge">Certificate and profile installer</code> step in the workflow, to download your <em>.p12 Certificates</em> and <em>Provisioning Profiles</em> uploaded to <a href="https://www.bitrise.io">bitrise.io</a> and to install them. <strong>Even if you don’t upload your files to</strong> <a href="https://www.bitrise.io"><strong>bitrise.io</strong></a> <strong>and instead you use a fastlane tool to manage your code signing files you should still keep this step in the workflow</strong>. Read more about <a href="/ios/code-signing/#use-a-third-party-tool-to-manage-your-code-signing-files">iOS Code Signing using third party tools</a>.</p>
+
+  </div>
+</div>
+
+<p>With adding the <em>fastlane</em> step we ensure that you are running on the latest <em>fastlane</em> version, as it is pre-installed on all our VMs. Inside the step you can set the <em>fastlane</em> action and we will run it automatically every time you push a new code change.</p>
 
 <p>For more configuration options see the <code class="highlighter-rouge">Fastlane</code> step’s description in the Workflow Editor!</p>
 
-<p>!!! note
-    If you want to use <a href="https://www.bitrise.io">bitrise.io</a> to store your code signing files,
-    you should just follow the <a href="/ios/code-signing/">iOS Code Signing guide here</a>.</p>
+<div class="message-box info">
+<div class="message-title">
+    <p>iOS code signing guidelines</p>
+  </div>
+
+<div class="message-content">
+    <p>If you want to use <a href="https://www.bitrise.io">bitrise.io</a> to store your code signing files, you should just follow the <a href="/ios/code-signing/">iOS Code Signing guide here</a>.</p>
+  </div>
+</div>
 
 <h2 id="whats-next">What’s next? <a href="#whats-next" class="anchor-symbol">⚓</a></h2>
 
