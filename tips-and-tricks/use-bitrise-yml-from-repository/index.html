@@ -1913,13 +1913,17 @@ it into the editor on <a href="https://www.bitrise.io">bitrise.io</a> (in <code 
   <li>Save the changes.</li>
 </ol>
 
-<p>!!! note “After downloading the original bitrise.yml from bitrise.io”
-The original <code class="highlighter-rouge">bitrise.yml</code> you downloaded from <a href="https://www.bitrise.io">bitrise.io</a>
-most likely includes the steps to retrieve your repository.
-These steps will be redundant, as you will define how the repository should be accessed
-in the “wrapper” config on <a href="https://www.bitrise.io">bitrise.io</a>,
-so go ahead and remove the <code class="highlighter-rouge">activate-ssh-key</code> and <code class="highlighter-rouge">git-clone</code>
-steps from it before you would commit it into your repository.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>After downloading the original bitrise.yml from bitrise.io</p>
+  </div>
+
+<div class="message-content">
+
+    <p>The original <code class="highlighter-rouge">bitrise.yml</code> you downloaded from <a href="https://www.bitrise.io">bitrise.io</a> most likely includes the steps to retrieve your repository. These steps will be redundant, as you will define how the repository should be accessed in the “wrapper” config on <a href="https://www.bitrise.io">bitrise.io</a>, so go ahead and remove the <code class="highlighter-rouge">activate-ssh-key</code> and <code class="highlighter-rouge">git-clone</code> steps from it before you would commit it into your repository.</p>
+
+  </div>
+</div>
 
 <h3 id="bitriseyml-content-for-bitriseio">bitrise.yml content for bitrise.io <a href="#bitriseyml-content-for-bitriseio" class="anchor-symbol">⚓</a></h3>
 
