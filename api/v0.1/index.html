@@ -1847,7 +1847,15 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
 
 <p>To get started with the API simply click the <strong>Generate new token</strong> button, and save the generated Personal Access Token somewhere safe.</p>
 
-<p><strong>Important note: the generated token is shown only once, when it’s generated!</strong> There’s no way to see the token value again! You can of course generate as many Access Tokens as you like, and delete the ones you don’t need anymore.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Availability of the generated token</p>
+  </div>
+
+<div class="message-content">
+    <p>The generated token is shown only once, when it’s generated! There’s no way to see the token value again! You can of course generate as many Access Tokens as you like, and delete the ones you don’t need anymore.</p>
+  </div>
+</div>
 
 <p>Once you have the token you can start interacting with the API.</p>
 
@@ -1880,7 +1888,16 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p><em>Note: the</em> <code class="highlighter-rouge">_next_</code> <em>property of the</em> <code class="highlighter-rouge">_paging_</code> <em>object is only included if there’s at least one more page available. If there’s no</em> <code class="highlighter-rouge">_next_</code> <em>property inside</em> <code class="highlighter-rouge">_paging_</code> <em>that means that there’s no more page to retrieve.</em></p>
+<div class="message-box note">
+<div class="message-title">
+    <p><code class="highlighter-rouge">_next_</code> property of the <code class="highlighter-rouge">_paging_</code> object</p>
+  </div>
+
+<div class="message-content">
+    <p>The <code class="highlighter-rouge">_next_</code> property of the <code class="highlighter-rouge">_paging_</code> object is only included if there’s at least one more page available. If there’s no <code class="highlighter-rouge">_next_</code> property inside <code class="highlighter-rouge">_paging_</code> that means that there’s no more page to retrieve.</p>
+
+  </div>
+</div>
 
 <p>The <code class="highlighter-rouge">page_item_limit</code> property can be set with the query parameter named <code class="highlighter-rouge">limit</code> at the GET requests, so you can specify the size of the response pages. The default and also maximum value for this parameter is 50.</p>
 
@@ -1923,7 +1940,7 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
 
 <p>These are the only endpoints which do not require authentication.</p>
 
-<p>Example <code class="highlighter-rouge">curl</code> request:</p>
+<p>An example <code class="highlighter-rouge">curl</code> request:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://api.bitrise.io/v0.1
 </code></pre></div></div>
@@ -2019,7 +2036,15 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
 
 <p>Retrieve the apps you have access to. This includes the apps created / owned by you, as well as apps where you’re a Team member (either added directly, or through an Organization’s Group). All the apps you have access to (similar to the Dashboard on <a href="https://www.bitrise.io">bitrise.io</a>.</p>
 
-<p><em>Note: the</em> <code class="highlighter-rouge">_/me/apps_</code> <em>endpoint is also working and the same as above, but it’s deprecated</em></p>
+<div class="message-box note">
+<div class="message-title">
+    <p><code class="highlighter-rouge">_/m</code><code class="highlighter-rouge">_/apps__</code> endpoint</p>
+  </div>
+
+<div class="message-content">
+    <p>The <code class="highlighter-rouge">_/m</code><code class="highlighter-rouge">_/apps__</code> endpoint is also working and the same as above, but it’s <strong>deprecated</strong>.</p>
+  </div>
+</div>
 
 <h4 id="example-curl-request-4">Example <code class="highlighter-rouge">curl</code> request <a href="#example-curl-request-4" class="anchor-symbol">⚓</a></h4>
 
@@ -2140,7 +2165,16 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
 
 <p>Also you can list apps for a specific user, obviously only those applicaitons with be listed in this response, which you have required rights. This endpoint works and responses the same as the <code class="highlighter-rouge">/apps</code> one, so you can use the same parameters too.</p>
 
-<p><em>Note: this endpoint doesn’t work with the</em> <code class="highlighter-rouge">_/me_</code> <em>subroute</em></p>
+<div class="message-box note">
+<div class="message-title">
+    <p><code class="highlighter-rouge">_/me_</code> subroute</p>
+  </div>
+
+<div class="message-content">
+    <p>This endpoint doesn’t work with the <code class="highlighter-rouge">__/me__</code> subroute.</p>
+
+  </div>
+</div>
 
 <h4 id="example-curl-request-6">Example <code class="highlighter-rouge">curl</code> request <a href="#example-curl-request-6" class="anchor-symbol">⚓</a></h4>
 
@@ -2198,7 +2232,15 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
 
 <p>Also you can list apps for a specific oraganization, it works the very same way as the <code class="highlighter-rouge">/users/USER-SLUG/apps</code> one.</p>
 
-<p><em>Note: this endpoint doesn’t work with the</em> <code class="highlighter-rouge">_/me_</code> <em>subroute</em></p>
+<div class="message-box note">
+<div class="message-title">
+    <p><code class="highlighter-rouge">_/me_</code> subroute</p>
+  </div>
+
+<div class="message-content">
+    <p>This endpoint doesn’t work with the <code class="highlighter-rouge">__/me__</code> subroute.</p>
+  </div>
+</div>
 
 <h4 id="example-curl-request-7">Example <code class="highlighter-rouge">curl</code> request <a href="#example-curl-request-7" class="anchor-symbol">⚓</a></h4>
 
@@ -2646,7 +2688,17 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p><em>Note:</em> <code class="highlighter-rouge">_download_url_</code> <em>is generated only when the provisioning profile’s</em> <code class="highlighter-rouge">_is_protected_</code> <em>attribute is</em> <code class="highlighter-rouge">_false_</code></p>
+<div class="message-box note">
+<div class="message-title">
+    <p><code class="highlighter-rouge">_download_url_</code></p>
+  </div>
+
+<div class="message-content">
+    <p>The 
+<code class="highlighter-rouge">_download_url_</code> is generated only when the provisioning profile’s <code class="highlighter-rouge">_is_protected_</code> attribute is <code class="highlighter-rouge">_false_</code>.</p>
+
+  </div>
+</div>
 
 <h3 id="patch-appsapp-slugprovisioning-profilesprovisioning-profile-slug">PATCH /apps/{APP-SLUG}/provisioning-profiles/{PROVISIONING-PROFILE-SLUG} <a href="#patch-appsapp-slugprovisioning-profilesprovisioning-profile-slug" class="anchor-symbol">⚓</a></h3>
 
@@ -2658,8 +2710,18 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
   <li>once <code class="highlighter-rouge">processed</code> flag set to true, then its value cannot be changed anymore</li>
 </ol>
 
-<p>Violating these constraints the response will be <code class="highlighter-rouge">Bad Request</code>.
-<em>Note: the previous</em> <code class="highlighter-rouge">_/apps/{APP-SLUG}/provisioning-profiles/{PROVISIONING-PROFILE-SLUG}/uploaded_</code> <em>endpoint will have the same effect as this one with the request body ‘{“processed”:true}’</em></p>
+<p>Violating these constraints the response will be <code class="highlighter-rouge">Bad Request</code>.</p>
+
+<div class="message-box note">
+<div class="message-title">
+    <p><code class="highlighter-rouge">_/apps/{APP-SLUG}/provisionig-profiles/{PROVISIONING-PROFILE-SLUG}/uploaded_</code></p>
+  </div>
+
+<div class="message-content">
+    <p>The previous <code class="highlighter-rouge">_/apps/{APP-SLUG}/provisionig-profiles/{PROVISIONING-PROFILE-SLUG}/uploaded_</code> endpoint will have the same effect as this one with the request body <code class="highlighter-rouge">{"processed":true}</code>.</p>
+
+  </div>
+</div>
 
 <h4 id="example-curl-request-20">Example <code class="highlighter-rouge">curl</code> request <a href="#example-curl-request-20" class="anchor-symbol">⚓</a></h4>
 
@@ -2799,8 +2861,16 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+<div class="message-box note">
+<div class="message-title">
+    <p>When does the <code class="highlighter-rouge">_download_url_</code> get generated?</p>
+  </div>
 
-<p><em>Note:</em> <code class="highlighter-rouge">_download_url_</code> <em>is generated only when the build certificate’s</em> <code class="highlighter-rouge">_is_protected_</code> <em>attribute is</em> <code class="highlighter-rouge">_false_</code></p>
+<div class="message-content">
+    <p>The <code class="highlighter-rouge">_download_url_</code> is generated only when the build certificate’s <code class="highlighter-rouge">_is_protected_</code> attribute is <code class="highlighter-rouge">_false_</code>.</p>
+
+  </div>
+</div>
 
 <h3 id="patch-appsapp-slugbuild-certificatesbuild-certificate-slug">PATCH /apps/{APP-SLUG}/build-certificates/{BUILD-CERTIFICATE-SLUG} <a href="#patch-appsapp-slugbuild-certificatesbuild-certificate-slug" class="anchor-symbol">⚓</a></h3>
 
@@ -2812,8 +2882,18 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
   <li>once <code class="highlighter-rouge">processed</code> flag set to true, then its value cannot be changed anymore</li>
 </ol>
 
-<p>Violating these constraints the response will be <code class="highlighter-rouge">Bad Request</code>.
-<em>Note: the previous</em> <code class="highlighter-rouge">_/apps/{APP-SLUG}/build-certificates/{BUILD-CERTIFICATE-SLUG}/uploaded_</code> <em>endpoint will have the same effect as this one with the request body ‘{“processed”:true}’</em></p>
+<p>Violating these constraints the response will be <code class="highlighter-rouge">Bad Request</code>.</p>
+
+<div class="message-box note">
+<div class="message-title">
+    <p><code class="highlighter-rouge">_/apps/{APP-SLUG}/build-certificates/{BUILD-CERTIFICATE-SLUG}/uploaded_</code> endpoint</p>
+  </div>
+
+<div class="message-content">
+    <p>The previous <code class="highlighter-rouge">_/apps/{APP-SLUG}/build-certificates/{BUILD-CERTIFICATE-SLUG}/uploaded_</code> endpoint will have the same effect as this one with the request body <code class="highlighter-rouge">{"processed":true}</code>.</p>
+
+  </div>
+</div>
 
 <h4 id="example-curl-request-26">Example <code class="highlighter-rouge">curl</code> request <a href="#example-curl-request-26" class="anchor-symbol">⚓</a></h4>
 
@@ -4607,7 +4687,16 @@ please do it here: <a href="http://discuss.bitrise.io/t/bitrise-public-api/37">h
   <li><code class="highlighter-rouge">**running_first**</code><strong>:</strong> it’s also ordered by <code class="highlighter-rouge">created_at</code> in descending order, but all running builds are listed first and then the builds with other status</li>
 </ul>
 
-<p><em>Note: sorting the list by</em> <code class="highlighter-rouge">_running_first_</code> <em>doesn’t support paging parameters</em></p>
+<div class="message-box note">
+<div class="message-title">
+    <p>List sorting with <code class="highlighter-rouge">_running_first</code></p>
+  </div>
+
+<div class="message-content">
+    <p>Sorting the list by <code class="highlighter-rouge">_running_first_</code> doesn’t support paging parameters.</p>
+
+  </div>
+</div>
 
 <h5 id="example-curl-request-28">Example <code class="highlighter-rouge">curl</code> request <a href="#example-curl-request-28" class="anchor-symbol">⚓</a></h5>
 
@@ -6045,14 +6134,14 @@ so please <strong>do not store</strong> this URL! If you want to retrieve the fu
   <li>And right after that, when you get the response, parse the <code class="highlighter-rouge">expiring_raw_log_url</code> from it and send a <code class="highlighter-rouge">GET</code> request to that URL as soon as possible.</li>
 </ol>
 
-<div class="message-box important">
+<div class="message-box warning">
 <div class="message-title">
-    <p>My message</p>
+    <p>Do not include special headers when sending <code class="highlighter-rouge">GET</code> request!</p>
   </div>
 
 <div class="message-content">
 
-    <p>when you send your <code class="highlighter-rouge">GET</code> request to the <code class="highlighter-rouge">expiring_raw_log_url</code> URL, please <strong>do not</strong> include the Authorization headers. In fact, you should not include any special header at all; just create a simple GET request and send it to the <code class="highlighter-rouge">expiring_raw_log_url</code> url. The <code class="highlighter-rouge">expiring_raw_log_url</code> is configured in such a way that it does not require any other parameter other than what’s included in the URL.</p>
+    <p>When you send your <code class="highlighter-rouge">GET</code> request to the <code class="highlighter-rouge">expiring_raw_log_url</code> URL, please <strong>do not</strong> include the Authorization headers. In fact, you should not include any special header at all; just create a simple <code class="highlighter-rouge">GET</code> request and send it to the <code class="highlighter-rouge">expiring_raw_log_url</code> URL. The <code class="highlighter-rouge">expiring_raw_log_url</code> is configured in such a way that it does not require any other parameter than what’s included in the URL.</p>
 
   </div>
 </div>
@@ -6060,7 +6149,16 @@ so please <strong>do not store</strong> this URL! If you want to retrieve the fu
 <p>When a build is running, the log chunks can be retrieved with filtering, because in this case every response contain a <code class="highlighter-rouge">timestamp</code> which has Unix timestamp format. You can send this value in the next call as query parameter with the key <code class="highlighter-rouge">timestamp</code>, so the next response will contain only the chunks created after the timestamp.
 There is also a <code class="highlighter-rouge">limit</code> parameter which has 50 as the default value, with this you can limit the number of the retrieved log chunks.</p>
 
-<p><em>Note: If build is finished the logs will be archived, in this case there are no filtering options, the filter parameters won’t have any effect on the content of the response, the whole archived log will be retrieved.</em></p>
+<div class="message-box note">
+<div class="message-title">
+    <p>No filtering</p>
+  </div>
+
+<div class="message-content">
+    <p>If build is finished, the logs will be archived, in this case there are no filtering options, the filter parameters won’t have any effect on the content of the response, the whole archived log will be retrieved.</p>
+
+  </div>
+</div>
 
 <h4 id="example-curl-request-30">Example <code class="highlighter-rouge">curl</code> request <a href="#example-curl-request-30" class="anchor-symbol">⚓</a></h4>
 
@@ -6225,7 +6323,16 @@ There is also a <code class="highlighter-rouge">limit</code> parameter which has
 
 <p>Set the attributes of a build artifact. In the request body have to be sent a JSON with the specified new attribute values.</p>
 
-<p><em>Note: at this time only the</em> <code class="highlighter-rouge">_is_public_page_enabled_</code> <em>attribute can be set through this endpoint call. This attribute can only set for the artifacts with type</em> <code class="highlighter-rouge">_android-apk_</code> <em>or</em> <code class="highlighter-rouge">_ios-ipa_</code><em>.</em></p>
+<div class="message-box note">
+<div class="message-title">
+    <p><code class="highlighter-rouge">_is_public_page_enabled_</code> attribute</p>
+  </div>
+
+<div class="message-content">
+    <p>At this time only the <code class="highlighter-rouge">_is_public_page_enabled_</code> attribute can be set through this endpoint call. This attribute can only set for the artifacts with type <code class="highlighter-rouge">_android-apk_</code> or <code class="highlighter-rouge">_ios-ipa_</code>.</p>
+
+  </div>
+</div>
 
 <h4 id="example-curl-request-34">Example <code class="highlighter-rouge">curl</code> request <a href="#example-curl-request-34" class="anchor-symbol">⚓</a></h4>
 
