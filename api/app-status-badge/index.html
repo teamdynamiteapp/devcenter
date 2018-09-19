@@ -1816,22 +1816,27 @@
   <li>
     <p>In the <code class="highlighter-rouge">Status image</code> popup, you can optionally set a branch, and get copy-paste-ready <code class="highlighter-rouge">Embed</code> codes for the SVG image.</p>
 
-    <p>!!! example “Example SVG URL”
-     <code class="highlighter-rouge">
-     https://app.bitrise.io/app/APP-ID/status.svg?token=STATUS-IMAGE-API-TOKEN&amp;branch=master
-    </code></p>
+    <p>An example for SVG URL:</p>
+
+    <p><code class="highlighter-rouge">https://app.bitrise.io/app/APP-ID/status.svg?token=STATUS-IMAGE-API-TOKEN&amp;branch=master</code></p>
 
     <p>To get the JSON equivalent of the status image, simply replace the <code class="highlighter-rouge">.svg</code> in the <code class="highlighter-rouge">Embed</code> URL with <code class="highlighter-rouge">.json</code>.</p>
 
-    <p>!!! example “JSON URL”
-     <code class="highlighter-rouge">
-     https://app.bitrise.io/app/APP-ID/status.json?token=STATUS-IMAGE-API-TOKEN&amp;branch=master
-    </code></p>
+    <p>An example for JSON URL:
+<code class="highlighter-rouge">https://app.bitrise.io/app/APP-ID/status.json?token=STATUS-IMAGE-API-TOKEN&amp;branch=master</code></p>
   </li>
 </ol>
 
-<p>!!! attention “STATUS-IMAGE-API-TOKEN”
-    The <code class="highlighter-rouge">STATUS-IMAGE-API-TOKEN</code> is a special token which can only be used for calling this endpoint (you can find this token in the <code class="highlighter-rouge">Status image</code> popup). No other information can be retrieved with this token, and it’s not the same as the <code class="highlighter-rouge">API Token</code> which you can find on the <code class="highlighter-rouge">Code</code> tab!</p>
+<div class="message-box important">
+<div class="message-title">
+    <p><code class="highlighter-rouge">STATUS-IMAGE-API-TOKEN</code></p>
+  </div>
+
+<div class="message-content">
+    <p>The <code class="highlighter-rouge">STATUS-IMAGE-API-TOKEN</code> is a special token which can only be used for calling this endpoint (you can find this token in the <code class="highlighter-rouge">Status image</code> popup). No other information can be retrieved with this token, and it’s not the same as the <code class="highlighter-rouge">API Token</code> which you can find on the <code class="highlighter-rouge">Code</code> tab!</p>
+
+  </div>
+</div>
 
 <h2 id="json-response">JSON response <a href="#json-response" class="anchor-symbol">⚓</a></h2>
 
