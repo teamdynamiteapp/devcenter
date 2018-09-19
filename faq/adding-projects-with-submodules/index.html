@@ -1811,19 +1811,20 @@ or other private repository dependencies (for example, CocoaPods repositories), 
 <p>There are two ways to achieve this:</p>
 
 <ul>
-  <li>
-    <p>Register <strong>the same SSH key</strong> for every repository you have to access during the build,
-as “Deployment keys”. This is the best, most secure way but not supported by all git hosting services (GitHub, for example, doesn’t support it).</p>
-  </li>
-  <li>
-    <p>Register an SSH key for a user account. Simply add a “bot” / “machine” user with the SSH key to the repositories. <strong>Add the SSH key you would like to use to the user and add the user to the projects</strong>. It is enough to assign <em>read</em> permissions to the bot user. After that, you can use the SSH key to clone to the repository or any submodule.</p>
-  </li>
+  <li>Register <strong>the same SSH key</strong> for every repository you have to access during the build,
+as “Deployment keys”. This is the best, most secure way but not supported by all git hosting services (GitHub, for example, doesn’t support it).</li>
+  <li>Register an SSH key for a user account. Simply add a “bot” / “machine” user with the SSH key to the repositories. <strong>Add the SSH key you would like to use to the user and add the user to the projects</strong>. It is enough to assign <em>read</em> permissions to the bot user. After that, you can use the SSH key to clone to the repository or any submodule.</li>
 </ul>
 
-<p>!!! note
-    It is not required to use a special “bot” / “machine” user: you can add the
-    SSH key to your own account on the git hosting service. The best practice, however, is
-    to use a machine user, with <strong>read only</strong> access, for those repositories you want to access during the build.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Use a machine user with read only access</p>
+  </div>
+
+<div class="message-content">
+    <p>It is not required to use a special “bot” / “machine” user: you can add the SSH key to your own account on the git hosting service. The best practice, however, is to use a <strong>machine user, with</strong> <strong>read only</strong> access, for those repositories you want to access during the build.</p>
+  </div>
+</div>
 
 <p><a href="https://developer.github.com/v3/guides/managing-deploy-keys/#machine-users">GitHub itself recommends this method</a> for accessing multiple repositories.</p>
 
@@ -1835,17 +1836,13 @@ as a “Deployment key” to multiple repositories, without the need to create a
 <p>There is one important detail to keep in mind when you want to give access to all submodules or private repository dependencies for an app: the app’s privacy settings determine what git URL should you use.</p>
 
 <ul>
-  <li>
-    <p>If you have a <strong>private</strong> app: <strong>use SSH URLs everywhere!</strong> Most services support SSH key based authentication <strong>only</strong> for SSH URLs
+  <li>If you have a <strong>private</strong> app: <strong>use SSH URLs everywhere!</strong> Most services support SSH key based authentication <strong>only</strong> for SSH URLs
 (for example, <code class="highlighter-rouge">git@github.com:bitrise-io/bitrise.git</code>).
 Therefore <strong>every private repository you want to use have to be addressed with the SSH URL</strong>.
 If you have direct private git repo references in your CocoaPods <code class="highlighter-rouge">Podfile</code> you’ll have to
 use the SSH URL there as well! The same applies for submodules and every other private
-git repository URL you want to use with the SSH key you register on <a href="https://www.bitrise.io/">Bitrise.io</a>!</p>
-  </li>
-  <li>
-    <p>If you have a <strong>public</strong> app: <strong>use HTTPS URLs everywhere!</strong> SSH URLs require SSH keys even if the repository is public. For security reasons, public apps CANNOT have SSH keys. As HTTPS git clone URLs do not require any authentication in the case of public repositories, they should be used for public Bitrise apps.</p>
-  </li>
+git repository URL you want to use with the SSH key you register on <a href="https://www.bitrise.io/">Bitrise.io</a>!</li>
+  <li>If you have a <strong>public</strong> app: <strong>use HTTPS URLs everywhere!</strong> SSH URLs require SSH keys even if the repository is public. For security reasons, public apps CANNOT have SSH keys. As HTTPS git clone URLs do not require any authentication in the case of public repositories, they should be used for public Bitrise apps.</li>
 </ul>
 
 <h2 id="creating-ssh-keys-for-a-new-private-app">Creating SSH keys for a new private app <a href="#creating-ssh-keys-for-a-new-private-app" class="anchor-symbol">⚓</a></h2>
