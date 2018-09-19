@@ -1805,30 +1805,50 @@
 						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/api/build-trigger.md" target="_blank"></a>
 					</div>
 				
-				<p><em>Note: the <code class="highlighter-rouge">www</code> endpoint is now deprecated. Please use the <code class="highlighter-rouge">https://app.bitrise.io/app/APP-SLUG/build/start.json</code> endpoint instead.</em></p>
+				<p><em>Note: the</em> <code class="highlighter-rouge">_www_</code> <em>endpoint is now deprecated. Please use the</em> <code class="highlighter-rouge">_https://app.bitrise.io/app/APP-SLUG/build/start.json_</code> <em>endpoint instead.</em></p>
 
 <p>With the Build Trigger API you can start a new build of your app with a simple API call.</p>
 
 <p>You can define parameters for the build like what <code class="highlighter-rouge">branch</code>, <code class="highlighter-rouge">tag</code> or <em>git commit</em> to use
 and what <em>build message</em> to present on the Build’s details page.</p>
 
-<p>!!! note “Interactive cURL call configurator”
-    You can find an interactive cURL call configurator by clicking on the <code class="highlighter-rouge">Start/Schedule a build</code>
-    button on your app’s <a href="https://www.bitrise.io">bitrise.io</a> page
-    and switching to <code class="highlighter-rouge">Advanced</code> mode in the popup.
-    At the bottom of the popup you can find a <code class="highlighter-rouge">curl</code> call,
-    based on the parameters you specify in the popup.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Interactive cURL call configurator</p>
+  </div>
+
+<div class="message-content">
+
+    <p>You can find an interactive cURL call configurator by clicking on the <code class="highlighter-rouge">Start/Schedule a build</code> button on your app’s <a href="https://www.bitrise.io">bitrise.io</a> page and switching to <code class="highlighter-rouge">Advanced</code> mode in the popup. At the bottom of the popup you can find a <code class="highlighter-rouge">curl</code> call, based on the parameters you specify in the popup.</p>
+
+  </div>
+</div>
 
 <h2 id="how-to-start-a-build-by-calling-the-trigger-api">How to start a build by calling the Trigger API? <a href="#how-to-start-a-build-by-calling-the-trigger-api" class="anchor-symbol">⚓</a></h2>
 
 <p>You have to call your build trigger with a <code class="highlighter-rouge">POST</code> request with a JSON body.</p>
 
-<p>!!! note “Build Trigger Token and App Slug”
-    When you use the Bitrise Trigger API you have to specify the App’s <code class="highlighter-rouge">Build Trigger Token</code> and <code class="highlighter-rouge">App Slug</code>.
-    You can view both and regenerate your App’s Build Trigger Token anytime you want to,
-    on the <code class="highlighter-rouge">Code</code> tab of the app.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Build Trigger Token and App Slug</p>
+  </div>
 
-<p><em>Note: the old <code class="highlighter-rouge">api_token</code> parameter is DEPRECATED, please use the <code class="highlighter-rouge">build_trigger_token</code> parameter instead</em></p>
+<div class="message-content">
+
+    <p>When you use the Bitrise Trigger API you have to specify the App’s <code class="highlighter-rouge">Build Trigger Token</code> and <code class="highlighter-rouge">App Slug</code>. You can view both and regenerate your App’s Build Trigger Token anytime you want to, on the <code class="highlighter-rouge">Code</code> tab of the app.</p>
+
+  </div>
+</div>
+
+<div class="message-box important">
+<div class="message-title">
+    <p>Old API token parameter</p>
+  </div>
+
+<div class="message-content">
+    <p>The old <code class="highlighter-rouge">_api_token_</code> parameter is DEPRECATED, please use the <code class="highlighter-rouge">_build_trigger_token_</code>parameter instead.</p>
+  </div>
+</div>
 
 <h2 id="json-body">JSON body <a href="#json-body" class="anchor-symbol">⚓</a></h2>
 
@@ -1916,21 +1936,26 @@ This special git <code class="highlighter-rouge">ref</code> should point to the 
 Example: <code class="highlighter-rouge">pull/12/head</code> (github) / <code class="highlighter-rouge">merge-requests/12/head</code> (gitlab).</li>
 </ul>
 
-<p>!!! note “Git Clone - parameter priority”
-    If you provide a <code class="highlighter-rouge">tag</code>, the <code class="highlighter-rouge">branch</code> parameter will be ignored by the <code class="highlighter-rouge">Git Clone</code> step.
-    If you provide a <code class="highlighter-rouge">commit_hash</code> parameter then both the <code class="highlighter-rouge">tag</code> and the <code class="highlighter-rouge">branch</code> parameters will be ignored.
-    These will still be logged, will be available for steps and will be visible on the Build’s details page,
-    but the <code class="highlighter-rouge">Git Clone</code> step will use the the most specific parameter for checkout.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Git Clone - parameter priority</p>
+  </div>
+
+<div class="message-content">
+
+    <p>If you provide a <code class="highlighter-rouge">tag</code>, the <code class="highlighter-rouge">branch</code> parameter will be ignored by the <code class="highlighter-rouge">Git Clone</code> step. If you provide a <code class="highlighter-rouge">commit_hash</code> parameter then both the <code class="highlighter-rouge">tag</code> and the <code class="highlighter-rouge">branch</code> parameters will be ignored. These will still be logged, will be available for steps and will be visible on the Build’s details page, but the <code class="highlighter-rouge">Git Clone</code> step will use the the most specific parameter for checkout.</p>
+  </div>
+</div>
 
 <h3 id="specify-environment-variables">Specify Environment Variables <a href="#specify-environment-variables" class="anchor-symbol">⚓</a></h3>
 
 <p>You can define additional <em>environment variables</em> for your build.</p>
 
-<p><em>These variables will be handled with priority between <code class="highlighter-rouge">Secrets</code> and <code class="highlighter-rouge">App Env Vars</code>,
+<p><em>These variables will be handled with priority between</em> <code class="highlighter-rouge">_Secrets_</code> <em>and</em> <code class="highlighter-rouge">_App Env Vars_</code>_,
 which means that you can not overwrite environment variables defined in
 your build configuration (e.g. App Env Vars), only Secrets.
 For more information see:
-<a href="/bitrise-cli/most-important-concepts/#availability-order-of-environment-variables">Availability order of environment variables</a></em></p>
+_<a href="/bitrise-cli/most-important-concepts/#availability-order-of-environment-variables"><em>Availability order of environment variables</em></a></p>
 
 <p>It’s important that this parameter have to be an <strong>array of objects</strong>,
 and that every item of the array have to include
@@ -1977,7 +2002,7 @@ At the bottom of the popup you can find a <code class="highlighter-rouge">curl</
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H 'Content-Type: application/json' https://app.bitrise.io/app/APP-SLUG/build/start.json --data '{"hook_info":{"type":"bitrise","build_trigger_token":"APP-API-TOKEN"},"build_params":{"branch":"master"}}'
 </code></pre></div></div>
 
-<p><em>Note: please don’t forget to add <code class="highlighter-rouge">Content-Type</code> header with <code class="highlighter-rouge">application/json</code> value</em></p>
+<p><em>Note: please don’t forget to add</em> <code class="highlighter-rouge">_Content-Type_</code> <em>header with</em> <code class="highlighter-rouge">_application/json_</code> <em>value</em></p>
 
 <p>A more advanced example: let’s say you want to build the <strong>master</strong> <code class="highlighter-rouge">branch</code>
 using the <code class="highlighter-rouge">deployment</code> workflow,
