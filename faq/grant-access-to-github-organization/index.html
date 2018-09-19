@@ -1807,8 +1807,16 @@
 				
 				<p>This guide explains how to grant access for <a href="https://www.bitrise.io/">bitrise.io</a> to your GitHub Organization.</p>
 
-<p>!!! note
-    This guide presumes you have already <a href="https://help.github.com/articles/authorizing-oauth-apps/">authorized</a> Bitrise on GitHub.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Have you authorized Bitrise on Github?</p>
+  </div>
+
+<div class="message-content">
+    <p>This guide presumes you have already <a href="https://help.github.com/articles/authorizing-oauth-apps/">authorized</a> Bitrise on GitHub.</p>
+
+  </div>
+</div>
 
 <ol>
   <li>Open <a href="https://github.com">https://github.com</a>.</li>
@@ -1821,20 +1829,30 @@
 
 <p><img src="/img/faq/grant-org-access.jpg" alt="Screenshot" /></p>
 
-<p>!!! note “Troubleshooting: Can’t see <code class="highlighter-rouge">Grant</code> button next to app under <code class="highlighter-rouge">Organization access</code>”
-    If there’s no <code class="highlighter-rouge">Grant</code> button but only a <strong>red cross</strong> icon next to the Organization in the <code class="highlighter-rouge">Organization access</code> that means that <strong>the access was previously granted but then it was revoked</strong>. You can fix this by first selecting the Organization under <code class="highlighter-rouge">Organization settings</code> on the left side, then clicking <code class="highlighter-rouge">Third-party access</code>. You can see <code class="highlighter-rouge">Bitrise</code> with <code class="highlighter-rouge">Denied</code> access. Click the pencil icon and <code class="highlighter-rouge">Grant access</code> to Bitrise. Now you can go back to your <code class="highlighter-rouge">Authorized OAuth Apps</code> and click on Bitrise. You should see a green tick instead of the red cross icon next to your Organization.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Can’t see <code class="highlighter-rouge">Grant</code> button next to app under <code class="highlighter-rouge">Organization access</code></p>
+  </div>
+
+<div class="message-content">
+    <p>If there’s no <code class="highlighter-rouge">Grant</code> button but only a <strong>red cross</strong> icon next to the Organization in the <code class="highlighter-rouge">Organization access</code> that means that <strong>the access was previously granted but then it was revoked</strong>. You can fix this by first selecting the Organization under <code class="highlighter-rouge">Organization settings</code> on the left side, then clicking <code class="highlighter-rouge">Third-party access</code>. You can see <code class="highlighter-rouge">Bitrise</code> with <code class="highlighter-rouge">Denied</code> access. Click the pencil icon and <code class="highlighter-rouge">Grant access</code> to Bitrise. Now you can go back to your <code class="highlighter-rouge">Authorized OAuth Apps</code> and click on Bitrise. You should see a green tick instead of the red cross icon next to your Organization.</p>
+  </div>
+</div>
 
 <p><img src="/img/faq/third-party-access.jpg" alt="Screenshot" /></p>
 
 <p>You can see the Organization and its repositories if you go back to <a href="https://www.bitrise.io">bitrise.io</a>, click on your avatar, select <code class="highlighter-rouge">Add new App</code> and hit <code class="highlighter-rouge">Next</code>.</p>
 
-<p>!!! note “Repository is a fork of another private repository”
-    If the repository is a fork of another private repository which belongs to <strong>(another) Organization</strong>, you have to repeat these steps and grant access for Bitrise for the Organization <strong>which owns the original repository</strong>.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Repository is a fork of another private repository</p>
+  </div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a GitHub limitation: to be able to access a private repository fork
-__you have to grant access for the service (Bitrise) in both repositories__;
-in the fork and in the original repository/Organization too.
-</code></pre></div></div>
+<div class="message-content">
+
+    <p>If the repository is a fork of another private repository which belongs to <strong>(another) Organization</strong>, you have to repeat these steps and grant access for Bitrise for the Organization <strong>which owns the original repository</strong>. This is a GitHub limitation: to be able to access a private repository fork you have to grant access for the service (Bitrise) in both repositories; in the fork and in the original repository/Organization too.</p>
+  </div>
+</div>
 
 			</main>
 		</div>
