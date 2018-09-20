@@ -1878,7 +1878,16 @@
 
 <p>You can set up multiple workflows to run in succession. The order of these workflows can be rearranged, new workflows can be added to the “chain” and existing workflows can be removed from it at any time.</p>
 
-<p><strong>IMPORTANT</strong>: Be aware that if you chain workflows together as described in this guide, all the workflows will still run on the same Virtual Machine. However, if you use the <code class="highlighter-rouge">Bitrise Start Build</code> step as described in <a href="/builds/triggering-builds/trigger-multiple-workflows">this guide</a>, each of the triggered workflows will run on a separate Virtual Machine.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p><code class="highlighter-rouge">Bitrise Start Build</code> step</p>
+  </div>
+
+<div class="message-content">
+
+    <p>Be aware that if you chain workflows together as described in this guide, all the workflows will still run on the same Virtual Machine. However, if you use the <code class="highlighter-rouge">Bitrise Start Build</code> step as described in <a href="/builds/triggering-builds/trigger-multiple-workflows">this guide</a>, each of the triggered workflows will run on a separate Virtual Machine.</p>
+  </div>
+</div>
 
 <ol>
   <li>Click the app’s <code class="highlighter-rouge">Workflow</code> tab. Note that you cannot leave the Workflow editor without either saving or discarding any changes you made.</li>
