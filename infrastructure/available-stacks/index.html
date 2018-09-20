@@ -1815,7 +1815,16 @@ Change it in the <code class="highlighter-rouge">Stacks</code> tab of the Workfl
 with an additional link to learn more about that specific Stack (e.g. to see what
 tools are preinstalled, and which versions, on the selected Stack).</p>
 
-<p>!!! note “The Stack won’t be used until you click the <code class="highlighter-rouge">Save</code> button!”</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Make sure you hit the <code class="highlighter-rouge">Save</code> button</p>
+  </div>
+
+<div class="message-content">
+    <p>The Stack won’t be used until you click the <code class="highlighter-rouge">Save</code> button!</p>
+
+  </div>
+</div>
 
 <h2 id="stack-status-types">Stack status types <a href="#stack-status-types" class="anchor-symbol">⚓</a></h2>
 
@@ -1829,7 +1838,7 @@ tools are preinstalled, and which versions, on the selected Stack).</p>
   <tbody>
     <tr>
       <td>Stable</td>
-      <td>Generally available and expected to be supported for the foreseeable future. <strong>Updated when an update for the Stack’s primary tool is available.</strong> Example: when Xcode 7.3.1 was released, the Xcode 7.3 stack was updated to have 7.3.1 instead of 7.3(.0). In case of <code class="highlighter-rouge">Xamarin</code> stacks, the Xamarin updates are applied weekly, during the weekends.</td>
+      <td>Generally available and expected to be supported for the foreseeable future. Updated when an update for the Stack’s primary tool is available. Example: when Xcode 7.3.1 was released, the Xcode 7.3 stack was updated to have 7.3.1 instead of 7.3(.0). In case of Xamarin stacks, the Xamarin updates are applied weekly, during the weekends.</td>
     </tr>
     <tr>
       <td>LTS (Long Term Support)</td>
@@ -1850,11 +1859,11 @@ tools are preinstalled, and which versions, on the selected Stack).</p>
   <tbody>
     <tr>
       <td>Pre-Booted</td>
-      <td>If a Stack is available as pre-booted, and there’s enough pre-booted machines with that Stack configuration, your build can start right away, without waiting for the build environment to boot. In case there’s no more available pre-booted machine with that Stack configuration, your build will start on an <code class="highlighter-rouge">On-Demand</code> configuration.</td>
+      <td>If a Stack is available as pre-booted, and there’s enough pre-booted machines with that Stack configuration, your build can start right away, without waiting for the build environment to boot. In case there’s no more available pre-booted machine with that Stack configuration, your build will start on an On-Demand configuration.</td>
     </tr>
     <tr>
       <td>On-Demand</td>
-      <td>If a Stack is available as on-demand configuration and there’s no (available) pre-booted configuration for the Stack, our system will have to create a virtual machine for your selected configuration <strong>when your build starts</strong>. This means that your build will be in <code class="highlighter-rouge">preparing environment</code> state while the related Virtual Machine is created &amp; booted. For a macOS configuration the boot process usually takes about 1 - 1.5 minutes. <em>The prepare time (of course) is not counted into the build time, it won’t affect how long your build can run.</em></td>
+      <td>If a Stack is available as on-demand configuration and there’s no (available) pre-booted configuration for the Stack, our system will have to create a virtual machine for your selected configuration when your build starts. This means that your build will be in preparing environment state while the related Virtual Machine is created &amp; booted. For a macOS configuration the boot process usually takes about 1 - 1.5 minutes. The prepare time (of course) is not counted into the build time, it won’t affect how long your build can run.</td>
     </tr>
   </tbody>
 </table>
