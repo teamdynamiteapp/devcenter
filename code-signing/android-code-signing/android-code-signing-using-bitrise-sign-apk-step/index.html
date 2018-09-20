@@ -1837,17 +1837,27 @@ The <code class="highlighter-rouge">Sign APK</code> step will receive your uploa
 
 <p>You can download your files from <code class="highlighter-rouge">GENERIC FILE STORAGE</code>(for example, your keystore file) using the <code class="highlighter-rouge">File-downloader</code> step:</p>
 
-<p>!!! example
-In this example, we’re downloading a keystore file.</p>
+<p>An example for downloading a keystore file” content=”</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
-<span class="pi">-</span> <span class="na">file-downloader</span><span class="pi">:</span>
-   <span class="na">inputs</span><span class="pi">:</span>
-   <span class="pi">-</span> <span class="na">source</span><span class="pi">:</span> <span class="s">$BITRISEIO_ANDROID_KEYSTORE_URL</span>
-   <span class="pi">-</span> <span class="na">destination</span><span class="pi">:</span> <span class="s2">"</span><span class="s">$HOME/keystores/my_keystore.jks"</span> <span class="c1">#native android#</span>
-<span class="nn">...</span>
-    
-</code></pre></div></div>
+<p>…</p>
+<ul>
+  <li>
+    <p>file-downloader:</p>
+
+    <p>inputs:</p>
+
+    <ul>
+      <li>
+        <p>source: $BITRISEIO_ANDROID_KEYSTORE_URL</p>
+      </li>
+      <li>
+        <p>destination: “$HOME/keystores/my_keystore.jks” #native android#</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>…</p>
 
 <p>After this step, <code class="highlighter-rouge">my_keystore.jks</code> will be available at <code class="highlighter-rouge">$HOME/keystores/my_keystore.jks</code>.</p>
 
