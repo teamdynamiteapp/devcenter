@@ -1839,25 +1839,15 @@ The <code class="highlighter-rouge">Sign APK</code> step will receive your uploa
 
 <p>An example for downloading a keystore file” content=”</p>
 
-<p>…</p>
-<ul>
-  <li>
-    <p>file-downloader:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- file-downloader:
 
-    <p>inputs:</p>
+   inputs:
 
-    <ul>
-      <li>
-        <p>source: $BITRISEIO_ANDROID_KEYSTORE_URL</p>
-      </li>
-      <li>
-        <p>destination: “$HOME/keystores/my_keystore.jks” #native android#</p>
-      </li>
-    </ul>
-  </li>
-</ul>
+   - source: $BITRISEIO_ANDROID_KEYSTORE_URL
 
-<p>…</p>
+   - destination: "$HOME/keystores/my_keystore.jks" #native android#
+
+</code></pre></div></div>
 
 <p>After this step, <code class="highlighter-rouge">my_keystore.jks</code> will be available at <code class="highlighter-rouge">$HOME/keystores/my_keystore.jks</code>.</p>
 
