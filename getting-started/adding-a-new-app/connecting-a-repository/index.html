@@ -1810,12 +1810,8 @@
 <p>Select your app’s privacy setting: it can be either public or private.</p>
 
 <ul>
-  <li>
-    <p>Private apps are only accessible to you, your organization members and those who are invited to work on an app. They require authentication to access the repository of the app.</p>
-  </li>
-  <li>
-    <p><a href="/adding-a-new-app/public-apps">Public apps</a> expose their <code class="highlighter-rouge">bitrise.yml</code> and their build logs to everyone. If you have the build URL of a public app, you can view its build log, to help with troubleshooting, for example. Public apps do not require authentication and they cannot have SSH keys.</p>
-  </li>
+  <li>Private apps are only accessible to you, your organization members and those who are invited to work on an app. They require authentication to access the repository of the app.</li>
+  <li><a href="/adding-a-new-app/public-apps">Public apps</a> expose their <code class="highlighter-rouge">bitrise.yml</code> and their build logs to everyone. If you have the build URL of a public app, you can view its build log, to help with troubleshooting, for example. Public apps do not require authentication and they cannot have SSH keys.</li>
 </ul>
 
 <p>Bitrise will give you options to connect any kind of git repository to it. <code class="highlighter-rouge">GitHub</code>, <code class="highlighter-rouge">GitLab</code> and <code class="highlighter-rouge">Bitbucket</code> are supported out of the box.</p>
@@ -1823,9 +1819,17 @@
 <p>If you’ve already authorized Bitrise, for example, with your GitHub,
 you will see Bitrise automatically listing all your repositories, so you can just click on the one you’d like to connect.</p>
 
-<p>!!! note “Connect any git repository to Bitrise”
-    You can connect any private or public git repository to Bitrise.
-    We will automatically create an SSH key that you can use to setup the connection with your provider.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Connect any git repository to Bitrise</p>
+  </div>
+
+<div class="message-content">
+
+    <p>You can connect any private or public git repository to Bitrise. We will automatically create an SSH key that you can use to setup the connection with your provider.</p>
+
+  </div>
+</div>
 
 <p><img src="/img/adding-a-new-app/connect-repo.png" alt="Screenshot" /></p>
 
@@ -1840,9 +1844,15 @@ select the <code class="highlighter-rouge">Other / Manual</code> tab.</p>
 
 <p>You will have to add the git url of the repository you would like to connect.</p>
 
-<p>!!! warning “Use SSH URLs for private repositories”
-    Please note, that if you are connecting a private repository,
-    Bitrise will try to clone it through SSH, so it’s necessary to provide an SSH URL to your repository here.</p>
+<div class="message-box warning">
+<div class="message-title">
+    <p>Use SSH URLs for private repositories</p>
+  </div>
+
+<div class="message-content">
+    <p>Please note, that if you are connecting a private repository, Bitrise will try to clone it through SSH, so it’s necessary to provide an SSH URL to your repository here.</p>
+  </div>
+</div>
 
 <p>Bitrise will add an SSH key to your repository at a later step.
 Read more about how to add SSH keys automatically, or manually at <a href="/adding-a-new-app/setting-up-ssh-keys/">SSH keys</a>.</p>
