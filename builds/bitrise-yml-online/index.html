@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Using the Trigger Map to trigger builds - Bitrise DevCenter
+				Accessing the bitrise.yml file online - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Using the Trigger Map to trigger builds
+							Accessing the bitrise.yml file online
 						
 					</div>
 				</div>
@@ -600,7 +600,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/webhooks/trigger-map/" title="Triggering builds with the Trigger map" class="current">Triggering builds with the Trigger map</a>
+				<a href="/builds/triggering-builds/trigger-map/" title="Triggering builds with the Trigger map">Triggering builds with the Trigger map</a>
 			
 		
 		
@@ -678,7 +678,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/bitrise-cli/bitrise-yml-online/" title="Accessing the bitrise.yml file online">Accessing the bitrise.yml file online</a>
+				<a href="/builds/bitrise-yml-online/" title="Accessing the bitrise.yml file online" class="current">Accessing the bitrise.yml file online</a>
 			
 		
 		
@@ -1041,7 +1041,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/bitrise-cli/steps/" title="Steps">Steps</a>
+				<a href="/bitrise-cli/steps/" title="Steps in YAML">Steps in YAML</a>
 			
 		
 		
@@ -1810,364 +1810,78 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Using the Trigger Map to trigger builds</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/webhooks/trigger-map.md" target="_blank"></a>
+						<h1>Accessing the bitrise.yml file online</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/builds/bitrise-yml-online.md" target="_blank"></a>
 					</div>
 				
-				<p>When you register a webhook for an event or for multiple events (for example, for <code class="highlighter-rouge">Code Push</code> and
-for <code class="highlighter-rouge">Pull Request</code> events), your source code hosting service will call the webhook
-every time the related event happens.</p>
-
-<p>On <a href="https://www.bitrise.io">bitrise.io</a> these webhooks calls are called <em>triggers</em>,
-and can be mapped to different <code class="highlighter-rouge">Workflows</code>, or not mapped at all.
-If you don’t map a trigger to any workflow, then <a href="https://www.bitrise.io">bitrise.io</a> won’t
-start a build. If you map it to a workflow, then a build will be started
-with the selected workflow.</p>
-
-<p>In the following examples, we’ll use a very simple Bitrise configuration (<code class="highlighter-rouge">bitrise.yml</code>),
-which does nothing else just prints the selected workflow’s ID:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">format_version</span><span class="pi">:</span> <span class="s">1.3.0</span>
-<span class="na">default_step_lib_source</span><span class="pi">:</span> <span class="s">https://github.com/bitrise-io/bitrise-steplib.git</span>
-<span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-<span class="pi">-</span> <span class="na">pull_request_target_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">pull_request_source_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-<span class="pi">-</span> <span class="na">tag</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-<span class="na">workflows</span><span class="pi">:</span>
-  <span class="na">primary</span><span class="pi">:</span>
-    <span class="na">steps</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">script</span><span class="pi">:</span>
-        <span class="na">inputs</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">content</span><span class="pi">:</span> <span class="pi">|-</span>
-            <span class="no">#!/bin/bash</span>
-            <span class="no">echo "$BITRISE_TRIGGERED_WORKFLOW_ID"</span>
-</code></pre></div></div>
-
-<div class="message-box info">
-<div class="message-title">
-    <p>What is <code class="highlighter-rouge">bitrise.yml</code></p>
-  </div>
-
-<div class="message-content">
-    <p><code class="highlighter-rouge">bitrise.yml</code> is the representation of your app’s configuration. In the workflow editor, you can edit it in a visual way through the web UI, but you can always switch to <code class="highlighter-rouge">bitrise.yml</code> mode (left side of the workflow editor) to see the configuration in a YAML format, as well as you can edit the configuration in YAML format too. It’s up to you which solution you prefer, the visual web UI or the YAML (<code class="highlighter-rouge">bitrise.yml</code>) representation, and you can switch between the two any time (the changes you do in the web UI will be reflected in the <code class="highlighter-rouge">bitrise.yml</code>, and vice versa).</p>
-
-  </div>
-</div>
-
-<p>The above example <code class="highlighter-rouge">bitrise.yml</code> will select the <code class="highlighter-rouge">primary</code> branch for every Code Push (<code class="highlighter-rouge">push_branch: "*"</code>), Tag Push (<code class="highlighter-rouge">tag: "*"</code>)
-and for every Pull Request (<code class="highlighter-rouge">pull_request_target_branch: "*"</code> &amp; <code class="highlighter-rouge">pull_request_source_branch: "*"</code>).</p>
-
-<p><em>If you remove the pull request item</em> from the <code class="highlighter-rouge">trigger_map</code> list, then
-no pull request will trigger a build anymore. Example:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
-
-<p>This configuration will start a build with the <code class="highlighter-rouge">primary</code> workflow for every code push, but for nothing else (for example not for pull requests).</p>
-
-<h2 id="components-of-the-trigger_map">Components of the <code class="highlighter-rouge">trigger_map</code> <a href="#components-of-the-trigger_map" class="anchor-symbol">⚓</a></h2>
-
-<p>A <code class="highlighter-rouge">trigger_map</code> is a <em>list of filters</em>, and the <code class="highlighter-rouge">workflow</code> the given
-filters should select in case of a matching trigger.</p>
-
-<p><strong>Every filter item has to include at least one condition!</strong></p>
-
-<p>This means that you can’t have an item which only specifies the <code class="highlighter-rouge">workflow</code>,
-at least one filter (<code class="highlighter-rouge">push_branch</code> / <code class="highlighter-rouge">pull_request_source_branch</code> / <code class="highlighter-rouge">pull_request_target_branch</code> / <code class="highlighter-rouge">tag</code>)
-has to be specified!</p>
-
-<h3 id="the-available-filters">The available filters: <a href="#the-available-filters" class="anchor-symbol">⚓</a></h3>
-
-<ul>
-  <li><code class="highlighter-rouge">push_branch</code> : A filter which is matched against Code Push events’ “branch” parameter</li>
-  <li><code class="highlighter-rouge">pull_request_source_branch</code> : A filter which is matched against Pull Request events’ “source branch”
-parameter (the branch the pull request was started from)</li>
-  <li><code class="highlighter-rouge">pull_request_target_branch</code> : A filter which is matched against Pull Request events’ “target branch”
-parameter - the branch the pull request will be <strong>merged into</strong></li>
-  <li><code class="highlighter-rouge">tag</code> : A filter which is matched against Tag Push events’ “tag” (name) parameter</li>
-  <li><code class="highlighter-rouge">pattern</code> : <strong>DEPRECATED</strong> - this filter was used for both code push and pull request events,
-in combination with <code class="highlighter-rouge">is_pull_request_allowed</code>. This filter is now deprecated,
-as the new filters allow better control over event mapping.</li>
-</ul>
-
-<p>If you define multiple filters in a single item then <strong>all filters have to match</strong>
-in order to select that item’s workflow.
-For example:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>trigger_map:
-- pull_request_target_branch: "master"
-  pull_request_source_branch: "develop"
-  workflow: primary
-</code></pre></div></div>
-
-<p>will only select the <code class="highlighter-rouge">primary</code> workflow if the pull request’s source branch is <code class="highlighter-rouge">develop</code> <strong>AND</strong>
-the target branch is <code class="highlighter-rouge">master</code>.</p>
-
-<p>If you want to specify filters which should be treated separately, for example, to select <code class="highlighter-rouge">primary</code> for pull requests where the source is <code class="highlighter-rouge">develop</code>, as well as select
-for the ones which target <code class="highlighter-rouge">master</code>:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>trigger_map:
-- pull_request_target_branch: "master"
-  workflow: primary
-- pull_request_source_branch: "develop"
-  workflow: primary
-</code></pre></div></div>
-
-<p>One last note, which is hopefully not surprising after the previous example:
-you can’t mix and match <code class="highlighter-rouge">push_branch</code>, <code class="highlighter-rouge">tag</code> and the <code class="highlighter-rouge">pull_request_..</code> filters <strong>in the same item</strong>.
-This would effectively mean that the workflow should be selected
-if the event is a Code Push and a Pull Request (or Tag Push) event <strong>at the same time</strong>.
-This is simply not possible, source code hosting services send separate
-webhooks for Pull Request (pre-merge state), Tags and for Code Push events.
-<em>A single webhook event will never be Code Push, Tag Push and Pull Request at the same time</em>,
-a single webhook is always related to only one type (Code Push, Tag Push or Pull Request).</p>
-
-<h2 id="one-trigger--one-build">One trigger = one build <a href="#one-trigger--one-build" class="anchor-symbol">⚓</a></h2>
-
-<p>One trigger can only select a single workflow / can only start a single build.
-<strong>The first item which matches the trigger will select the workflow for the build!</strong></p>
-
-<p><strong>If you want to run more than one workflow</strong>, you can
-<a href="/bitrise-cli/workflows/#chaining-workflows-and-reusing-workflows">Chaining workflows</a>
-after each other. <em>The workflows chained this way won’t run in parallel</em>,
-but the full chain of workflows will be executed, in the order you chain them.</p>
-
-<p><strong>The order of the items</strong> also matter: if you’d specify a <code class="highlighter-rouge">push_branch: mast</code> <em>item <strong>after</strong> a</em> <code class="highlighter-rouge">_push_branch: "*"_</code> item, the <code class="highlighter-rouge">push_branch: master</code> <em>would never be selected</em>
-as every code push event would match <code class="highlighter-rouge">push_branch: "*"</code> first,
-and <strong>the first item which matches the trigger will select the workflow for the build!</strong></p>
-
-<h2 id="how-to-build-only-a-single-branch">How to build only a single branch <a href="#how-to-build-only-a-single-branch" class="anchor-symbol">⚓</a></h2>
-
-<p>If you want to build only a single branch, for every code push, but for nothing else (no push to
-any other branch should trigger a build, nor any pull request or tag), then
-all you have to do is to specify a <code class="highlighter-rouge">trigger_map</code> which does not map anything else
-to any workflow, only the branch you want to build.</p>
-
-<p>For example, if you only want to build the <code class="highlighter-rouge">master</code> branch on code push:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
-
-<p>Or if you only want to build <code class="highlighter-rouge">feature/</code> branches:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">feature/*</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
-
-<p>Or the two together:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">feature/*</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
-
-<p>This configuration will start a build for every code push which happens on
-either <code class="highlighter-rouge">master</code> or on a <code class="highlighter-rouge">feature/</code> branch, and will use the same workflow for
-both (<code class="highlighter-rouge">primary</code>).</p>
-
-<p>If you want to use a different workflow for your <code class="highlighter-rouge">master</code> branch, then
-all you have to do is to change the <code class="highlighter-rouge">workflow:</code> for that trigger map item:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">deploy</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">feature/*</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
-
-<p>This configuration will use the workflow <code class="highlighter-rouge">deploy</code> for every code push on <code class="highlighter-rouge">master</code>,
-and the workflow <code class="highlighter-rouge">primary</code> for every code push on <code class="highlighter-rouge">feature/</code> branches,
-and <strong>will not start a build for anything else</strong>.</p>
-
-<h2 id="a-very-simple-two-workflow-cicd-setup">A very simple, two-workflow CI/CD setup <a href="#a-very-simple-two-workflow-cicd-setup" class="anchor-symbol">⚓</a></h2>
-
-<p>A base CI/CD setup involves two workflows: one for integration tests,
-and one for distribution.</p>
-
-<p>If you have a workflow <code class="highlighter-rouge">primary</code> for doing the integration tests,
-and <code class="highlighter-rouge">deploy</code> to do the deployment / distribution, and you want to
-run the integration test for code pushes and pull requests on every branch
-except the <code class="highlighter-rouge">master</code> branch, which should instead use the <code class="highlighter-rouge">deploy</code> workflow:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">deploy</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-<span class="pi">-</span> <span class="na">pull_request_target_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
-
-<div class="message-box warning">
-<div class="message-title">
-    <p>Order of the items matter!</p>
-  </div>
-
-<div class="message-content">
-    <p>When <code class="highlighter-rouge">bitrise</code> receives a webhook event (any kind), it’ll match it against the app’s <code class="highlighter-rouge">trigger_map</code>. <strong>The first item it matches will select the workflow for the build!</strong></p>
-
-    <p>This means that if you’d specify the <code class="highlighter-rouge">push_branch: master</code> <strong>after</strong> the <code class="highlighter-rouge">push_branch: "*"</code> item, <code class="highlighter-rouge">master</code> would never be selected as every code push event would match <code class="highlighter-rouge">push_branch: "*"</code> first!</p>
-
-  </div>
-</div>
-
-<h2 id="dont-start-two-builds-for-pull-requests-from-the-same-repository">Don’t start two builds for pull requests from the same repository <a href="#dont-start-two-builds-for-pull-requests-from-the-same-repository" class="anchor-symbol">⚓</a></h2>
-
-<p>When you start a Pull Request from the same repository (not from a fork,
-just from a branch of the repository),
-<strong>the source code hosting service will send two webhooks</strong>,
-one for the code push and one for the pull request!</p>
-
-<div class="message-box important">
-<div class="message-title">
-    <p>Pull Request build</p>
-  </div>
-
-<div class="message-content">
-    <p>Although it might seem like both builds are the same, it most likely isn’t! The code push event / build builds the code of the branch, without any merging, etc. It builds the exact same state of the code what you have when you checkout that branch. The Pull Request build on the other hand builds a “pre-merged” state of the code. This “pre-merged” state is not the final merged version of the code, it only represents a clone of how the code will look like <strong>after</strong> you merged the pull request.</p>
-
-  </div>
-</div>
-
-<p>Whether you want to build both or just one of these in case of a pull request
-is up to you and depends on your project’s requirements, but with <code class="highlighter-rouge">bitrise</code>
-you can decide whether you want it or not.</p>
+				<p>Every bitrise.yml file is stored for your builds on <a href="https://www.bitrise.io">bitrise.io</a>. They come in handy when you’d like to check the configuration with which a specific build has run. To do that, you can either use the online <code class="highlighter-rouge">Workflow Editor</code> or your build’s online bitrise.yml file. If you choose the latter, you can compare changes, restore the current build to the original version, edit the config, and download the file to your Mac/PC.</p>
 
 <div class="message-box note">
 <div class="message-title">
-    <p>Pull Request merge is a Code Push</p>
+    <p>Using filters on your Builds Board</p>
   </div>
 
 <div class="message-content">
-    <p>Source code hosting services treat the event of “merge” as a code push event. For example if you merge a Pull Request from <code class="highlighter-rouge">feature/a</code> into <code class="highlighter-rouge">master</code>, when you merge the PR it will generate a code push to <code class="highlighter-rouge">master</code>.</p>
 
+    <p>If an app has multiple builds on <a href="https://www.bitrise.io">bitrise.io</a> and you want to pick a specific build out of those, then these filters will help you a lot. Click on your app in your <code class="highlighter-rouge">Dashboard</code> and use the following fields:</p>
+
+    <ul>
+      <li>You can search for a build number or commit message in the<code class="highlighter-rouge">Try build number or commit message</code> grey field.</li>
+      <li>You can pick which of these triggers was used for your build: <code class="highlighter-rouge">Pushes</code>, <code class="highlighter-rouge">Pull Requests</code>, <code class="highlighter-rouge">Tags</code> or all of these.</li>
+      <li>You can pick which <code class="highlighter-rouge">branch</code> the build was started on.</li>
+      <li>You can select either the <code class="highlighter-rouge">primary</code> or the <code class="highlighter-rouge">deploy workflow</code> of the build.</li>
+    </ul>
   </div>
 </div>
 
-<p>An example to build only the pull request (“pre-merged”) events/state,
-in addition to deploying <code class="highlighter-rouge">master</code>:</p>
+<p><img src="/img/bitrise-cli-bitrise-yml/build-filters.png" alt="Screenshot" /></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">deploy</span>
-<span class="pi">-</span> <span class="na">pull_request_target_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
+<h2 id="accessing-a-builds-bitriseyml">Accessing a build’s bitrise.yml <a href="#accessing-a-builds-bitriseyml" class="anchor-symbol">⚓</a></h2>
 
-<p>or if you don’t want to start a build for pull requests, only for code push events:</p>
+<ol>
+  <li>Select an application on your <code class="highlighter-rouge">Dashboard</code> and select one of its builds.</li>
+  <li>Click the <code class="highlighter-rouge">Show bitrise.yml</code> button at the top OR at the bottom of your inline log.
+You should see your build’s bitrise.yml content displayed in ace editor but it’s not editable here. See where you can <a href="#editing-and-downloading-bitriseyml-online">edit the bitrise.yml online</a>.</li>
+</ol>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">deploy</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
+<h2 id="checking-changes-in-bitriseyml-online">Checking changes in bitrise.yml online <a href="#checking-changes-in-bitriseyml-online" class="anchor-symbol">⚓</a></h2>
 
-<h2 id="three-workflows-test-deploy-to-staging-and-deploy-to-production">Three workflows: test, deploy to staging and deploy to production <a href="#three-workflows-test-deploy-to-staging-and-deploy-to-production" class="anchor-symbol">⚓</a></h2>
-
-<p>Another common CI/CD pattern is to have three workflows:</p>
+<p>Once you’ve clicked <code class="highlighter-rouge">Show bitrise.yml</code>, you will see the <code class="highlighter-rouge">BUILD'S BITRISE YML</code> pop-up window displaying your builds’ configuration details. If the <code class="highlighter-rouge">build's bitrise.yml</code> content differs from the <code class="highlighter-rouge">current build's bitrise.yml</code>, you will see two editors displayed side-by-side in the <code class="highlighter-rouge">BITRISE.YML CHANGES</code> pop-up window. The differences between the builds are highlighted in the following colors:</p>
 
 <ul>
-  <li>A Test workflow, which will run for every pull request, every code push on <code class="highlighter-rouge">feature/</code> branches etc.,
-to test whether the test can be integrated into a release (branch)</li>
-  <li>A Staging deployment workflow, to deploy the app/code to an internal/testing system. Examples:
-    <ul>
-      <li>In case of an iOS app this can be, for example, an Ad Hoc signed IPA deployed to HockeyApp, where your tester team can download and test it, or a deploy to iTunes Connect / TestFlight for internal testing.</li>
-      <li>In case of an Android app this can be a deploy to Google Play to a “beta” track.</li>
-      <li>In case of a server code this can be a deploy to, for example, a staging Heroku server.</li>
-    </ul>
-  </li>
-  <li>A Production deployment workflow, to deploy the app/code into production. Examples:
-    <ul>
-      <li>In case of an iOS app this can be an App Store signed IPA deployed to iTunes Connect/TestFlight,
-enabled for “external testing”.</li>
-      <li>In case of an Android app this can be a deploy to Google Play as a public update of the app.</li>
-      <li>In case of a server code this can be a deploy to, for example, the production Heroku server.</li>
-    </ul>
-  </li>
+  <li>green means added content</li>
+  <li>blue means modified content</li>
+  <li>orange means deleted content</li>
 </ul>
 
-<p>So, we have three workflows (<code class="highlighter-rouge">primary</code> (test), <code class="highlighter-rouge">deploy-to-staging</code> and <code class="highlighter-rouge">deploy-to-production</code>)
-and we’ll specify three triggers, to select the right workflow for the right trigger.</p>
+<p><img src="/img/bitrise-cli-bitrise-yml/bitrise-yml-changes.png" alt="Screenshot" /></p>
 
-<p>There are two similar approaches, depending whether you prefer tags of branches for
-production deployment:</p>
+<h2 id="restoring-and-undoing-changes-in-bitriseyml-online">Restoring and undoing changes in bitrise.yml online <a href="#restoring-and-undoing-changes-in-bitriseyml-online" class="anchor-symbol">⚓</a></h2>
 
-<h3 id="using-tags-to-trigger-the-production-deployment">Using Tags to trigger the production deployment <a href="#using-tags-to-trigger-the-production-deployment" class="anchor-symbol">⚓</a></h3>
+<p>If you don’t like the changes made to your <em>current</em> bitrise.yml, you can easily restore it to the build’s original bitrise.yml.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">tag</span><span class="pi">:</span> <span class="s">v*.*.*</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">deploy-to-production</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">deploy-to-staging</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-<span class="pi">-</span> <span class="na">pull_request_target_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
+<ol>
+  <li>Click the <code class="highlighter-rouge">Show bitrise.yml</code> button at the top OR at the bottom of your inline log on <a href="https://www.bitrise.io/">bitrise.io</a>.</li>
+  <li>In the <code class="highlighter-rouge">BITRISE.YML CHANGES</code> pop-up window, click the orange <code class="highlighter-rouge">Restore</code> button.</li>
+  <li>Hit <code class="highlighter-rouge">OK</code> in the <code class="highlighter-rouge">Are you sure?</code> pop-up window to confirm and override the current bitrise.yml.</li>
+</ol>
 
-<p>This trigger map configuration will trigger a build:</p>
+<p><img src="/img/bitrise-cli-bitrise-yml/confirm-bitrise-yml-changes.png" alt="Screenshot" /></p>
+
+<h2 id="editing-and-downloading-bitriseyml-online">Editing and downloading bitrise.yml online <a href="#editing-and-downloading-bitriseyml-online" class="anchor-symbol">⚓</a></h2>
+
+<p>You can <strong>edit</strong> your build config in yml format in the <code class="highlighter-rouge">bitrise.yml editor</code> if you go to your app’s <code class="highlighter-rouge">Workflow Editor</code> and click the <code class="highlighter-rouge">bitrise.yml</code> tab.</p>
 
 <ul>
-  <li>with the <code class="highlighter-rouge">deploy-to-production</code> workflow if a new tag (with the format <code class="highlighter-rouge">v*.*.*</code>,  <code class="highlighter-rouge">v1.0.0</code>) is pushed</li>
-  <li>with the <code class="highlighter-rouge">deploy-to-staging</code> workflow if a code push happens on the <code class="highlighter-rouge">master</code> branch (for example, a pull request is merged into the <code class="highlighter-rouge">master</code> branch)</li>
-  <li>with the <code class="highlighter-rouge">primary</code> workflow for any other branch and for pull requests</li>
+  <li>press <code class="highlighter-rouge">F1</code> for the full command list</li>
+  <li>fold and unfold with the <code class="highlighter-rouge">-</code> and <code class="highlighter-rouge">+</code> signs</li>
+  <li>press <code class="highlighter-rouge">Ctrl</code>/<code class="highlighter-rouge">Cmd</code> + <code class="highlighter-rouge">F</code> for search and replace where you can search with <code class="highlighter-rouge">RegExp</code>, <code class="highlighter-rouge">Match Whole Word</code>, case-sensitive, case-insensitive, or to search only in the selected section</li>
+  <li>use the <code class="highlighter-rouge">preview sidebar</code> on the right for easier navigation</li>
 </ul>
 
-<h3 id="using-a-branch-to-trigger-the-production-deployment">Using a Branch to trigger the production deployment <a href="#using-a-branch-to-trigger-the-production-deployment" class="anchor-symbol">⚓</a></h3>
+<p>You can <strong>save</strong> or <strong>discard</strong> any changes you have made with the config. If you click <code class="highlighter-rouge">Download currently saved config</code>, you can <strong>download</strong> this YML version to your own computer and run it with bitrise CLI on your Mac/PC.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">deploy-to-production</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s">develop</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">deploy-to-staging</span>
-<span class="pi">-</span> <span class="na">push_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-<span class="pi">-</span> <span class="na">pull_request_target_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
-
-<p>This trigger map configuration will trigger a build:</p>
-
-<ul>
-  <li>with the <code class="highlighter-rouge">deploy-to-production</code> workflow if a code push happens on the <code class="highlighter-rouge">master</code> branch (for example, a git flow release branch merged into <code class="highlighter-rouge">master</code>)</li>
-  <li>with the <code class="highlighter-rouge">deploy-to-staging</code> workflow if a code push happens on the <code class="highlighter-rouge">develop</code> branch (for example, a pull request is merged into the <code class="highlighter-rouge">develop</code> branch)</li>
-  <li>with the <code class="highlighter-rouge">primary</code> workflow for any other branch and for pull requests</li>
-</ul>
-
-<h2 id="how-to-build-only-pull-requests">How to build only pull requests <a href="#how-to-build-only-pull-requests" class="anchor-symbol">⚓</a></h2>
-
-<p>If all you want is to run integration tests for pull requests, and you
-don’t want to do anything else, then you can use a trigger map configuration
-like this:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">pull_request_target_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
-
-<p>This will select the <code class="highlighter-rouge">primary</code> workflow for every and any pull request,
-and will not start a build for anything else.</p>
-
-<p>If you’d only want to build pull requests which are targeted to
-be merged into <code class="highlighter-rouge">master</code>, the configuration would look like this:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">trigger_map</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">pull_request_target_branch</span><span class="pi">:</span> <span class="s">master</span>
-  <span class="na">workflow</span><span class="pi">:</span> <span class="s">primary</span>
-</code></pre></div></div>
+<p>You might want to <strong>clone</strong> this whole YML configuration or just part of it to another app, so that you can use the copied version as a base and extend it with a few extra steps. All you have to do is copy this bitrise.yml content and paste it into the new app’s bitrise.yml editor and develop it further.</p>
 
 			</main>
 		</div>
