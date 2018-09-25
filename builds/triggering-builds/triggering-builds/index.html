@@ -1814,11 +1814,27 @@
 						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/builds/triggering-builds/triggering-builds.md" target="_blank"></a>
 					</div>
 				
-				<p>If you set up incoming webhooks to Bitrise, you can automatically trigger builds by specifying a trigger event and a workflow. You can specify multiple triggers, and add new triggers or remove existing ones any time you wish.</p>
+				<p>You can trigger builds on Bitrise either by:</p>
+
+<ul>
+  <li><a href="/builds/triggering-builds/starting-builds-manually/">manually starting one</a></li>
+  <li><a href="/builds/scheduling-builds/">scheduling one for a specific time</a></li>
+  <li>triggering them automatically by specifying a trigger event.</li>
+</ul>
+
+<p>If you set up incoming webhooks to Bitrise, you can automatically trigger builds by specifying a trigger event and a workflow. You can specify multiple triggers, and add new triggers or remove existing ones any time you wish.</p>
 
 <p>By default, every new app you add will have two triggers: one that triggers a build every time code is pushed to ANY branch of your repository, and another that triggers a build every time a pull request is opened within your repository. You can change or remove these, of course.</p>
 
 <p>You can manage the triggers in the <code class="highlighter-rouge">Triggers</code> section of the <code class="highlighter-rouge">Workflow Editor</code> or you can directly edit the bitrise.yml of your app to set them up. In this section of our DevCenter, we cover how to set up and manage triggers on the website UI!</p>
+
+<ul>
+  <li><a href="/builds/triggering-builds/trigger-code-push">Triggering builds with code push</a></li>
+  <li><a href="/builds/triggering-builds/trigger-pull-request">Triggering builds with pull requests</a></li>
+  <li><a href="/builds/triggering-builds/trigger-git-tags">Triggering builds with Git Tags</a></li>
+  <li><a href="/builds/triggering-builds/trigger-multiple-workflows">Starting parallel builds with a single trigger</a></li>
+  <li><a href="/builds/triggering-builds/status-reporting">Reporting the build status to your git hosting provider</a></li>
+</ul>
 
 			</main>
 		</div>
