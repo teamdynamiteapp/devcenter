@@ -1807,13 +1807,18 @@
 				
 				<p>You can specify webhooks so that Bitrise automatically triggers a build of your app whenever you perform a specified action, such as a code push or a pull request. For GitHub, all you have to do is register your <code class="highlighter-rouge">bitrise-webhooks</code> URL as a Webhook in your <a href="https://www.github.com">GitHub</a> repository.</p>
 
+<p>You can register a webhook either automatically or manually. This guide walks you through the process of <strong>manually</strong> registering a webhook. <a href="/webhooks/index#setting-up-incoming-webhooks-automatically/">Read more about automatic webhook registration</a>.</p>
+
 <h2 id="get-the-webhook-url-for-github">Get the webhook URL for GitHub <a href="#get-the-webhook-url-for-github" class="anchor-symbol">⚓</a></h2>
 
 <ol>
   <li>
-    <p>Navigate to the <code class="highlighter-rouge">Code</code> tab of your app’s page and select <code class="highlighter-rouge">GitHub</code> from the dropdown menu of the <code class="highlighter-rouge">Incoming Webhooks</code> section.</p>
+    <p>Go to the <code class="highlighter-rouge">Code</code> tab of your app’s page and in the <code class="highlighter-rouge">INCOMING WEBHOOKS</code> menu, click <code class="highlighter-rouge">SETUP MANUALLY</code>.</p>
+  </li>
+  <li>
+    <p>Select <code class="highlighter-rouge">GitHub</code> from the dropdown menu.</p>
 
-    <p><img src="/img/webhooks/github-webhook-1.png" alt="Screenshot" /></p>
+    <p><img src="/img/github-webhook-1.png" alt="Screenshot" /></p>
   </li>
   <li>
     <p>Copy the webhook URL for the selected service.</p>
