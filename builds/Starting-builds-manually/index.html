@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Registering a test device - Bitrise DevCenter
+				Starting builds manually - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Registering a test device
+							Starting builds manually
 						
 					</div>
 				</div>
@@ -633,7 +633,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/builds/Starting-builds-manually/" title="Starting builds manually">Starting builds manually</a>
+				<a href="/builds/Starting-builds-manually/" title="Starting builds manually" class="current">Starting builds manually</a>
 			
 		
 		
@@ -1128,7 +1128,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/testing/registering-a-test-device/" title="Registering a test device" class="current">Registering a test device</a>
+				<a href="/testing/registering-a-test-device/" title="Registering a test device">Registering a test device</a>
 			
 		
 		
@@ -1810,53 +1810,92 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Registering a test device</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/testing/registering-a-test-device.md" target="_blank"></a>
+						<h1>Starting builds manually</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/builds/Starting-builds-manually.md" target="_blank"></a>
 					</div>
 				
-				<h2 id="register-an-ios-device-using-safari">Register an iOS device using Safari <a href="#register-an-ios-device-using-safari" class="anchor-symbol">⚓</a></h2>
-
-<p>The most comfortable way to register your iOS test device on <a href="https://www.bitrise.io">bitrise.io</a> is to open <a href="https://www.bitrise.io">bitrise.io</a> with Safari so that we can open your device’s Settings and create a temporary profile to get your Unique Device Identifier (UDID). This way you don’t have to look for it and manually copy/paste it.</p>
+				<p>Starting a build manually on Bitrise takes literally two clicks - if you leave everything on the default settings. If you do not wish to do that, or at least want to be sure what the default settings are, read on! We’ll walk you through the process.</p>
 
 <ol>
-  <li>Open Safari in <strong>non-incognito mode</strong> on your iOS device and log into <a href="https://www.bitrise.io">bitrise.io</a>.</li>
-  <li>Go to your <code class="highlighter-rouge">Profile</code>.</li>
-  <li>Click <code class="highlighter-rouge">Account Settings</code>.</li>
-  <li>Click <code class="highlighter-rouge">Test devices</code> on the left.</li>
-  <li>Click <code class="highlighter-rouge">Register this device</code>.</li>
-  <li>In the pop-up window, click <code class="highlighter-rouge">Allow</code> so that <a href="https://www.bitrise.io">bitrise.io</a> can show your configuration profile.</li>
-  <li>Click <code class="highlighter-rouge">Install</code> when the <code class="highlighter-rouge">Install Profile</code> dialog appears.</li>
-  <li>Enter your devices’s passcode.</li>
-  <li>Click <code class="highlighter-rouge">Install</code> on the <code class="highlighter-rouge">Install Profile</code> again.
-Now you can see your UDID and your iOS device name in the <code class="highlighter-rouge">Register device</code> dialog.</li>
-  <li>Click <code class="highlighter-rouge">Register device</code>.</li>
-  <li>Register this test device to the <a href="https://developer.apple.com/">Apple Developer Portal</a> with the correct provisioning profile added to your device or use our <a href="/code-signing/ios-code-signing/ios-auto-provisioning">Auto Provisioning</a> step with enabling profile generation.</li>
-</ol>
-
-<p>If you go back to <code class="highlighter-rouge">Test devices</code>, you can see the registered device:</p>
-
-<p><img src="/img/adding-a-new-app/ios-device.jpg" alt="Screenshot" /></p>
-
-<p>You can delete the registered device any time if you click on the <code class="highlighter-rouge">x</code> icon.</p>
-
-<h2 id="register-a-test-device-manually">Register a test device manually <a href="#register-a-test-device-manually" class="anchor-symbol">⚓</a></h2>
-
-<ol>
-  <li>Go to your <code class="highlighter-rouge">Profile</code> on <a href="https://www.bitrise.io">bitrise.io</a>.</li>
-  <li>Click <code class="highlighter-rouge">Test devices</code> on the left.</li>
-  <li>Click on <code class="highlighter-rouge">Register manually</code>.</li>
-  <li>In the <code class="highlighter-rouge">Register device</code> dialog, fill out the <code class="highlighter-rouge">Title</code> field and the <code class="highlighter-rouge">Identifier</code> field with your device’s UDID.</li>
   <li>
-    <p>Hit <code class="highlighter-rouge">Register Device</code>.</p>
-
-    <p>You can <strong>get your UDID</strong> if you plug your device into a computer, and open iTunes. Under <code class="highlighter-rouge">Summary</code>, you should see a Serial Number. If you click on it, it will reveal your device’s <code class="highlighter-rouge">UDID</code> which you can paste into the <code class="highlighter-rouge">Identifier</code> field on our <code class="highlighter-rouge">[Test Devices](https://www.bitrise.io/me/profile#/test_devices)</code>.</p>
+    <p>Log in to Bitrise and go to the <a href="https://app.bitrise.io/dashboard">Dashboard</a>.</p>
   </li>
-  <li>Register this test device to the <a href="https://developer.apple.com/">Apple Developer Portal</a> with the correct provisioning profile added to your device or use our <a href="/code-signing/ios-code-signing/ios-auto-provisioning">Auto Provisioning</a> step with enabling profile generation.</li>
+  <li>
+    <p>Select the app you wish to build.</p>
+  </li>
+  <li>
+    <p>Click <code class="highlighter-rouge">Start/Schedule a Build</code>.</p>
+  </li>
 </ol>
 
-<p>Now you can see your registered test device under <a href="https://www.bitrise.io/me/profile#/test_devices">Registered test devices</a>.</p>
+<p><img src="/img/start-build.png" alt="Start a build" /></p>
 
-<p>You can remove this registered device any time if you click the orange <code class="highlighter-rouge">x</code> icon.</p>
+<p>At this point, the <strong>Build configuration</strong> window opens and you are presented with two tabs near the top of the window:</p>
+
+<ul>
+  <li><strong>Basic</strong></li>
+  <li><strong>Advanced</strong></li>
+</ul>
+
+<div class="message-box note">
+<div class="message-title">
+    <p>Scheduling builds</p>
+  </div>
+
+<div class="message-content">
+    <p>The <code class="highlighter-rouge">Schedule this build</code> option allows you to configure builds to be triggered at specific times. Read more in <a href="/builds/scheduling-builds/">our guide</a>.</p>
+  </div>
+</div>
+
+<h3 id="basic-configuration">Basic configuration <a href="#basic-configuration" class="anchor-symbol">⚓</a></h3>
+
+<p>If you choose <code class="highlighter-rouge">Basic</code> in the <strong>Build configuration</strong> window, you have three options to configure:</p>
+
+<p><img src="/img/basic-config-window.png" alt="Basic config window" /></p>
+
+<ul>
+  <li><strong>Branch</strong>: The Git branch that you wish to build. Make sure to type the name of the branch correctly, otherwise the build will fail. You can only enter a single branch. If a pull request to your repository is made from a forked branch, type the name of that branch to run a build of the pull request.</li>
+</ul>
+
+<div class="message-box important">
+<div class="message-title">
+    <p>Pull request build</p>
+  </div>
+
+<div class="message-content">
+    <p>Starting a build of a pull request’s branch is NOT the same as a pull request build. The manually started build of a pull request branch will only build the state of the code on that branch. An automatically triggered pull request build, however, builds the state of the code as it will look like once you merged the pull request.</p>
+  </div>
+</div>
+
+<ul>
+  <li>
+    <p><strong>Message</strong>: The build message. Please note that entering the git commit message of a specific commit does <strong>not</strong> trigger a build of that commit!</p>
+  </li>
+  <li>
+    <p><strong>Workflow</strong>: This is an optional setting. You can select the workflow you wish to run. By default, it is based on the trigger map: for example, if you wish to run the <code class="highlighter-rouge">test</code> branch, and the <code class="highlighter-rouge">test</code> branch is configured in the trigger map to trigger the <code class="highlighter-rouge">testing</code> workflow. You can configure the trigger map either <a href="/builds/triggering-builds/trigger-code-push">on the website</a> or <a href="/builds/triggering-builds/trigger-map">directly in the bitrise.yml of the app</a>.</p>
+  </li>
+</ul>
+
+<h3 id="advanced-configuration">Advanced configuration <a href="#advanced-configuration" class="anchor-symbol">⚓</a></h3>
+
+<p>If you choose <code class="highlighter-rouge">Advanced</code> in the <strong>Build configuration</strong> window, you have all the options available with <code class="highlighter-rouge">Basic</code>, and a few more:</p>
+
+<p><img src="/img/advanced-window1.png" alt="Advanced config window" /></p>
+
+<ul>
+  <li>
+    <p><strong>Git Tag</strong>: Builds a particular branch or commit that is tagged with the Tag you enter.</p>
+  </li>
+  <li>
+    <p><strong>Commit Hash</strong>: Copy a specific commit’s hash here to build that particular commit. This option can even send a build status update to your git hosting service.</p>
+  </li>
+  <li>
+    <p><strong>Custom Environment Variables</strong>: Set up a custom Environment Variable that is used in the build. You can enable the <code class="highlighter-rouge">Replace variables in input?</code> option: this replaces the Environment Variables in your input with the assigned value. You need to do this if your custom variable references other Environment Variables.</p>
+  </li>
+  <li>
+    <p><strong>Generated cURL command</strong>: Based on the options you set in the Build configuration window, we provide an automatically generated cURL command. This can be copied and pasted, and you can run it on any platform that has cURL installed.</p>
+  </li>
+</ul>
 
 			</main>
 		</div>
