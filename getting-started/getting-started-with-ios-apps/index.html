@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Frequent iOS issues - Bitrise DevCenter
+				Getting started with iOS apps - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Frequent iOS issues
+							Getting started with iOS apps
 						
 					</div>
 				</div>
@@ -273,7 +273,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/getting-started/getting-started-with-ios-apps/" title="Getting started with iOS apps">Getting started with iOS apps</a>
+				<a href="/getting-started/getting-started-with-ios-apps/" title="Getting started with iOS apps" class="current">Getting started with iOS apps</a>
 			
 		
 		
@@ -1698,7 +1698,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/troubleshooting/frequent-ios-issues/" title="Frequent iOS issues" class="current">Frequent iOS issues</a>
+				<a href="/troubleshooting/frequent-ios-issues/" title="Frequent iOS issues">Frequent iOS issues</a>
 			
 		
 		
@@ -1819,444 +1819,163 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Frequent iOS issues</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/troubleshooting/frequent-ios-issues.md" target="_blank"></a>
+						<h1>Getting started with iOS apps</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/getting-started/getting-started-with-ios-apps.md" target="_blank"></a>
 					</div>
 				
-				<h2 id="searching-for-errors-and-issues-in-xcode-generated-output">Searching for errors and issues in Xcode generated output <a href="#searching-for-errors-and-issues-in-xcode-generated-output" class="anchor-symbol">⚓</a></h2>
+				<p>Developing for iOS is not always easy - our aim is to make it as simple as possible for you! In this guide, we’ll walk you through how to add an iOS app to Bitrise, how to run Xcode tests, manage your code signing files and deploy the app to bitrise.io and to the App Store.</p>
 
-<p><em>This applies only to the raw, unfiltered output of Xcode.
-If you can’t find the error reason in the logs make sure to switch the <code class="highlighter-rouge">Output Tool</code> option
-of the Xcode … step to <code class="highlighter-rouge">xcodebuild</code> (Xcode’s Command Line Tool), which will
-result in a quite verbose output, but will include everything the way it’s produced by
-Xcode’s command line build tool (<code class="highlighter-rouge">xcodebuild</code>). All of the official Bitrise Xcode steps
-have an <code class="highlighter-rouge">Output Tool</code> input with a <code class="highlighter-rouge">xcodebuild</code> option.</em></p>
-
-<p>You should search for <code class="highlighter-rouge">error:</code> in the Xcode logs, in 99% of the cases that’ll be the one which causes your issues.</p>
-
-<p>If that doesn’t work you should also search for <code class="highlighter-rouge">warning:</code>, in rare cases Xcode doesn’t print an <code class="highlighter-rouge">error:</code> even if it fails.</p>
-
-<p>If you have the logs on your own machine then you can run something like this in your Terminal:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep --color 'error:' my.log
-grep --color 'warning:' my.log
-</code></pre></div></div>
-
-<h2 id="xcode-scheme-not-found">Xcode Scheme not found <a href="#xcode-scheme-not-found" class="anchor-symbol">⚓</a></h2>
-
-<p>The first thing you should check if you can’t see your Xcode project’s scheme
-during setup, or if you get a <code class="highlighter-rouge">The project named "Foo" does not contain a scheme named "Bar"</code> error during build,
-is your Xcode project settings.</p>
-
-<ul>
-  <li>Check if the desired Scheme is shared</li>
-  <li>When you share your scheme the Xcode project changes. Don’t forget to <strong>commit</strong> and to <strong>push</strong> your changes!</li>
-  <li>If the related validation is still running on Bitrise abort it and try to run it again.</li>
-</ul>
-
-<p><img src="/img/ios/xcode-shared-scheme.png" alt="Xcode shared scheme" /></p>
-
-<p><strong>Don’t forget to commit &amp; push the changes</strong> if you just enabled the Shared option!
-This change should be reflected in your <code class="highlighter-rouge">git</code> repository,
-under you project / workspace
-(which is actually a directory, just seems like a file in Finder):
-<code class="highlighter-rouge">*.xcodeproj OR *.xcworkspace/xcshareddata/xcschemes/SchemeName.xcscheme</code>.</p>
-
-<p>If you still can’t see the desired Scheme,
-try to look into your <code class="highlighter-rouge">.gitignore</code> file and check if you are ignoring the config files of your Xcode project.</p>
-
-<h2 id="cocoapods-missing-dependency-issue">CocoaPods (missing) dependency issue <a href="#cocoapods-missing-dependency-issue" class="anchor-symbol">⚓</a></h2>
-
-<h3 id="error">Error: <a href="#error" class="anchor-symbol">⚓</a></h3>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ld: library not found for -lPods-...
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-</code></pre></div></div>
-
-<p>OR:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no such module '...'
-</code></pre></div></div>
-
-<h3 id="solution">Solution: <a href="#solution" class="anchor-symbol">⚓</a></h3>
-
-<p>Most likely you use Cocoapods but you specified the Xcode project (.xcodeproj) file
-instead of the Workspace (<code class="highlighter-rouge">.xcworkspace</code>) file. Go to your App’s <strong>Workflow tab</strong> on Bitrise,
-click <strong>Manage Workflows</strong>, click <strong>App Environments</strong> and change the <code class="highlighter-rouge">BITRISE_PROJECT_PATH</code> item.
-This will change the default Project Path configuration for every workflow.</p>
-
-<p><strong>If it worked before</strong> and the <code class="highlighter-rouge">BITRISE_PROJECT_PATH</code> did not solve the issue,
-then check your App’s other environments - the project file path might be overwritten by a Workflow environment variable,
-or you might have specified a Project Path for the related Xcode step directly.</p>
-
-<h2 id="fastlane-export-issue">Fastlane Export Issue <a href="#fastlane-export-issue" class="anchor-symbol">⚓</a></h2>
-
-<p><em>This section was contributed by <a href="https://github.com/kwoylie">@kwoylie</a>,
-and applies if you have a <code class="highlighter-rouge">Gemfile</code> in your repository and you use
-the <code class="highlighter-rouge">fastlane</code> step which uses the <code class="highlighter-rouge">Gemfile</code> automatically if present.</em></p>
-
-<p><code class="highlighter-rouge">Gemfile</code> content was:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem "fastlane", "1.104.0"
-gem "gym", "1.10.0"
-gem "badge", "0.5.0"
-gem "CFPropertyList","2.3.3"
-gem "sqlite3", "1.3.11"
-</code></pre></div></div>
-
-<p>I have been battling issues with Fastlane just not letting me export to an enterprise build on
-bitrise cloud service. But it works perfectly fine on my colleagues and my machine.</p>
-
-<p>I had disabled xcpretty on Fastlane and got the following error from gym:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$/usr/bin/xcrun /usr/local/lib/ruby/gems/2.3.0/gems/gym-1.10.0/lib/assets/wrap_xcodebuild/xcbuild-safe.sh -exportArchive -exportOptionsPlist '/var/folders/90/5stft2v13fb_m_gv3c8x9nwc0000gn/T/gym_config20161003-2206-1f0vw3k.plist' -archivePath /Users/vagrant/Library/Developer/Xcode/Archives/2016-10-03/App\ 2016-10-03\ 05.57.17.xcarchive -exportPath '/var/folders/90/5stft2v13fb_m_gv3c8x9nwc0000gn/T/gym_output20161003-2206-wjhjai'
-+ xcodebuild -exportArchive -exportOptionsPlist /var/folders/90/5stft2v13fb_m_gv3c8x9nwc0000gn/T/gym_config20161003-2206-1f0vw3k.plist -archivePath '/Users/vagrant/Library/Developer/Xcode/Archives/2016-10-03/App 2016-10-03 05.57.17.xcarchive' -exportPath /var/folders/90/5stft2v13fb_m_gv3c8x9nwc0000gn/T/gym_output20161003-2206-wjhjai
-2016-10-03 06:01:58.299 xcodebuild[5284:14924] [MT] IDEDistribution: -[IDEDistributionLogging _createLoggingBundleAtPath:]: Created bundle at path '/var/folders/90/5stft2v13fb_m_gv3c8x9nwc0000gn/T/App_2016-10-03_06-01-58.298.xcdistributionlogs'.
-2016-10-03 06:01:59.596 xcodebuild[5284:14924] [MT] IDEDistribution: Step failed: &lt;IDEDistributionThinningStep: 0x7f868c80f810&gt;: Error Domain=IDEDistributionErrorDomain Code=14 "No applicable devices found." UserInfo={NSLocalizedDescription=No applicable devices found.}
-error: exportArchive: No applicable devices found.
-
-Error Domain=IDEDistributionErrorDomain Code=14 "No applicable devices found." UserInfo={NSLocalizedDescription=No applicable devices found.}
-
-** EXPORT FAILED **
-[06:01:59]: Exit status: 70
-[06:01:59]: 2016-10-03 13:01:58 +0000 [MT] Running step: IDEDistributionSigningAssetsStep with &lt;IDEDistributionContext: 0x7f868c51ed70; archive(resolved)='&lt;IDEArchive: 0x7f868c4af8d0&gt;', distributionTask(resolved)='2', distributionMethod(resolved)='&lt;IDEDistributionMethodEnterprise: 0x7f868c202a00&gt;', teamID(resolved)='(null)'&gt;
-	Chain (2, self inclusive):
-	&lt;IDEDistributionContext: 0x7f868c51ed70; archive = '(null)', distributionMethod='&lt;IDEDistributionMethodEnterprise: 0x7f868c202a00&gt;', teamID='(null)'&gt;
-	&lt;IDEDistributionContext: 0x7f868c4b0e70; archive = '&lt;IDEArchive: 0x7f868c4af8d0&gt;', distributionMethod='(null)', teamID='(null)'&gt;
-&lt;/IDEDistributionContext: 0x7f868c51ed70&gt;
-</code></pre></div></div>
-
-<p>This error is a little decieving, thinking it might be a code signing error or
-some weird configuration issue with Fastlane.
-But if you look further into the error, you may see the following:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2016-10-03 13:01:58 +0000 [MT] Running /Applications/Xcode.app/Contents/Developer/usr/bin/ipatool '/var/folders/90/5stft2v13fb_m_gv3c8x9nwc0000gn/T/IDEDistributionThinningStep.s1x' '--json' '/var/folders/90/5stft2v13fb_m_gv3c8x9nwc0000gn/T/ipatool-json-filepath-RUCdRR' '--info' '--toolchain' '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr' '--platforms' '/Applications/Xcode.app/Contents/Developer/Platforms'
-2016-10-03 13:01:58 +0000  ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15]
-2016-10-03 13:01:59 +0000  /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.13.1/lib/bundler/definition.rb:181:in `rescue in specs': Your bundle is locked to json (1.8.3), but that version could not be found in any of the sources listed in your Gemfile. If you haven't changed sources, that means the author of json (1.8.3) has removed it. You'll need to update your bundle to a different version of json (1.8.3) that hasn't been removed in order to install. (Bundler::GemNotFound)
-	from /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.13.1/lib/bundler/definition.rb:175:in `specs'
-	from /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.13.1/lib/bundler/definition.rb:235:in `specs_for'
-	from /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.13.1/lib/bundler/definition.rb:224:in `requested_specs'
-	from /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.13.1/lib/bundler/runtime.rb:118:in `block in definition_method'
-	from /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.13.1/lib/bundler/runtime.rb:19:in `setup'
-	from /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.13.1/lib/bundler.rb:99:in `setup'
-	from /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.13.1/lib/bundler/setup.rb:20:in `&lt;top (required)&gt;'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
-2016-10-03 13:01:59 +0000 [MT] /Applications/Xcode.app/Contents/Developer/usr/bin/ipatool exited with 1
-2016-10-03 13:01:59 +0000 [MT] ipatool JSON: (null)
-</code></pre></div></div>
-
-<p>So after alot of investigation, Fastlane reverts back to Mac OS system’s ruby for exporting.
-But the system ruby doesn’t have json 1.8.3 installed.</p>
-
-<h3 id="solution-1">Solution: <a href="#solution-1" class="anchor-symbol">⚓</a></h3>
-
-<p>To fix this issue, you just have to add a <code class="highlighter-rouge">Script</code> step to run the following:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo /usr/bin/gem install bundler
-</code></pre></div></div>
-
-<p>This will install bundler on the system ruby and when the fastlane plugin
-calls bundle install then system ruby will also installed the neccessary dependencies</p>
-
-<h2 id="works-in-local-but-not-on-bitriseio">Works in local but not on Bitrise.io <a href="#works-in-local-but-not-on-bitriseio" class="anchor-symbol">⚓</a></h2>
-
-<p><em>An example error: <code class="highlighter-rouge">ld: file not found ...</code></em></p>
-
-<p>First of all restart your Xcode and try a new build.</p>
-
-<p>If it doesn’t help try a <strong>clean build</strong> in Xcode.</p>
-
-<p>If no error was displayed, try resetting your simulator(s).</p>
-
-<p>Another problem could be your CocoaPods version.
-Try updating your CocoaPods with the <code class="highlighter-rouge">[sudo] gem install cocoapods</code> command.
-Also make sure that your <code class="highlighter-rouge">Podfile.lock</code> is <strong>committed into your repository</strong>,
-as that’s the file which describes the exact Pod versions you use.
-<em>Without this Bitrise might download newer versions of Pods than the ones you use.</em></p>
-
-<p>If there’s still no error try deleting the <code class="highlighter-rouge">Pods</code> folder in your project and run the <code class="highlighter-rouge">pod install</code> command again.</p>
-
-<p>Finally, if none of the above helped, or you get an error with <code class="highlighter-rouge">ld: file not found</code> on Bitrise,
-and the path contains <code class="highlighter-rouge">DerivedData</code>, with no other error message, like this:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ld: file not found: /Users/vagrant/Library/Developer/Xcode/DerivedData/...
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-</code></pre></div></div>
-
-<p>Try deleting the Xcode local cache. After that the error should be reproducible on your local machine.</p>
-
-<p>You can delete the local Xcode cache using your Terminal:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf ~/Library/Developer/Xcode/DerivedData
-</code></pre></div></div>
-
-<h2 id="step-hangs-times-out-after-a-period-without-any-logs">Step hangs (times out after a period without any logs) <a href="#step-hangs-times-out-after-a-period-without-any-logs" class="anchor-symbol">⚓</a></h2>
-
-<p>Check whether the scripts you use trigger any GUI prompts or popups, or wait for any user input.
-If a script waits for any user input it can cause the build to hang.</p>
-
-<p>Most frequent sources of this issue:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">Xcode</code> (command line tools) might hang if you try to build a Scheme which is not marked as <strong>shared</strong>.
-Usually it hangs right after you start any <code class="highlighter-rouge">xcodebuild</code> command (e.g. <code class="highlighter-rouge">xcodebuild -list</code> or <code class="highlighter-rouge">xcodebuild .. archive</code>).
-    <ul>
-      <li><strong>Solution</strong>: Please make sure that you marked the Scheme as <strong>shared</strong>,
-and that you actually committed &amp; pushed it into your repository.
-For more information please follow this guide: <a href="#xcode-scheme-not-found">Xcode scheme not found</a>.</li>
-    </ul>
-  </li>
-  <li>Your script tries to access an item in the OS X Keychain and the item is configured to
-ask for permission before access (this is the default type of Access Control configuration
-if you add an item - for example a password - to Keychain)</li>
-  <li>You try to use a script or tool which requires permissions where OS X presents a popup
-for acceptance (for example an <code class="highlighter-rouge">osascript</code>). You can use a workaround to allow the tool,
-without manual interaction by the user, for example by using <a href="https://github.com/jacobsalmela/tccutil">https://github.com/jacobsalmela/tccutil</a>.
-    <ul>
-      <li>For example to add <code class="highlighter-rouge">osascript</code> to the allowed OS X Accessibility list you can call <strong>tccutil</strong> from
-your script (don’t forget to include it in your repository or download on-the-fly): <code class="highlighter-rouge">sudo python tccutil.py -i /usr/bin/osascript</code></li>
-      <li>You can download the script from GitHub directly, for example: <code class="highlighter-rouge">wget https://raw.githubusercontent.com/jacobsalmela/tccutil/master/tccutil.py</code>.</li>
-    </ul>
-  </li>
-  <li>It can also be <strong>something in your app’s code</strong>.
-An example: one of our user had a simple <strong>popup in the app, presented only at the first start of the app</strong>.
-Once the popup was dismissed, the fact was stored in the app’s local storage, and the popup was not shown anymore.
-They did dismiss the popup on their iOS Simulator, but on Bitrise every build runs in a brand new,
-clean environment, which means that the simulator is in the same state as if you’d hit <strong>“Reset Content and Settings”</strong> in the iOS Simulator’s menu.
-    <ul>
-      <li><strong>Solution</strong>: try to clean out the simulator/emulator before you’d run the tests on your Mac/PC, to simulate the “first run” experience.</li>
-    </ul>
-  </li>
-</ul>
-
-<p>It might also be that the build does not hang, <strong>it just doesn’t generate any log output</strong>.
-This can happen for various reasons;
-you can find an example in case of an <a href="https://github.com/bitrise-samples/xcodebuild-piped-output-issue-reproduction">iOS library project</a>.</p>
-
-<h2 id="cocoapods-frameworks-signing-issue">CocoaPods frameworks signing issue <a href="#cocoapods-frameworks-signing-issue" class="anchor-symbol">⚓</a></h2>
-
-<p>When you get an error something like this:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=== CLEAN TARGET Pods-Xxxxxxxxx OF PROJECT Pods WITH CONFIGURATION Release ===
-
-Check dependencies
-[BEROR]Code Sign error: No code signing identities found: No valid signing identities (i.e. certificate and private key pair) matching the team ID “(null)” were found.
-[BEROR]CodeSign error: code signing is required for product type 'Framework' in SDK 'iOS 8.1'
-</code></pre></div></div>
-
-<p>This error is related to how CocoaPods expects code signing configurations for <strong>frameworks</strong>.</p>
-
-<h3 id="solution-1-make-sure-that-you-uploadincludeinstall-a-wildcard-development-provisioning-profile">Solution 1: make sure that you upload/include/install a wildcard development provisioning profile <a href="#solution-1-make-sure-that-you-uploadincludeinstall-a-wildcard-development-provisioning-profile" class="anchor-symbol">⚓</a></h3>
-
-<p>Usually this issue does not happen on your local Mac, and this is the reason why it does not:
-When Xcode performs an initial code signing (when it compiles the framework projects)
-it requires a certificate and provisioning profile which can be used for
-signing the CocoaPods framework projects.</p>
-
-<p>On your Mac you most likely have your own Development certificate and
-<strong>Wildcard</strong> team provisioning profile, which is enough for Xcode to do the
-initial code signing for the framework projects.</p>
-
-<p>So, Solution #1 is exactly this, upload these (Development identity/certificate (.p12)
-and the Team <strong>wildcard</strong> provisioning profile) to <a href="https://www.bitrise.io">bitrise.io</a>,
-and Xcode will work the same way as it does on your Mac.
-It’ll do an initial code signing with the development signing files,
-and then it’ll resign the archive when it exports the final IPA.</p>
-
-<h3 id="solution-2-modifying-code-signing-settings-through-podfile">Solution 2: modifying code signing settings through <code class="highlighter-rouge">Podfile</code> <a href="#solution-2-modifying-code-signing-settings-through-podfile" class="anchor-symbol">⚓</a></h3>
-
-<p>One of our beloved user sent us the following fix for this problem.
-You should add the following script as a <code class="highlighter-rouge">Post script</code> to your <code class="highlighter-rouge">Podfile</code>:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
-      config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
-      config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
-    end
-  end
-end
-</code></pre></div></div>
-
-<p>You can find a related CocoaPods issue and discussion at:
-<a href="https://github.com/CocoaPods/CocoaPods/issues/4331">https://github.com/CocoaPods/CocoaPods/issues/4331</a></p>
-
-<p>You can also find possible solutions at CocoaPod’s official GitHub issues page,
-like this one: <a href="https://github.com/CocoaPods/CocoaPods/issues/3063">https://github.com/CocoaPods/CocoaPods/issues/3063</a>.</p>
-
-<h2 id="installing-an-enterprise-app-untrusted-enterprise-developer">Installing an Enterprise app: <code class="highlighter-rouge">Untrusted Enterprise Developer</code> <a href="#installing-an-enterprise-app-untrusted-enterprise-developer" class="anchor-symbol">⚓</a></h2>
-
-<p>If you try to install an Enterprise distribution signed app you might get a
-popup when you try to run the app the first time, with the title <strong>Untrusted Enterprise Developer</strong>.</p>
-
-<p><img src="/img/ios/ios-untrusted-enterprise-developer.png" alt="iOS Untrusted Enterprise Developer popup" /></p>
-
-<p>Starting with iOS 9 there’s no option to “Trust” the developer right from the popup.</p>
-
-<p>You can Trust the developer and enable the app to run in iOS Settings:</p>
+<h2 id="adding-an-ios-app">Adding an iOS app <a href="#adding-an-ios-app" class="anchor-symbol">⚓</a></h2>
 
 <ol>
-  <li>Open the Settings app on your iPhone or iPad</li>
-  <li>Select the <code class="highlighter-rouge">General</code> category</li>
-  <li>Select the <code class="highlighter-rouge">Profile</code> option
+  <li>Click the <code class="highlighter-rouge">+</code> sign on the top menu bar and select <code class="highlighter-rouge">Add app</code>.</li>
+  <li>On the Create new App page, choose the account you wish to add the app to.</li>
+  <li>Set the privacy of the app to either <code class="highlighter-rouge">Private</code> or <code class="highlighter-rouge">[Public](/getting-started/adding-a-new-app/public-apps)</code> and click <code class="highlighter-rouge">Next</code>.</li>
+  <li>Select the Git hosting service that hosts your repository, then find and select your repository that hosts the project. Read more about <a href="/getting-started/adding-a-new-app/connecting-your-repository">connecting your repository</a>.</li>
+  <li>When prompted to set up repository access, click <code class="highlighter-rouge">No, auto-add SSH key</code>. Read more about <a href="/getting-started/adding-a-new-app/setting-up-ssh-keys/">SSH keys</a>.</li>
+  <li>Type the name of the branch that includes your project’s configuration - master, for example - then click <code class="highlighter-rouge">Next</code>.</li>
+  <li>
+    <p>Wait while Bitrise is validating your project. We look for your configuration files and set up your app based on them. In the case of an iOS app, we’re looking for your Xcode Project (<code class="highlighter-rouge">.xcodeproj</code>) or Xcode Workspace (<code class="highlighter-rouge">.xcworkspace</code>) path.</p>
+
+    <p><strong>IMPORTANT</strong>: the validation will fail if you do not have a SHARED scheme in your project. You can still point Bitrise manually to your Xcode scheme but if it’s shared, we automatically detect it for you. <a href="/troubleshooting/frequent-ios-issues/#xcode-scheme-not-found">Read more about schemes and the possible issues with them!</a></p>
+  </li>
+  <li>
+    <p>Select the .ipa export method. You can modify this later - for now, select <code class="highlighter-rouge">development</code>.</p>
+
+    <p><img src="/_articles/img/ios-project-scanned.png" alt="" /></p>
+
+    <p>Once you clicked it, you should see your:</p>
     <ul>
-      <li>starting with iOS 9.2 the option was renamed to <code class="highlighter-rouge">Device Management</code> instead of <code class="highlighter-rouge">Profile</code></li>
+      <li>Project or Workspace path</li>
+      <li>Scheme name</li>
+      <li>ipa export method</li>
+      <li>iOS stack</li>
     </ul>
   </li>
-  <li>Tap on the Enterprise App option related to the app (the one mentioned in the popup)</li>
-  <li>Tap the <code class="highlighter-rouge">Trust "The Developer's Name"</code> button</li>
-  <li>A popup will appear, tap on <code class="highlighter-rouge">Trust</code> again</li>
+  <li>Register a webhook when prompted so that Bitrise can start a build automatically when code is pushed to your repository, or a pull request is created. This also kicks off your first build - click the message and it will take you to the build page.</li>
 </ol>
 
-<p>You should now be able to run the app, and any other Enterprise app from the same developer.</p>
+<h2 id="running-xcode-tests">Running Xcode tests <a href="#running-xcode-tests" class="anchor-symbol">⚓</a></h2>
 
-<h2 id="no-dsym-found">No dSYM found <a href="#no-dsym-found" class="anchor-symbol">⚓</a></h2>
+<p>Once you created your app, the first build will run based on the automatically created <strong>primary</strong> workflow. You can check it out in the app’s <a href="/getting-started/getting-started-workflows">Workflow Editor</a>: click the app’s name on your Dashboard then click the <code class="highlighter-rouge">Workflow</code> tab.</p>
 
-<p>A couple of services require the dSYM to be present for deployment but you might have disabled the dSYM generation in your Xcode project.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Test targets</p>
+  </div>
 
-<h3 id="solution-2">Solution: <a href="#solution-2" class="anchor-symbol">⚓</a></h3>
+<div class="message-content">
+    <p>If your app does not have test targets defined, the primary workflow will be the only automatically created workflow and it will NOT include the <code class="highlighter-rouge">Xcode Test for iOS</code> Step.</p>
+  </div>
+</div>
 
-<p>To generate debug symbols (dSYM) go to your <code class="highlighter-rouge">Xcode Project's Settings -&gt; Build Settings -&gt; Debug Information Format</code> and set it to <em>DWARF with dSYM File</em>.</p>
+<p>If you have test targets defined, the <code class="highlighter-rouge">primary</code> workflow of an iOS app includes the two <a href="/getting-started/getting-started-steps">Steps</a> you need to run your Xcode tests, and view their results on <a href="https://bitrise.io">bitrise.io</a>:</p>
 
-<h2 id="invalid-ipa-get-task-allow-values-in-the-embedded-mobileprovision-dont-match-your-binary">Invalid IPA: get-task-allow values in the embedded .mobileprovision don’t match your binary <a href="#invalid-ipa-get-task-allow-values-in-the-embedded-mobileprovision-dont-match-your-binary" class="anchor-symbol">⚓</a></h2>
-
-<p><strong>Solution:</strong> Generate a new Certificate on the Apple Developer portal, <strong>not</strong> in Xcode.</p>
-
-<p>Another solution might be: make sure you have the proper Signing Identity and Provisioning Profile
-in Xcode project settings for both the target and for the project.</p>
-
-<h2 id="no-identity-found">No identity found <a href="#no-identity-found" class="anchor-symbol">⚓</a></h2>
-
-<p>You uploaded the correct <em>Provisioning Profile</em> and <em>Certificate</em> pair,
-if you check the identity hash it matches with the one you can see in your Keychain,
-but you still get an error like:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>22...D11: no identity found
-</code></pre></div></div>
-
-<p><strong>Solution:</strong></p>
-
-<p>You probably have a configuration in your Xcode project settings which specifies
-which keychain should be used for the build,
-your scheme might include something like <code class="highlighter-rouge">--keychain /../../xxx.keychain</code> code signing flag
-and a <code class="highlighter-rouge">CODE_SIGN_KEYCHAIN</code> variable set in the <em>.pbxproj</em>.</p>
-
-<p><em>This might happen if you migrate your Xcode Bot based setup into Bitrise.</em></p>
-
-<p>To fix the issue you have to remove the keychain selection configurations from your
-Xcode project settings.</p>
-
-<h2 id="no-mobileprovision_path-found--no-embeddedmobileprovision-found-in-">No mobileprovision_path found / No embedded.mobileprovision found in … <a href="#no-mobileprovision_path-found--no-embeddedmobileprovision-found-in-" class="anchor-symbol">⚓</a></h2>
-
-<p>Error: <code class="highlighter-rouge">No embedded.mobileprovision found in ...</code></p>
-
-<p>Or: <code class="highlighter-rouge">No mobileprovision_path found</code></p>
-
-<h3 id="possible-solution-1-skip-install-xcode-settings">Possible solution 1: <code class="highlighter-rouge">Skip Install</code> Xcode Settings <a href="#possible-solution-1-skip-install-xcode-settings" class="anchor-symbol">⚓</a></h3>
-
-<p>If you get this error in the Xcode Archive step you should check your Xcode Projects settings. Most likely you have the <code class="highlighter-rouge">Skip Install</code> option set to <code class="highlighter-rouge">YES</code>.</p>
-
-<p>This should only be used for iOS frameworks, <strong>for iOS apps this should be set to <code class="highlighter-rouge">NO</code></strong>.</p>
-
-<p>You can find the official documentation at:
-<a href="https://developer.apple.com/library/ios/technotes/tn2215/_index.html">https://developer.apple.com/library/ios/technotes/tn2215/_index.html</a></p>
 <ul>
-  <li>under the <em>Xcode successfully archived my application, but the Archives Organizer does not list my archive</em> section.</li>
+  <li><code class="highlighter-rouge">Xcode Test for iOS</code></li>
+  <li><code class="highlighter-rouge">Deploy to Bitrise.io</code></li>
 </ul>
 
-<h3 id="possible-solution-2-installation-directory-xcode-settings">Possible solution 2: <code class="highlighter-rouge">Installation Directory</code> Xcode Settings <a href="#possible-solution-2-installation-directory-xcode-settings" class="anchor-symbol">⚓</a></h3>
+<div class="message-box note">
+<div class="message-title">
+    <p>Code signing files</p>
+  </div>
 
-<p><strong>Another cause of the issue can be</strong> if you (or a tool you use) modifies
-the <code class="highlighter-rouge">Build Setting -&gt; Deployment -&gt; Installation Directory</code> settings in your Xcode Project.
-This can result in an <code class="highlighter-rouge">.xcarchive</code> where your app is not generated
-into the canonical <code class="highlighter-rouge">Products/Applications</code> folder, but instead into a <code class="highlighter-rouge">Products/Users/USERNAME/...</code> folder,
-including the full absolute path of an intermediate build.</p>
+<div class="message-content">
+    <p>Running Xcode tests and deploying their results to Bitrise do not require any code signing files. So don’t worry about them just yet!</p>
+  </div>
+</div>
 
-<p><strong>Solution:</strong> Please make sure that the <code class="highlighter-rouge">Installation Directory</code> option is set to <code class="highlighter-rouge">$(LOCAL_APPS_DIR)</code>
-(the default value when you generate a new iOS Xcode Project) or <code class="highlighter-rouge">/Applications</code>
-(which is the default value of <code class="highlighter-rouge">$(LOCAL_APPS_DIR)</code>) in your Xcode Project settings,
-and that no build tool you use modifies this option.</p>
+<p>The <code class="highlighter-rouge">Xcode Test for iOS</code> step runs the pre-defined Xcode tests. It has a default configuration that does not need to be modified: if the tests are written correctly, they will work. You can find the same configuration options in Xcode, too.</p>
 
-<p><em>Huge thanks to <strong>Antje</strong>, who reported this solution!</em></p>
+<p>The <code class="highlighter-rouge">Deploy to Bitrise.io</code> will deploy the following to the <code class="highlighter-rouge">Logs</code> and <a href="/builds/build-artifacts-online/">Apps &amp; Artifacts</a> tab of the build:</p>
 
-<h2 id="duplicated-schemes">Duplicated Schemes <a href="#duplicated-schemes" class="anchor-symbol">⚓</a></h2>
+<ul>
+  <li>your Xcode test results</li>
+  <li>your raw <code class="highlighter-rouge">xcodebuildoutput</code> log.</li>
+</ul>
 
-<p>This is quite rare, but worth checking.
-If you have multiple Schemes in your Xcode Project or Workspace with the <strong>exact same name</strong>,
-when your project is built with Xcode’s Command Line Tools Xcode will select one of these Schemes/Configurations,
-<strong>randomly</strong>. This can result in random build success / failure,
-and if you check the Raw Xcode output you’ll see something like this:
-<code class="highlighter-rouge">xcodebuild: error: Scheme YOUR_DUPLICATED_SCHEME is not currently configured for the test action</code> when it fails.</p>
+<h2 id="code-signing-and-exporting-an-ipa">Code signing and exporting an .ipa <a href="#code-signing-and-exporting-an-ipa" class="anchor-symbol">⚓</a></h2>
 
-<p>This might also happen if you use CocoaPods and one of your Pods have the same name as your project.</p>
+<p>To install and test the app on other physical devices, you will need to create and export an .ipa file. This requires setting up code signing. In the example, we’ll be exporting an .ipa with the <code class="highlighter-rouge">development</code> export method: you cannot upload such an app to Testflight but you can test it, for example, on the devices of your internal testers.</p>
 
-<p>In any way you can debug this by listing the available Schemes with Xcode’s command line tool.
-In your project’s directory run: <code class="highlighter-rouge">xcodebuild -workspace ./path/to/workspace/file -list</code> - or if you use a project file
-instead of a workspace file: <code class="highlighter-rouge">xcodebuild -project ./path/to/project/file -list</code>.
-There should be no duplicated Scheme in the printed list.
-You can run this command on your Mac and on bitrise.io too (just add it to a Script step), and ideally you should see the same list.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Automatic provisioning</p>
+  </div>
 
-<h2 id="system-dialog-blocks-the-tests-to-run">System dialog blocks the tests to run <a href="#system-dialog-blocks-the-tests-to-run" class="anchor-symbol">⚓</a></h2>
+<div class="message-content">
+    <p>The example procedure described here uses manual provisioning, with the <code class="highlighter-rouge">Certificate and profile installer</code> Step. However, Bitrise also supports <a href="/code-signing/ios-code-signing/ios-auto-provisioning/">automatic provisioning</a> but it is not in the scope of this guide.</p>
 
-<p><em>(huge thanks to <a href="https://github.com/AronI">@AronI</a> who reported this issue and the solution)</em></p>
+  </div>
+</div>
 
-<p>Error:</p>
+<p>You will need:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2016-09-08 07:30:34.535 XCTRunner[6174:22447] Running tests...\
-07:30:35.399 XCTRunner[6174:22454] _XCT_testBundleReadyWithProtocolVersion:minimumVersion: reply received\
-07:30:35.403 XCTRunner[6174:22453] _IDE_startExecutingTestPlanWithProtocolVersion:16\
-2016-09-08 07:30:46.670 XCTRunner[6174:22447] Failed to background test runner within 10.0s.\
-** TEST FAILED **\
-\
-}
-</code></pre></div></div>
-
-<p>Solution:</p>
-
-<blockquote>
-  <p>So to put it simply my problem was my UI Tests were failing.</p>
-</blockquote>
-
-<p>The steps leading to the failure were the following:</p>
+<ul>
+  <li>the automatically created <code class="highlighter-rouge">deploy</code> workflow</li>
+  <li>an iOS <strong>Development</strong> certificate (a .p12 certificate file)</li>
+  <li>a <strong>Development</strong> type Provisioning Profile</li>
+</ul>
 
 <ol>
-  <li>Unit tests run and pass. However a few of the unit tests are FBSnapshotTestCase tests
-which are kind of UI Tests but are still kept in the unit test bundle.
-They launch the app and compare screens with reference images of the screen.</li>
-  <li>When a FBSnapshot TestCase is run it launches the app and launches
-a system alert dialog asking the user for permission for push notifications
-(this is just something that’s done in the AppDelegate in my app every fresh install).</li>
-  <li>When the UITests start the permissions dialog is still visible and overlaying the screen.</li>
-  <li>The application tries to access some XCUIElements but fails because of the overlaying permissions dialog and eventually fails</li>
+  <li>Set the code signing type of your project in Xcode to either manual or automatic (Xcode managed), and generate an .ipa locally.</li>
+  <li>
+    <p>Collect and upload the code signing files with <a href="/code-signing/ios-code-signing/collecting-files-with-codesigndoc/">the codesigndoc tool</a>.</p>
+
+    <p>The tool can also upload your code signing files to Bitrise - we recommend doing so! Otherwise, upload them manually: enter the Workflow Editor and select the <code class="highlighter-rouge">Code signing</code> tab, then upload the files in their respective fields.</p>
+  </li>
+  <li>Go to your app’s Workflow Editor, and select the <code class="highlighter-rouge">deploy</code> workflow in the <code class="highlighter-rouge">WORKFLOW</code> dropdown menu in the top left corner.</li>
+  <li>Check that you have the <code class="highlighter-rouge">Certificate and profile installer</code> Step in your workflow. It must be before the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step (you can have other Steps between the two, like <code class="highlighter-rouge">Xcode Test for iOS</code>).</li>
+  <li>
+    <p>Check the <code class="highlighter-rouge">Select method for export</code> input of the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step. By default, it should be the <code class="highlighter-rouge">$BITRISE_EXPORT_METHOD</code> environment variable. This variable stores the export method you selected when creating the app. If you selected <code class="highlighter-rouge">development</code> back then, you don’t need to change the input. Otherwise, manually set it to <code class="highlighter-rouge">development</code>.</p>
+
+    <p><img src="/_articles/img/export-method-envvar.png" alt="" /></p>
+  </li>
+  <li><a href="/builds/starting-builds-manually/">Start a build</a>.</li>
 </ol>
 
-<p>I resolved this by adding a check in the AppDelegate
-(where we fire the permissions dialog) if we are running in unit test mode
-and only asking for permissions when not running unit tests:</p>
+<p>If you uploaded the correct code signing files, the <code class="highlighter-rouge">Certificate and profile installer</code> Step should install your code signing files and the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step should export an .ipa with the development export method. If you have the <code class="highlighter-rouge">Deploy to Bitrise.io</code> Step in your workflow, you can find the .ipa on the <code class="highlighter-rouge">Apps &amp; Artifacts</code> tab of the build page.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let unitTestMode = NSProcessInfo.processInfo().environment["XCTestConfigurationFilePath"] != nil
-if !unitTestMode {
-// IMPORTANT: Only ask permission for push notifications (or any notifications) when not running unit tests.
-// The reason for doing this is that it's causing a build failure when the CI runs unit and UI tests.
-// The build failure happens like this:
-// 1. FBSnapshotTestCase unit tests run and open the application
-// 2. The application asks user for the permission to enable push notifications
-// 3. FBSnapshotTestCase finish but the permissions dialog is still visible
-// 4. UITests start with the permissions dialog overlaying the screen
-// 5. UITest doesn't know what the hell is going on and eventually fails because the dialog is blocking everything
+<p>iOS code signing is often not this simple - read more about how <a href="/code-signing/ios-code-signing/code-signing">iOS code signing works on Bitrise</a>!</p>
 
-// 6.  BUILD FAILURE
+<h2 id="deploying-to-testflight-and-the-app-store">Deploying to TestFlight and the App Store <a href="#deploying-to-testflight-and-the-app-store" class="anchor-symbol">⚓</a></h2>
 
-askForNotificationPermission()
-}
-</code></pre></div></div>
+<p>If you set up your code signing files and created an .ipa for your internal testers, it is time to involve external testers and then to publish your iOS app to the App Store. Let’s see how!</p>
 
-<blockquote>
-  <p>This is probably a pretty big edge case but just wanted to report this to you if someone might encounter this problem sometime.
-Hopefully this will come to use to someone.</p>
-</blockquote>
+<p>To deploy to Testflight and to the App Store, you will need more code signing files:</p>
+
+<ul>
+  <li>an iOS <strong>Distribution</strong> Certificate</li>
+  <li>an <strong>App Store</strong> type Provisioning Profile</li>
+</ul>
+
+<ol>
+  <li>On your local machine, set up App Store code signing for your project in Xcode, and export an App Store .ipa. If this fails locally, it will definitely fail on Bitrise, too!</li>
+  <li>Collect and upload the code signing files with <a href="/code-signing/ios-code-signing/collecting-files-with-codesigndoc/">the codesigndoc tool</a>.</li>
+  <li>Go to the app’s Workflow Editor and create a <a href="/getting-started/getting-started-workflows/">new workflow</a>: click the <code class="highlighter-rouge">+ Workflow</code> button, enter the name of your new workflow and in the <strong>BASED ON</strong> dropdown menu, select <code class="highlighter-rouge">deploy</code>. This way the new workflow will be a copy of the basic <code class="highlighter-rouge">deploy</code> workflow.</li>
+  <li>
+    <p>Set the <code class="highlighter-rouge">Select method for export</code> input of the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step to <code class="highlighter-rouge">app-store</code>.</p>
+
+    <p><img src="/_articles/img/app-store-export.png" alt="" /></p>
+
+    <p>If you wish to distribute your app to external testers without uploading the app to Testflight, select <code class="highlighter-rouge">ad-hoc</code>. In that case, skip the next steps in the guide: you only need the <code class="highlighter-rouge">Deploy to Bitrise.io</code> Step in your workflow.</p>
+  </li>
+  <li>Add the <code class="highlighter-rouge">Deploy to iTunes Connect - Application Loader</code> Step to your workflow, after the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step but preferably before the <code class="highlighter-rouge">Deploy to Bitrise.io</code> Step.</li>
+  <li>
+    <p>Provide your Apple credentials in the <code class="highlighter-rouge">Deploy to iTunes Connect - Application Loader</code> Step.</p>
+
+    <p>The Step will need your:</p>
+    <ul>
+      <li>Apple ID</li>
+      <li>password or, if you use two-factor authentication on iTunes Connect, your application password.</li>
+    </ul>
+
+    <p>Don’t worry, the password will not be visible in the logs or exposed - <a href="/builds/env-vars-secret-env-vars#about-secrets">that’s why it is marked SENSITIVE</a>.</p>
+  </li>
+</ol>
+
+<p>And that’s it! Start a build - if everything went well, you should see your app on Testflight. From there, you can distribute it to external testers or release it to the App Store.</p>
 
 			</main>
 		</div>
