@@ -1878,7 +1878,7 @@ assembleRelease - Assembles all Release builds.
 or by using our <code class="highlighter-rouge">Gradle Runner</code> step (<a href="https://github.com/bitrise-io/steps-gradle-runner">https://github.com/bitrise-io/steps-gradle-runner</a>)
 and specifying the task as the value of the <code class="highlighter-rouge">gradle_task</code> input.</p>
 
-<p><strong>Instead of running <code class="highlighter-rouge">gradle</code> directly, you should run the gradle commands through <code class="highlighter-rouge">gradlew</code> (the Gradle Wrapper)!</strong>
+<p><strong>Instead of running</strong> <code class="highlighter-rouge">**gradle**</code> <strong>directly, you should run the gradle commands through</strong> <code class="highlighter-rouge">**gradlew**</code> <strong>(the Gradle Wrapper)!</strong>
 The <code class="highlighter-rouge">Gradle Runner</code> step does this, and as you can see it in the related input description of the step:</p>
 
 <blockquote>
@@ -1892,9 +1892,9 @@ in the official guide at: <a href="https://docs.gradle.org/current/userguide/gra
 
 <h2 id="how-to-install-an-additional-android-sdk-package">How to install an additional Android SDK package <a href="#how-to-install-an-additional-android-sdk-package" class="anchor-symbol">⚓</a></h2>
 
-<p><strong>The preferred way to do this is to use the <code class="highlighter-rouge">Install missing Android tools</code> step.
+<p><strong>The preferred way to do this is to use the</strong> <code class="highlighter-rouge">**Install missing Android tools**</code>** step.
 Please only use a Script solution if you really have to, as you’ll have to update
-the Script if the Android tools change (which did happen).</strong></p>
+the Script if the Android tools change (which did happen).**</p>
 
 <p>All you have to do is to add a <code class="highlighter-rouge">Script</code> step to your workflow,
 and use the Android <code class="highlighter-rouge">sdkmanager</code> tool to install the additional packages you want to.</p>
@@ -1958,8 +1958,8 @@ which makes sure that the emulator is booted and ready for subsequent steps.</p>
 
 <h3 id="emulator-with-google-apis">Emulator with Google APIs <a href="#emulator-with-google-apis" class="anchor-symbol">⚓</a></h3>
 
-<p><strong>Instead of using a Script step to create an android emulator please use the <code class="highlighter-rouge">Create Android emulator</code> step!
-There are simply too many edge cases to cover here, as well as the commands and working configurations change quite frequently.</strong></p>
+<p><strong>Instead of using a Script step to create an android emulator please use the</strong> <code class="highlighter-rouge">**Create Android emulator**</code>** step!
+There are simply too many edge cases to cover here, as well as the commands and working configurations change quite frequently.**</p>
 
 <p><em>The section below is kept here for referencing purposes, and might be outdated.</em></p>
 
@@ -1970,15 +1970,21 @@ and <a href="https://code.google.com/p/android/issues/detail?id=176348">2</a>).
 The script above creates an emulator with SDK version 21, which should work properly with Google Play services.</p>
 
 <p><em>There are possible workarounds for newer versions
-(see <a href="http://stackoverflow.com/questions/34329363/app-wont-run-unless-you-update-google-play-services-with-google-maps-api-andr">1</a>
-and <a href="http://stackoverflow.com/questions/33114112/app-wont-run-unless-you-update-google-play-services">2</a>),
+(see _<a href="http://stackoverflow.com/questions/34329363/app-wont-run-unless-you-update-google-play-services-with-google-maps-api-andr">_1_</a>
+_and</em> <a href="http://stackoverflow.com/questions/33114112/app-wont-run-unless-you-update-google-play-services"><em>2</em></a><em>),
 but that requires some customization in your project.</em></p>
 
 <h2 id="installing--using-java-version-x">Installing / Using Java version X <a href="#installing--using-java-version-x" class="anchor-symbol">⚓</a></h2>
 
-<p>!!! note “Java 8 is now pre-installed”
-    Java 8 is now the pre-installed Java version on the Bitrise.io Linux Stack.
-    This section is kept here for future reference, in case you’d need another Java version.</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Java 8 is now pre-installed</p>
+  </div>
+
+<div class="message-content">
+    <p>Java 8 is now the pre-installed Java version on the Bitrise.io Linux Stack. This section is kept here for future reference, in case you’d need another Java version.</p>
+  </div>
+</div>
 
 <p><em>If you’d need a Java / JDK version which is not preinstalled on the Android stacks,
 you can follow this guide to install it. This example will install Java/JDK 8,
@@ -1997,8 +2003,8 @@ update-java-alternatives <span class="nt">-s</span> /usr/lib/jvm/java-1.8.0-open
 </code></pre></div></div>
 
 <p>That’s all, just add the <code class="highlighter-rouge">Script</code> step to the Workflow with the content above,
-and start a new build. <em>This <code class="highlighter-rouge">Script</code> step can be the very first step in the Workflow,
-as it does not depend on anything else.</em></p>
+and start a new build. <em>This</em> <code class="highlighter-rouge">_Script_</code>_ step can be the very first step in the Workflow,
+as it does not depend on anything else._</p>
 
 			</main>
 		</div>
