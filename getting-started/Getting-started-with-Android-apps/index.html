@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Outgoing Webhooks - Bitrise DevCenter
+				Getting started with Android apps - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Outgoing Webhooks
+							Getting started with Android apps
 						
 					</div>
 				</div>
@@ -282,7 +282,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/getting-started/Getting-started-with-Android-apps/" title="Getting started with Android apps">Getting started with Android apps</a>
+				<a href="/getting-started/Getting-started-with-Android-apps/" title="Getting started with Android apps" class="current">Getting started with Android apps</a>
 			
 		
 		
@@ -1800,7 +1800,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/api/outgoing-webhooks/" title="Outgoing Webhooks" class="current">Outgoing Webhooks</a>
+				<a href="/api/outgoing-webhooks/" title="Outgoing Webhooks">Outgoing Webhooks</a>
 			
 		
 		
@@ -1828,72 +1828,215 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Outgoing Webhooks</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/api/outgoing-webhooks.md" target="_blank"></a>
+						<h1>Getting started with Android apps</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/getting-started/Getting-started-with-Android-apps.md" target="_blank"></a>
 					</div>
 				
-				<p>By setting up outgoing webhooks you can make Bitrise send notifications about specific events to your web service, so you can create custom integrations.</p>
+				<p>In this guide, we’ll walk you through how to add an Android app to Bitrise, what primary and deploy workflows can do, and finally how to test and deploy your app to <a href="https://www.bitrise.io/">bitrise.io</a> and to the App Store.</p>
 
-<p>You can set the URL of your web service and select which events should trigger a notification in the Code tab of your app. Currently only build events are supported: a notification is sent when a build starts or finishes.</p>
+<h2 id="add-an-android-app-to-bitriseio">Add an Android app to bitrise.io <a href="#add-an-android-app-to-bitriseio" class="anchor-symbol">⚓</a></h2>
 
-<p>The event type that triggered the webhook is sent in a custom header:</p>
+<div class="message-box note">
+<div class="message-title">
+    <p>Do you have a Bitrise account?</p>
+  </div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Bitrise-Event-Type": "build/triggered" # or "build/finished"
+<div class="message-content">
+    <p>Make sure you have signed up to <a href="https://www.bitrise.io">bitrise.io</a> and can access your Bitrise account. Here are <a href="https://devcenter.bitrise.io/getting-started/index#signing-up-to-bitrise">4 ways</a> on how to connect your Bitrise account to your account found on a Git service provider.</p>
+  </div>
+</div>
+
+<ol>
+  <li>Log into <a href="https://www.bitrise.io/">bitrise.io</a>.</li>
+  <li>On your Dashboard, click <code class="highlighter-rouge">+ Add new app</code>.</li>
+  <li>On <code class="highlighter-rouge">Create new App</code> page, choose the account your wish to add the app to.</li>
+  <li>Set the privacy of the app to either Private or <a href="/getting-started/adding-a-new-app/public-apps">Public</a> and click <code class="highlighter-rouge">Next</code>.</li>
+  <li>Select the Git hosting service that hosts your repository, then find and select your own repository that hosts the project. Read more about <a href="/getting-started/adding-a-new-app/connecting-a-repository/">connecting your repository</a>.</li>
+  <li>When prompted to set up repository access, click <code class="highlighter-rouge">No, auto-add SSH key</code>. Read more about <a href="/getting-started/adding-a-new-app/setting-up-ssh-keys/">SSH keys</a>.</li>
+  <li>Type the name of the branch that includes your project’s configuration - master, for example, - then click <code class="highlighter-rouge">Next</code>.</li>
+  <li>Wait while Bitrise is validating your project. We look for your configuration files and set up your app based on them.
+    <ul>
+      <li>Bitrise Scanner selects the module of your project by default.  If there are more modules to choose from in the <code class="highlighter-rouge">Module</code> list, select a module that works best for your project.</li>
+      <li>Select a variant for <strong>building</strong> (you can <code class="highlighter-rouge">Select All Variants</code> which will generate all variants in <code class="highlighter-rouge">APPS &amp; ARTIFACTS</code>) and select a variant for <strong>testing</strong> too.</li>
+    </ul>
+  </li>
+  <li>Register a webhook when prompted so that Bitrise can start a build automatically when code is pushed to your repository. This also kicks off your first build on the primary workflow - click the message and it will take you to the build page. The first build does not generate an apk yet, however, you can already check out the project’s logs on the Build’s page.</li>
+</ol>
+
+<p>An example of an <strong>Android primary workflow</strong>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>primary:
+    steps:
+    - activate-ssh-key@4.0.3:
+        run_if: ''
+    - git-clone@4.0.11: {}
+    - cache-pull@2.0.1: {}
+    - script@1.1.5:
+        title: Do anything with Script step
+    - install-missing-android-tools@2.2.0:
+        inputs:
+        - gradlew_path: "$PROJECT_LOCATION/gradlew"
+    - android-lint@0.9.4:
+        inputs:
+        - project_location: "$PROJECT_LOCATION"
+        - module: "$MODULE"
+        - variant: "$TEST_VARIANT"
+    - android-unit-test@0.9.3:
+        inputs:
+        - project_location: "$PROJECT_LOCATION"
+        - module: "$MODULE"
+        - variant: "$TEST_VARIANT"
+    - deploy-to-bitrise-io@1.3.15: {}
+    - cache-push@2.0.5: {}
 </code></pre></div></div>
 
-<p>The recent delivery attempts of a webhook can be found on the Code tab, so you can inspect the sent payload and the given response, and even request a redelivery of a given item. (Please note that Bitrise tries to deliver an item only once, no automatic retry attempts are made: it can be requested manually.)</p>
+<p>As you can see in this workflow, there is no <code class="highlighter-rouge">Android Build</code> step that would build your project and our <code class="highlighter-rouge">Sign APK</code> step is missing as well, hence this workflow is only a jumping off-point for you to test your project on code level.</p>
 
-<h2 id="build-events">Build events <a href="#build-events" class="anchor-symbol">⚓</a></h2>
+<p>Let’s see how an <strong>Android deploy workflow</strong> looks like!</p>
 
-<p><em>Note: the available values of the build status parameter can be found at the <a href="/api/v0.1/#get-appsapp-slugbuilds">build list part of the Bitrise API documentation</a></em></p>
+<ol>
+  <li>Select the <code class="highlighter-rouge">deploy</code> workflow in Workflow Editor.</li>
+  <li>Go to the <code class="highlighter-rouge">Code Signing</code> tab of your Workflow Editor.</li>
+  <li>Drag-and-drop your keystore file to the <code class="highlighter-rouge">ANDROID KEYSTORE FILE</code> field.</li>
+  <li>Fill out the <code class="highlighter-rouge">Keystore password</code>, <code class="highlighter-rouge">Keystore alias</code>, and <code class="highlighter-rouge">Private key password</code> fields and <code class="highlighter-rouge">Save metadata</code>. You should have these already at hand as these are included in your keystore file which is generated in Android Studio prior to uploading your app to Bitrise. More information on the keystore file <a href="https://developer.android.com/studio/publish/app-signing">here</a>. With this information added to your Code Signing tab, our <code class="highlighter-rouge">Sign APK step</code> (by default included in your Android deploy workflow) will take care of signing your apk so that it’s ready for distribution! Head over to our <a href="/code-signing/android-code-signing/android-code-signing-procedures/">Android code signing guide</a> to learn more about your code signing options!</li>
+  <li>Go back to your Build’s page and click <code class="highlighter-rouge">Start/Schedule a build</code>.</li>
+  <li>Select <code class="highlighter-rouge">deploy</code> in the Basic tab of <code class="highlighter-rouge">Build configuration</code> pop-up window.</li>
+</ol>
 
-<h3 id="build-triggered">Build triggered <a href="#build-triggered" class="anchor-symbol">⚓</a></h3>
+<p>Here is an example of a deploy workflow:</p>
 
-<p>Custom header:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Bitrise-Event-Type": "build/triggered"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deploy:
+    - activate-ssh-key@4.0.3:
+        run_if: ''
+    - git-clone@4.0.11: {}
+    - cache-pull@2.0.1: {}
+    - script@1.1.5:
+        title: Do anything with Script step
+    - install-missing-android-tools@2.2.0:
+        inputs:
+        - gradlew_path: "$PROJECT_LOCATION/gradlew"
+    - change-android-versioncode-and-versionname@1.1.1:
+        inputs:
+        - build_gradle_path: "$PROJECT_LOCATION/$MODULE/build.gradle"
+    - android-lint@0.9.4:
+        inputs:
+        - project_location: "$PROJECT_LOCATION"
+        - module: "$MODULE"
+        - variant: "$TEST_VARIANT"
+    - android-unit-test@0.9.3:
+        inputs:
+        - project_location: "$PROJECT_LOCATION"
+        - module: "$MODULE"
+        - variant: "$TEST_VARIANT"
+    - android-build@0.9.5:
+        inputs:
+        - project_location: "$PROJECT_LOCATION"
+        - module: "$MODULE"
+        - variant: "$BUILD_VARIANT"
+    - sign-apk@1.2.3:
+        run_if: ''
+    - deploy-to-bitrise-io@1.3.15:
+        inputs:
+        - notify_user_groups: testers
+    - cache-push@2.0.5: {}
 </code></pre></div></div>
 
-<p>Payload example:</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Order of the steps matter!</p>
+  </div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "build_slug":"1234abcd",
-  "build_number":3,
-  "app_slug":"abcd1234",
-  "build_status":0,
-  "git": {
-    "provider":"github",
-    "src_branch":"feature/branch",
-    "dst_branch":"master", # If the build was triggered by a pull request
-    "pull_request_id":32, # If the build was triggered by a pull request
-    "tag":"v1.0" # If the build was triggered by tag
-  }
-}
-</code></pre></div></div>
+<div class="message-content">
 
-<h3 id="build-finished">Build finished <a href="#build-finished" class="anchor-symbol">⚓</a></h3>
+    <ul>
+      <li>To cache Gradle dependencies, keep the <code class="highlighter-rouge">Bitrise.io Cache:Pull</code> step as the first and the <code class="highlighter-rouge">Bitrise.io Cache:Push</code> step as the very last step in your workflow!</li>
+      <li>Right after our <code class="highlighter-rouge">Do anything with Script</code> step, the <code class="highlighter-rouge">Install missing Android SDK components</code> will take care of installing the missing Android SDK components that your project might be lacking.</li>
+      <li><code class="highlighter-rouge">Change Android versionCode and versionName</code> step must be inserted BEFORE the <code class="highlighter-rouge">Android Build</code>step as the former makes sure you will upload the build with the right version code and version name to your app’s marketplace.</li>
+      <li><code class="highlighter-rouge">Android Lint</code> and <code class="highlighter-rouge">Android Unit Test</code> steps must be inserted BEFORE the <code class="highlighter-rouge">Android Build</code> step to test your code and debug before building your build.</li>
+      <li><code class="highlighter-rouge">Sign APK</code> step must be AFTER the <code class="highlighter-rouge">Android Build</code> step as the latter builds your project so that you have an apk ready to be signed with the <code class="highlighter-rouge">Sign APK</code> step. Make sure that this step is BEFORE any deploy step so that you can upload an authorized project.</li>
+    </ul>
+  </div>
+</div>
 
-<p>Custom header:</p>
+<h2 id="dependencies">Dependencies <a href="#dependencies" class="anchor-symbol">⚓</a></h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Bitrise-Event-Type": "build/finished"
-</code></pre></div></div>
+<p>Luckily, our <code class="highlighter-rouge">Android Build</code> step, which is by default part of your deploy workflow, takes care of all the dependencies which you have listed in your <code class="highlighter-rouge">build.gradle</code> file and installs them for your project.</p>
 
-<p>Payload example:</p>
+<h2 id="test-your-project">Test your project <a href="#test-your-project" class="anchor-symbol">⚓</a></h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "build_slug":"1234abcd",
-  "build_number":3,
-  "app_slug":"abcd1234",
-  "build_status":1,
-  "git": {
-    "provider":"github",
-    "src_branch":"feature/branch",
-    "dst_branch":master, # If the build was triggered by a pull request
-    "pull_request_id":32 # If the build was triggered by a pull request
-    "tag":"v1.0" # If the build was triggered by tag
-  }
-}
-</code></pre></div></div>
+<p>As you can see in the above Android workflows, the <code class="highlighter-rouge">Android Lint</code> and <code class="highlighter-rouge">Android Unit Test</code> steps are by default included in your workflow.</p>
+
+<p>For UI testing, add our <code class="highlighter-rouge">beta Virtual Device Testing for Android</code> step to <strong>run Android UI tests on virtual devices</strong>. Available test types - make sure you select one!</p>
+
+<ul>
+  <li>instrumentation</li>
+  <li>robo</li>
+  <li>gameloop</li>
+</ul>
+
+<p>If you selected instrumentation, don’t forget to set <strong>Test APK path</strong> under the <strong>Instrumentation Test</strong> group as well.</p>
+
+<div class="message-box info">
+<div class="message-title">
+    <p>More testing steps to choose from</p>
+  </div>
+
+<div class="message-content">
+    <p>Click the <code class="highlighter-rouge">+</code> sign on the left side of your Workflow and select another <code class="highlighter-rouge">TEST</code> step from our collection.</p>
+  </div>
+</div>
+
+<h2 id="deploy-your-project">Deploy your project <a href="#deploy-your-project" class="anchor-symbol">⚓</a></h2>
+
+<h3 id="deploy-to-bitriseio">Deploy to bitrise.io <a href="#deploy-to-bitriseio" class="anchor-symbol">⚓</a></h3>
+
+<p>This step uploads all the artifacts related to your build into the<a href="/builds/build-artifacts-online/"> APPS &amp; ARTIFACTS </a>tab on your Build’s page.</p>
+
+<p>You can share the generated apk with your team members using the buil’s URL. You can also notify user groups or individual users that your apk has been built.</p>
+
+<ol>
+  <li>Go to the <code class="highlighter-rouge">Deploy to bitrise.io</code> step.</li>
+  <li>In the <code class="highlighter-rouge">Notify: User Roles</code>, add the role so that only those get notified who have been granted with this role. Or fill out the <code class="highlighter-rouge">Notify: Emails</code> field with email addresses of the users you want to notify. Make sure you set those email addresses as <a href="/builds/env-vars-secret-env-vars/">secret env vars</a>! These details can be also modified under <code class="highlighter-rouge">Notifications</code> if you click the <code class="highlighter-rouge">eye</code> icon next to your generated apk in the <code class="highlighter-rouge">APPS &amp; ARTIFACTS</code> tab.</li>
+</ol>
+
+<h3 id="deploy-to-marketplace">Deploy to marketplace <a href="#deploy-to-marketplace" class="anchor-symbol">⚓</a></h3>
+
+<p>If you add <code class="highlighter-rouge">Google Play Deploy</code> step to your workflow (after the <code class="highlighter-rouge">Sign APK</code> step), your signed apk will get uploaded to a marketplace of your choice.</p>
+
+<ol>
+  <li>Make sure you are in sync with Google Play Store! Learn how to
+    <ul>
+      <li><a href="/tutorials/deploy/android-deployment/#register-to-google-play-store-and-set-up-your-first-project">register to Google Play Store and set up your project</a></li>
+      <li>set up <a href="/tutorials/deploy/android-deployment/#set-up-google-play-api-access">Google Play API access</a></li>
+    </ul>
+  </li>
+  <li>In your Bitrise <code class="highlighter-rouge">Dashboard</code>, go to <code class="highlighter-rouge">Code Signing</code> and upload the service account JSON key into the <code class="highlighter-rouge">GENERIC FILE STORAGE.</code></li>
+  <li>
+    <p>Copy the env key which stores your uploaded file’s url.</p>
+
+    <p>For example: <code class="highlighter-rouge">BITRISEIO_SERVICE_ACCOUNT_JSON_KEY_URL</code></p>
+  </li>
+  <li>Go back to the <code class="highlighter-rouge">Google Play Deploy</code> step in your Workflow Editor.`</li>
+  <li>Fill out the required input fields as follows:
+    <ul>
+      <li><code class="highlighter-rouge">Service Account JSON key file path</code>:  This field can accept a remote URL so you have to provide the environment variable which contains your uploaded service account JSON key. For example: <code class="highlighter-rouge">$BITRISEIO_SERVICE_ACCOUNT_JSON_KEY_URL</code></li>
+      <li><code class="highlighter-rouge">Package name</code>: the package name of your Android app</li>
+      <li><code class="highlighter-rouge">Track</code>: the track where you want to deploy your APK (alpha/beta/rollout/production)</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="message-box note">
+<div class="message-title">
+    <p>Other deploy steps you can add to your workflow</p>
+  </div>
+
+<div class="message-content">
+    <p>Click the <code class="highlighter-rouge">+</code> sign on the left side of your Workflow and select another <code class="highlighter-rouge">DEPLOY</code> step from our collection, for example, <code class="highlighter-rouge">Appetize.io deploy</code> or <code class="highlighter-rouge">Amazon Device Farm File Directory</code>, if you wish.</p>
+  </div>
+</div>
+
+<p>That’s all! Start or schedule a build and share the URL with external testers or distribute your app on an app store of your choice!</p>
 
 			</main>
 		</div>
