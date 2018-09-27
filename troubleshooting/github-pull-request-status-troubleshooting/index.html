@@ -1840,49 +1840,51 @@
 must have a connected account to the git hosting provider.</p>
 
 <ol>
-  <li>
-    <p>Go to your app’s page on <a href="https://www.bitrise.io">bitrise.io</a>.</p>
-  </li>
-  <li>
-    <p>Click the <code class="highlighter-rouge">Team</code> tab.</p>
-  </li>
-  <li>
-    <p>Find the <code class="highlighter-rouge">Service credential User</code> menu. By default, the app owner is the Service credential User.</p>
-  </li>
-  <li>
-    <p>Check the <code class="highlighter-rouge">Account Settings page</code> of the account of the Service credential User.</p>
-  </li>
+  <li>Go to your app’s page on <a href="https://www.bitrise.io">bitrise.io</a>.</li>
+  <li>Click the <code class="highlighter-rouge">Team</code> tab.</li>
+  <li>Find the <code class="highlighter-rouge">Service credential User</code> menu. By default, the app owner is the Service credential User.</li>
+  <li>Check the <code class="highlighter-rouge">Account Settings page</code> of the account of the Service credential User.</li>
 </ol>
 
 <p>On the left side you can find the <strong>Connected Accounts</strong> section,
 where you can connect and disconnect other services (like GitHub, Bitbucket or GitLab)
 to your <a href="https://www.bitrise.io">bitrise.io</a> account.</p>
 
-<p>!!! note “Make sure you connected the correct account”
-    If you have more than one account with the given service, you should also check whether you connected one that can access the repository.
-    You can check which user you connected by clicking the name of the service provider
-    on your <a href="https://www.bitrise.io">bitrise.io</a> <a href="https://www.bitrise.io/me/profile">Account Settings</a> page.
-    It will open the connected user’s page on the website of your git hosting provider.</p>
+<div class="message-box important">
+<div class="message-title">
+    <p>Make sure you connected the correct account</p>
+  </div>
 
-<p>!!! note “Admin rights”
-    Make sure that the Service credential User has administrative rights to the repository. Check this on the repository settings on the website of your git hosting provider.</p>
+<div class="message-content">
+
+    <p>If you have more than one account with the given service, you should also check whether you connected one that can access the repository. You can check which user you connected by clicking the name of the service provider on your <a href="https://www.bitrise.io">bitrise.io</a> <a href="https://www.bitrise.io/me/profile">Account Settings</a> page. It will open the connected user’s page on the website of your git hosting provider.</p>
+  </div>
+</div>
+
+<div class="message-box important">
+<div class="message-title">
+    <p>Admin rights</p>
+  </div>
+
+<div class="message-content">
+
+    <p>Make sure that the Service credential User has administrative rights to the repository. Check this on the repository settings on the website of your git hosting provider.</p>
+
+  </div>
+</div>
 
 <h2 id="checking-repository-permissions-and-repository-url">Checking repository permissions and repository URL <a href="#checking-repository-permissions-and-repository-url" class="anchor-symbol">⚓</a></h2>
 
 <ul>
-  <li>
-    <p><strong>Make sure that you granted Bitrise access to your organization or team</strong>.
+  <li><strong>Make sure that you granted Bitrise access to your organization or team</strong>.
 It might be that you did not <strong>grant Bitrise access</strong> or denied access to the GitHub organization or Bitbucket team
 that owns the repository.
 See the
 <a href="/faq/grant-access-to-github-organization">Grant access to a GitHub Organization</a> and the
-<a href="/faq/grant-access-to-bitbucket-team">Grant access to a Bitbucket team</a> guides for more information.</p>
-  </li>
-  <li>
-    <p><strong>Make sure the repository URL is up to date</strong>.
+<a href="/faq/grant-access-to-bitbucket-team">Grant access to a Bitbucket team</a> guides for more information.</li>
+  <li><strong>Make sure the repository URL is up to date</strong>.
 Go to the <code class="highlighter-rouge">Settings</code> tab of your app on <a href="https://www.bitrise.io">bitrise.io</a>
-and make sure that the <code class="highlighter-rouge">Repository URL</code> points to the current location of the repository. If, for example, you renamed or transferred your repository elsewhere, the status report can fail.</p>
-  </li>
+and make sure that the <code class="highlighter-rouge">Repository URL</code> points to the current location of the repository. If, for example, you renamed or transferred your repository elsewhere, the status report can fail.</li>
 </ul>
 
 			</main>
