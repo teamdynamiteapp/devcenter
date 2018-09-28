@@ -1834,7 +1834,7 @@
 				
 				<p><strong>Feel free to add your comments to this list.</strong></p>
 
-<p><a href="https://github.com/bitrise-io/devcenter/edit/master/docs/ios/known-xcode-issues.md">You can do it directly on GitHub, by clicking this link</a>,
+<p><a href="https://github.com/bitrise-io/devcenter/blob/master/_articles/troubleshooting/known-xcode-issues.md">You can do it directly on GitHub, by clicking this link</a>,
 just don’t forget to send it as a Pull Request ;)</p>
 
 <h2 id="performance-related">Performance related <a href="#performance-related" class="anchor-symbol">⚓</a></h2>
@@ -1874,7 +1874,7 @@ Mac Mini.</p>
 <ul>
   <li>As reported <a href="http://stackoverflow.com/a/37866825/974381">in this StackOverflow answer</a> &amp;
 <a href="https://forums.developer.apple.com/thread/4472">in this Apple dev forum discussion</a>
-a possible workaround can be to <strong>not to store <code class="highlighter-rouge">XCUIApplication()</code> in a variable</strong>, instead
+a possible workaround can be to <strong>not to store</strong> <code class="highlighter-rouge">**XCUIApplication()**</code> <strong>in a variable</strong>, instead
 reference / use it directly. E.g. instead of: <code class="highlighter-rouge">let app = XCUIApplication() ; ... ; app.launch()</code>
 do: <code class="highlighter-rouge">XCUIApplication().launch()</code></li>
   <li>Others reported that if you add a delay (<code class="highlighter-rouge">sleep(10)</code>) after every <code class="highlighter-rouge">app.launch()</code> related to your tests, it can
@@ -1960,7 +1960,7 @@ implementing known workarounds for common issues.</li>
 might include additional workarounds / fixes.</li>
   <li>Try <a href="http://devcenter.bitrise.io/docs/available-stacks#section-how-to-switch-to-the-new-beta-stacks">another Xcode version</a>,
 there are issues which are present in one Xcode version but not in another one.</li>
-  <li>Make sure your desired <a href="http://devcenter.bitrise.io/docs/scheme-cannot-be-found">Xcode scheme is shared</a>. Don’t forget to commit and push the changes if you just enabled it.</li>
+  <li>Make sure your desired <a href="https://devcenter.bitrise.io/troubleshooting/frequent-ios-issues/#xcode-scheme-not-found">Xcode scheme is shared</a>. Don’t forget to commit and push the changes if you just enabled it.</li>
   <li>It might also be a <a href="https://github.com/bitrise-io/bitrise.io/issues/5#issuecomment-140188658">project configuration issue in your Xcode project</a>,
 or a <a href="https://github.com/bitrise-io/bitrise.io/issues/5#issuecomment-160171566">code issue in your tests</a>,
 or a <a href="https://github.com/bitrise-io/bitrise.io/issues/5#issuecomment-190163069">multi threading issue in your code</a>.</li>
@@ -2022,7 +2022,7 @@ as simple as <code class="highlighter-rouge">xcodebuild -list</code>.</p>
 
 <h5 id="solution">Solution <a href="#solution" class="anchor-symbol">⚓</a></h5>
 
-<p><a href="http://devcenter.bitrise.io/v1.0/docs/scheme-cannot-be-found">Make sure that you marked the Scheme as shared, and that you actually committed &amp; pushed it into your repository</a>.</p>
+<p><a href="https://devcenter.bitrise.io/troubleshooting/frequent-ios-issues/#xcode-scheme-not-found">Make sure that you marked the Scheme as shared, and that you actually committed &amp; pushed it into your repository</a>.</p>
 
 <h2 id="build-hangs">Build hangs <a href="#build-hangs" class="anchor-symbol">⚓</a></h2>
 
@@ -2040,8 +2040,7 @@ For example if you have a Run Phase Script in your Xcode project, that will
 run during Xcode build/test/archive, and that script hangs for some reason
 (e.g. it waits for a user input).</p>
 
-<p>You can find pointers to identify and solve these kind
-of issues <a href="http://devcenter.bitrise.io/docs/step-hangs-times-out-after-a-period-without-any-logs-on-bitrise">on our old DevCenter</a>.</p>
+<p>Check out our guide on <a href="https://devcenter.bitrise.io/troubleshooting/frequent-ios-issues/">frequent iOS issues</a> for more information!</p>
 
 			</main>
 		</div>
