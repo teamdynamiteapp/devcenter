@@ -1837,12 +1837,24 @@
 <h2 id="adding-an-ios-app">Adding an iOS app <a href="#adding-an-ios-app" class="anchor-symbol">⚓</a></h2>
 
 <ol>
-  <li>Click the <code class="highlighter-rouge">+</code> sign on the top menu bar and select <code class="highlighter-rouge">Add app</code>.</li>
-  <li>On the Create new App page, choose the account you wish to add the app to.</li>
-  <li>Set the privacy of the app to either Private or <a href="/getting-started/adding-a-new-app/public-apps">Public</a> and click <code class="highlighter-rouge">Next</code>.</li>
-  <li>Select the Git hosting service that hosts your repository, then find and select your repository that hosts the project. Read more about <a href="/getting-started/adding-a-new-app/connecting-your-repository">connecting your repository</a>.</li>
-  <li>When prompted to set up repository access, click <code class="highlighter-rouge">No, auto-add SSH key</code>. Read more about <a href="/getting-started/adding-a-new-app/setting-up-ssh-keys/">SSH keys</a>.</li>
-  <li>Type the name of the branch that includes your project’s configuration - master, for example - then click <code class="highlighter-rouge">Next</code>.</li>
+  <li>
+    <p>Click the <code class="highlighter-rouge">+</code> sign on the top menu bar and select <code class="highlighter-rouge">Add app</code>.</p>
+  </li>
+  <li>
+    <p>On the Create new App page, choose the account you wish to add the app to.</p>
+  </li>
+  <li>
+    <p>Set the privacy of the app to either Private or <a href="/getting-started/adding-a-new-app/public-apps">Public</a> and click <code class="highlighter-rouge">Next</code>.</p>
+  </li>
+  <li>
+    <p>Select the Git hosting service that hosts your repository, then find and select your repository that hosts the project. Read more about <a href="/getting-started/adding-a-new-app/connecting-your-repository">connecting your repository</a>.</p>
+  </li>
+  <li>
+    <p>When prompted to set up repository access, click <code class="highlighter-rouge">No, auto-add SSH key</code>. Read more about <a href="/getting-started/adding-a-new-app/setting-up-ssh-keys/">SSH keys</a>.</p>
+  </li>
+  <li>
+    <p>Type the name of the branch that includes your project’s configuration - master, for example - then click <code class="highlighter-rouge">Next</code>.</p>
+  </li>
   <li>
     <p>Wait while Bitrise is validating your project. We look for your configuration files and set up your app based on them. In the case of an iOS app, we’re looking for your Xcode Project (<code class="highlighter-rouge">.xcodeproj</code>) or Xcode Workspace (<code class="highlighter-rouge">.xcworkspace</code>) path.</p>
 
@@ -1861,7 +1873,9 @@
       <li>iOS stack</li>
     </ul>
   </li>
-  <li>Register a webhook when prompted so that Bitrise can start a build automatically when code is pushed to your repository, or a pull request is created. This also kicks off your first build - click the message and it will take you to the build page.</li>
+  <li>
+    <p>Register a webhook when prompted so that Bitrise can start a build automatically when code is pushed to your repository, or a pull request is created. This also kicks off your first build - click the message and it will take you to the build page.</p>
+  </li>
 </ol>
 
 <h2 id="running-xcode-tests">Running Xcode tests <a href="#running-xcode-tests" class="anchor-symbol">⚓</a></h2>
@@ -1928,20 +1942,28 @@
 </ul>
 
 <ol>
-  <li>Set the code signing type of your project in Xcode to either manual or automatic (Xcode managed), and generate an .ipa locally.</li>
+  <li>
+    <p>Set the code signing type of your project in Xcode to either manual or automatic (Xcode managed), and generate an .ipa locally.</p>
+  </li>
   <li>
     <p>Collect and upload the code signing files with <a href="/code-signing/ios-code-signing/collecting-files-with-codesigndoc/">the codesigndoc tool</a>.</p>
 
     <p>The tool can also upload your code signing files to Bitrise - we recommend doing so! Otherwise, upload them manually: enter the Workflow Editor and select the <code class="highlighter-rouge">Code signing</code> tab, then upload the files in their respective fields.</p>
   </li>
-  <li>Go to your app’s Workflow Editor, and select the <code class="highlighter-rouge">deploy</code> workflow in the <code class="highlighter-rouge">WORKFLOW</code> dropdown menu in the top left corner.</li>
-  <li>Check that you have the <code class="highlighter-rouge">Certificate and profile installer</code> Step in your workflow. It must be before the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step (you can have other Steps between the two, like <code class="highlighter-rouge">Xcode Test for iOS</code>).</li>
+  <li>
+    <p>Go to your app’s Workflow Editor, and select the <code class="highlighter-rouge">deploy</code> workflow in the <code class="highlighter-rouge">WORKFLOW</code> dropdown menu in the top left corner.</p>
+  </li>
+  <li>
+    <p>Check that you have the <code class="highlighter-rouge">Certificate and profile installer</code> Step in your workflow. It must be before the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step (you can have other Steps between the two, like <code class="highlighter-rouge">Xcode Test for iOS</code>).</p>
+  </li>
   <li>
     <p>Check the <code class="highlighter-rouge">Select method for export</code> input of the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step. By default, it should be the <code class="highlighter-rouge">$BITRISE_EXPORT_METHOD</code> environment variable. This variable stores the export method you selected when creating the app. If you selected <code class="highlighter-rouge">development</code> back then, you don’t need to change the input. Otherwise, manually set it to <code class="highlighter-rouge">development</code>.</p>
 
     <p><img src="/img/export-method-envvar.png" alt="Export method env var" /></p>
   </li>
-  <li><a href="/builds/starting-builds-manually/">Start a build</a>.</li>
+  <li>
+    <p><a href="/builds/starting-builds-manually/">Start a build</a>.</p>
+  </li>
 </ol>
 
 <p>If you uploaded the correct code signing files, the <code class="highlighter-rouge">Certificate and profile installer</code> Step should install your code signing files and the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step should export an .ipa with the development export method. If you have the <code class="highlighter-rouge">Deploy to Bitrise.io</code> Step in your workflow, you can find the .ipa on the <code class="highlighter-rouge">Apps &amp; Artifacts</code> tab of the build page.</p>
@@ -1960,9 +1982,15 @@
 </ul>
 
 <ol>
-  <li>On your local machine, set up App Store code signing for your project in Xcode, and export an App Store .ipa. If this fails locally, it will definitely fail on Bitrise, too!</li>
-  <li>Collect and upload the code signing files with <a href="/code-signing/ios-code-signing/collecting-files-with-codesigndoc/">the codesigndoc tool</a>.</li>
-  <li>Go to the app’s Workflow Editor and create a <a href="/getting-started/getting-started-workflows/">new workflow</a>: click the <code class="highlighter-rouge">+ Workflow</code> button, enter the name of your new workflow and in the <strong>BASED ON</strong> dropdown menu, select <code class="highlighter-rouge">deploy</code>. This way the new workflow will be a copy of the basic <code class="highlighter-rouge">deploy</code> workflow.</li>
+  <li>
+    <p>On your local machine, set up App Store code signing for your project in Xcode, and export an App Store .ipa. If this fails locally, it will definitely fail on Bitrise, too!</p>
+  </li>
+  <li>
+    <p>Collect and upload the code signing files with <a href="/code-signing/ios-code-signing/collecting-files-with-codesigndoc/">the codesigndoc tool</a>.</p>
+  </li>
+  <li>
+    <p>Go to the app’s Workflow Editor and create a <a href="/getting-started/getting-started-workflows/">new workflow</a>: click the <code class="highlighter-rouge">+ Workflow</code> button, enter the name of your new workflow and in the <strong>BASED ON</strong> dropdown menu, select <code class="highlighter-rouge">deploy</code>. This way the new workflow will be a copy of the basic <code class="highlighter-rouge">deploy</code> workflow.</p>
+  </li>
   <li>
     <p>Set the <code class="highlighter-rouge">Select method for export</code> input of the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step to <code class="highlighter-rouge">app-store</code>.</p>
 
