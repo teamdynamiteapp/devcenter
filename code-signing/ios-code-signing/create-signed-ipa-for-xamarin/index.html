@@ -1837,24 +1837,20 @@
 <p>Before setting up IPA export, make sure that:</p>
 
 <ul>
-  <li>your code signing files have been collected: we recommend using our <a href="https://github.com/bitrise-tools/codesigndoc">codesigndoc</a> tool.</li>
+  <li>your code signing files have been collected.</li>
   <li>you have the <code class="highlighter-rouge">Certificate and profile installer</code> step in your workflow.</li>
 </ul>
 
 <p>If you’re all set, proceed to setting up IPA export in your workflow:</p>
 
 <ol>
-  <li>
-    <p>Make sure that you have the <code class="highlighter-rouge">Xamarin Archive</code> step in the app’s Workflow Editor and select it.</p>
-  </li>
-  <li>
-    <p>Set the <code class="highlighter-rouge">Xamarin solution configuration</code> input of the step to the Xamarin project Configuration you want to use (for example, <code class="highlighter-rouge">Release</code>).</p>
-  </li>
+  <li>Make sure that you have the <code class="highlighter-rouge">Xamarin Archive</code> step in the app’s Workflow Editor and select it.</li>
+  <li>Set the <code class="highlighter-rouge">Xamarin solution configuration</code> input of the step to the Xamarin project Configuration you want to use (for example, <code class="highlighter-rouge">Release</code>).</li>
   <li>
     <p>Set the <code class="highlighter-rouge">Xamarin solution platform</code> input to <code class="highlighter-rouge">iPhone</code>.</p>
 
     <p>You can control the code signing type in your Xamarin project by setting the
- code signing configurations in Xamarin Studio.</p>
+code signing configurations in Xamarin Studio.</p>
 
     <p><img src="/img/code-signing/ios-code-signing/xamarin-archive-export-method.png" alt="Select export method for Xamarin Archive for iOS" /></p>
   </li>
@@ -1864,7 +1860,7 @@
 
 <p>You can <code class="highlighter-rouge">Copy</code> the existing <code class="highlighter-rouge">Release</code> configuration in Xamarin Studio, to have an identical base configuration, where you only change the code signing settings. For example, <code class="highlighter-rouge">Copy</code> the <code class="highlighter-rouge">Release|iPhone</code> configuration with the name <code class="highlighter-rouge">ReleaseAppStore</code>, set the code signing to App Store for this <code class="highlighter-rouge">ReleaseAppStore</code> configuration, and specify this configuration as the <code class="highlighter-rouge">Xamarin solution configuration</code> input of the <code class="highlighter-rouge">Xamarin Archive</code> step.</p>
 
-<p>Don’t forget to run <code class="highlighter-rouge">codesigndoc</code> again if you change code signing configurations in your Xamarin project, or to manually collect and upload the signing files required for the configurations you want to use!</p>
+<p>Don’t forget to collect and upload the signing files again if you change code signing configurations in your Xamarin project!</p>
 
 			</main>
 		</div>
