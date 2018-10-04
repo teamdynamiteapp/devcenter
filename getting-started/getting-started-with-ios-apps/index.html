@@ -1836,6 +1836,16 @@
 
 <h2 id="adding-an-ios-app">Adding an iOS app <a href="#adding-an-ios-app" class="anchor-symbol">⚓</a></h2>
 
+<div class="message-box note">
+<div class="message-title">
+    <p>Do you have a Bitrise account?</p>
+  </div>
+
+<div class="message-content">
+    <p>Make sure you have signed up to <a href="https://www.bitrise.io">bitrise.io</a> and can access your Bitrise account. Here are <a href="https://devcenter.bitrise.io/getting-started/index#signing-up-to-bitrise">4 ways</a> on how to connect your Bitrise account to your account found on a Git service provider.</p>
+  </div>
+</div>
+
 <ol>
   <li>
     <p>Click the <code class="highlighter-rouge">+</code> sign on the top menu bar and select <code class="highlighter-rouge">Add app</code>.</p>
@@ -1998,7 +2008,9 @@
 
     <p>If you wish to distribute your app to external testers without uploading the app to Testflight, select <code class="highlighter-rouge">ad-hoc</code>. In that case, skip the next steps in the guide: you only need the <code class="highlighter-rouge">Deploy to Bitrise.io</code> Step in your workflow.</p>
   </li>
-  <li>Add the <code class="highlighter-rouge">Deploy to iTunes Connect - Application Loader</code> Step to your workflow, after the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step but preferably before the <code class="highlighter-rouge">Deploy to Bitrise.io</code> Step.</li>
+  <li>
+    <p>Add the <code class="highlighter-rouge">Deploy to iTunes Connect - Application Loader</code> Step to your workflow, after the <code class="highlighter-rouge">Xcode Archive &amp; Export for iOS</code> Step but preferably before the <code class="highlighter-rouge">Deploy to Bitrise.io</code> Step.</p>
+  </li>
   <li>
     <p>Provide your Apple credentials in the <code class="highlighter-rouge">Deploy to iTunes Connect - Application Loader</code> Step.</p>
 
