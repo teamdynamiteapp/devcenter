@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Triggering builds - Bitrise DevCenter
+				ビルドトリガー - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Triggering builds
+							ビルドトリガー
 						
 					</div>
 				</div>
@@ -582,7 +582,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/builds/triggering-builds/triggering-builds/" title="Triggering builds" class="current">Triggering builds</a>
+				<a href="/builds/triggering-builds/triggering-builds/" title="ビルドトリガー" class="current">ビルドトリガー</a>
 			
 		
 		
@@ -591,7 +591,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/builds/triggering-builds/trigger-code-push/" title="Triggering builds with code push">Triggering builds with code push</a>
+				<a href="/builds/triggering-builds/trigger-code-push/" title="プッシュをトリガーにする">プッシュをトリガーにする</a>
 			
 		
 		
@@ -1828,30 +1828,34 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Triggering builds</h1>
+						<h1>ビルドトリガー</h1>
 						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/builds/triggering-builds/triggering-builds.md" target="_blank"></a>
 					</div>
 				
-				<p>You can trigger builds on Bitrise either by:</p>
+				<p>Bitriseのビルドトリガーには以下のいずれかを選択できます。</p>
 
 <ul>
-  <li><a href="/builds/triggering-builds/starting-builds-manually/">manually starting one</a></li>
-  <li><a href="/builds/scheduling-builds/">scheduling one for a specific time</a></li>
-  <li>triggering them automatically by specifying a trigger event.</li>
+  <li><a href="/builds/triggering-builds/starting-builds-manually/">手動による開始</a></li>
+  <li><a href="/builds/scheduling-builds/">スケジュールによる開始</a></li>
+  <li>トリガーイベントによる開始</li>
 </ul>
 
-<p>If you set up incoming webhooks to Bitrise, you can automatically trigger builds by specifying a trigger event and a workflow. You can specify multiple triggers, and add new triggers or remove existing ones any time you wish.</p>
+<p>BitriseにIncoming Webhooksを設定している場合、指定されたトリガーイベントまたはWorkflowによりビルドを自動的に開始することができます。<br />
+また、複数のトリガーを指定したり、トリガーの追加、削除を行うことができます。</p>
 
-<p>By default, every new app you add will have two triggers: one that triggers a build every time code is pushed to ANY branch of your repository, and another that triggers a build every time a pull request is opened within your repository. You can change or remove these, of course.</p>
+<p>デフォルトでは、アプリケーションを登録すると2つのトリガーを持っています。<br />
+1つ目は任意のブランチがリポジトリにプッシュされたとき、2つ目は新規のPull Requestが作成されたときです。<br />
+これらは自由に変更、削除することができます。</p>
 
-<p>You can manage the triggers in the <code class="highlighter-rouge">Triggers</code> section of the <code class="highlighter-rouge">Workflow Editor</code> or you can directly edit the bitrise.yml of your app to set them up. In this section of our DevCenter, we cover how to set up and manage triggers on the website UI!</p>
+<p>トリガーは<code class="highlighter-rouge">Workflow Editor</code>の<code class="highlighter-rouge">Triggers</code>セクションで管理できますが、<code class="highlighter-rouge">bitrise.yml</code>を直接編集して設定することも可能です。<br />
+DevCenterのこのセクションでは、WebサイトのUI上でトリガーを設定および管理する方法について説明します。</p>
 
 <ul>
-  <li><a href="/builds/triggering-builds/trigger-code-push">Triggering builds with code push</a></li>
-  <li><a href="/builds/triggering-builds/trigger-pull-request">Triggering builds with pull requests</a></li>
-  <li><a href="/builds/triggering-builds/trigger-git-tags">Triggering builds with Git Tags</a></li>
-  <li><a href="/builds/triggering-builds/trigger-multiple-workflows">Starting parallel builds with a single trigger</a></li>
-  <li><a href="/builds/triggering-builds/status-reporting">Reporting the build status to your git hosting provider</a></li>
+  <li><a href="/builds/triggering-builds/trigger-code-push">プッシュをトリガーにする</a></li>
+  <li><a href="/builds/triggering-builds/trigger-pull-request">Pull Requestをトリガーにする</a></li>
+  <li><a href="/builds/triggering-builds/trigger-git-tags">Tagをトリガーにする</a></li>
+  <li><a href="/builds/triggering-builds/trigger-multiple-workflows">単一のトリガーで並列ビルドを開始する</a></li>
+  <li><a href="/builds/triggering-builds/status-reporting">Gitホスティングサービスにビルド結果を通知する</a></li>
 </ul>
 
 			</main>
