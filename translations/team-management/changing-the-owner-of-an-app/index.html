@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			
-				Creating and sharing your own Step - Bitrise DevCenter
+				アプリのオーナーを変更する - Bitrise DevCenter
 			
 		</title>
 		<meta property="og:title" content="Bitrise DevCenter">
@@ -35,7 +35,7 @@
 					<button class="burger material-icon" onclick="toggleSideBar()"></button>
 					<div class="title">
 						
-							Creating and sharing your own Step
+							アプリのオーナーを変更する
 						
 					</div>
 				</div>
@@ -1182,7 +1182,7 @@
 	<li class="menu-item">
 		
 			
-				<a href="/bitrise-cli/create-your-own-step/" title="Creating and sharing your own Step" class="current">Creating and sharing your own Step</a>
+				<a href="/bitrise-cli/create-your-own-step/" title="Creating and sharing your own Step">Creating and sharing your own Step</a>
 			
 		
 		
@@ -1846,131 +1846,24 @@
 			<main class="content">
 				
 					<div class="title-with-source-edit">
-						<h1>Creating and sharing your own Step</h1>
-						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/bitrise-cli/create-your-own-step.md" target="_blank"></a>
+						<h1>アプリのオーナーを変更する</h1>
+						<a class="material-icon" href="https://github.com/bitrise-io/devcenter/blob/master/_articles/translations/team-management/changing-the-owner-of-an-app.md" target="_blank"></a>
 					</div>
 				
-				<p>Creating your own Step is as simple as running a <code class="highlighter-rouge">bitrise</code> CLI (v1.6.1+) command and following the guide it prints. You can generate Steps using either the Bash or Go toolkits.</p>
-
-<p>If you don’t have the Bitrise CLI installed, check the installation guide <a href="/bitrise-cli/installation/">here</a>.</p>
-
-<div class="message-box important">
-<div class="message-title">
-    <p>Use the latest Bitrise CLI!</p>
-  </div>
-
-<div class="message-content">
-    <p>Make sure you have the latest version of the Bitrise CLI, or at the very least, you have version 1.6.1 or higher. Call <code class="highlighter-rouge">bitrise --version</code> to check your Bitrise CLI version. This is important because the CLI uses the <code class="highlighter-rouge">:step</code> plugin to create Steps and this plugin was introduced as a core plugin in v1.6.1.</p>
-  </div>
-</div>
-
-<h2 id="creating-the-step">Creating the Step <a href="#creating-the-step" class="anchor-symbol">⚓</a></h2>
-
-<p>Once the Bitrise CLI is installed, create your own Step with three simple commands.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If this is the very first time you use the CLI / if you just installed the CLI run this:</span>
-bitrise setup
-
-<span class="c"># If you want to update the Step plugin to the latest version:</span>
-bitrise plugin update step
-
-<span class="c"># And to generate a new Step, simply run this command and follow the guide it prints:</span>
-bitrise :step create
-</code></pre></div></div>
-
-<p>Running <code class="highlighter-rouge">bitrise :step</code> without any commands will print the plugin’s help.</p>
-
-<p>Once you are done, you should have a <code class="highlighter-rouge">step.yml</code> and, depending on whether you chose Go or Bash, a <code class="highlighter-rouge">main.go</code> or a <code class="highlighter-rouge">step.sh</code> file in your new Step’s repository.</p>
-
-<ul>
-  <li>The <code class="highlighter-rouge">step.yml</code> file is the Step interface definition, containing dependencies, Step inputs and Step outputs as well as other step properties.</li>
-  <li><code class="highlighter-rouge">main.go</code> or <code class="highlighter-rouge">step.sh</code> contains the actual functionality of the Step. <strong>DO NOT CHANGE the working directory!</strong></li>
-</ul>
-
-<p>The generated Step’s README describes:</p>
-
-<ul>
-  <li>how you can run your Step locally, before you even commit the code,</li>
-  <li>how you can test and use your Step in any build by using <a href="/bitrise-cli/steps/#special-Step-sources">the </a><code class="highlighter-rouge">[git::](/bitrise-cli/steps/#special-Step-sources)</code><a href="/bitrise-cli/steps/#special-Step-sources"> Step reference</a>,</li>
-  <li>how you can share your Step with others through the Bitrise StepLib if you wish to do so.</li>
-</ul>
-
-<div class="message-box important">
-<div class="message-title">
-    <p>Before proceeding with step configuration</p>
-  </div>
-
-<div class="message-content">
-    <p>Check out <a href="/bitrise-cli/most-important-concepts/">some important concepts you must be aware of</a>!</p>
-
-  </div>
-</div>
-
-<h2 id="step-development-guidelines">Step development guidelines <a href="#step-development-guidelines" class="anchor-symbol">⚓</a></h2>
-
-<p>A newly created Step is a ‘skeleton’: in the <code class="highlighter-rouge">step.yml</code> file, certain properties are assigned default values and example inputs and outputs are created to show the structure of these.</p>
-
-<p>Many step properties are automatically generated - for example, when sharing the Step - while other properties should be set manually if they are required. When creating a new Step with the plugin, only the <code class="highlighter-rouge">project_type_tags</code> property does not get filled with some value by default but of course you can manually modify all properties in the <code class="highlighter-rouge">step.yml</code> file.</p>
-
-<p>Step inputs and outputs are also Step properties. For more information, see <a href="/bitrise-cli/step-properties">Step properties</a>, <a href="/bitrise-cli/step-inputs">Step inputs</a>, <a href="/bitrise-cli/step-outputs">Step outputs</a>.</p>
-
-<h3 id="naming-conventions-versioning-step-id-step-inputs-and-outputs">Naming conventions: versioning, Step ID, step inputs and outputs <a href="#naming-conventions-versioning-step-id-step-inputs-and-outputs" class="anchor-symbol">⚓</a></h3>
-
-<ul>
-  <li>You should use <a href="https://semver.org/">semantic versioning</a> (MAJOR.MINOR.PATCH) for your Step. For example, <code class="highlighter-rouge">1.2.3</code>.</li>
-  <li>For Step IDs, use hyphens as separator if the ID contains multiple words. For example, <code class="highlighter-rouge">set-ios-bundle-identifier</code>.</li>
-  <li>For inputs, use <strong>lower</strong> case <a href="https://en.wikipedia.org/wiki/Snake_case">snake case</a> style input IDs. For example, <code class="highlighter-rouge">input_path</code>.</li>
-  <li>If your step input should accept a list of values, postfix the input ID with <code class="highlighter-rouge">_list</code> (for example, <code class="highlighter-rouge">input_path_list</code>). We strongly recommend using the pipe character as a separator (for example, <code class="highlighter-rouge">first value|second value</code>).</li>
-  <li>For outputs, use <strong>upper</strong> case <a href="https://en.wikipedia.org/wiki/Snake_case">snake case</a> style output IDs. For example, <code class="highlighter-rouge">OUTPUT_PATH</code>.</li>
-  <li>If an output should be able to provide a list of values, postfix the input ID with <code class="highlighter-rouge">_LIST</code> (for example, <code class="highlighter-rouge">OUTPUT_PATH_LIST</code>). We strongly recommend using the pipe character as a separator (for example, <code class="highlighter-rouge">first value|second value</code>).</li>
-  <li>Filter out empty items! For example, <code class="highlighter-rouge">first value| |second value</code> should be treated exactly the same way as <code class="highlighter-rouge">first value|second value</code>.</li>
-</ul>
-
-<h3 id="environment-variables-in-steps">Environment variables in Steps <a href="#environment-variables-in-steps" class="anchor-symbol">⚓</a></h3>
-
-<p><strong>Do not use Environment Variables directly in your Step’s code</strong>. Instead, expose every outside variable as an input of your Step and set the default value of that input to the Environment Variable you want to use. You can do this in the <code class="highlighter-rouge">step.yml</code> file. This way it’s easier to test the Step and the user of the Step can easily declare these inputs, without having to scour through code for the required variable.</p>
-
-<p><strong>Example</strong>:</p>
-
-<p>The <code class="highlighter-rouge">xcode-archive</code> Step generates an output Environment Variable <code class="highlighter-rouge">$BITRISE_IPA_PATH</code>. Create an input for this in your Step:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">inputs</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">ipa-path</span><span class="pi">:</span> <span class="s">$BITRISE_IPA_PATH</span>
-    <span class="na">opts</span><span class="pi">:</span>
-        <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">IPA</span><span class="nv"> </span><span class="s">path"</span>
-</code></pre></div></div>
-
-<h3 id="submodules-and-dependencies">Submodules and dependencies <a href="#submodules-and-dependencies" class="anchor-symbol">⚓</a></h3>
-
-<p><strong>Do not use submodules, or require any other resource downloaded on-demand in your Step</strong>. Try to include everything required for your Step in the Step’s repository. Otherwise you can run into problems if, say, the Step fails to download a resource because of a network error or some authorization problem.</p>
-
-<p>In the case of submodules, you should include the content of the other repository instead of using it as a submodule of your Step’s repository.</p>
-
-<p>You can, however, declare dependencies that you can fetch from an OS dependency manager, such as <code class="highlighter-rouge">apt-get</code> or <code class="highlighter-rouge">brew</code>. For more information on declaring dependencies, see <a href="/bitrise-cli/step-properties">Step properties</a>.</p>
-
-<p>If you have any questions visit our <a href="https://discuss.bitrise.io/">community discussion site</a> or <a href="https://www.bitrise.io/contact">contact us</a>!</p>
-
-<p><strong>Need some inspiration for a new Step idea?</strong> Look no further, we have a list! <a href="https://discuss.bitrise.io/search?q=tags%3Acontrib-this-feature%20tag%3AStep">This way please</a> :)</p>
-
-<h2 id="sharing-a-new-step">Sharing a new Step <a href="#sharing-a-new-step" class="anchor-symbol">⚓</a></h2>
-
-<p>If you wish to share your newly created Step with the wider world, that’s great - and simple!</p>
-
-<p>We recommend you start with the command <code class="highlighter-rouge">bitrise share</code>. This will print you a guide on sharing steps - all you need to do is follow! But we’ll summarize the most important things here as well, if you wish to look at the process before even firing up a command line interface.</p>
+				<p><a href="https://www.bitrise.io">Bitrise</a>にあるアプリを別のユーザーに移動させる必要が出てくることがあります。その時、これを以下の手順に従って簡単に行うことができます。</p>
 
 <ol>
-  <li>Make sure your Step is stored in a public git repository.</li>
-  <li>Fork the StepLib repository you want to have your step in. The official Bitrise StepLib can be found here: https://github.com/bitrise-io/bitrise-steplib</li>
-  <li>Call <code class="highlighter-rouge">$ bitrise share start -c https://github.com/[your-username]/bitrise-steplib.git</code>, with the git clone URL of your forked StepLib repository. This will prepare your forked StepLib locally for sharing.</li>
-  <li>Add the step version tag to your Step’s repository.</li>
-  <li>Call <code class="highlighter-rouge">$ bitrise share create --tag [step-version-tag] --git [step-git-uri].git --stepid [step-id]</code>,
-to add your Step to your forked StepLib repository (locally).</li>
-  <li>You can call <code class="highlighter-rouge">$ bitrise audit -c https://github.com/[your-username]/bitrise-steplib.git</code>
-to perform a complete health-check on your forked StepLib.</li>
-  <li>Create a Pull Request in the original StepLib repository.</li>
+  <li>アプリの <strong>現在のオーナー</strong> でログインします</li>
+  <li>アプリのページを開いて、 <strong>Team</strong> タブを選択します</li>
+  <li>アプリの新しいオーナーがチームにいることを確認するか、必要に応じて追加してください</li>
+  <li>右上にある <code class="highlighter-rouge">Transfer ownership</code> ボタンをクリックします</li>
 </ol>
 
-<p>And that’s it, you are done! Once your PR is merged, your step will be available to everyone who uses the StepLib repository you chose.</p>
+<p>所有権を移動させるために、アプリを移動させる新しいユーザーを選択します。</p>
+
+<p><img src="/img/team-management/transfering-ownership.png" alt="Screenshot" /></p>
+
+<p>あなたはサービスへの接続を保ったまま切り替えることができます。これはもしあなたが <code class="highlighter-rouge">GitHub</code> や <code class="highlighter-rouge">Bitbucket</code> の管理者で、アプリをBitriseで動かすためにあなたの認証情報が必要な時に重要です。</p>
 
 			</main>
 		</div>
