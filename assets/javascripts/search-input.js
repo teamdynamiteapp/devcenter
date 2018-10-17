@@ -4,7 +4,7 @@ var sjs = SimpleJekyllSearch({
 	searchInput: searchInput,
 	resultsContainer: document.getElementById('results-container'),
 	json: '/search.json',
-	fuzzy: true
+	fuzzy: false
 });
 
 function clearSearchField() {
