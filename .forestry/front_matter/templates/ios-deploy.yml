@@ -1,5 +1,5 @@
 ---
-label: builds
+label: ios-deploy
 hide_body: false
 is_partial: false
 fields:
@@ -11,8 +11,8 @@ fields:
   name: menu
   fields:
   - type: field_group
-    name: builds
-    label: builds
+    name: ios-deploy
+    label: ios-deploy
     fields:
     - type: text
       name: weight
@@ -20,4 +20,5 @@ fields:
       config:
         required: true
 pages:
-- _articles/builds/build-logs.md
+- _articles/deploy/ios-deploy/introduction-to-deploying-ios-apps.md
+- _articles/deploy/ios-deploy/deploying-an-ios-app-to-itunes-connect.md

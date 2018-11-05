@@ -1,5 +1,5 @@
 ---
-label: builds
+label: android-deploy
 hide_body: false
 is_partial: false
 fields:
@@ -11,8 +11,8 @@ fields:
   name: menu
   fields:
   - type: field_group
-    name: builds
-    label: builds
+    name: android-deploy
+    label: android-deploy
     fields:
     - type: text
       name: weight
@@ -20,4 +20,4 @@ fields:
       config:
         required: true
 pages:
-- _articles/builds/build-logs.md
+- _articles/deploy/android-deploy/deploying-android-apps.md

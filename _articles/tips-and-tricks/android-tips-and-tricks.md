@@ -51,7 +51,7 @@ You can run any of the tasks on bitrise from a `Script` step by calling `gradle 
 or by using our `Gradle Runner` step ([https://github.com/bitrise-io/steps-gradle-runner](https://github.com/bitrise-io/steps-gradle-runner))
 and specifying the task as the value of the `gradle_task` input.
 
-**Instead of running** `**gradle**` **directly, you should run the gradle commands through** `**gradlew**` **(the Gradle Wrapper)!**
+**Instead of running** `gradle` **directly, you should run the gradle commands through** `gradlew` **(the Gradle Wrapper)!**
 The `Gradle Runner` step does this, and as you can see it in the related input description of the step:
 
 > Using a Gradle Wrapper (gradlew) is strongly suggested, as the wrapper is what makes sure
@@ -63,9 +63,9 @@ The `Gradle Runner` step does this, and as you can see it in the related input d
 
 ## How to install an additional Android SDK package
 
-**The preferred way to do this is to use the** `**Install missing Android tools**`** step.
+**The preferred way to do this is to use the** `Install missing Android SDK components` **step**.
 Please only use a Script solution if you really have to, as you'll have to update
-the Script if the Android tools change (which did happen).**
+the Script if the Android tools change (which did happen).
 
 All you have to do is to add a `Script` step to your workflow,
 and use the Android `sdkmanager` tool to install the additional packages you want to.
@@ -126,7 +126,7 @@ which makes sure that the emulator is booted and ready for subsequent steps.
 
 ### Emulator with Google APIs
 
-**Instead of using a Script step to create an android emulator please use the** `**Create Android emulator**`** step!
+**Instead of using a Script step to create an android emulator please use the** `Create Android emulator` **step**!
 There are simply too many edge cases to cover here, as well as the commands and working configurations change quite frequently.**
 
 _The section below is kept here for referencing purposes, and might be outdated._
@@ -162,5 +162,5 @@ If your build requires JDK 8, you can install and activate it with a `Script` st
     echo "done"
 
 That's all, just add the `Script` step to the Workflow with the content above,
-and start a new build. _This_ `_Script_`_ step can be the very first step in the Workflow,
-as it does not depend on anything else._
+and start a new build. This `Script` step can be the very first step in the Workflow,
+as it does not depend on anything else.

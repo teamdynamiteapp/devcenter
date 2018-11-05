@@ -13,6 +13,8 @@ sections:
   label: For review
   create: all
   match: "**/*"
+- type: heading
+  label: DevCenter articles
 - type: directory
   path: _articles
   label: Bitrise Devcenter - What is Bitrise
@@ -65,6 +67,11 @@ sections:
   create: all
   match: "**/*"
 - type: directory
+  path: _articles/deploy
+  label: Deployment
+  create: all
+  match: "**/*"
+- type: directory
   path: _articles/tutorials
   label: Tutorials
   create: all
@@ -89,6 +96,13 @@ sections:
   label: Tools
   create: all
   match: "**/*"
+- type: directory
+  path: _articles/api
+  label: API
+  create: all
+  match: "**/*"
+- type: heading
+  label: Data files
 - type: document
   path: _config.yml
   label: _config.yml
